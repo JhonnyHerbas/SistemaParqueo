@@ -9,4 +9,5 @@
     <link rel="stylesheet" type="text/css" href="/SistemaParqueo/public/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/SistemaParqueo/public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/SistemaParqueo/public/css/crearSitio.css">
 </head>

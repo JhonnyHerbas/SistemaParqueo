@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear sitio</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/crearSitio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="menu-bars" class="fas fa-bars"></div>
+    <header>
+        <div class="container-logo">
+            <a href="" class="logo">
+                <img src="/public/img/FCYT.png" alt="logo" class="logo">
+            </a>
+            <h2>Sistema de parqueo FCYT</h2>
+        </div>
+        <div class="line"></div>
+
+        <div class="container-user">
+            <img src="/public/img/Usuario.png" alt="usuario" class="logo">
+            <div class="info-user">
+                <h3 class="info">USER NAME</h3>
+                <h5 class="info">Administrador</h5>
+            </div>                
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Visualizar</a></li>
+                <li><a href="">Configurar horario</a></li>
+                <li><a href="">Ver solicitudes</a></li>
+            </ul>
+        </nav>
+
+        <div class="redes_sociales">
+            <a href="https://www.facebook.com/fcytumssOficial" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="http://abcd.fcyt.umss.edu.bo/cgi-bin//wxis/iah/scripts/?IsisScript=iah.xis&lang=es&base=TECLI" target="_blank" class="fa-solid fa-book"></a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form-register">
+              <form class="needs-validation" novalidate id="formulario" action="CrearSitio.php" method="post" enctype="multipart/form-data">
+                <div class = "container-titulo">
+                    <h2 class="form-title" style="position: relative;">Crear Sitio</h2>   
+                </div>
+    
+                <div class="block">
+                  <label >Nombre de sitio: </label>
+                  <input class="form-control" onkeyup = "this.value=this.value.replace(/^\s+/,'');" oninput="validarNombre(this)" required name="name" id="name" spellcheck="false" type="text" maxlength="15" 
+                  autocomplete="off" style="font-size: 20px;" 
+                  >
+                  
+                  <script>
+                    function validarNombre(input){
+                      var name = document.getElementById('name');
+                      name.addEventListener('keypress', function(event) {
+                      var key = event.keyCode;
+                      // Restringir los caracteres especiales (33 a 47)
+                      if (key >= 33 && key <= 47) {
+                        event.preventDefault();
+                      }
+                      // Restringir los caracteres especiales (58 a 64)
+                      if (key >= 58 && key <= 64) {
+                        event.preventDefault();
+                      }
+                      // Restringir los caracteres especiales (91 a 96)
+                      if (key >= 91 && key <= 96) {
+                        event.preventDefault();
+                      }
+                      // Restringir los caracteres especiales (123 a 126)
+                      if (key >= 123 && key <= 126) {
+                        event.preventDefault();
+                      }
+                    });
+                    }
+                  </script>
+                </div>
+
+                <div class="block2">
+                  <label for="validationCustom03" class="form-label"> Disponible : </label>
+                  <select class="form-select" name="disponible" id="disponible" style="font-size: 20px;">
+                    <option selected disabled value="">Elige...</option>
+                    <option value="1" style="font-size: 20px;">Si</option>
+                    <option value="0" style="font-size: 20px;">No</option>
+                  </select>
+                </div>
+
+                <div class="block3">
+                  <label>Precio: </label>
+                  <input class="form-control" required name="precio" id="precio" spellcheck="false" type="text" maxlength="10" pattern="^[0-9]*$"
+                  oninput="validarNumero(this)" title="Ingrese un número positivo" style="font-size: 20px;" autocomplete="off"
+                  >
+                  <script>
+                    function validarNumero(input) {
+                      var precio = document.getElementById('precio');
+                      precio.addEventListener('keypress', function(event) {
+                      var key = event.keyCode;
+                      if (key < 48 || key > 57) {
+                        event.preventDefault();
+                      }
+                      }); 
+                    }
+                  </script>
+                </div>
+      
+                <div class="botones">
+                  <a href=""><button id="btn" class="crear" type="submit" name="crear">Crear</button></a>
+      
+                  <button id="cancelar" class="cancelar" type = "reset" >Cancelar</button>
+                </div>
+      
+              </form>
+      
+            </div>
+    </div>
+    </main>
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/bootstrap.bundle.js"></script>
+</body>
+</html>
