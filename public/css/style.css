@@ -146,18 +146,23 @@ header .redes_sociales a{
         overflow-x: hidden;
         scroll-behavior: smooth;
     }
+
     body{
         padding: 0;
     }
+
     #menu-bars{
         display: initial;
     }
+
     header{
         left: -120%;
     }
+
     header.active{
         left:0%;
     }
+
 }
 
 @media (max-width:450px){
@@ -171,6 +176,10 @@ header .redes_sociales a{
 
     .input-buscar {
         width: 55vw;
+    }
+
+    .container-logo h2 {
+        padding-top: 2.5vh;
     }
 
     .container-busqueda {
