@@ -1,116 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
-.container-principal {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-#sidebar {
-    position: fixed;
-    width: 25%;
-    height: 100%;
-    background: #1C304A;
+body{
+    background: #00cfff;
+    padding-left: 30rem;
 }
 
-#modelo {
-    position: fixed;
-    left: 25%;
-    width: 75%;
-    height: 100%;
+main {
     background-color: #00cfff;
+    min-height: 100vh;
 }
 
 .container-logo {
-    margin-top: 10px;
-    margin-left: 10px;
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
+    color: white;
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-.title {
-    font-size: 25px;
-    color: #ffffff;
+    width: 70px;
+    height: 70px;
 }
 
-.line {
-    margin-left: 5%;
-    display: inline-block;
-    width: 90%;
-    height: 3px;
-    background-color: #00cfff;
-}
-
-.container-user {
-    margin-top: 10px;
-    margin-left: 10px;
+header{
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    background: #1C304A;
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
-    justify-content: flex-start;
-    text-align: left;
+    justify-content: space-between;
+    z-index: 1000;
+    flex-flow: column nowrap;
+    padding: 8rem 2rem;
+    width: 30rem;
+    text-align: center;
 }
 
-.logo-user {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+ul {
+    list-style: none;
 }
 
-.info {
-    font-weight: normal;
+header .navbar a{
+    display: block;
     color: #ffffff;
+    margin: 3rem 0;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
-.container-superior {
-    position: relative;
-    top: 10px;
-    left: 5%;
-    width: 95%;
+header .navbar a:hover{
+    letter-spacing: .2rem;
+    color: #00cfff;
 }
 
-.container-modelo {
-    position: relative;
-    top: 10px;
-    height: 95%;
+header .redes_sociales a:hover{
+    color: #00cfff;
 }
 
-.container-visual {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    width: 90%;
-    height: 90%;
-    border-radius: 15px;
+header .redes_sociales a{
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 0.7rem;
+    text-decoration: none;
 }
 
-.input-container {
-    position: relative;
-    width: 100%;
-}
- 
-.container-input-buscar {
-    display: inline-block;
-}
-
-.container-button-buscar {
-    display: inline-block;
+#menu-bars{
+    position: fixed;
+    top: 1rem;right: 1rem;
+    z-index: 10000;
+    background: #1C304A;
+    color: #ffffff;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
 }
 
 .input-buscar {
@@ -132,4 +103,85 @@
     border-radius: 15px;
     width: 100px;
     height: 40px;
+    background-color: #7b46a4;
+    color: white;
+    border: none;
+}
+
+.container-busqueda {
+    padding-left: 3vw;
+    padding-top: 2vh;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+ 
+.container-input-buscar {
+    display: inline-block;
+}
+
+.container-button-buscar {
+    display: inline-block;
+}
+
+.line {
+    margin-left: 5%;
+    display: inline-block;
+    width: 100vw;
+    height: 3px;
+    background-color: #00cfff;
+}
+
+.container-user {
+    display: flex;
+    text-align: left;
+    color: #ffffff;
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+    body{
+        padding: 0;
+    }
+    #menu-bars{
+        display: initial;
+    }
+    header{
+        left: -120%;
+    }
+    header.active{
+        left:0%;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 70%;
+    }
+
+    header{
+        width: 100%;
+    }
+
+    .input-buscar {
+        width: 55vw;
+    }
+
+    .container-busqueda {
+        width: 85vw;
+    }
+
+    .container-logo {
+        position: relative;
+    }
+
+    .container-logo h2 {
+        padding-top: 2.5vh;
+    }
 }
