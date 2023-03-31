@@ -41,6 +41,7 @@ header{
     padding: 8rem 2rem;
     width: 30rem;
     text-align: center;
+    overflow: auto;
 }
 
 ul {
@@ -129,7 +130,7 @@ header .redes_sociales a{
 .line {
     margin-left: 5%;
     display: inline-block;
-    width: 100vw;
+    width: 90%;
     height: 3px;
     background-color: #00cfff;
 }
@@ -138,6 +139,50 @@ header .redes_sociales a{
     display: flex;
     text-align: left;
     color: #ffffff;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.visual{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 85vh;
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: block;
+}
+
+.container-seccion {
+    text-align: right;
+    width: 100%;
+}
+
+.seccion {
+    margin: 5%;
+    width: 30%;
+    border-radius: 10px;
+    background-color: #01baef;
+    color: white;
+    height: 40px;
+}
+
+.container-vista {
+    margin-left: 5%;
+    width: 90%;
+    height: 80%;
+
+}
+
+.body-sitio {
+    display: flex;
+}
+
+.acordion-btn {
+    background-color: #1C304A;
 }
 
 @media (max-width:991px){
@@ -192,5 +237,9 @@ header .redes_sociales a{
 
     .container-logo h2 {
         padding-top: 2.5vh;
+    }
+
+    .visual {
+        height: 90vh;
     }
 }
