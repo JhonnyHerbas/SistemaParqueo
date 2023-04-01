@@ -184,7 +184,18 @@ header .redes_sociales a{
 .acordion-btn {
     background-color: #1C304A;
 }
-
+/*Visualizar solicitudes*/
+.container-solicitud{
+    margin-top: 5%;
+}
+.titulo-acordion{
+    background-color: #046b99;
+    color: #ffffff;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #046b99;
+    color: #ffffff;
+}
 @media (max-width:991px){
     html{
         font-size: 55%;
