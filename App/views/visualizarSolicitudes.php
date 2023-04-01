@@ -35,17 +35,18 @@ include('head.php');
             $result = visualizar_solicitud();
             if($result){
                 while($row = $result->fetch_array(MYSQLI_BOTH)){
+                    $collapse = "flush-collapse".$i;
                 ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
                                 <?php 
                                     echo "Solicitud ".$i;
-                                    $i=$i+1;
+                                    
                                 ?>
                             </button>
                         </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div id="<?php echo $collapse ?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <?php 
                                     echo "Titulo: ".$row["TITULO_SOL"].'<br>';
@@ -54,7 +55,7 @@ include('head.php');
                                     echo "Correo: ".$row["CORREO_DOC"].'<br>';
                                     echo "Descripción: ".$row["DESCRIPCION_SOL"].'<br>';
                                     echo "Sitio: #".$row["SITIO_SOL"].'<br>';
-
+                                    $i=$i+1;
                                 ?>
                             </div>
                         </div>
