@@ -11,7 +11,7 @@ html {
 
 body{
     background: #00cfff;
-    padding-left: 30rem;
+    padding-left: 25rem;
 }
 
 main {
@@ -25,8 +25,8 @@ main {
 }
 
 .logo {
-    width: 70px;
-    height: 70px;
+    width: 5vh;
+    height: 5vh;
 }
 
 header{
@@ -39,7 +39,7 @@ header{
     z-index: 1000;
     flex-flow: column nowrap;
     padding: 8rem 2rem;
-    width: 30rem;
+    width: 25rem;
     text-align: center;
     overflow: auto;
 }
@@ -147,7 +147,7 @@ header .redes_sociales a{
 }
 
 .visual{
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: 5%;
     height: 85vh;
     width: 90%;
@@ -182,7 +182,39 @@ header .redes_sociales a{
 }
 
 .acordion-btn {
-    background-color: #1C304A;
+    text-align: center;
+    display: flex;
+    justify-content: right;
+}
+
+.function {
+    height: 5vh;
+    width: 5vh;
+    background-color: #01baef;
+    border-radius: 1vh;
+    margin: auto 0.5vw;
+}
+
+.celeste {
+    background-color: #00cfff;
+}
+
+.verde {
+    background-color: #0cbea1;
+}
+
+.azul {
+    background-color: #046b99;
+}
+
+.rojo {
+    background-color: #ff0000;
+}
+
+.blanco {
+    color: white;
+    padding: 1vh;
+    font-size: 3vh;
 }
 
 @media (max-width:991px){
@@ -194,6 +226,10 @@ header .redes_sociales a{
 
     body{
         padding: 0;
+    }
+
+    img {
+        height: 100vh;
     }
 
     #menu-bars{
