@@ -52,4 +52,17 @@ function visualizr_nombreSitio($ID_SIT) {
     }
 }
 
+function eliminar_sitio($ID_SIT) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_SITIO_ELIMINAR(?)");
+    $stmt->bind_param("i",$ID_SIT);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+
 ?>

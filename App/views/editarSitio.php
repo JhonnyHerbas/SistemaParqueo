@@ -33,7 +33,7 @@ include('head.php');
             <h2 class="h2">Editar sitio</h2>
         </div>
         <div class="card-body">
-            <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/realizarSolcitudAction.php" method="post">
+            <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/editarSitioAction.php" method="post">
                 <div class="mb-3">
                     <label for="validationCustom01" class="form-label">Nombre del sitio:</label>
                     <input type="text" name="name" class="form-control bg-info" id="validationCustom01" pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" 
