@@ -7,7 +7,7 @@
     <title>Crear sitio</title>
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/bootstrap.css">
-    <link rel="stylesheet" href="/public/css/crearSitio.css">
+    <link rel="stylesheet" href="/public/css/editarSitio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -48,12 +48,12 @@
             <div class="form-register">
               <form class="needs-validation" novalidate id="formulario" action="CrearSitio.php" method="post" enctype="multipart/form-data">
                 <div class = "container-titulo">
-                    <h2 class="form-title" style="position: relative;">Crear Sitio</h2>   
+                    <h2 class="form-title" style="position: relative;">Editar Sitio</h2>   
                 </div>
     
                 <div class="block">
                   <label >Nombre de sitio: </label>
-                  <input class="form-control" onkeyup = "this.value=this.value.replace(/^\s+/,'');" oninput="validarNombre(this)" required name="name" id="name" spellcheck="false" type="text" maxlength="15" 
+                  <input class="form-control bg-info" onkeyup = "this.value=this.value.replace(/^\s+/,'');" oninput="validarNombre(this)" required name="name" id="name" spellcheck="false" type="text" maxlength="15" 
                   autocomplete="off" style="font-size: 20px;" 
                   >
                   
@@ -83,18 +83,9 @@
                   </script>
                 </div>
 
-                <div class="block2">
-                  <label for="validationCustom03" class="form-label"> Disponible : </label>
-                  <select class="form-select" name="disponible" id="disponible" style="font-size: 20px;">
-                    <option selected disabled value="">Elige...</option>
-                    <option value="1" style="font-size: 20px;">Si</option>
-                    <option value="0" style="font-size: 20px;">No</option>
-                  </select>
-                </div>
-
                 <div class="block3">
                   <label>Precio: </label>
-                  <input class="form-control" required name="precio" id="precio" spellcheck="false" type="text" maxlength="10" pattern="^[0-9]*$"
+                  <input class="form-control bg-info" required name="precio" id="precio" spellcheck="false" type="text" maxlength="10" pattern="^[0-9]*$"
                   oninput="validarNumero(this)" title="Ingrese un número positivo" style="font-size: 20px;" autocomplete="off"
                   >
                   <script>
@@ -109,9 +100,10 @@
                     }
                   </script>
                 </div>
+
       
                 <div class="botones">
-                  <a href=""><button id="btn" class="crear" type="submit" name="crear">Crear</button></a>
+                  <a href=""><button id="btn" class="crear" type="submit" name="crear">Editar</button></a>
       
                   <button id="cancelar" class="cancelar" type = "reset" >Cancelar</button>
                 </div>
