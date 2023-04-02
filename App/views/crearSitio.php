@@ -90,7 +90,7 @@ include('head.php');
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-body">
-                                ¿Está seguro de que desea guardar esta solicitud?
+                                ¿Está seguro de que desea guardar este sitio?
                             </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton" >Cancelar</button>

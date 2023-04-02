@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Crear Sitio";
+$title = "Editar Sitio";
 include('head.php');
 ?>
 
@@ -22,63 +22,39 @@ include('head.php');
 
     include('header.php');
     include('../models/funcionSeccion.php');
+    $name = $_GET['nombre'];
+    $price = $_GET['precio'];
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
     <section class="container-form">
     <div class="card form">
         <div class="card-header">
-            <h2 class="h2">Crear sitio</h2>
+            <h2 class="h2">Editar sitio</h2>
         </div>
         <div class="card-body">
             <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/realizarSolcitudAction.php" method="post">
                 <div class="mb-3">
                     <label for="validationCustom01" class="form-label">Nombre del sitio:</label>
                     <input type="text" name="name" class="form-control bg-info" id="validationCustom01" pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" 
-                    minlength="5" maxlength="30" placeholder="Sitio X" onkeyup = "this.value=this.value.replace(/^\s+/,'');" required>
+                    minlength="5" maxlength="30" placeholder="<?php echo $name; ?>" onkeyup = "this.value=this.value.replace(/^\s+/,'');" required>
+
                     <div class="invalid-feedback">
                         Por favor, ingrese un valor válido para este campo.
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="validationCustom02" class="form-label">Disponible:</label>
-                    <select class="form-select bg-info" name="disponible" id="validationCustom04" required>
-                      <option selected disabled value="">Elige...</option>
-                      <option value="1" style="font-size: 20px;">Si</option>
-                      <option value="0" style="font-size: 20px;">No</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Por favor seleccione una opción
-                    </div>
-                </div>
+
                 <div class="mb-3">
                   <label for="validationCustom02" class="form-label">Precio: </label>
                   <input type="number" class="form-control bg-info" id="validationCustom02" min="1" autocomplete="off" 
-                    required name="precio" spellcheck="false" maxlength="10" pattern="^[0-9]*$"   
+                    required name="precio" spellcheck="false" maxlength="10" pattern="^[0-9]*$" placeholder="<?php echo $price; ?>"
                   >
+
                   <div class="invalid-feedback">
                             Solo se permiten valores positivos mayores a cero.
                   </div>
                 </div>
-                <div class="mb-3">
-                    <label for="validationCustom02" class="form-label">Seccion:</label>
-                    <select class="form-select bg-info" name="seccion" id="validationCustom04" required>
-                    <option selected disabled value="">Elige...</option>
-                        <?php
-                        $result = visualizar_seccion();
-                        if($result){
-                            while($row = $result->fetch_array(MYSQLI_BOTH)){
-                                $id = $row['ID_SEC'];
-                                $nombre = $row['NOMBRE_SEC'];
-                                echo "<option value='$id'>$nombre</option>";
-                            }
-                        } 
-                        ?>
-                    </select>
-                    <div class="invalid-feedback">
-                        Por favor seleccione una sección
-                    </div>
-                </div>
+
                 <div class="col-12 button">
                     <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
                     <button class="btn btn-danger" type="reset">Cancelar</button>
@@ -90,7 +66,7 @@ include('head.php');
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-body">
-                                ¿Está seguro de que desea guardar esta solicitud?
+                                ¿Está seguro de que desea editar este sitio?
                             </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton" >Cancelar</button>
