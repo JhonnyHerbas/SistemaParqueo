@@ -44,6 +44,15 @@ header{
     overflow: auto;
 }
 
+header::-webkit-scrollbar {
+    width: 10px;
+}
+
+header::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 50px;
+}
+
 ul {
     list-style: none;
 }
@@ -174,7 +183,16 @@ header .redes_sociales a{
     margin-left: 5%;
     width: 90%;
     height: 80%;
+    overflow: auto;
+}
 
+.container-vista::-webkit-scrollbar {
+    width: 10px;
+}
+
+.container-vista::-webkit-scrollbar-thumb {
+    background: #00cfff;
+    border-radius: 50px;
 }
 
 .body-sitio {
