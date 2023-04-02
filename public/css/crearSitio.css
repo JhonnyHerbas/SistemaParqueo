@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-  .container-form{
+.container-form{
     margin:10% 25%;
     border: none;
 }
@@ -45,9 +45,16 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
-    -moz-appearance: textfield;
-  }
+.modal-body{ 
+    background: #1C304A; 
+    color: white; 
+    font-size: 1.3rem; 
+    text-align: center; 
+    } 
+    form{ 
+    padding: 0% 10%; 
+    }
+
 
 @media (max-width:991px){
     html{

@@ -3,9 +3,8 @@
 
 <?php
 
-$title = "Editar sitio";
+$title = "Crear Sitio";
 include('head.php');
-    
 ?>
 
 <body>
@@ -22,92 +21,92 @@ include('head.php');
                 </ul>";
 
     include('header.php');
-    include('../models/funcionSitio.php');
+    include('../models/funcionSeccion.php');
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
-    <main>
-        <div class="containerE">
-            <div class="form-register">
-              <form class="needs-validation" novalidate id="formulario" action="CrearSitio.php" method="post" enctype="multipart/form-data">
-                <div class = "container-tituloE">
-                    <h2 class="form-title" style="position: relative;">Editar Sitio</h2>   
+    <section class="container-form">
+    <div class="card form">
+        <div class="card-header">
+            <h2 class="h2">Crear sitio</h2>
+        </div>
+        <div class="card-body">
+            <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/realizarSolcitudAction.php" method="post">
+                <div class="mb-3">
+                    <label for="validationCustom01" class="form-label">Nombre del sitio:</label>
+                    <input type="text" name="name" class="form-control bg-info" id="validationCustom01" pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" 
+                    minlength="5" maxlength="30" placeholder="Sitio X" onkeyup = "this.value=this.value.replace(/^\s+/,'');" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese un valor válido para este campo.
+                    </div>
                 </div>
-    
-                <div class="blockE">
-                  <label >Nombre de sitio: </label>
-                  <input class="form-control bg-info" onkeyup = "this.value=this.value.replace(/^\s+/,'');" oninput="validarNombre(this)" 
-                  required name="name" id="name" spellcheck="false" type="text" maxlength="15" 
-                  autocomplete="off" style="font-size: 20px;" placeholder="<?php echo $nombre; ?>"
+                <div class="mb-3">
+                    <label for="validationCustom02" class="form-label">Disponible:</label>
+                    <select class="form-select bg-info" name="disponible" id="validationCustom04" required>
+                      <option selected disabled value="">Elige...</option>
+                      <option value="1" style="font-size: 20px;">Si</option>
+                      <option value="0" style="font-size: 20px;">No</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor seleccione una opción
+                    </div>
+                </div>
+                <div class="mb-3">
+                  <label for="validationCustom02" class="form-label">Precio: </label>
+                  <input type="number" class="form-control bg-info" id="validationCustom02" min="1" autocomplete="off" 
+                    required name="precio" spellcheck="false" maxlength="10" pattern="^[0-9]*$"   
                   >
-                  <?php
-                  $consulta = "SELECT NOMBRE_SIT FROM SITIO WHERE ID_SIT = 1";
-                  $resultado = mysqli_query($conexion, $consulta);
-                  $fila = mysqli_fetch_array($resultado);
-                  $nombre = $fila['NOMBRE_SIT'];
-                  ?>
-                  
-                  <script>
-                    function validarNombre(input){
-                      var name = document.getElementById('name');
-                      name.addEventListener('keypress', function(event) {
-                      var key = event.keyCode;
-                      // Restringir los caracteres especiales (33 a 47)
-                      if (key >= 33 && key <= 47) {
-                        event.preventDefault();
-                      }
-                      // Restringir los caracteres especiales (58 a 64)
-                      if (key >= 58 && key <= 64) {
-                        event.preventDefault();
-                      }
-                      // Restringir los caracteres especiales (91 a 96)
-                      if (key >= 91 && key <= 96) {
-                        event.preventDefault();
-                      }
-                      // Restringir los caracteres especiales (123 a 126)
-                      if (key >= 123 && key <= 126) {
-                        event.preventDefault();
-                      }
-                    });
-                    }
-                  </script>
+                  <div class="invalid-feedback">
+                            Solo se permiten valores positivos mayores a cero.
+                  </div>
+                </div>
+                <div class="mb-3">
+                    <label for="validationCustom02" class="form-label">Seccion:</label>
+                    <select class="form-select bg-info" name="seccion" id="validationCustom04" required>
+                    <option selected disabled value="">Elige...</option>
+                        <?php
+                        $result = visualizar_seccion();
+                        if($result){
+                            while($row = $result->fetch_array(MYSQLI_BOTH)){
+                                $id = $row['ID_SEC'];
+                                $nombre = $row['NOMBRE_SEC'];
+                                echo "<option value='$id'>$nombre</option>";
+                            }
+                        } 
+                        ?>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor seleccione una sección
+                    </div>
+                </div>
+                <div class="col-12 button">
+                    <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
+                    <button class="btn btn-danger" type="reset">Cancelar</button>
                 </div>
 
-                <div class="blockE3">
-                  <label>Precio: </label>
-                  <input class="form-control bg-info" required name="precio" id="precio" spellcheck="false" type="text" maxlength="10" pattern="^[0-9]*$"
-                  oninput="validarNumero(this)" title="Ingrese un número positivo" style="font-size: 20px;" autocomplete="off" placeholder="<?php echo $precio; ?>"
-                  >
-                  <?php
-                  $consulta = "SELECT PRECIO_SIT FROM SITIO WHERE ID_SIT = 1";
-                  $resultado = mysqli_query($conexion, $consulta);
-                  $fila = mysqli_fetch_array($resultado);
-                  $precio = $fila['PRECIO_SIT'];
-                  ?>
-                  <script>
-                    function validarNumero(input) {
-                      var precio = document.getElementById('precio');
-                      precio.addEventListener('keypress', function(event) {
-                      var key = event.keyCode;
-                      if (key < 48 || key > 57) {
-                        event.preventDefault();
-                      }
-                      }); 
-                    }
-                  </script>
+        <!-- Modal -->
+                <div class="container-modal">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-body">
+                                ¿Está seguro de que desea guardar esta solicitud?
+                            </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton" >Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" id="confirmButton">Confirmar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-      
-                <div class="botonesE">
-                  <a href=""><button id="btn" class="editar" type="submit" name="crear">Editar</button></a>
-      
-                  <button id="cancelar" class="cancelarE" type = "reset" >Cancelar</button>
-                </div>
-      
-              </form>
-      
-            </div>
+            </form>
+        </div>
     </div>
-    </main>    
+</section>
+
+
+    
 
     <!-- Include de los scripts.php -->
     <?php
@@ -115,6 +114,28 @@ include('head.php');
     include('scripts.php');
 
     ?>
+      <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+        'use strict'
 
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+            }, false)
+        })
+        })()
+    </script>  
+    
+<script src="/SistemaParqueo/public/js/validacion.js"></script>
 </body>
 </html>
