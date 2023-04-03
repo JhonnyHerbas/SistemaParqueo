@@ -5,6 +5,7 @@
 
 $title = "Editar Sitio";
 include('head.php');
+include('../models/funcionSitio.php')
 ?>
 
 <body>
@@ -22,8 +23,11 @@ include('head.php');
 
     include('header.php');
     include('../models/funcionSeccion.php');
-    $name = $_GET['nombre'];
-    $price = $_GET['precio'];
+    $id_sit = $_GET['id_sit'];
+    $sitio = [];
+    if($sitio_id = visualizar_nombre_sitio($id_sit)){
+        $sitio = $sitio_id->fetch_array(MYSQLI_BOTH);
+    }
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
@@ -37,8 +41,7 @@ include('head.php');
                 <div class="mb-3">
                     <label for="validationCustom01" class="form-label">Nombre del sitio:</label>
                     <input type="text" name="name" class="form-control bg-info" id="validationCustom01" pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" 
-                    minlength="5" maxlength="30" placeholder="<?php echo $name; ?>" onkeyup = "this.value=this.value.replace(/^\s+/,'');" required>
-
+                    minlength="5" maxlength="30" value="<?php echo $sitio['NOMBRE_SIT']; ?>" onkeyup = "this.value=this.value.replace(/^\s+/,'');" required>
                     <div class="invalid-feedback">
                         Por favor, ingrese un valor válido para este campo.
                     </div>
@@ -47,12 +50,16 @@ include('head.php');
                 <div class="mb-3">
                   <label for="validationCustom02" class="form-label">Precio: </label>
                   <input type="number" class="form-control bg-info" id="validationCustom02" min="1" autocomplete="off" 
-                    required name="precio" spellcheck="false" maxlength="10" pattern="^[0-9]*$" placeholder="<?php echo $price; ?>"
+                    required name="precio" spellcheck="false" maxlength="10" pattern="^[0-9]*$" value="<?php echo $sitio['PRECIO_SIT']; ?>"
                   >
 
                   <div class="invalid-feedback">
                             Solo se permiten valores positivos mayores a cero.
                   </div>
+                </div> 
+                <div> 
+                    <input type="hidden" value="<?php echo $sitio['ID_SIT'];?>" name="id_sit" style="display: none;">
+                    <input type="hidden" value="<?php echo $sitio['ID_SEC'];?>" name="id_sec" style="display: none;">
                 </div>
 
                 <div class="col-12 button">

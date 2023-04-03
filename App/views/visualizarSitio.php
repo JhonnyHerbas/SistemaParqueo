@@ -109,7 +109,7 @@ include('head.php');
                                                     <a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a>
                                                 </div>
                                                 <div class="function azul">
-                                                    <a href="editarSitio.php?nombre=<?php echo $fila['NOMBRE_SIT'];?>&precio=<?php echo $fila['PRECIO_SIT'];?>" target="_self" class="fa-solid fa-pencil blanco"></a>
+                                                    <a href="editarSitio.php?id_sit=<?php echo $fila['ID_SIT'];?>" target="_self" class="fa-solid fa-pencil blanco"></a>
                                                 </div>
                                                 <div class="function rojo">
                                                     <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
