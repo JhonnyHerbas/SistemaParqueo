@@ -21,4 +21,17 @@ function visualizar_seccion(){
         return null;
     }
 }
+
+function actualizar_seccion($ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC){
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_SECCION_ACTUALIZAR(?,?,?)");
+    $stmt->bind_param("iss", $ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+} 
 ?>
