@@ -21,14 +21,10 @@
 
     include('../views/header.php');
     $id_sit = $_GET['id_sit'];
-    $sitio = [];
-    if($sitio_id = visualizar_nombre_sitio($id_sit)){
-        $sitio = $sitio_id->fetch_array(MYSQLI_BOTH);
-    }
     ?>
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
 
-    <div class="modal error" tabindex="-1">
+    <div class="modal eliminar" tabindex="-1" action="/SistemaParqueo/App/controllers/eliminarSitioAction.php" method="post">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">

@@ -51,14 +51,11 @@ function visualizar_nombre_sitio($ID_SIT) {
 
 function eliminar_sitio($ID_SIT) {
     $conn = get_connection();
-    $stmt = $conn->prepare("CALL DB_SP_SITIO_ELIMINAR(?)");
-    $stmt->bind_param("i",$ID_SIT);
-    if ($stmt->execute()) {
-        $stmt->close();
-        return true;
+    $query ='CALL DB_SP_SITIO_ELIMINAR("'.$ID_SIT.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
     } else {
-        $stmt->close();
-        return false;
+        return null;
     }
 }
 

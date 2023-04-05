@@ -5,6 +5,7 @@
 
 $title = "Crear Sitio";
 include('head.php');
+include('../models/funcionSeccion.php');
 ?>
 
 <body>
@@ -21,7 +22,7 @@ include('head.php');
                 </ul>";
 
     include('header.php');
-    include('../models/funcionSeccion.php');
+    
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
@@ -93,7 +94,7 @@ include('head.php');
                                 ¿Está seguro de que desea guardar este sitio?
                             </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton" >Cancelar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton">Cancelar</button>
                                     <button type="submit" class="btn btn-primary" id="confirmButton">Confirmar</button>
                                 </div>
                             </div>
