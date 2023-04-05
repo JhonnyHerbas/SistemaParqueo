@@ -205,7 +205,10 @@ header .redes_sociales a{
 }
 .modal-content{
     margin:50% 50%;
+    display: flex;
+    justify-content: center; 
 }
+
 .card-header{
     text-align: center;
     background-color: #046b99;
@@ -221,10 +224,8 @@ header .redes_sociales a{
 }
 .button{
     text-align: center;
-    display: flex;
-    justify-content: space-evenly ;
 }
- .area{
+.area{
     height: 15vh;
     resize: none;
     overflow: hidden; 
@@ -242,11 +243,16 @@ header .redes_sociales a{
     color: white;
     font-size: 1.3rem;
     text-align: center;
+    display: flex;
+    justify-content: center; 
 }
+
 .container-modal-error{
     background-color: red;
     width: 30vw;
     height: 30vh;
+    display: flex;
+    justify-content: center; 
 }
 .error {
     display: block;

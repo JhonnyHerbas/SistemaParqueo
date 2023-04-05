@@ -3,6 +3,7 @@ include("../models/funcionSitio.php");
 
 $result = visualizar_sitio();
 $nombre = $_POST['name'];
+$id_sit = $_POST['id_sit'];
 $existe = false;
 if($result){
     while($row = $result->fetch_array(MYSQLI_BOTH)){
@@ -43,7 +44,7 @@ if($existe){
                     <p>El sitio ya existe. Por favor, ingrese un nombre de sitio diferente.</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="../views/editarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></a>
+                    <a href="../views/editarSitio.php?id_sit=<?php echo $id_sit;?>" rel="noopener noreferrer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button></a>
                 </div>
             </div>
         </div>

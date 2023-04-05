@@ -43,7 +43,7 @@ if($existe){
                     <p>El sitio ya existe. Por favor, ingrese un nombre de sitio diferente.</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="../views/crearSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></a>
+                    <a href="../views/crearSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-danger data-bs-dismiss="modal">Cerrar</button></a>
                 </div>
             </div>
         </div>
