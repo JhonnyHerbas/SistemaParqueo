@@ -13,7 +13,6 @@ function visualizar_sitio() {
     }
 }
 
-
 function buscar_sitio($nombre) {
     $conn = get_connection();
     $result = mysqli_query($conn, "CALL DB_SP_SITIO_BUSCAR($nombre)");

@@ -39,8 +39,13 @@ if (mysqli_num_rows($result) > 0) {
         echo 'Precio: ' . $fila["PRECIO_SIT"] . ' PARCK
                     </div>
                     <div class="acordion-btn w-50">
-                        <div class="function celeste">
-                            <a href="" target="_self" class="fa-solid fa-lock blanco"></a>
+                        <div class="function celeste">';
+                        if ($fila['DISPONIBLE_SIT'] == 1){
+                            echo '<a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock-open blanco"></a>';
+                        } else {
+                            echo '<a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a>';
+                        }
+                        echo '<a href="" target="_self" class="fa-solid fa-lock blanco"></a>
                         </div>
                         <div class="function verde">
                             <a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a>

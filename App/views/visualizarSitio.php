@@ -107,14 +107,24 @@ include('head.php');
                                         </div>
                                         <div class="acordion-btn w-50">
                                             <div class="function celeste">
-                                                <a href="" target="_self" class="fa-solid fa-lock blanco"></a>
+                                                <?php 
+                                                
+                                                if ($fila['DISPONIBLE_SIT'] == 1){
+                                                    echo '<a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock-open blanco"></a>';
+                                                } else {
+                                                    echo '<a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a>';
+                                                }
+                                                
+                                                ?>
+
+
+                                                <a href="../controllers/liberarSitio.php?id_sit=<?php echo $fila['ID_SIT']?>" target="_self" class="fa-solid fa-lock blanco"></a>
                                             </div>
                                             <div class="function verde">
                                                 <a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a>
                                             </div>
                                             <div class="function azul">
-                                                <a href="editarSitio.php?nombre=<?php echo $fila['NOMBRE_SIT']; ?>&precio=<?php echo $fila['PRECIO_SIT']; ?>"
-                                                    target="_self" class="fa-solid fa-pencil blanco"></a>
+                                                <a href="editarSitio.php?id_sit=<?php echo $fila['ID_SIT']?>" target="_self" class="fa-solid fa-pencil blanco"></a>
                                             </div>
                                             <div class="function rojo">
                                                 <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
