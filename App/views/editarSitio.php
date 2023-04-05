@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Editar Sitio";
+$title = "Editar sitio";
 include('head.php');
 include('../models/funcionSitio.php')
 ?>
@@ -30,7 +30,7 @@ include('../models/funcionSitio.php')
     }
     ?>
 
-    <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
+    <!-- Aqui vendra toda la interfaz que se necesita para la creacion-->
     <section class="container-form">
     <div class="card form">
         <div class="card-header">
@@ -46,7 +46,6 @@ include('../models/funcionSitio.php')
                         Por favor, ingrese un valor válido para este campo.
                     </div>
                 </div>
-
                 <div class="mb-3">
                   <label for="validationCustom02" class="form-label">Precio: </label>
                   <input type="number" class="form-control bg-info" id="validationCustom02" min="1" autocomplete="off" 
@@ -61,10 +60,9 @@ include('../models/funcionSitio.php')
                     <input type="hidden" value="<?php echo $sitio['ID_SIT'];?>" name="id_sit" style="display: none;">
                     <input type="hidden" value="<?php echo $sitio['ID_SEC'];?>" name="id_sec" style="display: none;">
                 </div>
-
                 <div class="col-12 button">
                     <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
-                    <button class="btn btn-danger" type="reset">Cancelar</button>
+                    <a href="visualizarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">Cancelar</button></a>
                 </div>
 
         <!-- Modal -->
@@ -73,7 +71,7 @@ include('../models/funcionSitio.php')
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-body">
-                                ¿Está seguro de que desea editar este sitio?
+                                ¿Está seguro de editar este sitio?
                             </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton" >Cancelar</button>
@@ -97,27 +95,7 @@ include('../models/funcionSitio.php')
     include('scripts.php');
 
     ?>
-      <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (() => {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-            }, false)
-        })
-        })()
-    </script>  
+    
     
 <script src="/SistemaParqueo/public/js/validacion.js"></script>
 </body>

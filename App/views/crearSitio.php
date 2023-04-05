@@ -3,9 +3,9 @@
 
 <?php
 
-$title = "Crear Sitio";
+$title = "Crear sitio";
 include('head.php');
-include('../models/funcionSeccion.php');
+include('../models/funcionSeccion.php')
 ?>
 
 <body>
@@ -22,10 +22,9 @@ include('../models/funcionSeccion.php');
                 </ul>";
 
     include('header.php');
-    
     ?>
 
-    <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
+    <!-- Aqui vendra toda la interfaz que se necesita para la creacion-->
     <section class="container-form">
     <div class="card form">
         <div class="card-header">
@@ -82,7 +81,7 @@ include('../models/funcionSeccion.php');
                 </div>
                 <div class="col-12 button">
                     <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
-                    <button class="btn btn-danger" type="reset">Cancelar</button>
+                    <a href="visualizarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">Cancelar</button></a>
                 </div>
 
         <!-- Modal -->
@@ -91,10 +90,10 @@ include('../models/funcionSeccion.php');
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-body">
-                                ¿Está seguro de que desea guardar este sitio?
+                                ¿Está seguro de crear esta sección?
                             </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton">Cancelar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton" >Cancelar</button>
                                     <button type="submit" class="btn btn-primary" id="confirmButton">Confirmar</button>
                                 </div>
                             </div>
@@ -115,27 +114,7 @@ include('../models/funcionSeccion.php');
     include('scripts.php');
 
     ?>
-      <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (() => {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-            }, false)
-        })
-        })()
-    </script>  
+    
     
 <script src="/SistemaParqueo/public/js/validacion.js"></script>
 </body>

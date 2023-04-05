@@ -52,11 +52,10 @@ function visualizar_nombre_sitio($ID_SIT) {
 function eliminar_sitio($ID_SIT) {
     $conn = get_connection();
     $query ='CALL DB_SP_SITIO_ELIMINAR("'.$ID_SIT.'")';
-    if ($result = $conn->query($query)) {
-        return $result;
-    } else {
-        return null;
-    }
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
 }
 
 function buscar_sitio($NOMBRE_SIT) {
@@ -71,6 +70,5 @@ function buscar_sitio($NOMBRE_SIT) {
         return false;
     }
 }
-
 
 ?>
