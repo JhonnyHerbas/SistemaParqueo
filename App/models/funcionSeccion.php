@@ -44,4 +44,13 @@ function actualizar_seccion($ID_ADM,$ID_SEC,$NOMBRE_SEC,$DESCRIPCION_SEC){
         return false;
     }
 } 
+function eliminar_seccion($ID_SEC) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SECCION_ELIMINAR("'.$ID_SEC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>
