@@ -2,16 +2,17 @@
 
 require_once ('../config/conexion.php');
 
-function visualizar_sitio($cod) {
+function visualizar_sitio() {
     $conn = get_connection();
-    $result = mysqli_query($conn, "CALL DB_SP_SITIO_VISTA_ID_SEC($cod)");
+    $query = 'SELECT * FROM db_view_sitio_vista';
 
-    if (mysqli_num_rows($result) > 0) {
+    if ($result = $conn->query($query)) {
         return $result;
     } else {
         return null;
     }
 }
+
 
 function buscar_sitio($nombre) {
     $conn = get_connection();
