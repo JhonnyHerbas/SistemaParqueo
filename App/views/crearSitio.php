@@ -61,7 +61,7 @@ include('../models/funcionSeccion.php')
                   </div>
                 </div>
                 <div class="mb-3">
-                    <label for="validationCustom02" class="form-label">Seccion:</label>
+                    <label for="validationCustom02" class="form-label">Sección:</label>
                     <select class="form-select bg-info" name="seccion" id="validationCustom04" required>
                     <option selected disabled value="">Elige...</option>
                         <?php
