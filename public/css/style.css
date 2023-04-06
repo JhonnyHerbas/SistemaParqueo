@@ -157,16 +157,17 @@ header .redes_sociales a{
 
 .visual{
     margin-top: 3%;
-    margin-left: 5%;
+    margin-left: 5%;    
     height: 85vh;
     width: 90%;
     background-color: #ffffff;
     border-radius: 15px;
-    display: block;
+    /* display: block; */
 }
 
 .container-seccion {
     text-align: right;
+    height: 15vh;
     width: 100%;
 }
 
@@ -182,7 +183,7 @@ header .redes_sociales a{
 .container-vista {
     margin-left: 5%;
     width: 90%;
-    height: 80%;
+    height: 60vh;
     overflow: auto;
 }
 
@@ -235,6 +236,37 @@ header .redes_sociales a{
     font-size: 3vh;
 }
 
+
+
+/* Descriptcion de la seccion */
+.elements-descripcion {
+    display: flex;
+    margin: auto 10vh;
+}
+
+.function-seccion {
+    height: 7.5vh;
+    width: 7.5vh;
+    border-radius: 1vh;
+    margin: auto 0.5vh;
+}
+
+.eliminar-seccion {
+    padding: 1vh;
+    font-size: 5vh;
+}
+
+
+/* Styles libre o sitio ocupado */
+#libre {
+    background: #0cbea1;
+    color: #ffffff;
+}
+
+#ocupado {
+    background-color: #046b99;
+    color: white;
+}
 @media (max-width:991px){
     html{
         font-size: 55%;

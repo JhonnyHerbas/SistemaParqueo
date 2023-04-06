@@ -16,10 +16,10 @@ if (mysqli_num_rows($result) > 0) {
         $buttons = "flush-collapse";
         echo '<div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                <button id="'; if ($fila['DISPONIBLE_SIT'] == 1) {echo "libre";} else {echo "ocupado";} echo '" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#' . $buttons . $fila["ID_SIT"] . '" aria-expanded="false"
                     aria-controls="flush-collapseOne">
-                    Sitio #' . $fila["NOMBRE_SIT"] . '
+                    Sitio # ' . $fila["NOMBRE_SIT"] . '
                 </button>
             </h2>
             <div id="' . $buttons . $fila["ID_SIT"] . '" class="accordion-collapse collapse"
@@ -38,19 +38,14 @@ if (mysqli_num_rows($result) > 0) {
         }
         echo 'Precio: ' . $fila["PRECIO_SIT"] . ' PARCK
                     </div>
-                    <div class="acordion-btn w-50">
-                        <div class="function celeste">';
-                        if ($fila['DISPONIBLE_SIT'] == 1){
-                            echo '<a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock-open blanco"></a>';
-                        } else {
-                            echo '<a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a>';
-                        }
-                        echo '<a href="" target="_self" class="fa-solid fa-lock blanco"></a>
-                        </div>
-                        <div class="function verde">
-                            <a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a>
-                        </div>
-                        <div class="function azul">
+                    <div class="acordion-btn w-50">';
+        if ($fila['DISPONIBLE_SIT'] == 0) {
+            echo '<div class="function celeste"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
+        } else {
+            echo '<div class="function verde"><a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
+        }
+
+        echo '<div class="function azul">
                             <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
                         </div>
                         <div class="function rojo">

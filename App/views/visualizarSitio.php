@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Buscar sitio";
+$title = "Ver sitios";
 include('head.php');
 
 ?>
@@ -32,13 +32,13 @@ include('head.php');
     <main>
         <div class="main">
             <div class="container-busqueda">
-                <form action="" method="POST">
+                <form action="../controllers/buscarSitio.php" method="POST">
                     <div class="input-container">
                         <div class="container-input-buscar">
-                            <input type="text" class="input-buscar">
+                            <input type="text" class="input-buscar" name="nombre" id="nombre">
                         </div>
                         <div class="container-button-buscar">
-                            <input type="submit" value="Buscar" class="button-buscar">
+                            <input type="submit" value="Buscar" class="button-buscar" id="buscar">
                         </div>
                     </div>
                 </form>
@@ -72,7 +72,7 @@ include('head.php');
                             ?>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    <button id="<?php if ($fila['DISPONIBLE_SIT'] == 1) {echo "libre";} else {echo "ocupado";}?>" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#<?php echo $buttons . $fila["ID_SIT"]; ?>" aria-expanded="false"
                                         aria-controls="flush-collapseOne">
                                         <?php
@@ -106,25 +106,17 @@ include('head.php');
                                             ?>
                                         </div>
                                         <div class="acordion-btn w-50">
-                                            <div class="function celeste">
-                                                <?php 
-                                                
-                                                if ($fila['DISPONIBLE_SIT'] == 1){
-                                                    echo '<a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock-open blanco"></a>';
-                                                } else {
-                                                    echo '<a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a>';
-                                                }
-                                                
-                                                ?>
+                                            <?php
 
-
-                                                <a href="../controllers/liberarSitio.php?id_sit=<?php echo $fila['ID_SIT']?>" target="_self" class="fa-solid fa-lock blanco"></a>
-                                            </div>
-                                            <div class="function verde">
-                                                <a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a>
-                                            </div>
+                                            if ($fila['DISPONIBLE_SIT'] == 0) {
+                                                echo '<div class="function celeste"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
+                                            } else {
+                                                echo '<div class="function verde"><a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
+                                            }
+                                            ?>
                                             <div class="function azul">
-                                                <a href="editarSitio.php?id_sit=<?php echo $fila['ID_SIT']?>" target="_self" class="fa-solid fa-pencil blanco"></a>
+                                                <a href="editarSitio.php?id_sit=<?php echo $fila['ID_SIT'] ?>" target="_self"
+                                                    class="fa-solid fa-pencil blanco"></a>
                                             </div>
                                             <div class="function rojo">
                                                 <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
@@ -137,6 +129,14 @@ include('head.php');
                         }
                     }
                     ?>
+                </div>
+                <div class="elements-descripcion">
+                    <div class="container-descripcion">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque ipsa exercitationem unde modi? Possimus tempore voluptate, doloribus at dolor quaerat praesentium nobis adipisci provident atque deleniti incidunt modi est.</p>
+                    </div>
+                    <div class="function-seccion rojo">
+                        <a href="" target="_self" class="fa-solid fa-trash blanco eliminar-seccion"></a>
+                    </div>
                 </div>
             </div>
         </div>
