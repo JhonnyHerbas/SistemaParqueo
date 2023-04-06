@@ -49,7 +49,6 @@ include('head.php');
                         <option value="todos">Todos</option>
                         <!-- Implementacion de la visualizacion de secciones -->
                         <?php
-
                         $result = visualizar_seccion();
                         if ($result) {
                             while ($row = $result->fetch_array(MYSQLI_BOTH)) {
@@ -64,8 +63,16 @@ include('head.php');
                 <div class="container-vista" id="container-vista">
                     <!-- Aqui vendra toda la vista por secciones del script -->
                     <?php
+                    // Obtener el parámetro "nombre" de la URL usando el operador ternario
+                    $name = isset($_GET["nombre"]) ? $_GET["nombre"] : "";
 
-                    $sitios = visualizar_sitio();
+                    // Verificar si el parámetro "nombre" está presente y no está vacío
+                    if(!empty($name)){
+                        $sitios = buscar_sitio($name);
+                    } else {
+                        $sitios = visualizar_sitio();
+                    }
+
                     if ($sitios) {
                         while ($fila = mysqli_fetch_array($sitios)) {
                             $buttons = "flush-collapse";
@@ -101,8 +108,8 @@ include('head.php');
                                                 echo "Asignado: Si<br>";
                                             }
 
-                                            echo "Precio: " . $fila["PRECIO_SIT"] . " PARCK";
-
+                                            echo "Precio: " . $fila["PRECIO_SIT"] . " PARCK <br>";
+                                            echo "Sección: # " . $fila["ID_SEC"];
                                             ?>
                                         </div>
                                         <div class="acordion-btn w-50">
