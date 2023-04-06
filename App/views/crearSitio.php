@@ -90,10 +90,10 @@ include('../models/funcionSeccion.php')
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-body">
-                                ¿Está seguro de crear esta sección?
+                                ¿Está seguro de crear este sitio?
                             </div>
                                 <div class="modal-footer d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-sucess" id="confirmButton">Confirmar</button>
+                                    <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
                                 </div>
                             </div>
