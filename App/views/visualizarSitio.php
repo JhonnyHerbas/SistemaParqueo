@@ -138,7 +138,12 @@ include('head.php');
                     ?>
                 </div>                
                 <div class="elements-descripcion" id="elements">
-                    
+                    <div class="container-descripcion" id="container-descripcion">
+
+                    </div>
+                    <div class="function-seccion rojo">
+                        <a href="" target="_self" class="fa-solid fa-trash blanco eliminar-seccion" id="seccion-hidden"></a>
+                    </div>
                 </div>
             </div>
         </div>
