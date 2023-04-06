@@ -1,15 +1,15 @@
-$('#seccion').on('change', function () {
-    var seccion = $(this).val(); // Obtener el valor seleccionado
-    // Realizar solicitud AJAX a la página PHP que maneja la consulta SQL
-    $.ajax({
-        url: '/SistemaParqueo/App/models/verSitios.php', // Archivo PHP que maneja la consulta SQL
-        type: 'POST',
-        data: { seccion: seccion }, // Enviar la categoría seleccionada como datos
-        success: function (data) {
-            $('#container-vista').html(data); // Mostrar los resultados en el div con id "resultado"
-        }
-    });
-});
+// $('#seccion').on('change', function () {
+//     var seccion = $(this).val(); // Obtener el valor seleccionado
+//     // Realizar solicitud AJAX a la página PHP que maneja la consulta SQL
+//     $.ajax({
+//         url: '/SistemaParqueo/App/models/verSitios.php', // Archivo PHP que maneja la consulta SQL
+//         type: 'POST',
+//         data: { seccion: seccion }, // Enviar la categoría seleccionada como datos
+//         success: function (data) {
+//             $('#container-vista').html(data); // Mostrar los resultados en el div con id "resultado"
+//         }
+//     });
+// });
 
 document.getElementById("seccion").addEventListener("change", function () {
     var select = document.getElementById("seccion");
@@ -36,3 +36,34 @@ document.getElementById("seccion").addEventListener("change", function () {
 //         });
 //     }
 // });
+
+var elements = document.getElementById("elements");
+var template = '<h2>Hola mundo</h2>'; // Definir la variable aquí para que esté disponible en todo el scope
+
+$('#seccion').on('change', function () {
+    var seccion = $(this).val();
+    $.ajax({
+        url: '/SistemaParqueo/App/models/verSitios.php',
+        type: 'POST',
+        data: { seccion: seccion },
+        success: function (data) {
+            $('#container-vista').html(data);
+
+            // Nueva petición AJAX para obtener la descripción
+            $.ajax({
+                url: '/SistemaParqueo/App/models/obtenerSeccion.php',
+                type: 'POST',
+                data: { id_seccion: seccion }, // Enviar el ID de la sección seleccionada
+                success: function (respuesta) {
+                    template = '<div class="container-descripcion">' +
+                        '<p>"${respuesta.DESCRIPCION_SEC}"</p>' +
+                        '</div>' +
+                        '<div class="function-seccion rojo">' +
+                        '<a href="eliminarSeccion.php?id_sec="${respuesta.ID_SEC}"" target="_self" class="fa-solid fa-trash blanco eliminar-seccion"></a>' +
+                        '</div>';
+                    elements.innerHTML=template;
+                }
+            });
+        }
+    });
+});

@@ -136,14 +136,9 @@ include('head.php');
                         }
                     }
                     ?>
-                </div>
-                <div class="elements-descripcion">
-                    <div class="container-descripcion">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque ipsa exercitationem unde modi? Possimus tempore voluptate, doloribus at dolor quaerat praesentium nobis adipisci provident atque deleniti incidunt modi est.</p>
-                    </div>
-                    <div class="function-seccion rojo">
-                        <a href="" target="_self" class="fa-solid fa-trash blanco eliminar-seccion"></a>
-                    </div>
+                </div>                
+                <div class="elements-descripcion" id="elements">
+                    
                 </div>
             </div>
         </div>
