@@ -240,20 +240,22 @@ header .redes_sociales a{
 
 /* Descriptcion de la seccion */
 .elements-descripcion {
+    margin-top: 1vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
     display: flex;
-    margin: auto 10vh;
 }
 
 .function-seccion {
-    height: 7.5vh;
-    width: 7.5vh;
+    height: 5vh;
+    width: 5vh;
     border-radius: 1vh;
     margin: auto 0.5vh;
 }
 
 .eliminar-seccion {
     padding: 1vh;
-    font-size: 5vh;
+    font-size: 3vh;
 }
 
 
@@ -267,6 +269,7 @@ header .redes_sociales a{
     background-color: #046b99;
     color: white;
 }
+
 @media (max-width:991px){
     html{
         font-size: 55%;
