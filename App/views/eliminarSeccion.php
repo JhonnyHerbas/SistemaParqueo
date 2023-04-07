@@ -20,8 +20,8 @@
                 </ul>";
 
     include('../views/header.php');
-    $id_sec = 9;
-    //$id_sec = $_GET['id_sec'];
+    
+    $id_sec = $_GET['id_sec'];
     ?>
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
 
