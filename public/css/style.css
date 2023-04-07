@@ -269,6 +269,77 @@ header .redes_sociales a{
     background-color: #046b99;
     color: white;
 }
+/*Visualizar solicitudes*/
+.container-solicitud{
+    margin-top: 5%;
+}
+
+.titulo-acordion{
+    background-color: #046b99;
+    color: #ffffff;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #046b99;
+    color: #ffffff;
+}
+/*realizar solicitud*/
+.container-form{
+    margin:10% 25%;
+    border: none;
+}
+.modal-content{
+    margin:50% 50%;
+}
+.card-header{
+    text-align: center;
+    background-color: #046b99;
+    color: #ffffff;
+}
+
+.card-header .h2{
+    font-weight: bold;
+    font-size: 4vh;
+}
+.btn{
+    font-size: 1.3rem;
+}
+.button{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly ;
+}
+ .area{
+    height: 15vh;
+    resize: none;
+    overflow: hidden; 
+}
+.form-control{
+    background: #00cfff;
+    color: #000000;
+    font-size: 1.2rem;
+}
+.form-label{
+    font-size: 1.3rem;
+}
+.modal-body{
+    background: #1C304A;
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+}
+form{
+    padding: 0% 10%;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+  }
 
 @media (max-width:991px){
     html{
@@ -296,7 +367,18 @@ header .redes_sociales a{
     header.active{
         left:0%;
     }
-
+    .container-form{
+        margin: 20% 2%;
+        border: none;
+    }    
+    .card-header .h2{
+        font-weight: bold;
+        font-size: 3vh;
+    }
+    .modal-content{
+        margin:50% 0%;
+    }
+    
 }
 
 @media (max-width:450px){

@@ -1,4 +1,5 @@
 <?php
+
     function get_connection(){
         
         // Leer el archivo config.ini y extrae las credenciales necesarias
