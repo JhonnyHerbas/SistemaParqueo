@@ -11,7 +11,7 @@ html {
 
 body{
     background: #00cfff;
-    padding-left: 30rem;
+    padding-left: 25rem;
 }
 
 main {
@@ -25,8 +25,8 @@ main {
 }
 
 .logo {
-    width: 70px;
-    height: 70px;
+    width: 5vh;
+    height: 5vh;
 }
 
 header{
@@ -39,9 +39,18 @@ header{
     z-index: 1000;
     flex-flow: column nowrap;
     padding: 8rem 2rem;
-    width: 30rem;
+    width: 25rem;
     text-align: center;
     overflow: auto;
+}
+
+header::-webkit-scrollbar {
+    width: 10px;
+}
+
+header::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 50px;
 }
 
 ul {
@@ -147,17 +156,18 @@ header .redes_sociales a{
 }
 
 .visual{
-    margin-top: 5%;
-    margin-left: 5%;
+    margin-top: 3%;
+    margin-left: 5%;    
     height: 85vh;
     width: 90%;
     background-color: #ffffff;
     border-radius: 15px;
-    display: block;
+    /* display: block; */
 }
 
 .container-seccion {
     text-align: right;
+    height: 15vh;
     width: 100%;
 }
 
@@ -173,8 +183,17 @@ header .redes_sociales a{
 .container-vista {
     margin-left: 5%;
     width: 90%;
-    height: 80%;
+    height: 60vh;
+    overflow: auto;
+}
 
+.container-vista::-webkit-scrollbar {
+    width: 10px;
+}
+
+.container-vista::-webkit-scrollbar-thumb {
+    background: #00cfff;
+    border-radius: 50px;
 }
 
 .body-sitio {
@@ -182,7 +201,155 @@ header .redes_sociales a{
 }
 
 .acordion-btn {
-    background-color: #1C304A;
+    text-align: center;
+    display: flex;
+    justify-content: right;
+}
+/*Visualizar solicitudes*/
+.container-solicitud{
+    margin-top: 5%;
+}
+
+.titulo-acordion{
+    background-color: #046b99;
+    color: #ffffff;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #046b99;
+    color: #ffffff;
+}
+/*realizar solicitud*/
+.container-form{
+    margin:10% 25%;
+    border: none;
+}
+.modal-content{
+    margin:50% 50%;
+    display: flex;
+    justify-content: center; 
+}
+
+.card-header{
+    text-align: center;
+    background-color: #046b99;
+    color: #ffffff;
+}
+
+.card-header .h2{
+    font-weight: bold;
+    font-size: 4vh;
+}
+.btn{
+    font-size: 1.3rem;
+}
+.button{
+    text-align: center;
+}
+.area{
+    height: 15vh;
+    resize: none;
+    overflow: hidden; 
+}
+.form-control{
+    background: #00cfff;
+    color: #000000;
+    font-size: 1.2rem;
+}
+.form-label{
+    font-size: 1.3rem;
+}
+.modal-body{
+    background: #1C304A;
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+}
+
+.container-modal-error{
+    background-color: red;
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center; 
+}
+.error {
+    display: block;
+}
+form{
+    padding: 0% 10%;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.function {
+    height: 5vh;
+    width: 5vh;
+    background-color: #01baef;
+    border-radius: 1vh;
+    margin: auto 0.5vw;
+}
+
+.celeste {
+    background-color: #00cfff;
+}
+
+.verde {
+    background-color: #0cbea1;
+}
+
+.azul {
+    background-color: #046b99;
+}
+
+.rojo {
+    background-color: #ff0000;
+}
+
+.blanco {
+    color: white;
+    padding: 1vh;
+    font-size: 3vh;
+}
+
+
+
+/* Descriptcion de la seccion */
+.elements-descripcion {
+    margin-top: 1vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    display: flex;
+}
+
+.function-seccion {
+    height: 5vh;
+    width: 5vh;
+    border-radius: 1vh;
+    margin: auto 0.5vh;
+}
+
+.eliminar-seccion {
+    padding: 1vh;
+    font-size: 3vh;
+}
+
+
+/* Styles libre o sitio ocupado */
+#libre {
+    background: #0cbea1;
+    color: #ffffff;
+}
+
+#ocupado {
+    background-color: #046b99;
+    color: white;
 }
 /*Visualizar solicitudes*/
 .container-solicitud{
@@ -234,6 +401,15 @@ header .redes_sociales a{
     color: #000000;
     font-size: 1.2rem;
 }
+.form-select{
+    background: #00cfff;
+    color: #000000;
+    
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
 .form-label{
     font-size: 1.3rem;
 }
@@ -273,6 +449,10 @@ input[type="number"] {
 
     body{
         padding: 0;
+    }
+
+    img {
+        height: 100vh;
     }
 
     #menu-bars{

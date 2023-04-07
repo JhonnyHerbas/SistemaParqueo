@@ -1,5 +1,7 @@
-<?php
-include '../config/conexion.php';
+<?php 
+
+require_once('../config/conexion.php') ;
+
 function insertar_seccion($ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC){
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_SECCION_INSERTAR(?,?,?)");
@@ -12,7 +14,8 @@ function insertar_seccion($ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC){
         return false;
     }
 }
-function visualizar_seccion(){
+
+function visualizar_seccion() {
     $conn = get_connection();
     $query = 'SELECT * FROM db_view_seccion_vista';
     if ($result = $conn->query($query)) {
@@ -44,10 +47,22 @@ function actualizar_seccion($ID_ADM,$ID_SEC,$NOMBRE_SEC,$DESCRIPCION_SEC){
         return false;
     }
 } 
+
 function eliminar_seccion($ID_SEC) {
     $conn = get_connection();
     $query ='CALL DB_SP_SECCION_ELIMINAR("'.$ID_SEC.'")';
     if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function obtener_seccion ($id_sec) {
+    $conn = get_connection();
+    $result = mysqli_query($conn, "CALL DB_SP_SITIO_BUSCAR($id_sec)");
+
+    if (mysqli_num_rows($result) > 0) {
         return $result;
     } else {
         return null;
