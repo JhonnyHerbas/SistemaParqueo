@@ -419,6 +419,14 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 1.3rem;
     text-align: center;
 }
+.container-modal-error{
+    background-color: red;
+    width: 30vw;
+    height: 30vh;
+}
+.error {
+    display: block;
+}
 form{
     padding: 0% 10%;
 }
