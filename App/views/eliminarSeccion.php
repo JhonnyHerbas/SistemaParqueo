@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-    $title = "Eliminar sitio";
+    $title = "Eliminar seccion";
     include '../views/head.php';      
     include('head.php');
     include('../models/funcionSeccion.php') ;
