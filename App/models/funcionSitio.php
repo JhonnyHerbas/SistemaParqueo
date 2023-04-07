@@ -2,7 +2,7 @@
 
 require_once('../config/conexion.php');
 
-function visualizar_sitio(){
+function visualizar_sitio() {
     $conn = get_connection();
     $query = 'SELECT * FROM db_view_sitio_vista';
 
@@ -13,7 +13,7 @@ function visualizar_sitio(){
     }
 }
 
-function insertar_sitio($ID_SEC,$NOMBRE_SIT, $DISPONIBLE_SIT, $PRECIO_SIT) {
+function insertar_sitio($ID_SEC, $NOMBRE_SIT, $DISPONIBLE_SIT, $PRECIO_SIT) {
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_SITIO_INSERTAR(?,?,?,?)");
     $stmt->bind_param("isii",$ID_SEC, $NOMBRE_SIT, $DISPONIBLE_SIT, $PRECIO_SIT);
@@ -49,6 +49,17 @@ function visualizar_nombre_sitio($ID_SIT) {
     }
 }
 
+function buscar_sitio($nombre) {
+    $conn = get_connection();
+    $result = mysqli_query($conn, "CALL DB_SP_SITIO_BUSCAR($nombre)");
+
+    if (mysqli_num_rows($result) > 0) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
 function eliminar_sitio($ID_SIT) {
     $conn = get_connection();
     $query ='CALL DB_SP_SITIO_ELIMINAR("'.$ID_SIT.'")';
@@ -58,7 +69,7 @@ function eliminar_sitio($ID_SIT) {
     mysqli_close($conn);
 }
 
-function buscar_sitio($NOMBRE_SIT) {
+function buscar_sitioSP06($NOMBRE_SIT) {
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_SITIO_BUSCAR(?)");
     $stmt->bind_param("s",$NOMBRE_SIT);
@@ -68,6 +79,18 @@ function buscar_sitio($NOMBRE_SIT) {
     } else {
         $stmt->close();
         return false;
+    }
+}
+
+function liberar_sitio($id_sit)
+{
+    $conn = get_connection();
+    $result = mysqli_query($conn, "CALL	DB_SP_SITIO_LIBERAR($id_sit)");
+
+    if (mysqli_affected_rows($conn) > 0) {
+        return $result;
+    } else {
+        return null;
     }
 }
 

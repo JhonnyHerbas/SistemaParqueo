@@ -13,5 +13,15 @@ function visualizar_seccion() {
     }
 }
 
+function obtener_seccion ($id_sec) {
+    $conn = get_connection();
+    $result = mysqli_query($conn, "CALL DB_SP_SITIO_BUSCAR($id_sec)");
+
+    if (mysqli_num_rows($result) > 0) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 
 ?>
