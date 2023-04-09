@@ -1,7 +1,7 @@
 <div id="menu-bars" class="fas fa-bars"></div>
 <header>
     <div class="container-logo">
-        <a href="" class="logo">
+        <a href="/SistemaParqueo/App/views/visualizarSitio.php" class="logo">
             <img src="/SistemaParqueo/public/img/FCYT.png" alt="logo" class="logo">
         </a>
         <h2>Sistema de parqueo FCYT</h2>
