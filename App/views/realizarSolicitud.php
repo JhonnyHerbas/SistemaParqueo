@@ -4,7 +4,7 @@
 <?php
 
 $title = "Realizar solicitud";
-include('head.php');
+include('templates/head.php');
 include('../models/funcionSolicitud.php')
 ?>
 
@@ -14,14 +14,8 @@ include('../models/funcionSolicitud.php')
     
     $user = "Jhonny Herbas";
     $role = "Administrador";
-    $lista =    "<ul>
-                    <li><a href=''>Inicio</a></li>
-                    <li><a href=''>Visualizar</a></li>
-                    <li><a href=''>Configurar horario</a></li>
-                    <li><a href=''>Ver solicitudes</a></li>
-                </ul>";
 
-    include('header.php');
+    include('templates/header.php');
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
@@ -96,7 +90,7 @@ include('../models/funcionSolicitud.php')
     <!-- Include de los scripts.php -->
     <?php
     
-    include('scripts.php');
+    include('templates/scripts.php');
 
     ?>
     
