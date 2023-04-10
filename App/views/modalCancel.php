@@ -1,24 +1,9 @@
-<?php 
-include("../models/funcionSitio.php");
 
-$result = visualizar_sitio();
-$nombre = $_POST['name'];
-$id_sit = $_POST['id_sit'];
-$existe = false;
-if($result){
-    while($row = $result->fetch_array(MYSQLI_BOTH)){
-        if($row['NOMBRE_SIT'] == $nombre ){ 
-            $existe = true;
-        }
-    }
-}
-if($existe){
-    ?>
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
     <?php
-        $title = "Error";
+        $title = "Cancelado";
         include '../views/head.php';       
     ?>       
     <body>
@@ -41,10 +26,10 @@ if($existe){
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p>El sitio ya existe. Por favor, ingrese un nombre de sitio diferente.</p>
+                    <p>¡Cancelado!</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="../views/editarSitio.php?id_sit=<?php echo $id_sit;?>" rel="noopener noreferrer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button></a>
+                    <a href="visualizarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-danger data-bs-dismiss="modal">Cerrar</button></a>
                 </div>
             </div>
         </div>
@@ -56,11 +41,3 @@ if($existe){
     ?>
 </body>
 </html>
-    
-    <?php
-}else{
-    editar_sitio($_POST['id_sit'], $_POST['id_sec'], $_POST['name'], $_POST['precio']);
-    header("Location: /SistemaParqueo/App/views/modalConf.php");
-    exit();
-}
-?>
