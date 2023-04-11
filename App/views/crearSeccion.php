@@ -41,7 +41,7 @@ include('../models/funcionSeccion.php')
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="validationTextarea" class="form-label">Descripción:</label>
+                    <label for="validationTextarea" class="form-label">Descripción de sección:</label>
                     <textarea class="form-control area" name="descripcion" id="validationTextarea" minlength="20" maxlength="200" cols="3" autocomplete="off" spellcheck="false" required></textarea>
                     <div class="invalid-feedback">
                         Solo se acepta un mínimo de 20 y máximo de 200 caracteres.
@@ -49,7 +49,7 @@ include('../models/funcionSeccion.php')
                 </div>
                 <div class="col-12 button">
                     <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
-                    <button class="btn btn-danger" type="reset">Cancelar</button>
+                    <button class="btn btn-danger" id="cancelButton"  data-toggle="modal" data-target="#exampleModalCancelado">Cancelar</button>
                 </div>
 
         <!-- Modal -->
@@ -60,14 +60,33 @@ include('../models/funcionSeccion.php')
                             <div class="modal-body">
                                 ¿Está seguro de crear esta sección?
                             </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton" >Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" id="confirmButton">Confirmar</button>
+                                <div class="col-12 button" >
+                                    
+                                    <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                 </div>
+
+                 <div class="container-modal">
+                    <div class="modal fade" id="exampleModalCancelado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-body">
+                                Creacion cancelada correctamente
+                            </div>
+                                <div class="col-12 button" >
+                                    
+                                    <button type="reset" class="btn btn-success" id="confirmButton">Confirmar</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+
             </form>
         </div>
     </div>
