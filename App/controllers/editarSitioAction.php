@@ -60,7 +60,7 @@ if($existe){
     <?php
 }else{
     editar_sitio($_POST['id_sit'], $_POST['id_sec'], $_POST['name'], $_POST['precio']);
-    header("Location: /SistemaParqueo/App/views/visualizarSitio.php");
+    header("Location: /SistemaParqueo/App/views/modalConf.php");
     exit();
 }
 ?>

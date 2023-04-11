@@ -75,19 +75,19 @@ include ('../models/funcionSeccion.php');
                 </div>
                 <div class="col-12 button">
                     <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
-                    <a href="visualizarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">Cancelar</button></a>
+                    <a href="modalCancel.php" rel="noopener noreferrer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button></a>
                 </div>
 
         <!-- Modal -->
                 <div class="container-modal">
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-body">
                                 ¿Está seguro de crear este sitio?
                             </div>
                                 <div class="modal-footer d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
+                                    <button type="submit" class="btn btn-success" id="confirmButton" onclick = "mostrarModal()">Confirmar</button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
                                 </div>
                             </div>
@@ -98,10 +98,6 @@ include ('../models/funcionSeccion.php');
         </div>
     </div>
 </section>
-
-
-    
-
     <!-- Include de los scripts.php -->
     <?php
     
