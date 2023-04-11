@@ -4,8 +4,8 @@
 <?php
 
 $title = "Crear sitio";
-include('templates/head.php');
-include('../models/funcionSeccion.php')
+include ('templates/head.php');
+include ('../models/funcionSeccion.php');
 ?>
 
 <body>

@@ -19,7 +19,7 @@ if($existe){
 
     <?php
         $title = "Error";
-        include '../views/head.php';       
+        include '../views/templates/head.php';       
     ?>       
     <body>
     <!-- Include del header.php -->
@@ -33,7 +33,7 @@ if($existe){
                     <li><a href=''>Ver solicitudes</a></li>
                 </ul>";
 
-    include('../views/header.php');
+    include('../views/templates/header.php');
     ?>
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
 
@@ -52,7 +52,7 @@ if($existe){
 
     <!-- Include de los scripts.php -->
     <?php
-    include('../views/scripts.php');
+    include('../views/templates/scripts.php');
     ?>
 </body>
 </html>
