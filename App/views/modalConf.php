@@ -4,7 +4,7 @@
 
     <?php
         $title = "Confirmación";
-        include '../views/head.php';       
+        include ('templates/head.php');       
     ?>       
     <body>
     <!-- Include del header.php -->
@@ -18,7 +18,7 @@
                     <li><a href=''>Ver solicitudes</a></li>
                 </ul>";
 
-    include('../views/header.php');
+    include ('templates/header.php');
     ?>
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
 
@@ -37,7 +37,7 @@
 
     <!-- Include de los scripts.php -->
     <?php
-    include('../views/scripts.php');
+    include('templates/scripts.php');
     ?>
 </body>
 </html>

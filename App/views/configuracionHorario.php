@@ -72,9 +72,9 @@ include('../models/funcionConfiguracionHorario.php')
                             <div class="modal-body">
                                 ¿Está seguro de que desea guardar este horario?
                             </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"id="cancelButton" >Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" id="confirmButton">Confirmar</button>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
                                 </div>
                             </div>
                         </div>
