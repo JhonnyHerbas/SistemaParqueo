@@ -4,7 +4,7 @@
 <?php
 
 $title = "Editar sitio";
-include('head.php');
+include('templates/head.php');
 include('../models/funcionSitio.php')
 ?>
 
@@ -14,14 +14,8 @@ include('../models/funcionSitio.php')
     
     $user = "Jhonny Herbas";
     $role = "Administrador";
-    $lista =    "<ul>
-                    <li><a href=''>Inicio</a></li>
-                    <li><a href=''>Visualizar</a></li>
-                    <li><a href=''>Configurar horario</a></li>
-                    <li><a href=''>Ver solicitudes</a></li>
-                </ul>";
 
-    include('header.php');
+    include('templates/header.php');
     include('../models/funcionSeccion.php');
     $id_sit = $_GET['id_sit'];
     $sitio = [];
@@ -92,11 +86,9 @@ include('../models/funcionSitio.php')
     <!-- Include de los scripts.php -->
     <?php
     
-    include('scripts.php');
+    include('templates/scripts.php');
 
     ?>
     
-    
-<script src="/SistemaParqueo/public/js/validacion.js"></script>
 </body>
 </html>

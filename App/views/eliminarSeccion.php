@@ -3,8 +3,7 @@
 
 <?php
     $title = "Eliminar seccion";
-    include '../views/head.php';      
-    include('head.php');
+    include ('templates/head.php');
     include('../models/funcionSeccion.php') ;
 ?>       
 <body>
@@ -12,14 +11,8 @@
     <?php 
     $user = "Jhonny Herbas";
     $role = "Administrador";
-    $lista =    "<ul>
-                    <li><a href=''>Inicio</a></li>
-                    <li><a href=''>Visualizar</a></li>
-                    <li><a href=''>Configurar horario</a></li>
-                    <li><a href=''>Ver solicitudes</a></li>
-                </ul>";
 
-    include('../views/header.php');
+    include('templates/header.php');
     
     $id_sec = $_GET['id_sec'];
     ?>
@@ -41,7 +34,7 @@
 
     <!-- Include de los scripts.php -->
     <?php
-    include('../views/scripts.php');
+    include('templates/scripts.php');
     ?>
 </body>
 </html>
