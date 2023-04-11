@@ -3,21 +3,15 @@
 
     <?php
         $title = "Eliminar sitio";
-        include '../views/head.php';       
+        include ('templates/head.php');       
     ?>       
     <body>
     <!-- Include del header.php -->
     <?php 
     $user = "Jhonny Herbas";
     $role = "Administrador";
-    $lista =    "<ul>
-                    <li><a href=''>Inicio</a></li>
-                    <li><a href=''>Visualizar</a></li>
-                    <li><a href=''>Configurar horario</a></li>
-                    <li><a href=''>Ver solicitudes</a></li>
-                </ul>";
 
-    include('../views/header.php');
+    include('templates/header.php');
     $id_sit = $_GET['id_sit'];
     ?>
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
@@ -42,7 +36,7 @@
 
     <!-- Include de los scripts.php -->
     <?php
-    include('../views/scripts.php');
+    include('templates/scripts.php');
     ?>
 </body>
 </html>

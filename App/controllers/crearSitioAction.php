@@ -18,7 +18,7 @@ if($existe){
 
     <?php
         $title = "Error";
-        include '../views/head.php';       
+        include '../views/templates/head.php';       
     ?>       
     <body>
     <!-- Include del header.php -->
@@ -51,7 +51,7 @@ if($existe){
 
     <!-- Include de los scripts.php -->
     <?php
-    include('../views/scripts.php');
+    include('../views/templates/scripts.php');
     ?>
 </body>
 </html>

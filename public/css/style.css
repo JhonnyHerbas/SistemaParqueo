@@ -101,7 +101,7 @@ header .redes_sociales a{
     height: 0px;
     border: none;
     border-radius: 15px;
-    background-image: url(/public/img/lupa.png);
+    background-image: url(../img/lupa.png);
     padding: 20px;
     background-position: 5% 50%;
     background-repeat: no-repeat;
@@ -340,6 +340,10 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 3vh;
 }
 
+.editar-seccion {
+    padding: 1vh;
+    font-size: 3vh;
+}
 
 /* Styles libre o sitio ocupado */
 #libre {

@@ -4,7 +4,7 @@
 <?php
 
 $title = "Solicitudes";
-include('head.php');
+include('templates/head.php');
     
 ?>
 
@@ -14,14 +14,8 @@ include('head.php');
     
     $user = "Jhonny Herbas";
     $role = "Administrador";
-    $lista =    "<ul>
-                    <li><a href=''>Inicio</a></li>
-                    <li><a href=''>Visualizar</a></li>
-                    <li><a href=''>Configurar horario</a></li>
-                    <li><a href='./visualizarSolicitudes.php'>Ver solicitudes</a></li>
-                </ul>";
 
-    include('header.php');
+    include('templates/header.php');
     include('../models/funcionSolicitud.php')
     ?>
 
@@ -68,7 +62,7 @@ include('head.php');
     <!-- Include de los scripts.php -->
     <?php
     
-    include('scripts.php');
+    include('templates/scripts.php');
 
     ?>
 
