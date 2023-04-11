@@ -28,7 +28,7 @@ include('../models/funcionConfiguracionHorario.php')
             <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/configuracionHorarioAction.php" method="post">
                 <div class="mb-3">
                     <label for="validationCustom01" class="form-label">Horario de apertura:</label>
-                    <input type="text" name="hora-apertura" class="form-control" id="validationCustom01" pattern="^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
+                    <input type="text" name="hora-apertura" class="form-control" id="validationCustom01" pattern="^(0[6-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
                     minlength="8" maxlength="8" placeholder="HH:MM:SS" required>
                     <div class="invalid-feedback">
                         Por favor, ingrese un valor válido para este campo.
@@ -43,9 +43,9 @@ include('../models/funcionConfiguracionHorario.php')
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="validationCustom02" class="form-label">Dia:</label>
+                    <label for="validationCustom02" class="form-label">Día:</label>
                     <select class="form-select" name="dia" id="validationCustom04" required>
-                    <option selected disabled value="">Seleccione un dia</option>
+                    <option selected disabled value="">Seleccione un día</option>
                     <option class='form-control' id='validationCustom02' value="LUNES">Lunes</option>
                     <option class='form-control' id='validationCustom02' value="MARTES">Martes</option>
                     <option class='form-control' id='validationCustom02' value="MIERCOLES">Miercoles</option>
