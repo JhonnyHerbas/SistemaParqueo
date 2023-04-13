@@ -16,7 +16,8 @@ include('templates/head.php');
     $role = "Administrador";
 
     include('templates/header.php');
-    include('../models/funcionSolicitud.php')
+    include('../models/funcionSolicitud.php');
+    
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
@@ -41,8 +42,9 @@ include('templates/head.php');
                             </button>
                         </h2>
                         <div id="<?php echo $collapse ?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <?php 
+                           
+                                <div class="accordion-body">
+                                    <?php 
                                     echo "Titulo: ".$row["TITULO_SOL"].'<br>';
                                     echo "Nombre: ".$row["NOMBRE_DOC"]." ".$row["APELLIDO_DOC"].'<br>';                    
                                     echo "Celular: ".$row["CELULAR_DOC"].'<br>';
@@ -50,8 +52,12 @@ include('templates/head.php');
                                     echo "Descripción: ".$row["DESCRIPCION_SOL"].'<br>';
                                     echo "Sitio: #".$row["SITIO_SOL"].'<br>';
                                     $i=$i+1;
-                                ?>
-                            </div>
+                                    ?>
+                                    <button type="button" class="btn btn-success" onclick="submitForm('aceptar')">Aceptar</button>
+                                    <button type="button" class="btn btn-danger" onclick="submitForm('rechazar')">Rechazar</button>
+
+                                </div>
+                            
                         </div>
                     </div>
                     <?php
@@ -63,8 +69,36 @@ include('templates/head.php');
     <?php
     
     include('templates/scripts.php');
-
+    
+    
     ?>
-
+<script>
+        function submitForm(action) {
+        // Obtener valores de los campos
+       // var titulo = document.getElementById("titulo").value;
+        //var nombre = document.getElementById("nombre").value;
+        //var apellido = document.getElementById("apellido").value;
+        //var celular = document.getElementById("celular").value;
+        //var correo = document.getElementById("correo").value;
+        //var descripcion = document.getElementById("descripcion").value;
+        //var sitio = document.getElementById("sitio").value;
+    
+        // Crear objeto FormData y agregar valores
+        var formData = new FormData();
+        /*formData.append("titulo", titulo);
+        formData.append("nombre", nombre);
+        formData.append("apellido", apellido);
+        formData.append("celular", celular);
+        formData.append("correo", correo);
+        formData.append("descripcion", descripcion);
+        formData.append("sitio", sitio);*/
+        formData.append("action", action);
+    
+        // Enviar formulario
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/SistemaParqueo/App/controllers/aceptarSolicitudAction.php");
+        xhr.send(formData);
+      }
+</script>
 </body>
 </html>

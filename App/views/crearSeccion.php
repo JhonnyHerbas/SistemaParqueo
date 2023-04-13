@@ -54,7 +54,7 @@ include('../models/funcionSeccion.php')
                             <div class="modal-body">
                                 ¿Está seguro de crear esta sección?
                             </div>
-                                <div class="col-12 button" >
+                                <div class="modal-footer d-flex justify-content-center" >
                                     
                                     <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
@@ -64,22 +64,7 @@ include('../models/funcionSeccion.php')
                     </div>
                  </div>
 
-                 <div class="container-modal">
-                    <div class="modal fade" id="exampleModalCancelado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-body">
-                                Creacion cancelada correctamente
-                            </div>
-                                <div class="col-12 button" >
-                                    
-                                    <button type="reset" class="btn btn-success" id="confirmButton">Confirmar</button>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
+                 
 
             </form>
         </div>
