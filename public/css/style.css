@@ -531,7 +531,6 @@ input[type="number"] {
     display: block;
     flex-direction: column;
     font-size: 2.5vh;
-    overflow: auto;
 }
 
 form label:not(:first-child) {
@@ -542,14 +541,17 @@ form label:not(:first-child) {
     margin-top: 5vh;
     text-align: center;
 }
+
 .columnas {
     width: 100%;
     display: flex;
     gap: 2.5vw;
 }
+
 .invalid-feedback {
     font-size: small;
 }
+
 .overflow-registro {
     overflow: auto;
 }
@@ -612,20 +614,22 @@ form label:not(:first-child) {
     .modal-content {
         margin: 50% 0%;
     }
+
     .form-container {
         width: 80vw;
     }
-    
+
     .header-container {
-        width: 80vw;
+        width: 100vw;
     }
 
-    .columnas{
+    .columnas {
         display: block;
     }
 
-    .card-body {
-        overflow: auto;
+    .form-container {
+        width: 100vw;
+        height: 100vh;
     }
 }
 
@@ -661,15 +665,17 @@ form label:not(:first-child) {
     .visual {
         height: 90vh;
     }
+
     .form-container {
         width: 80vw;
     }
-    
+
     .header-container {
-        width: 80vw;
+        width: 100vw;
     }
 
-    .card-body {
-        overflow: auto;
+    .form-container {
+        width: 100vw;
+        height: 100vh;
     }
 }
