@@ -9,12 +9,15 @@ html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #00cfff;
     padding-left: 25rem;
 }
 
 main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #00cfff;
     min-height: 100vh;
 }
@@ -29,9 +32,11 @@ main {
     height: 5vh;
 }
 
-header{
+header {
     position: fixed;
-    top: 0; left: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
     background: #1C304A;
     display: flex;
     align-items: center;
@@ -57,7 +62,7 @@ ul {
     list-style: none;
 }
 
-header .navbar a{
+header .navbar a {
     display: block;
     color: #ffffff;
     margin: 3rem 0;
@@ -65,25 +70,26 @@ header .navbar a{
     font-size: 1.5rem;
 }
 
-header .navbar a:hover{
+header .navbar a:hover {
     letter-spacing: .2rem;
     color: #00cfff;
 }
 
-header .redes_sociales a:hover{
+header .redes_sociales a:hover {
     color: #00cfff;
 }
 
-header .redes_sociales a{
+header .redes_sociales a {
     font-size: 2.5rem;
     color: #ffffff;
     margin: 0.7rem;
     text-decoration: none;
 }
 
-#menu-bars{
+#menu-bars {
     position: fixed;
-    top: 1rem;right: 1rem;
+    top: 1rem;
+    right: 1rem;
     z-index: 10000;
     background: #1C304A;
     color: #ffffff;
@@ -127,7 +133,7 @@ header .redes_sociales a{
     position: relative;
     width: 100%;
 }
- 
+
 .container-input-buscar {
     display: inline-block;
 }
@@ -155,9 +161,9 @@ header .redes_sociales a{
     min-height: 100vh;
 }
 
-.visual{
+.visual {
     margin-top: 3%;
-    margin-left: 5%;    
+    margin-left: 5%;
     height: 85vh;
     width: 90%;
     background-color: #ffffff;
@@ -205,12 +211,13 @@ header .redes_sociales a{
     display: flex;
     justify-content: right;
 }
+
 /*Visualizar solicitudes*/
-.container-solicitud{
+.container-solicitud {
     margin-top: 5%;
 }
 
-.titulo-acordion{
+.titulo-acordion {
     background-color: #046b99;
     color: #ffffff;
 }
@@ -219,72 +226,83 @@ header .redes_sociales a{
     background-color: #046b99;
     color: #ffffff;
 }
+
 /*realizar solicitud*/
-.container-form{
-    margin:10% 25%;
+.container-form {
+    margin: 10% 25%;
     border: none;
 }
-.modal-content{
-    margin:50% 50%;
+
+.modal-content {
+    margin: 50% 50%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
-.card-header{
+.card-header {
     text-align: center;
     background-color: #046b99;
     color: #ffffff;
 }
 
-.card-header .h2{
+.card-header .h2 {
     font-weight: bold;
     font-size: 4vh;
 }
-.btn{
+
+.btn {
     font-size: 1.3rem;
 }
-.button{
+
+.button {
     text-align: center;
 }
-.area{
+
+.area {
     height: 15vh;
     resize: none;
-    overflow: hidden; 
+    overflow: hidden;
 }
-.form-control{
+
+.form-control {
     background: #00cfff;
     color: #000000;
     font-size: 1.2rem;
 }
-.form-label{
+
+.form-label {
     font-size: 1.3rem;
 }
-.modal-body{
+
+.modal-body {
     background: #1C304A;
     color: white;
     font-size: 1.3rem;
     text-align: center;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
-.container-modal-error{
+.container-modal-error {
     background-color: red;
     width: 30vw;
     height: 30vh;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
+
 .error {
     display: block;
 }
-form{
+
+form {
     padding: 0% 10%;
 }
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
@@ -355,12 +373,13 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: #046b99;
     color: white;
 }
+
 /*Visualizar solicitudes*/
-.container-solicitud{
+.container-solicitud {
     margin-top: 5%;
 }
 
-.titulo-acordion{
+.titulo-acordion {
     background-color: #046b99;
     color: #ffffff;
 }
@@ -369,89 +388,198 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: #046b99;
     color: #ffffff;
 }
+
 /*realizar solicitud*/
-.container-form{
-    margin:10% 25%;
+.container-form {
+    margin: 10% 25%;
     border: none;
 }
-.modal-content{
-    margin:50% 50%;
+
+.modal-content {
+    margin: 50% 50%;
 }
-.card-header{
+
+.card-header {
     text-align: center;
     background-color: #046b99;
     color: #ffffff;
 }
 
-.card-header .h2{
+.card-header .h2 {
     font-weight: bold;
     font-size: 4vh;
 }
-.btn{
+
+.btn {
     font-size: 1.3rem;
 }
-.button{
+
+.button {
     text-align: center;
     display: flex;
-    justify-content: space-evenly ;
+    justify-content: space-evenly;
 }
- .area{
+
+.area {
     height: 15vh;
     resize: none;
-    overflow: hidden; 
+    overflow: hidden;
 }
-.form-control{
+
+.form-control {
     background: #00cfff;
     color: #000000;
     font-size: 1.2rem;
 }
-.form-select{
+
+.form-select {
     background: #00cfff;
     color: #000000;
-    
+
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 16px 12px;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
 }
-.form-label{
+
+.form-label {
     font-size: 1.3rem;
 }
-.modal-body{
+
+.modal-body {
     background: #1C304A;
     color: white;
     font-size: 1.3rem;
     text-align: center;
 }
-.container-modal-error{
+
+.container-modal-error {
     background-color: red;
     width: 30vw;
     height: 30vh;
 }
+
 .error {
     display: block;
 }
-form{
+
+form {
     padding: 0% 10%;
 }
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type="number"] {
     -moz-appearance: textfield;
-  }
+}
 
-@media (max-width:991px){
-    html{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NUEVAS FORM */
+.form-container {
+    background-color: white;
+    height: 90vh;
+    width: 50vw;
+    border-radius: 1vh;
+}
+
+.header-container {
+    height: 10vh;
+    width: 50vw;
+    background-color: #046b99;
+    border-radius: 1vh 1vh 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container h2 {
+    color: white;
+    text-align: center;
+}
+
+.card-body {
+    height: 70vh;
+    border-radius: 0 0 1vh 1vh;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.card-body form {
+    width: 80vh;
+    display: block;
+    flex-direction: column;
+    font-size: 2.5vh;
+    overflow: auto;
+}
+
+form label:not(:first-child) {
+    margin-top: 5vh;
+}
+
+.button-container {
+    margin-top: 5vh;
+    text-align: center;
+}
+.columnas {
+    width: 100%;
+    display: flex;
+    gap: 2.5vw;
+}
+.invalid-feedback {
+    font-size: small;
+}
+.overflow-registro {
+    overflow: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:991px) {
+    html {
         font-size: 55%;
         overflow-x: hidden;
         scroll-behavior: smooth;
     }
 
-    body{
+    body {
         padding: 0;
     }
 
@@ -459,37 +587,54 @@ input[type="number"] {
         height: 100vh;
     }
 
-    #menu-bars{
+    #menu-bars {
         display: initial;
     }
 
-    header{
+    header {
         left: -120%;
     }
 
-    header.active{
-        left:0%;
+    header.active {
+        left: 0%;
     }
-    .container-form{
+
+    .container-form {
         margin: 20% 2%;
         border: none;
-    }    
-    .card-header .h2{
+    }
+
+    .card-header .h2 {
         font-weight: bold;
         font-size: 3vh;
     }
-    .modal-content{
-        margin:50% 0%;
+
+    .modal-content {
+        margin: 50% 0%;
+    }
+    .form-container {
+        width: 80vw;
     }
     
+    .header-container {
+        width: 80vw;
+    }
+
+    .columnas{
+        display: block;
+    }
+
+    .card-body {
+        overflow: auto;
+    }
 }
 
-@media (max-width:450px){
-    html{
+@media (max-width:450px) {
+    html {
         font-size: 70%;
     }
 
-    header{
+    header {
         width: 100%;
     }
 
@@ -515,5 +660,16 @@ input[type="number"] {
 
     .visual {
         height: 90vh;
+    }
+    .form-container {
+        width: 80vw;
+    }
+    
+    .header-container {
+        width: 80vw;
+    }
+
+    .card-body {
+        overflow: auto;
     }
 }
