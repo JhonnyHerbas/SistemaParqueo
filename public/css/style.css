@@ -495,14 +495,14 @@ input[type="number"] {
 
 
 /* NUEVAS FORM */
-.form-container {
+.form-containerG {
     background-color: white;
-    height: 90vh;
+    height: 95vh;
     width: 50vw;
     border-radius: 1vh;
 }
 
-.header-container {
+.header-containerG {
     height: 10vh;
     width: 50vw;
     background-color: #046b99;
@@ -512,25 +512,32 @@ input[type="number"] {
     align-items: center;
 }
 
-.header-container h2 {
+.header-containerG h2 {
     color: white;
     text-align: center;
 }
 
 .card-body {
-    height: 70vh;
+    height: 80vh;
     border-radius: 0 0 1vh 1vh;
-    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.grande {
+    height: 85vh;
+    border-radius: 0 0 1vh 1vh;
     align-items: center;
     justify-content: center;
     display: flex;
 }
 
 .card-body form {
-    width: 80vh;
+    width: 90vh;
     display: block;
     flex-direction: column;
-    font-size: 2.5vh;
+    font-size: 2vh;
 }
 
 form label:not(:first-child) {
@@ -556,6 +563,27 @@ form label:not(:first-child) {
     overflow: auto;
 }
 
+.form-container {
+    background-color: white;
+    height: 90vh;
+    width: 50vw;
+    border-radius: 1vh;
+}
+
+.header-container {
+    height: 10vh;
+    width: 50vw;
+    background-color: #046b99;
+    border-radius: 1vh 1vh 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container h2 {
+    color: white;
+    text-align: center;
+}
 
 
 
@@ -619,15 +647,19 @@ form label:not(:first-child) {
         width: 80vw;
     }
 
-    .header-container {
+    .header-containerG {
         width: 100vw;
+    }
+
+    .header-container {
+        width: 80vw;
     }
 
     .columnas {
         display: block;
     }
 
-    .form-container {
+    .form-containerG {
         width: 100vw;
         height: 100vh;
     }
@@ -670,11 +702,15 @@ form label:not(:first-child) {
         width: 80vw;
     }
 
-    .header-container {
+    .header-containerG {
         width: 100vw;
     }
 
-    .form-container {
+    .header-container {
+        width: 80vw;
+    }
+
+    .form-containerG {
         width: 100vw;
         height: 100vh;
     }
