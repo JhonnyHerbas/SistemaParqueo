@@ -14,4 +14,15 @@ function insertar_docente ($codigo, $nombre, $apellido, $celular, $correo, $pass
         return false;
     }
 }
+
+function visualizar_docente(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM db_view_docente_vista';
+
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

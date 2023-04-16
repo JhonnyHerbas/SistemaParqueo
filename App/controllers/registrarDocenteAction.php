@@ -7,7 +7,7 @@ $verContrasenia = $_POST['verPass'];
 if ($contrasenia == $verContrasenia) {
     $hash = md5($contrasenia);
     insertar_docente($_POST['codigo'], $_POST['nombre'], $_POST['apellido'], $_POST['celular'], $_POST['correo'], $hash);
-    header("Location: /SistemaParqueo/App/views/visualizarSitio.php");
+    header("Location: /SistemaParqueo/App/views/visualizarDocente.php");
     exit();
 }
 ?>
