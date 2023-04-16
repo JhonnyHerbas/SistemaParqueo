@@ -55,11 +55,11 @@ include('templates/head.php');
                                     ?>
                                     
                                     <div class="function azul">
-                                        <a href="../controllers/aceptarSolicitudAction.php?nombre=<?php echo $row["NOMBRE_DOC"] ?>&apellido=<?php echo $row["APELLIDO_DOC"] ?>&sitio=<?php echo $row["SITIO_SOL"] ?>&correo=<?php echo $row["CORREO_DOC"] ?>&accion=aceptar" class="fa-solid fa-square-check blanco"
+                                        <a href="../controllers/aceptarSolicitudAction.php?nombre=<?php echo $row["NOMBRE_DOC"] ?>&apellido=<?php echo $row["APELLIDO_DOC"] ?>&sitio=<?php echo $row["SITIO_SOL"] ?>&id=<?php echo $row["ID_SOL"]?>&correo=<?php echo $row["CORREO_DOC"] ?>&accion=aceptar" class="fa-solid fa-square-check blanco"
                                             class="fa-solid fa-square-check blanco"></a>
                                             </div>
                                     <div class="function rojo">
-                                        <a href="crearSitio.php" target="_self" class="fa-solid fa-square-xmark blanco"></a>
+                                        <a href="../controllers/aceptarSolicitudAction.php?nombre=<?php echo $row["NOMBRE_DOC"] ?>&apellido=<?php echo $row["APELLIDO_DOC"] ?>&sitio=<?php echo $row["SITIO_SOL"] ?>&id=<?php echo $row["ID_SOL"]?>&correo=<?php echo $row["CORREO_DOC"] ?>&accion=rechazar" target="_self" class="fa-solid fa-square-xmark blanco"></a>
                                     </div>
 
                                 </div>
