@@ -116,7 +116,7 @@ include('templates/head.php');
                                             }
                                             ?>
                                             <div class="function azul">
-                                                <a href="editarSitio.php?id_sit=<?php echo $fila['ID_SIT'] ?>" target="_self"
+                                                <a href="editarSitio.php? id_sit=<?php echo $fila['ID_SIT'] ?>" target="_self"
                                                     class="fa-solid fa-pencil blanco"></a>
                                             </div>
                                             <div class="function rojo">

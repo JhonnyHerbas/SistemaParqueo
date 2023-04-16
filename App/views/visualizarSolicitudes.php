@@ -53,8 +53,14 @@ include('templates/head.php');
                                     echo "Sitio: #".$row["SITIO_SOL"].'<br>';
                                     $i=$i+1;
                                     ?>
-                                    <button type="button" class="btn btn-success" onclick="submitForm('aceptar')">Aceptar</button>
-                                    <button type="button" class="btn btn-danger" onclick="submitForm('rechazar')">Rechazar</button>
+                                    
+                                    <div class="function azul">
+                                        <a href="../controllers/aceptarSolicitudAction.php?nombre=<?php echo $row["NOMBRE_DOC"] ?>&apellido=<?php echo $row["APELLIDO_DOC"] ?>&sitio=<?php echo $row["SITIO_SOL"] ?>&correo=<?php echo $row["CORREO_DOC"] ?>&accion=aceptar" class="fa-solid fa-square-check blanco"
+                                            class="fa-solid fa-square-check blanco"></a>
+                                            </div>
+                                    <div class="function rojo">
+                                        <a href="crearSitio.php" target="_self" class="fa-solid fa-square-xmark blanco"></a>
+                                    </div>
 
                                 </div>
                             
@@ -74,8 +80,8 @@ include('templates/head.php');
     ?>
 <script>
         function submitForm(action) {
-        // Obtener valores de los campos
-       // var titulo = document.getElementById("titulo").value;
+        //Obtener valores de los campos
+        //var titulo = document.getElementById("titulo").value;
         //var nombre = document.getElementById("nombre").value;
         //var apellido = document.getElementById("apellido").value;
         //var celular = document.getElementById("celular").value;
@@ -91,12 +97,14 @@ include('templates/head.php');
         formData.append("celular", celular);
         formData.append("correo", correo);
         formData.append("descripcion", descripcion);
+        <i class="fa-solid fa-square-check" style="color: #23a40a;"></i>
+        <i class="fa-solid fa-square-xmark" style="color: #f90101;"></i>
         formData.append("sitio", sitio);*/
         formData.append("action", action);
     
         // Enviar formulario
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/SistemaParqueo/App/controllers/aceptarSolicitudAction.php");
+        xhr.open("POST","/SistemaParqueo/App/controllers/aceptarSolicitudAction.php");
         xhr.send(formData);
       }
 </script>
