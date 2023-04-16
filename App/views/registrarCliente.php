@@ -26,8 +26,8 @@ include('../models/funcionSolicitud.php');
                 </h2>
             </div>
             <div class="card-body grande">
-                <form id="myForm" class="row g-3 needs-validation" novalidate action="<?php echo $action; ?>"
-                    method="post">
+                <form id="myForm" class="row g-3 needs-validation" novalidate
+                    action="/SistemaParqueo/App/controllers/registrarDocenteAction.php" method="post">
 
                     <div class="columnas">
                         <div class="izquierda">
@@ -56,7 +56,7 @@ include('../models/funcionSolicitud.php');
                     </div>
                     <div class="columnas">
                         <div class="izquierda">
-                            <!-- Input del nombre -->
+                            <!-- Input del codigoSis -->
                             <div class="mb-3">
                                 <label for="validationCustom03" class="form-label">Código SIS:</label>
                                 <input type="text" name="codigo" class="form-control" id="validationCustom03"
@@ -119,15 +119,16 @@ include('../models/funcionSolicitud.php');
                         </div>
                     </div>
                     <?php
+
                     $success = "Guardar";
                     $danger = "Cancelar";
-                    include('templates/buttonsForms.php');
+                    include ('templates/buttonsForms.php');
 
-                    include('templates/finForm.php');
+                    $mensaje = "¿Está seguro de que desea registrar este docente?";
+                    include ('templates/modalForm.php');
+
+                    include ('templates/finForm.php');
                     ?>
-                </form>
-            </div>
-        </div>
     </main>
 
 

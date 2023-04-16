@@ -477,23 +477,6 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* NUEVAS FORM */
 .form-containerG {
     background-color: white;
@@ -584,23 +567,6 @@ form label:not(:first-child) {
     color: white;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width:991px) {
     html {
