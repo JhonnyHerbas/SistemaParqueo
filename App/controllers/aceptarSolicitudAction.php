@@ -33,7 +33,7 @@ $id_sol = $_GET["id"];
  $mail->setFrom('servicio.correo.exodus@gmail.com', 'Exodus');
  $mail->addAddress($correo, $nombre . ' ' . $apellido);
 
-if ($accion == 'aceptar') {
+ if ($accion == 'aceptar') {
     try {
        
         // Configura el asunto y el cuerpo del correo
@@ -42,9 +42,11 @@ if ($accion == 'aceptar') {
 
         // Envía el correo electrónico y muestra un mensaje
         $mail->send();
-        echo 'El correo electrónico se ha enviado correctamente.';
+        //echo 'El correo electrónico se ha enviado correctamente.';
         
         solicitud($id_sol,$accion);
+    
+        header("Location: /SistemaParqueo/App/views/modalSolicitud.php?accion=aceptar");
     } catch (Exception $e) {
         echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
     }
@@ -57,7 +59,8 @@ if ($accion == 'aceptar') {
         // Envía el correo electrónico y muestra un mensaje
         $mail->send();
         solicitud($id_sol,$accion);
-        echo 'El correo electrónico se ha enviado correctamente.';
+        header("Location: /SistemaParqueo/App/views/modalSolicitud.php?accion=rechazar");
+       // echo 'El correo electrónico se ha enviado correctamente.';
     } catch (Exception $e) {
         echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
     }
