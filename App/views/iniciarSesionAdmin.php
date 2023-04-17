@@ -17,47 +17,48 @@ include('../models/funcionSolicitud.php');
     include('templates/header.php');
     ?>
     <main>
-        <?php
+    <div class="form-container">
+            <div class="header-container">
+                <h2 class="title-form">
+                    Iniciar sesión
+                </h2>
+            </div>
+            <div class="card-body">
+                <form id="login" class="row g-3 needs-validation" novalidate action="../controllers/iniciarSesionActionAdmin.php"
+                    method="post">
 
-        $title = "Iniciar sesión";
-        $action = "";
-        $metodo = "POST";
-        include('templates/iniForm.php');
-        ?>
+                    <h1>ADMINISTRADOR</h1>
 
-        <h1>Administrador</h1>
-
-        <!-- Aqui viene toda la interfaz de visualizacion -->
-        <div class="mb-3">
-            <label for="validationCustom01" class="form-label">Nombre de usuario:</label>
-            <input type="text" name="titulo-solicitud" class="form-control" id="validationCustom01" pattern="[a-zA-Z]{5,30}"
-                autocomplete="off" spellcheck="false" placeholder="Ingrese su código" required>
-            <div class="invalid-feedback">
-                Por favor, ingrese un usuario válido.
+                    <!-- Aqui viene toda la interfaz de visualizacion -->
+                    <div class="mb-3">
+                        <label for="validationCustom01" class="form-label">Nombre de usuario:</label>
+                        <input type="text" name="user" class="form-control" id="validationCustom01"
+                            pattern=".{4,30}$" autocomplete="off" spellcheck="false" placeholder="Ingrese su código"
+                            required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese un código válido.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="validationCustom02" class="form-label">Contraseña</label>
+                        <input type="password" name="pass" class="form-control" id="validationCustom02"
+                            pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
+                            placeholder="Ingrese su contraseña" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese un nombre válido.
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-success" id="submitButton" data-toggle="modal"
+                            data-target="#exampleModal">Iniciar
+                            sesión</button>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center h5">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="validationCustom02" class="form-label">Contraseña</label>
-            <input type="password" name="titulo-solicitud" class="form-control" id="validationCustom02"
-                pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false" placeholder="Ingrese su contraseña"
-                required>
-            <div class="invalid-feedback">
-                Por favor, ingrese un nombre válido.
-            </div>
-        </div>
-        <div class="button-container">
-            <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Iniciar
-                sesión</button>
-        </div>
-        <div class="d-flex align-items-center justify-content-center h5">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-        </div>
-
-        <?php
-
-        include('templates/finForm.php');
-        ?>
-
     </main>
 
 
@@ -66,7 +67,6 @@ include('../models/funcionSolicitud.php');
     include('templates/scripts.php');
 
     ?>
-    <script src="/SistemaParqueo/public/js/validacion.js"></script>
 </body>
 
 </html>

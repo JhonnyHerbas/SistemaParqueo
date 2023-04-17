@@ -47,12 +47,12 @@ $(document).ready(function () {
             $('#exampleModal').modal('show');
 
             // Agrega evento de click al botón de confirmar en el modal
-            $('#confirmButton').click(function(){
+            $('#confirmButton').click(function () {
                 // Envía el formulario al action definido en el atributo "action"
                 $("#myForm").off('submit').submit();
             });
             // Agrega evento de click al botón de cancelar en el modal
-            $('#cancelButton').click(function(){
+            $('#cancelButton').click(function () {
                 // Cierra el modal
                 $('#exampleModal').modal('hide');
                 // Restablece el valor del elemento select
@@ -80,3 +80,13 @@ window.onscroll = () => {
     menu.classList.remove('fa-times');
     header.classList.remove('active');
 }
+
+document.getElementById("login").addEventListener("submit", function (event) {
+    // Verificar si hay errores en el formulario
+    if (!this.checkValidity()) {
+        // Evitar que el formulario se envíe si hay errores
+        event.preventDefault();
+        // Mostrar los mensajes de error
+        this.classList.add('was-validated');
+    }
+});
