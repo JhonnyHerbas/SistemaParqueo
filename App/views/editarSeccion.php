@@ -12,9 +12,6 @@ include('../models/funcionSeccion.php')
     <!-- Include del header.php -->
     <?php 
     
-    $user = "Jhonny Herbas";
-    $role = "Administrador";
-
     include('templates/header.php');
 //$id_s es la id dela seccion
     $id_sec = 8;

@@ -12,9 +12,6 @@ include('../models/funcionSitio.php')
     <!-- Include del header.php -->
     <?php 
     
-    $user = "Jhonny Herbas";
-    $role = "Administrador";
-
     include('templates/header.php');
     include('../models/funcionSeccion.php');
     $id_sit = $_GET['id_sit'];

@@ -9,13 +9,34 @@ include('../models/funcionSolicitud.php');
 ?>
 
 <body>
-    <?php
+    <div id="menu-bars" class="fas fa-bars"></div>
+    <header>
+        <div class="container-logo">
+            <a href="/SistemaParqueo/App/views/visualizarSitio.php" class="logo">
+                <img src="/SistemaParqueo/public/img/FCYT.png" alt="logo" class="logo">
+            </a>
+            <h2>Sistema de parqueo FCYT</h2>
+        </div>
+        <div class="line"></div>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <p>
+                        <a class='btn' href='iniciarSesionAdmin.php'>
+                            Iniciar sesión administrador
+                        </a>
+                    </p>
+                </li>
+                <li>
+            </ul>
+        </nav>
 
-    $user = "Jhonny Herbas";
-    $role = "Administrador";
-
-    include('templates/header.php');
-    ?>
+        <div class="redes_sociales">
+            <a href="https://www.facebook.com/fcytumssOficial" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="http://abcd.fcyt.umss.edu.bo/cgi-bin//wxis/iah/scripts/?IsisScript=iah.xis&lang=es&base=TECLI"
+                target="_blank" class="fa-solid fa-book"></a>
+        </div>
+    </header>
     <main>
         <div class="form-container">
             <div class="header-container">
@@ -24,8 +45,8 @@ include('../models/funcionSolicitud.php');
                 </h2>
             </div>
             <div class="card-body">
-                <form id="login" class="row g-3 needs-validation" novalidate action="../controllers/iniciarSesionActionDocente.php"
-                    method="post">
+                <form id="login" class="row g-3 needs-validation" novalidate
+                    action="../controllers/iniciarSesionActionDocente.php" method="post">
 
                     <h1>DOCENTE</h1>
 

@@ -8,8 +8,6 @@
     <body>
     <!-- Include del header.php -->
     <?php 
-    $user = "Jhonny Herbas";
-    $role = "Administrador";
 
     include('templates/header.php');
     $id_sit = $_GET['id_sit'];

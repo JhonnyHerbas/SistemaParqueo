@@ -9,32 +9,52 @@ include('../models/funcionSolicitud.php');
 ?>
 
 <body>
-    <?php
+    <div id="menu-bars" class="fas fa-bars"></div>
+    <header>
+        <div class="container-logo">
+            <a href="/SistemaParqueo/App/views/visualizarSitio.php" class="logo">
+                <img src="/SistemaParqueo/public/img/FCYT.png" alt="logo" class="logo">
+            </a>
+            <h2>Sistema de parqueo FCYT</h2>
+        </div>
+        <div class="line"></div>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <p>
+                        <a class='btn' href='iniciarSesionDocente.php'>
+                            Iniciar sesión docente
+                        </a>
+                    </p>
+                </li>
+                <li>
+            </ul>
+        </nav>
 
-    $user = "Jhonny Herbas";
-    $role = "Administrador";
-
-    include('templates/header.php');
-    ?>
+        <div class="redes_sociales">
+            <a href="https://www.facebook.com/fcytumssOficial" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="http://abcd.fcyt.umss.edu.bo/cgi-bin//wxis/iah/scripts/?IsisScript=iah.xis&lang=es&base=TECLI"
+                target="_blank" class="fa-solid fa-book"></a>
+        </div>
+    </header>
     <main>
-    <div class="form-container">
+        <div class="form-container">
             <div class="header-container">
                 <h2 class="title-form">
                     Iniciar sesión
                 </h2>
             </div>
             <div class="card-body">
-                <form id="login" class="row g-3 needs-validation" novalidate action="../controllers/iniciarSesionActionAdmin.php"
-                    method="post">
+                <form id="login" class="row g-3 needs-validation" novalidate
+                    action="../controllers/iniciarSesionActionAdmin.php" method="post">
 
                     <h1>ADMINISTRADOR</h1>
 
                     <!-- Aqui viene toda la interfaz de visualizacion -->
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label">Nombre de usuario:</label>
-                        <input type="text" name="user" class="form-control" id="validationCustom01"
-                            pattern=".{4,30}$" autocomplete="off" spellcheck="false" placeholder="Ingrese su código"
-                            required>
+                        <input type="text" name="user" class="form-control" id="validationCustom01" pattern=".{4,30}$"
+                            autocomplete="off" spellcheck="false" placeholder="Ingrese su código" required>
                         <div class="invalid-feedback">
                             Por favor, ingrese un código válido.
                         </div>

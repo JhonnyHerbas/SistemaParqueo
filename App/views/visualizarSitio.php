@@ -12,9 +12,6 @@ include('templates/head.php');
     <!-- Include del header.php -->
     <?php
 
-    $user = "Jhonny Herbas";
-    $role = "Administrador";
-
     include('templates/header.php');
     include('../models/funcionSeccion.php');
     include('../models/funcionSitio.php');
@@ -61,7 +58,7 @@ include('templates/head.php');
                     $name = isset($_GET["nombre"]) ? $_GET["nombre"] : "";
 
                     // Verificar si el parámetro "nombre" está presente y no está vacío
-                    if(!empty($name)){
+                    if (!empty($name)) {
                         $sitios = buscar_sitio($name);
                     } else {
                         $sitios = visualizar_sitio();
@@ -73,7 +70,13 @@ include('templates/head.php');
                             ?>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button id="<?php if ($fila['DISPONIBLE_SIT'] == 1) {echo "libre";} else {echo "ocupado";}?>" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    <button
+                                        id="<?php if ($fila['DISPONIBLE_SIT'] == 1) {
+                                            echo "libre";
+                                        } else {
+                                            echo "ocupado";
+                                        } ?>"
+                                        class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#<?php echo $buttons . $fila["ID_SIT"]; ?>" aria-expanded="false"
                                         aria-controls="flush-collapseOne">
                                         <?php
@@ -130,16 +133,18 @@ include('templates/head.php');
                         }
                     }
                     ?>
-                </div>                
+                </div>
                 <div class="elements-descripcion" id="elements">
                     <div class="container-descripcion" id="container-descripcion">
 
                     </div>
                     <div class="function-seccion azul">
-                        <a href="" target="_self" class="fa-solid fa-pencil blanco editar-seccion" id="editar-hidden"></a>
+                        <a href="" target="_self" class="fa-solid fa-pencil blanco editar-seccion"
+                            id="editar-hidden"></a>
                     </div>
                     <div class="function-seccion rojo">
-                        <a href="" target="_self" class="fa-solid fa-trash blanco eliminar-seccion" id="seccion-hidden"></a>
+                        <a href="" target="_self" class="fa-solid fa-trash blanco eliminar-seccion"
+                            id="seccion-hidden"></a>
                     </div>
                 </div>
             </div>

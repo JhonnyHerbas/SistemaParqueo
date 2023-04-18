@@ -11,8 +11,10 @@ if ($result) {
     $fila = mysqli_fetch_array($result);
     $password = $fila['CONTRASENA_DOC'];
     if ($hash == $password) {
-        echo "Contraseña correcta";
-        echo $fila['NOMBRE_DOC']. " " . $fila['APELLIDO_DOC'];
+        session_start();
+        $_SESSION['codigo'] = $codigo;
+        $_SESSION['nombre'] = $fila['NOMBRE_DOC'] . " " . $fila['APELLIDO_DOC'];
+        header("Location: ../views/visualizarSitio.php");
     } else {
         echo "Algo salio mal";
     }

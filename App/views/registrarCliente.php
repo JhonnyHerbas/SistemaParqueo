@@ -69,8 +69,8 @@ include('../models/funcionSolicitud.php');
                         </div>
                         <div class="derecha">
                             <div class="mb-3">
-                                <label for="validationCustom04" class="form-label">Celular:</label>
-                                <input type="text" name="celular" class="form-control" id="validationCustom04"
+                                <label for="validationCustom05" class="form-label">Celular:</label>
+                                <input type="text" name="celular" class="form-control" id="validationCustom05"
                                     pattern="^[0-9]{8}$" autocomplete="off" spellcheck="false" minlength="5"
                                     maxlength="30" placeholder="Ingrese su numero" required>
                                 <div class="invalid-feedback">
@@ -83,8 +83,8 @@ include('../models/funcionSolicitud.php');
                         <div class="izquierda">
                             <!-- Input del nombre -->
                             <div class="mb-3">
-                                <label for="validationCustom05" class="form-label">Correo:</label>
-                                <input type="email" name="correo" class="form-control" id="validationCustom05"
+                                <label for="validationCustom06" class="form-label">Correo:</label>
+                                <input type="email" name="correo" class="form-control" id="validationCustom06"
                                     autocomplete="off" spellcheck="false" maxlength="50" placeholder="Ingrese su correo"
                                     required>
                                 <div class="invalid-feedback">
@@ -94,8 +94,8 @@ include('../models/funcionSolicitud.php');
                         </div>
                         <div class="derecha">
                             <div class="mb-3">
-                                <label for="validationCustom06" class="form-label">Contraseña:</label>
-                                <input type="password" name="pass" class="form-control" id="validationCustom06"
+                                <label for="validationCustom07" class="form-label">Contraseña:</label>
+                                <input type="password" name="pass" class="form-control" id="validationCustom07"
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                                     placeholder="Ingrese su contraseña" required>
                                 <div class="invalid-feedback">
@@ -108,8 +108,8 @@ include('../models/funcionSolicitud.php');
                         <div class="izquierda">
                             <!-- Input de verificar contraseña -->
                             <div class="mb-3">
-                                <label for="validationCustom07" class="form-label">Verificar contraseña:</label>
-                                <input type="password" name="verPass" class="form-control" id="validationCustom07"
+                                <label for="validationCustom08" class="form-label">Verificar contraseña:</label>
+                                <input type="password" name="verPass" class="form-control" id="validationCustom08"
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                                     placeholder="Ingrese su contraseña" required>
                                 <div class="invalid-feedback">

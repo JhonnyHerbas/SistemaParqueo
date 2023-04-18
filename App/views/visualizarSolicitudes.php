@@ -11,9 +11,6 @@ include('templates/head.php');
 <body>
     <!-- Include del header.php -->
     <?php 
-    
-    $user = "Jhonny Herbas";
-    $role = "Administrador";
 
     include('templates/header.php');
     include('../models/funcionSolicitud.php')

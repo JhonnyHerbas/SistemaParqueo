@@ -11,9 +11,6 @@ include('../models/funcionConfiguracionHorario.php')
 <body>
     <!-- Include del header.php -->
     <?php 
-    
-    $user = "Jhonny Herbas";
-    $role = "Administrador";
 
     include('templates/header.php');
     ?>

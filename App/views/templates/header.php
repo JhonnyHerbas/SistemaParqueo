@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+if (isset($_SESSION['codigo'])) {
+    $user = $_SESSION['nombre'];
+    $role = "Docente";
+} else {
+    header('Location: iniciarSesionDocente.php');
+}
+?>
+
 <div id="menu-bars" class="fas fa-bars"></div>
 <header>
     <div class="container-logo">
