@@ -49,7 +49,7 @@ if (mysqli_num_rows($result) > 0) {
                             <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
                         </div>
                         <div class="function rojo">
-                            <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
+                            <a href="eliminarSitio.php?id_sit='.  $fila['ID_SIT']. '" target="_self" class="fa-solid fa-trash blanco"></a>
                         </div>
                     </div>
                 </div>
