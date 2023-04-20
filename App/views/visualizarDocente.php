@@ -3,6 +3,11 @@
 
 <?php
 
+if (session_status() != PHP_SESSION_NONE) {
+    if ($_SESSION['rol'] != "Administrador") {
+        header('Location: visualizarSitio.php');
+    }
+}
 $title = "Ver sitios";
 include('templates/head.php');
 

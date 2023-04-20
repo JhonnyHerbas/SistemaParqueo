@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+if (isset($_SESSION['codigo'])) {
+    header('Location: visualizarSitio.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +57,19 @@ include('../models/funcionSolicitud.php');
                     action="../controllers/iniciarSesionActionDocente.php" method="post">
 
                     <h1>DOCENTE</h1>
+                    <?php
+                    // Obtener el parámetro "nombre" de la URL usando el operador ternario
+                    $mensaje = isset($_GET["mensaje"]) ? $_GET["mensaje"] : "";
 
+                    // Verificar si el parámetro "nombre" está presente y no está vacío
+                    if (isset($_GET['error']) && $_GET['error'] == 'contrasena_incorrecta') {
+                        echo "<p>Contraseña incorrecta. Intente de nuevo.</p>";
+                    } else {
+                        if (isset($_GET['error']) && $_GET['error'] == 'usuario_inexistente') {
+                            echo "<p>Usuario incorrecto. Intente de nuevo.</p>";
+                        }
+                    }
+                    ?>
                     <!-- Aqui viene toda la interfaz de visualizacion -->
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label">Código SIS:</label>

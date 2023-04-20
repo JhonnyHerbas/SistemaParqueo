@@ -6,7 +6,7 @@ $codigo = $_POST["codigo"];
 $pass = $_POST["pass"];
 $hash = md5($pass);
 
-$result = iniciar_sesion($codigo);
+$result = iniciar_sesion_docente($codigo);
 if ($result) {
     $fila = mysqli_fetch_array($result);
     $password = $fila['CONTRASENA_DOC'];
@@ -14,12 +14,15 @@ if ($result) {
         session_start();
         $_SESSION['codigo'] = $codigo;
         $_SESSION['nombre'] = $fila['NOMBRE_DOC'] . " " . $fila['APELLIDO_DOC'];
+        $_SESSION['celular'] = $fila['CELULAR_DOC'];
+        $_SESSION['correo'] = $fila['CORREO_DOC'];
+        $_SESSION['rol'] = "Docente";
         header("Location: ../views/visualizarSitio.php");
     } else {
-        echo "Algo salio mal";
+        header("Location: ../views/iniciarSesionDocente.php?error=contrasena_incorrecta");
     }
 
 } else {
-    echo "No existe el docente";
+    header("Location: ../views/iniciarSesionDocente.php?error=usuario_inexistente");
 }
 ?>

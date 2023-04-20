@@ -70,13 +70,11 @@ include('templates/head.php');
                             ?>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button
-                                        id="<?php if ($fila['DISPONIBLE_SIT'] == 1) {
-                                            echo "libre";
-                                        } else {
-                                            echo "ocupado";
-                                        } ?>"
-                                        class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    <button id="<?php if ($fila['DISPONIBLE_SIT'] == 1) {
+                                        echo "libre";
+                                    } else {
+                                        echo "ocupado";
+                                    } ?>" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#<?php echo $buttons . $fila["ID_SIT"]; ?>" aria-expanded="false"
                                         aria-controls="flush-collapseOne">
                                         <?php
@@ -109,23 +107,25 @@ include('templates/head.php');
                                             echo "Sección: # " . $fila["ID_SEC"];
                                             ?>
                                         </div>
-                                        <div class="acordion-btn w-50">
-                                            <?php
+                                        <?php
+
+                                        if ($_SESSION['rol'] == "Administrador") {
+                                            echo '<div class="acordion-btn w-50">';
 
                                             if ($fila['DISPONIBLE_SIT'] == 0) {
                                                 echo '<div class="function celeste"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
                                             } else {
                                                 echo '<div class="function verde"><a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
                                             }
-                                            ?>
-                                            <div class="function azul">
-                                                <a href="editarSitio.php?id_sit=<?php echo $fila['ID_SIT'] ?>" target="_self"
-                                                    class="fa-solid fa-pencil blanco"></a>
-                                            </div>
-                                            <div class="function rojo">
-                                                <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
-                                            </div>
-                                        </div>
+                                            echo '<div class="function azul">
+                                                    <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
+                                                </div>
+                                                <div class="function rojo">
+                                                    <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
+                                                </div>
+                                            </div>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>

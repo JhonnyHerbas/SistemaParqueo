@@ -1,24 +1,26 @@
 <?php
 
-require_once('../models/funcionDocente.php');
+require_once('../models/funcionAdmin.php');
 
-$codigo = $_POST["user"];
+$user = $_POST["user"];
 $pass = $_POST["pass"];
 $hash = md5($pass);
 
-$result = iniciar_sesion($codigo);
+$result = iniciar_sesion($user);
 if ($result) {
     $fila = mysqli_fetch_array($result);
     $password = $fila['CONTRASENA_ADM'];
     if ($hash == $password) {
-        echo "Contraseña correcta";
-        echo $fila['NOMBRE_ADM']. " " . $fila['APELLIDO_ADM'];
+        session_start();
+        $_SESSION['username'] = $user;
+        $_SESSION['nombre'] = $fila['NOMBRE_ADM'] . " " . $fila['APELLIDO_ADM'];
+        $_SESSION['rol'] = "Administrador";
+        header("Location: ../views/visualizarSitio.php");
     } else {
-        echo "Algo salio mal";
-        
+        header("Location: ../views/iniciarSesionAdmin.php?error=contrasena_incorrecta");
     }
 
 } else {
-    echo "No existe el admin";
+    header("Location: ../views/iniciarSesionAdmin.php?error=usuario_inexistente");
 }
 ?>

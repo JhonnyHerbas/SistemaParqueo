@@ -2,6 +2,19 @@
 
 require_once('../config/conexion.php') ;
 
+function iniciar_sesion($user){
+    $conn = get_connection();
+    $stmt = mysqli_prepare($conn, "CALL DB_SP_ADMINISTRADOR_CONTRASENA(?)");
+    mysqli_stmt_bind_param($stmt, "s", $user);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if (mysqli_num_rows($result) > 0) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 function insertar_docente ($codigo, $nombre, $apellido, $celular, $correo, $pass) {
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_DOCENTE_INSERTAR(?,?,?,?,?,?)");

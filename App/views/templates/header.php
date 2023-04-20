@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-if (isset($_SESSION['codigo'])) {
+if (isset($_SESSION['nombre'])) {
     $user = $_SESSION['nombre'];
-    $role = "Docente";
+    $role = $_SESSION['rol'];
 } else {
     header('Location: iniciarSesionDocente.php');
 }
@@ -33,8 +33,26 @@ if (isset($_SESSION['codigo'])) {
 
     <nav class="navbar">
         <?php
-
-        $lista = "
+        $listaDocente = "<ul>
+            <li>
+                <p>
+                    <a href='realizarSolicitud.php'>Solicitar sitio</a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href='visualizarSitio.php'>Ver sitios</a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a class='btn' href='../controllers/cerrarSesion.php'>
+                        Cerrar sesión
+                    </a>
+                </p>
+            </li>
+        </ul>";
+        $listaAdmin = "
         <ul>
             <li>
                 <p>
@@ -66,20 +84,24 @@ if (isset($_SESSION['codigo'])) {
             </li>
             <li>
                 <p>
-                    <a class='btn' data-bs-toggle='collapse' href='#collapse-solicitud' role='button'
-                        aria-expanded='false' aria-controls='collapse-sitio'>
-                        Solicitudes
+                    <a href='visualizarSolicitudes.php'>Ver solicitudes</a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a class='btn' href='../controllers/cerrarSesion.php'>
+                        Cerrar sesión
                     </a>
                 </p>
-                <div class='collapse' id='collapse-solicitud'>
-                    <ul>
-                        <li><a href='visualizarSolicitudes.php'>Ver solicitudes</a></li>
-                        <li><a href='realizarSolicitud.php'>Solicitar sitio</a></li>
-                    </ul>
-                </div>
             </li>
         </ul>";
-        echo $lista;
+
+        if ($_SESSION['rol'] == "Administrador") {
+            echo $listaAdmin;
+        } else {
+            echo $listaDocente;
+        }
+
         ?>
     </nav>
 

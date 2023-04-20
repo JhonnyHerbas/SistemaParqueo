@@ -1,7 +1,7 @@
 <?php 
 
 require_once ('../config/conexion.php');
-function iniciar_sesion($codigo){
+function iniciar_sesion_docente($codigo){
     $conn = get_connection();
     $result = mysqli_query($conn, "CALL DB_SP_DOCENTE_CONTRASENA($codigo)");
 

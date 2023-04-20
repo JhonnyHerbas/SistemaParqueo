@@ -1,5 +1,5 @@
 <?php
 
-header('Location: App/views/visualizarSitio.php');
+header('Location: App/views/iniciarSesionDocente.php');
 
 ?>
