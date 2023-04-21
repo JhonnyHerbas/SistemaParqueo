@@ -2,7 +2,7 @@
     <html lang="en">
 
     <?php
-        $title = "Eliminar sitio";
+        $title = "Inhabilitar sitio";
         include ('templates/head.php');       
     ?>       
     <body>
@@ -20,7 +20,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p>¿Está seguro que desea eliminar este sitio?</p>
+                    <p>¿Está seguro que desea inhabilitar este sitio?</p>
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
                     <a href="../controllers/eliminarSitioAction.php?id_sit=<?php echo $id_sit;?>" rel="noopener noreferrer"><button type="summit" class="btn btn-success" data-bs-dismiss="modal">Confirmar</button></a>

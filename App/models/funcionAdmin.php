@@ -71,4 +71,34 @@ function editar_docente_contrasena($ID_DOC, $CONTRASENA_DOC) {
         return false;
     }
 }
+
+function visualizar_pago($ID_SOL){
+    $conn = get_connection();
+    $query ='CALL DB_SP_PAGO_VISTA("'.$ID_SOL.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function verificar_id($ID_DOC){
+    $conn = get_connection();
+    $query ='CALL DB_SP_DOCENTE_ID_DISTINTO("'.$ID_DOC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function verificar_celular($CELULAR_DOC){
+    $conn = get_connection();
+    $query ='CALL DB_SP_DOCENTE_CELULAR_DISTINTO("'.$CELULAR_DOC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

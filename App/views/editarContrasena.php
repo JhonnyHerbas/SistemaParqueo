@@ -47,7 +47,7 @@ include('../models/funcionAdmin.php');
                                 <label for="validationCustom06" class="form-label">Contraseña nueva:</label>
                                 <input type="password" name="passNuevo" class="form-control" id="validationCustom06"
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
-                                    placeholder="Ingrese su contraseña" required>
+                                    placeholder="Ingrese su nueva contraseña" required>
                                 <div class="invalid-feedback">
                                     Ingrese una contraseña válida.
                                 </div>
@@ -57,7 +57,7 @@ include('../models/funcionAdmin.php');
                                 <label for="validationCustom07" class="form-label">Verificar contraseña:</label>
                                 <input type="password" name="verPassNuevo" class="form-control" id="validationCustom07"
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
-                                    placeholder="Ingrese su contraseña" required>
+                                    placeholder="Verifique su nueva contraseña" required>
                                 <div class="invalid-feedback">
                                     Ingrese una contraseña válida.
                                 </div>

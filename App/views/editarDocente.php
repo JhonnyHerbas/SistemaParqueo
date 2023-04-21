@@ -32,7 +32,7 @@ include('../models/funcionAdmin.php');
             </div>
             <div class="card-body grande">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
-                    action="/SistemaParqueo/App/controllers/editarUsuarioAction.php" method="post">
+                    action="/SistemaParqueo/App/controllers/editarDocenteAction.php" method="post">
 
                     <div class="columnas">
                         <div class="izquierda">
@@ -99,7 +99,7 @@ include('../models/funcionAdmin.php');
                         </div>
                         <div class="derecha">
                             <div class="mb-3">
-                                <label for="validationCustom06" class="form-label">¿Quieres cambiar tu contraseña?</label>
+                            <a href="editarContrasena.php?id_doc=<?php echo $docente['ID_DOC'] ?>"><label class="form-label">¿Quieres cambiar tu contraseña?</label></a>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@ include('../models/funcionAdmin.php');
                     $danger = "Cancelar";
                     include ('templates/buttonsForms.php');
 
-                    $mensaje = "¿Está seguro de que desea registrar este docente?";
+                    $mensaje = "¿Está seguro de que desea guardar los cambios?";
                     include ('templates/modalForm.php');
 
                     include ('templates/finForm.php');

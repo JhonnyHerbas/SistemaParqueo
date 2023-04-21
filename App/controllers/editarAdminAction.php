@@ -1,9 +1,9 @@
 <?php 
 include("../models/funcionAdmin.php");
-
-$result = visualizar_docente();
+$celular = $_POST['celular'];
 $nombre = $_POST['name'];
-$id_doc = $_POST['id_doc'];
+$id_doc = $_POST['codigo'];
+$result = verificar_celular($celular);
 $existe = false;
 if($result){
     while($row = $result->fetch_array(MYSQLI_BOTH)){
@@ -59,7 +59,7 @@ if($existe){
     
     <?php
 }else{
-    editar_docente($_POST['id_doc'], $_POST['id_doc'], $_POST['name'], $_POST['apellido'],$_POST['celular'],$_POST['correo']);
+    editar_docente($_POST['codigo'], $_POST['codigo'], $_POST['nombre'], $_POST['apellido'],$_POST['celular'],$_POST['correo']);
     header("Location: /SistemaParqueo/App/views/modalConf.php");
     exit();
 }

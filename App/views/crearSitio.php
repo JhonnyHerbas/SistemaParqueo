@@ -35,24 +35,12 @@ include ('../models/funcionSeccion.php');
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="validationCustom02" class="form-label">Disponible:</label>
-                    <select class="form-select bg-info" name="disponible" id="validationCustom04" required>
-                      <option selected disabled value="">Elige...</option>
-                      <option value="1" style="font-size: 20px;">Si</option>
-                      <option value="0" style="font-size: 20px;">No</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Por favor seleccione una opción
-                    </div>
+                    <input name="disponible" value = "1"  style="display: none;">
                 </div>
                 <div class="mb-3">
-                  <label for="validationCustom02" class="form-label">Precio: </label>
-                  <input type="number" class="form-control bg-info" id="validationCustom02" min="1" autocomplete="off" 
-                    required name="precio" spellcheck="false" maxlength="10" pattern="^[0-9]*$"   
+                  <input type="hidden" min="1" autocomplete="off" 
+                    name="precio" maxlength="10" pattern="^[0-9]*$" value = "100" 
                   >
-                  <div class="invalid-feedback">
-                            Solo se permiten valores positivos mayores a cero.
-                  </div>
                 </div>
                 <div class="mb-3">
                     <label for="validationCustom02" class="form-label">Sección:</label>

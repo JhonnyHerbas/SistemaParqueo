@@ -33,11 +33,22 @@ include('../models/funcionSitio.php')
         <div class="card-body">
             <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/editarSitioAction.php" method="post">
                 <div class="mb-3">
-                    <label for="validationCustom01" class="form-label">Nombre del sitio:</label>
-                    <input type="text" name="name" class="form-control bg-info" id="validationCustom01" pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" 
-                    minlength="5" maxlength="30" value="<?php echo $sitio['NOMBRE_SIT']; ?>" onkeyup = "this.value=this.value.replace(/^\s+/,'');" required>
+                    <label for="validationCustom02" class="form-label">Sección:</label>
+                    <select class="form-select bg-info" name="seccion" id="validationCustom04" required>
+                    <option selected disabled value="">Elige...</option>
+                        <?php
+                        $result = visualizar_seccion();
+                        if($result){
+                            while($row = $result->fetch_array(MYSQLI_BOTH)){
+                                $id = $row['ID_SEC'];
+                                $nombre = $row['NOMBRE_SEC'];
+                                echo "<option value='$id'>$nombre</option>";
+                            }
+                        } 
+                        ?>
+                    </select>
                     <div class="invalid-feedback">
-                        Por favor, ingrese un valor válido para este campo.
+                        Por favor seleccione una sección
                     </div>
                 </div>
                 <div class="mb-3">
@@ -52,7 +63,6 @@ include('../models/funcionSitio.php')
                 </div> 
                 <div> 
                     <input type="hidden" value="<?php echo $sitio['ID_SIT'];?>" name="id_sit" style="display: none;">
-                    <input type="hidden" value="<?php echo $sitio['ID_SEC'];?>" name="id_sec" style="display: none;">
                 </div>
                 <div class="col-12 button">
                     <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
