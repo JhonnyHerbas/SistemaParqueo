@@ -226,6 +226,16 @@ header .redes_sociales a {
     background-color: #046b99;
     color: #ffffff;
 }
+.solicitud-header{
+    display: flex;
+    justify-content: space-between;
+}
+.solicitud-header #estado{
+    width: 13vw;
+    background: #1C304A;
+    color: #FFFFFF;
+    border-radius: 0.5vh;
+}
 
 /*realizar solicitud*/
 .container-form {
@@ -628,6 +638,17 @@ form label:not(:first-child) {
     .form-containerG {
         width: 100vw;
         height: 100vh;
+    }
+    .solicitud-header{
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .solicitud-header #estado{
+        width: 30vw;
+        background: #1C304A;
+        color: #FFFFFF;
+        border-radius: 0.5vh;
     }
 }
 
