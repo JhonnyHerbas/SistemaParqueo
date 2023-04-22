@@ -67,19 +67,30 @@ include('../models/funcionSolicitud.php');
                     ?>
                     <!-- Aqui viene toda la interfaz de visualizacion -->
                     
-                    <div class="mb-3"><div class="mb-3">
+                    <div class="mb-3">
                         <input type="hidden" value="<?php echo $codigo; ?>" name="codigo">
-                        <label for="validationCustom02" class="form-label">Token</label>
-                        <input type="password" name="token" class="form-control" id="validationCustom02"
+                        <label for="validationCustom02" class="form-label">Codigo de seguridad:</label>
+                        <input type="input" name="token" class="form-control" id="validationCustom02"
                             pattern="[0-9]{6}" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su token" required>
                         <div class="invalid-feedback">
                             Por favor, ingrese un token valido.
                         </div>
                     </div>
+                    <div class="mb-3">
                         <input type="hidden" value="<?php echo $codigo; ?>" name="codigo">
-                        <label for="validationCustom02" class="form-label">Nueva contraseña</label>
+                        <label for="validationCustom02" class="form-label">Nueva contraseña:</label>
                         <input type="password" name="nuevoPass" class="form-control" id="validationCustom02"
+                            pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
+                            placeholder="Ingrese su contraseña" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese una contraseña válida.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="hidden" value="<?php echo $codigo; ?>" name="codigo">
+                        <label for="validationCustom02" class="form-label">Confirmar contraseña:</label>
+                        <input type="password" name="nuevoPassConf" class="form-control" id="validationCustom02"
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required>
                         <div class="invalid-feedback">
