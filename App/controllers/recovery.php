@@ -11,11 +11,11 @@ require '../../vendor/phpmailer/phpmailer/src/SMTP.php';
 require_once('../models/funcionRecovery.php');
 
 $correo = $_POST['email'];
+$token = mt_rand(100000, 999999);
 
-$result = recuperar_correo($correo);
+$result = recuperar_correo($correo, $token);
 if ($result) {
-    $fila = mysqli_fetch_array($result);
-    if ($fila['correo'] == $correo) {
+    if ($result['correo'] == $correo) {
         $mail = new PHPMailer(true);
 
         try {
@@ -35,8 +35,10 @@ if ($result) {
             $mail->addAddress('jhonnyherbasapaico@gmail.com', 'Recuperación');
             
             $mail->isHTML(true);
-            $mail->Subject = 'Here is the subject';
-            $mail->Body = 'Hola, este es un correo generado para solicitar la recuperación de contraseña, por favor, <a href="localhost/SistemaParqueo/App/views/nuevaContrasena.php?id=' . $fila['id'] . '">Ingrese para recuperar su contraseña</a>';
+            $mail->Subject = 'Recupera tu contraseña';
+            $mail->Body = 'Hola, este es un correo generado para solicitar la recuperación de contraseña, Por favor <br>
+            <a href="localhost/SistemaParqueo/App/views/nuevaContrasena.php?id=' . $result['id'] . '">Ingrese para recuperar su contraseña</a> <br>
+            Su numero de token es: ' . $token;
 
             $mail->send();
             echo 'Message has been sent';

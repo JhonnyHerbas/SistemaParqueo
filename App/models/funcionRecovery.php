@@ -2,24 +2,32 @@
 
 require_once('../config/conexion.php');
 
-function recuperar_correo($correo) {
+function recuperar_correo($correo, $token)
+{
     $conn = get_connection();
-    $stmt = mysqli_prepare($conn, "CALL DB_SP_VERIFICAR_CORREO(?)");
-    mysqli_stmt_bind_param($stmt, "s", $correo);
+    $stmt = mysqli_prepare($conn, "CALL DB_SP_VERIFICAR_CORREO(?,?, @id_salida, @correo_salida)");
+    mysqli_stmt_bind_param($stmt, "si", $correo, $token);
     mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_close($stmt);
 
-    if (mysqli_num_rows($result) > 0) {
-        return $result;
+    $resultado = mysqli_query($conn, "SELECT @id_salida, @correo_salida");
+    $fila = mysqli_fetch_assoc($resultado);
+
+    $id_salida = $fila['@id_salida'];
+    $correo_salida = $fila['@correo_salida'];
+
+    if (!empty($id_salida)) {
+        return array('id' => $id_salida, 'correo' => $correo_salida);
     } else {
         return null;
     }
 }
 
-function cambiar_contrasena($id, $contrasena) {
+function cambiar_contrasena($id, $contrasena, $token)
+{
     $conn = get_connection();
-    $stmt = mysqli_prepare($conn, "CALL DB_SP_CAMBIAR_CONTRASENA(?,?)");
-    mysqli_stmt_bind_param($stmt, "is", $id, $contrasena);
+    $stmt = mysqli_prepare($conn, "CALL DB_SP_CAMBIAR_CONTRASENA(?,?,?)");
+    mysqli_stmt_bind_param($stmt, "isi", $id, $contrasena, $token);
     $success = mysqli_stmt_execute($stmt);
 
     return $success;
