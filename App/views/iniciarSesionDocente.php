@@ -35,7 +35,6 @@ include('../models/funcionSolicitud.php');
                         </a>
                     </p>
                 </li>
-                <li>
             </ul>
         </nav>
 
@@ -95,7 +94,7 @@ include('../models/funcionSolicitud.php');
                             sesión</button>
                     </div>
                     <div class="d-flex align-items-center justify-content-center h5">
-                        <a href="#">¿Olvidaste tu contraseña?</a>
+                        <a href="recuperarContrasena.php">¿Olvidaste tu contraseña?</a>
                     </div>
                 </form>
             </div>

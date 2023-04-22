@@ -35,6 +35,14 @@ include('../models/funcionSolicitud.php');
                         </a>
                     </p>
                 </li>
+                <li>
+                    <p>
+                        <a class='btn' href='iniciarSesionAdmin.php'>
+                            Iniciar sesión administrador
+                        </a>
+                    </p>
+                </li>
+                <li>
             </ul>
         </nav>
 
@@ -48,52 +56,33 @@ include('../models/funcionSolicitud.php');
         <div class="form-container">
             <div class="header-container">
                 <h2 class="title-form">
-                    Iniciar sesión
+                    Recuperar contraseña
                 </h2>
             </div>
             <div class="card-body">
                 <form id="login" class="row g-3 needs-validation" novalidate
-                    action="../controllers/iniciarSesionActionAdmin.php" method="post">
-
-                    <h1>ADMINISTRADOR</h1>
+                    action="../controllers/recovery.php" method="post">
                     <?php
                     // Obtener el parámetro "nombre" de la URL usando el operador ternario
                     $mensaje = isset($_GET["mensaje"]) ? $_GET["mensaje"] : "";
 
                     // Verificar si el parámetro "nombre" está presente y no está vacío
-                    if (isset($_GET['error']) && $_GET['error'] == 'contrasena_incorrecta') {
-                        echo "<p>Contraseña incorrecta. Intente de nuevo.</p>";
-                    } else {
-                        if (isset($_GET['error']) && $_GET['error'] == 'usuario_inexistente') {
-                            echo "<p>Usuario incorrecto. Intente de nuevo.</p>";
-                        }
+                    if (isset($_GET['error']) && $_GET['error'] == 'correo_inexistente') {
+                        echo "<p>Correo inexistente. Intente de nuevo.</p>";
                     }
                     ?>
                     <!-- Aqui viene toda la interfaz de visualizacion -->
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label">Nombre de usuario:</label>
-                        <input type="text" name="user" class="form-control" id="validationCustom01" pattern=".{4,30}$"
-                            autocomplete="off" spellcheck="false" placeholder="Ingrese su código" required>
+                        <label for="validationCustom01" class="form-label">Email:</label>
+                        <input type="email" name="email" class="form-control" id="validationCustom01"
+                            autocomplete="off" spellcheck="false" placeholder="Ingrese su correo electronico" required>
                         <div class="invalid-feedback">
                             Por favor, ingrese un código válido.
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="validationCustom02" class="form-label">Contraseña</label>
-                        <input type="password" name="pass" class="form-control" id="validationCustom02"
-                            pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
-                            placeholder="Ingrese su contraseña" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese un nombre válido.
-                        </div>
-                    </div>
                     <div class="button-container">
                         <button type="submit" class="btn btn-success" id="submitButton" data-toggle="modal"
-                            data-target="#exampleModal">Iniciar
-                            sesión</button>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center h5">
-                        <a href="recuperarContrasena.php">¿Olvidaste tu contraseña?</a>
+                            data-target="#exampleModal">Restablecer</button>
                     </div>
                 </form>
             </div>
