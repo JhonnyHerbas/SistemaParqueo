@@ -2,10 +2,10 @@
 
 require_once('../config/conexion.php') ;
 
-function insertar_seccion($ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC){
+function insertar_seccion($ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC,$PARQUEO,$CANTIDAD,$PRECIO){
     $conn = get_connection();
-    $stmt = $conn->prepare("CALL DB_SP_SECCION_INSERTAR(?,?,?)");
-    $stmt->bind_param("iss", $ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC);
+    $stmt = $conn->prepare("CALL DB_SP_SECCION_INSERTAR(?,?,?,?,?,?)");
+    $stmt->bind_param("issssi", $ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC,$PARQUEO,$CANTIDAD,$PRECIO);
     if ($stmt->execute()) {
         $stmt->close();
         return true;
@@ -47,16 +47,6 @@ function actualizar_seccion($ID_ADM,$ID_SEC,$NOMBRE_SEC,$DESCRIPCION_SEC){
         return false;
     }
 } 
-
-function eliminar_seccion($ID_SEC) {
-    $conn = get_connection();
-    $query ='CALL DB_SP_SECCION_ELIMINAR("'.$ID_SEC.'")';
-    if ($result = $conn->query($query)) {
-        return $result;
-    } else {
-        return null;
-    }
-}
 
 function obtener_seccion ($id_sec) {
     $conn = get_connection();

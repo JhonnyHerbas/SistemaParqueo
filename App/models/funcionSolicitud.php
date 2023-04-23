@@ -42,4 +42,5 @@ function obtener_sitio_solicitado($ID_DOC){
     $sitio_solicitado = $row['NOMBRE_SIT'];
     return $sitio_solicitado;
 }
+
 ?>

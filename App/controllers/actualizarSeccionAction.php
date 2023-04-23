@@ -3,10 +3,11 @@ include '../models/funcionSeccion.php';
 
 $result = visualizar_seccion();
 $nombre = $_POST['nombre-seccion'];
+$id = $_POST['id-sec'];
 $existe = false;
 if($result){
     while($row = $result->fetch_array(MYSQLI_BOTH)){
-        if($row['NOMBRE_SEC'] == $nombre ){ 
+        if($row['NOMBRE_SEC'] == $nombre && $row['ID_SEC'] != $id ){ 
             $existe = true;
         }
     }

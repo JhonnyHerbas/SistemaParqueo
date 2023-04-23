@@ -19,7 +19,7 @@ include('../models/funcionSeccion.php')
 
     include('templates/header.php');
     //$id_s es la id dela seccion
-    $id_sec = 8;
+    $id_sec = $_GET['id_sec'];
     $seccion = [];
     if ($seccion_id = visualizar_seccion_editar($id_sec)) {
         $seccion = $seccion_id->fetch_array(MYSQLI_BOTH);
@@ -28,7 +28,7 @@ include('../models/funcionSeccion.php')
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
-    <main class="container-form">
+    <section class="container-form">
         <div class="card form">
             <div class="card-header">
                 <h2 class="h2">Editar sección</h2>
@@ -46,7 +46,7 @@ include('../models/funcionSeccion.php')
                         <label for="validationCustom01" class="form-label">Nombre de sección:</label>
                         <input type="text" name="nombre-seccion" class="form-control" id="validationCustom01"
                             pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="3"
-                            maxlength="30" value="<?php echo $seccion['NOMBRE_SEC']; ?>" required>
+                            maxlength="30" value="<?php echo $seccion['NOMBRE_SEC']; ?>" readonly required>
                         <div class="invalid-feedback">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
@@ -89,7 +89,7 @@ include('../models/funcionSeccion.php')
                 </form>
             </div>
         </div>
-    </main>
+    </section>
 
 
 

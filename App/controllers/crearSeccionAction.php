@@ -59,7 +59,7 @@ if($existe){
     <?php
 }else{
     //Cuando haya las secciones se pondra el id del administrador
-    insertar_seccion(1,$_POST['nombre-seccion'],$_POST['descripcion']);
+    insertar_seccion(1,$_POST['nombre-seccion'],$_POST['descripcion'],$_POST['parqueo'],$_POST['cantidad'],130);
     header("Location: /SistemaParqueo/App/views/visualizarSitio.php");
     exit();
 }

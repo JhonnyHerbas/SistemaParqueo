@@ -346,6 +346,13 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 3vh;
 }
 
+.fila{
+    display: flex;
+    justify-content: space-between;
+}
+.inpu{
+    margin-left: 1vw;
+}
 
 
 /* Descriptcion de la seccion */
@@ -483,10 +490,6 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
 /* NUEVAS FORM */
 .form-containerG {
     background-color: white;
@@ -511,7 +514,6 @@ input[type="number"] {
 }
 
 .card-body {
-    height: 80vh;
     border-radius: 0 0 1vh 1vh;
     align-items: center;
     justify-content: center;
@@ -649,6 +651,14 @@ form label:not(:first-child) {
         background: #1C304A;
         color: #FFFFFF;
         border-radius: 0.5vh;
+    }
+    .card-body .pago{
+        margin: 0;
+    }
+    .card-body form {
+        width: 100vw;
+        font-size: 1vh;
+        padding: 0;
     }
 }
 
