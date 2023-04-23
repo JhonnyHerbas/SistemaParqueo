@@ -46,6 +46,13 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
                 <p>
+                    <a class='btn' href='visualizarPagos.php'>
+                        Ver pagos pendientes
+                    </a>
+                </p>
+            </li>
+            <li>
+                <p>
                     <a class='btn' href='../controllers/cerrarSesion.php'>
                         Cerrar sesión
                     </a>
@@ -54,6 +61,20 @@ if (isset($_SESSION['nombre'])) {
         </ul>";
         $listaAdmin = "
         <ul>
+            <li>
+            <p>
+                <a class='btn' data-bs-toggle='collapse' href='#collapse-sitio' role='button'
+                    aria-expanded='false' aria-controls='collapse-sitio'>
+                    Docentes
+                </a>
+            </p>
+                <div class='collapse' id='collapse-sitio'>
+                    <ul>
+                        <li><a href='visualizarDocente.php'>Ver docentes</a></li>
+                        <li><a href='registrarCliente.php'>Registrar docente</a></li>
+                    </ul>
+                </div>
+            </li>
             <li>
                 <p>
                     <a class='btn' href='configuracionHorario.php'>
