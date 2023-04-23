@@ -47,12 +47,11 @@ include('templates/head.php');
                                 <div class="accordion-body body-sitio">
                                     <div class="acordion-text w-50">
                                         <?php 
-                                        //echo "Titulo: ".$row["TITULO_SOL"].'<br>';
+                                        
                                         echo "Nombre: ".$row["NOMBRE_DOC"]." ".$row["APELLIDO_DOC"].'<br>';                    
                                         echo "Celular: ".$row["CELULAR_DOC"].'<br>';
                                         echo "Correo: ".$row["CORREO_DOC"].'<br>';
-                                        //echo "Descripción: ".$row["DESCRIPCION_SOL"].'<br>';
-                                        //echo "Sitio: #".$row["SITIO_SOL"].'<br>';
+                                        
                                         $i=$i+1;
                                         ?>
                                     </div>

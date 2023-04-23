@@ -31,6 +31,7 @@ include('templates/head.php');
             if($result){
                 while($row = $result->fetch_array(MYSQLI_BOTH)){
                     $collapse = "flush-collapse".$i;
+                    if($row["ESTADO_SOL"]=="ESPERA"){
                 ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -70,7 +71,7 @@ include('templates/head.php');
                         </div>
                     </div>
                     <?php
-                }    
+            }}    
             }
             ?>    
 
