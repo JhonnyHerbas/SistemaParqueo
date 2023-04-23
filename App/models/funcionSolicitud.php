@@ -19,11 +19,10 @@ function visualizar_sitios(){
         return null;
     }
 }
-function insertar_solicitud($ID_DOC,$ID_SIT,$TITULO_SOL,$FECHA_SOL,$DESCRIPCION_SOL,$ESTADO_SOL){
+function insertar_solicitud($ID_DOC,$ID_SIT,$NOMBRE_SIT,$TITULO_SOL,$FECHA_SOL,$DESCRIPCION_SOL,$ESTADO_SOL){
     $conn = get_connection();
-    $sitio = obtener_sitio_solicitado($ID_SIT);
     $stmt = $conn->prepare("CALL DB_SP_SOLICITUD_INSERTAR(?,?,?,?,?,?,?)");
-    $stmt->bind_param("iissssi", $ID_DOC,$ID_SIT,$sitio,$TITULO_SOL,$FECHA_SOL,$DESCRIPCION_SOL,$ESTADO_SOL);
+    $stmt->bind_param("iissssi", $ID_DOC,$ID_SIT,$NOMBRE_SIT,$TITULO_SOL,$FECHA_SOL,$DESCRIPCION_SOL,$ESTADO_SOL);
     if ($stmt->execute()) {
         $stmt->close();
         return true;
@@ -42,4 +41,5 @@ function obtener_sitio_solicitado($ID_DOC){
     $sitio_solicitado = $row['NOMBRE_SIT'];
     return $sitio_solicitado;
 }
+
 ?>

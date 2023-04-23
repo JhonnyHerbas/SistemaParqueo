@@ -10,7 +10,9 @@ if (session_status() != PHP_SESSION_NONE) {
 }
 $title = "Realizar solicitud";
 include('templates/head.php');
-include('../models/funcionSolicitud.php')
+include('../models/funcionSolicitud.php');
+include('../models/funcionSeccion.php');
+include('../models/funcionSitio.php');
     ?>
 
 <body>
@@ -21,6 +23,14 @@ include('../models/funcionSolicitud.php')
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
+
+    <?php 
+    $result = visualizar_seccion_editar($_GET['id_sec']);
+    $seccion = $result->fetch_array(MYSQLI_BOTH);
+    $result1 = visualizar_nombre_sitio($_GET['id_sit']);
+    $sitio = $result1->fetch_array(MYSQLI_BOTH);
+    $cod = $_SESSION['codigo']
+    ?>
     <section class="container-form">
         <div class="card form">
             <div class="card-header">
@@ -29,44 +39,56 @@ include('../models/funcionSolicitud.php')
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
                     action="/SistemaParqueo/App/controllers/realizarSolcitudAction.php" method="post">
+                    <div>
+                        <input type="hidden" value="<?php echo $cod; ?>" name="id_doc"
+                            style="display: none;">
+                        <input type="hidden" value="<?php echo $_GET['id_sit'] ?>" name="id_sit"
+                            style="display: none;">
+                    </div>
+
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label">Titulo de solicitud:</label>
                         <input type="text" name="titulo-solicitud" class="form-control" id="validationCustom01"
                             pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="5"
-                            maxlength="30" placeholder="Solicito el sitio X" required>
+                            maxlength="30" value="Solicitud de sitio" readonly>
                         <div class="invalid-feedback">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
                     </div>
+
                     <div class="mb-3">
-                        <label for="validationCustom02" class="form-label">Sitios disponibles:</label>
-                        <select class="form-select" name="id-sitio" id="validationCustom04" required>
-                            <option selected disabled value="">Seleccione un sitio</option>
-                            <?php
-                            $result = visualizar_sitios();
-                            if ($result) {
-                                while ($row = $result->fetch_array(MYSQLI_BOTH)) {
-                                    echo "<option class='form-control' id='validationCustom02' value='" . $row['ID_SIT'] . "'>" . $row['NOMBRE_SIT'] . "</option>";
-                                }
-                            }
-                            ?>
-                        </select>
+                        <label for="validationCustom02" class="form-label">Sección:</label>
+                        <input type="text" name="seccion" class="form-control" id="validationCustom01"
+                            pattern="" autocomplete="off" spellcheck="false"
+                            maxlength="30" value="<?php echo $seccion["NOMBRE_SEC"]; ?>" readonly>
                         <div class="invalid-feedback">
-                            Por favor seleccione un sitio
+                            Por favor ingrese una seccion
                         </div>
                     </div>
+
+                    <div class="mb-3">
+                        <label for="validationCustom02" class="form-label">Sitio:</label>
+                        <input type="text" name="sitio" class="form-control" id="validationCustom01"
+                            pattern="" autocomplete="off" spellcheck="false"
+                            maxlength="30" value="<?php echo $sitio["NOMBRE_SIT"]; ?>" readonly>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un sitio
+                        </div>
+                    </div>
+
                     <div class="mb-3">
                         <label for="validationTextarea" class="form-label">Descripción:</label>
                         <textarea class="form-control area" name="descripcion" id="validationTextarea" maxlength="200"
-                            cols="3" autocomplete="off" spellcheck="false" required></textarea>
+                            cols="3" autocomplete="off" spellcheck="false" ></textarea>
                         <div class="invalid-feedback">
                             Solo se acepta un máximo de 200 caracteres.
                         </div>
                     </div>
+
                     <div class="col-12 button">
                         <button class="btn btn-success" id="submitButton" data-toggle="modal"
                             data-target="#exampleModal">Guardar</button>
-                        <button class="btn btn-danger" type="reset">Cancelar</button>
+                        <a href="visualizarSitio.php" class="btn btn-danger">Cancelar</a>
                     </div>
 
                     <!-- Modal -->
