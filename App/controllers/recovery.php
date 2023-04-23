@@ -32,7 +32,7 @@ if ($result) {
 
             // Configura el remitente y el destinatario del correo
             $mail->setFrom('servicio.correo.exodus@gmail.com', 'Exodus');
-            $mail->addAddress('jhonnyherbasapaico@gmail.com', 'Recuperación');
+            $mail->addAddress($correo, 'Recuperación');
             
             $mail->isHTML(true);
             $mail->Subject = 'Recupera tu contraseña';

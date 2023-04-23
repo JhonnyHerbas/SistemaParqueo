@@ -108,23 +108,24 @@ include('templates/head.php');
                                             ?>
                                         </div>
                                         <?php
-
-                                        if ($_SESSION['rol'] == "Administrador") {
-                                            echo '<div class="acordion-btn w-50">';
-
+                                        echo '<div class="acordion-btn w-50">';
+                                        if ($_SESSION['rol'] != "Administrador") {
+                                            if ($fila['DISPONIBLE_SIT'] != 0) {
+                                            echo '<div class="function verde"><a href="realizarSolicitud.php?id_sit='. $fila["ID_SIT"] .'&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>'; 
+                                            }
+                                        } else {
                                             if ($fila['DISPONIBLE_SIT'] == 0) {
                                                 echo '<div class="function celeste"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
-                                            } else {
-                                                echo '<div class="function verde"><a href="" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
                                             }
                                             echo '<div class="function azul">
                                                     <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
                                                 </div>
                                                 <div class="function rojo">
                                                     <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
-                                                </div>
-                                            </div>';
+                                                </div>';
                                         }
+                                        
+                                        echo '</div>';
                                         ?>
                                     </div>
                                 </div>
@@ -141,10 +142,6 @@ include('templates/head.php');
                     <div class="function-seccion azul">
                         <a href="" target="_self" class="fa-solid fa-pencil blanco editar-seccion"
                             id="editar-hidden"></a>
-                    </div>
-                    <div class="function-seccion rojo">
-                        <a href="" target="_self" class="fa-solid fa-trash blanco eliminar-seccion"
-                            id="seccion-hidden"></a>
                     </div>
                 </div>
             </div>
