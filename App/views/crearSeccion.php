@@ -21,7 +21,7 @@ include('../models/funcionSeccion.php')
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
-    <main class="container-form">
+    <section class="container-form">
         <div class="card form">
             <div class="card-header">
                 <h2 class="h2">Crear sección</h2>
@@ -38,6 +38,27 @@ include('../models/funcionSeccion.php')
                             Por favor, ingrese un valor válido para este campo.
                         </div>
                     </div>
+
+                    <div class="mb-3">
+                        <label for="validationCustom04" class="form-label">Parqueo:</label>
+                        <select class="form-select" id="validationCustom04" name="parqueo" required>
+                            <option selected disabled value="">Seleccione</option>
+                            <option value="Parqueo 1" >Parqueo 1</option>
+                            <option value="Parqueo 2">Parqueo 2</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Seleccione un parqueo.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="validationCustom02" class="form-label">Cantidad de sitios:</label>
+                        <input type="number" class="form-control" name="cantidad" id="validationCustom02" min="4" max="20"  required>
+                        <div class="invalid-feedback">
+                            Ingrese un numero mayor a 4.
+                        </div>
+                    </div>
+
                     <div class="mb-3">
                         <label for="validationTextarea" class="form-label">Descripción:</label>
                         <textarea class="form-control area" name="descripcion" id="validationTextarea" minlength="20"
@@ -74,7 +95,7 @@ include('../models/funcionSeccion.php')
                 </form>
             </div>
         </div>
-    </main>
+    </section>
 
 
 
