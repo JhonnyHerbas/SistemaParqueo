@@ -10,10 +10,10 @@ $hash = md5($pass);
 
 if ($pass == $confirmacion) {
     $result = cambiar_contrasena($codigo, $hash, $token);
-    if ($result) {
-        echo "Contraseña cambiada";
+    if ($result == 1) {
+        header("Location: ../views/notificacionCorreo.php?cambio=correcto");
     } else {
-        echo "Error al cambio de contraseña";
+        header("Location: ../views/notificacionCorreo.php?cambio=incorrecto");
     }
 }
 ?>

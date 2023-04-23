@@ -28,8 +28,8 @@ function cambiar_contrasena($id, $contrasena, $token)
     $conn = get_connection();
     $stmt = mysqli_prepare($conn, "CALL DB_SP_CAMBIAR_CONTRASENA(?,?,?)");
     mysqli_stmt_bind_param($stmt, "isi", $id, $contrasena, $token);
-    $success = mysqli_stmt_execute($stmt);
-
-    return $success;
+    mysqli_stmt_execute($stmt);
+    $filas = mysqli_stmt_affected_rows($stmt);
+    return $filas;
 }
 ?>

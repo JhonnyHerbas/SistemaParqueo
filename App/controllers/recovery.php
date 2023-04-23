@@ -41,7 +41,7 @@ if ($result) {
             Su numero de codigo de seguridad es: ' . $token;
 
             $mail->send();
-            echo 'Message has been sent';
+            header("Location: ../views/notificacionCorreo.php");
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
