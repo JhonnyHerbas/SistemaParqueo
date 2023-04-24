@@ -6,9 +6,9 @@
                     <?php echo $mensaje; ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"
-                        id="cancelButton">Cancelar</button>
                     <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" 
+                    id="cancelButton">Cancelar</button>
                 </div>
             </div>
         </div>

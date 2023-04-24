@@ -32,7 +32,7 @@ include('../models/funcionAdmin.php');
             </div>
             <div class="card-body grande">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
-                    action="/SistemaParqueo/App/controllers/editarAdminAction.php" method="post">
+                    action="/SistemaParqueo/App/controllers/realizarPagoAction.php" method="post">
 
                     <div class="columnas">
                         <div class="izquierda">
@@ -72,14 +72,13 @@ include('../models/funcionAdmin.php');
                             </div>
                         </div>
                         <div class="derecha">
-                            <!-- Input del nombre -->
                             <div class="mb-3">
-                                <label for="validationCustom05" class="form-label">Correo:</label>
-                                <input type="email" name="correo" class="form-control bg-info" id="validationCustom05"
-                                    autocomplete="off" spellcheck="false" maxlength="50" value="<?php echo $pago['CORREO_DOC']; ?>"
-                                    readonly>
+                                <label for="validationCustom02" class="form-label">Apellido/s:</label>
+                                <input type="text" name="apellido" class="form-control bg-info" id="validationCustom02"
+                                    pattern="[a-zA-Z\s]{3,90}" autocomplete="off" spellcheck="false" minlength="5"
+                                    maxlength="30" value="<?php echo $pago['APELLIDO_DOC']; ?>" readonly>
                                 <div class="invalid-feedback">
-                                    Ingrese un correo válido.
+                                    Ingrese un apellido válido.
                                 </div>
                             </div>
                         </div>
@@ -91,6 +90,17 @@ include('../models/funcionAdmin.php');
                                 <label for="validationCustom01" class="form-label">Fecha final:</label>
                                 <input type="text" name="fecha" class="form-control bg-info" id="validationCustom01"
                                     autocomplete="off" spellcheck="false" maxlength="50" value="<?php echo $pago['FECHA_FIN_ASI']; ?>"
+                                    readonly>
+                                <div class="invalid-feedback">
+                                    Ingrese un correo válido.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="derecha">
+                            <div class="mb-3">
+                                <label for="validationCustom05" class="form-label">Correo:</label>
+                                <input type="email" name="correo" class="form-control bg-info" id="validationCustom05"
+                                    autocomplete="off" spellcheck="false" maxlength="50" value="<?php echo $pago['CORREO_DOC']; ?>"
                                     readonly>
                                 <div class="invalid-feedback">
                                     Ingrese un correo válido.

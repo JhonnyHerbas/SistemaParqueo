@@ -26,7 +26,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p>¡El sitio se guardo correctamente!</p>
+                    <p>¡Se guardo correctamente!</p>
                 </div>
                 <div class="modal-footer">
                     <a href="visualizarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-danger data-bs-dismiss="modal">Cerrar</button></a>

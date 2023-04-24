@@ -31,11 +31,11 @@ include('../models/funcionAdmin.php');
                 </h2>
             </div>
             <div class="card-body">
-            <form id="admin-form" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/editarContrasenaAction.php" method="post">
+            <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/editarContrasenaAction.php" method="post">
                             <!-- Input de la contraseña actual-->
                             <div class="mb-3">
-                                <label for="validationCustom06" class="form-label">Contraseña actual:</label>
-                                <input type="password" name="pass" class="form-control" id="validationCustom06"
+                                <label for="validationCustom07" class="form-label">Contraseña actual:</label>
+                                <input type="password" name="pass" class="form-control" id="validationCustom07"
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                                     placeholder="Ingrese su contraseña" required>
                                 <div class="invalid-feedback">
@@ -44,8 +44,8 @@ include('../models/funcionAdmin.php');
                             </div>
                             <!-- Input de la contraseña -->
                             <div class="mb-3">
-                                <label for="validationCustom06" class="form-label">Contraseña nueva:</label>
-                                <input type="password" name="passNuevo" class="form-control" id="validationCustom06"
+                                <label for="validationCustom07" class="form-label">Contraseña nueva:</label>
+                                <input type="password" name="passNuevo" class="form-control" id="validationCustom07"
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                                     placeholder="Ingrese su nueva contraseña" required>
                                 <div class="invalid-feedback">
@@ -54,8 +54,8 @@ include('../models/funcionAdmin.php');
                             </div>
                             <!-- Input de verificar contraseña -->
                             <div class="mb-3">
-                                <label for="validationCustom07" class="form-label">Verificar contraseña:</label>
-                                <input type="password" name="verPassNuevo" class="form-control" id="validationCustom07"
+                                <label for="validationCustom08" class="form-label">Verificar contraseña:</label>
+                                <input type="password" name="verPassNuevo" class="form-control" id="validationCustom08"
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                                     placeholder="Verifique su nueva contraseña" required>
                                 <div class="invalid-feedback">
@@ -65,6 +65,7 @@ include('../models/funcionAdmin.php');
                             <div> 
                                 <input type="hidden" value="<?php echo $docente['ID_DOC'];?>" name="id_doc" style="display: none;">
                              </div>
+                             
 
                     <?php
 
@@ -72,7 +73,7 @@ include('../models/funcionAdmin.php');
                     $danger = "Cancelar";
                     include ('templates/buttonsForms.php');
 
-                    $mensaje = "¿Está seguro de que desea registrar este docente?";
+                    $mensaje = "¿Está seguro de que desea cambiar la contraseña?";
                     include ('templates/modalForm.php');
 
                     include ('templates/finForm.php');
