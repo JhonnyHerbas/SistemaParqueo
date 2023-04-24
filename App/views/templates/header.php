@@ -36,11 +36,6 @@ if (isset($_SESSION['nombre'])) {
         $listaDocente = "<ul>
             <li>
                 <p>
-                    <a href='realizarSolicitud.php'>Solicitar sitio</a>
-                </p>
-            </li>
-            <li>
-                <p>
                     <a href='visualizarSitio.php'>Ver sitios</a>
                 </p>
             </li>
