@@ -22,7 +22,7 @@ function visualizar_sitios(){
 function insertar_solicitud($ID_DOC,$ID_SIT,$NOMBRE_SIT,$TITULO_SOL,$FECHA_SOL,$DESCRIPCION_SOL,$ESTADO_SOL){
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_SOLICITUD_INSERTAR(?,?,?,?,?,?,?)");
-    $stmt->bind_param("iissssi", $ID_DOC,$ID_SIT,$NOMBRE_SIT,$TITULO_SOL,$FECHA_SOL,$DESCRIPCION_SOL,$ESTADO_SOL);
+    $stmt->bind_param("iisssss", $ID_DOC,$ID_SIT,$NOMBRE_SIT,$TITULO_SOL,$FECHA_SOL,$DESCRIPCION_SOL,$ESTADO_SOL);
     if ($stmt->execute()) {
         $stmt->close();
         return true;
