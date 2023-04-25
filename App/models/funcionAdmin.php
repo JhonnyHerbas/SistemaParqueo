@@ -38,4 +38,36 @@ function visualizar_docente(){
         return null;
     }
 }
+
+function visualizar_datos_docente($ID_DOC) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_DOCENTE_VISTA_EDITAR("'.$ID_DOC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function editar_docente_contrasena($ID_DOC, $CONTRASENA_DOC) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_DOCENTE_CAMBIO_CONTRASENA(?,?)");
+    $stmt->bind_param("is",$ID_DOC, $CONTRASENA_DOC);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+function ver_contrasena($ID_DOC){
+    $conn = get_connection();
+    $query ='CALL DB_SP_DOCENTE_CONTRASENA("'.$ID_DOC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>
