@@ -32,6 +32,7 @@ include('templates/head.php');
             if($result){
                 while($row = $result->fetch_array(MYSQLI_BOTH)){
                     $collapse = "flush-collapse".$i;
+                    $modal_id = "exampleModal".$i;
                 ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -61,14 +62,29 @@ include('templates/head.php');
                                                     class="fa-solid fa-pencil blanco"></a>
                                             </div>
                                             <div class="function rojo">
-                                                <a href="eliminarCliente.php? id_doc=<?php echo $row['ID_DOC'] ?>" 
-                                                 class="fa-solid fa-trash blanco"></a>
+                                            <a href=""data-toggle="modal" data-target="#<?php echo $modal_id ?>" class="fa-solid fa-trash blanco"></a>
                                             </div>
                                     </div>
                                 </div>
                             
                         </div>
                     </div>
+                   <!-- Modal -->
+                <div class="container-modal">
+                <div class="modal fade" id="<?php echo $modal_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-body">
+                                ¿Está seguro de que desea guardar este horario?
+                            </div>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <?php
                 }    
             }
