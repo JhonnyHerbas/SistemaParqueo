@@ -3,21 +3,19 @@
 
 <?php
 
-if (session_status() != PHP_SESSION_NONE) {
-    if ($_SESSION['rol'] != "Administrador") {
-        header('Location: visualizarSitio.php');
-    }
-}
 $title = "Configurar horario";
 include('templates/head.php');
 include('../models/funcionConfiguracionHorario.php')
-    ?>
+?>
 
 <body>
     <!-- Include del header.php -->
     <?php
 
     include('templates/header.php');
+    if ($_SESSION['rol'] != "Administrador") {
+        header('Location: visualizarSitio.php');
+    }
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->

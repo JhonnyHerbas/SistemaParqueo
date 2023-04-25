@@ -3,11 +3,6 @@
 
 <?php
 
-if (session_status() != PHP_SESSION_NONE) {
-    if ($_SESSION['rol'] != "Administrador") {
-        header('Location: visualizarSitio.php');
-    }
-}
 $title = "Eliminar sitio";
 include('templates/head.php');
 ?>
@@ -17,6 +12,9 @@ include('templates/head.php');
     <?php
 
     include('templates/header.php');
+    if ($_SESSION['rol'] != "Administrador") {
+        header('Location: visualizarSitio.php');
+    }
     $id_sit = $_GET['id_sit'];
     ?>
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
