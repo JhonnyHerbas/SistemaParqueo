@@ -10,6 +10,7 @@ if (session_status() != PHP_SESSION_NONE) {
 }
 $title = "Solicitudes";
 include('templates/head.php');
+//include('../models/funcionSolicitud.php');
 
 ?>
 
