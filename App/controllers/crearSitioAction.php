@@ -32,7 +32,7 @@ if($existe){
                     <li><a href=''>Ver solicitudes</a></li>
                 </ul>";
 
-    include('../views/header.php');
+    include('../views/templates/header.php');
     ?>
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
 
