@@ -63,6 +63,7 @@ include('../models/funcionSitio.php')
                 </div> 
                 <div> 
                     <input type="hidden" value="<?php echo $sitio['ID_SIT'];?>" name="id_sit" style="display: none;">
+                    <input type="hidden" value="<?php echo $sitio['NOMBRE_SIT'];?>" name="name" style="display: none;">
                 </div>
                 <div class="col-12 button">
                     <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>

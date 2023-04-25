@@ -97,10 +97,8 @@ include('../models/funcionAdmin.php');
                                 </div>
                             </div>
                         </div>
-                        <div class="derecha">
-                            <div class="mb-3">
-                                <label for="validationCustom06" class="form-label">¿Quieres cambiar tu contraseña?</label>
-                            </div>
+                        <div> 
+                           <input type="hidden" value="<?php echo $docente['ID_DOC'];?>" name="id_doc" style="display: none;">
                         </div>
                     </div>
                     

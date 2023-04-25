@@ -97,11 +97,10 @@ include('../models/funcionAdmin.php');
                                 </div>
                             </div>
                         </div>
-                        <div class="derecha">
-                            <div class="mb-3">
-                            <a href="editarContrasena.php?id_doc=<?php echo $docente['ID_DOC'] ?>"><label class="form-label">¿Quieres cambiar tu contraseña?</label></a>
-                            </div>
-                        </div>
+                        
+                    </div>
+                    <div class="mb-3">
+                            <a href="editarContrasena.php?id_doc=<?php echo $docente['ID_DOC'] ?>"><label class="form-label" style="cursor: pointer;">¿Quieres cambiar tu contraseña?</label></a>
                     </div>
                     
                     <?php

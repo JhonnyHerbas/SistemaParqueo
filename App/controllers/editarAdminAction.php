@@ -59,7 +59,7 @@ if($existe){
     
     <?php
 }else{
-    editar_docente($_POST['codigo'], $_POST['codigo'], $_POST['nombre'], $_POST['apellido'],$_POST['celular'],$_POST['correo']);
+    editar_docente($_POST['id_doc'], $_POST['codigo'], $_POST['nombre'], $_POST['apellido'],$_POST['celular'],$_POST['correo']);
     header("Location: /SistemaParqueo/App/views/modalConf.php");
     exit();
 }
