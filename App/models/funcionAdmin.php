@@ -48,11 +48,23 @@ function visualizar_datos_docente($ID_DOC) {
         return null;
     }
 }
-
 function editar_docente_contrasena($ID_DOC, $CONTRASENA_DOC) {
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_DOCENTE_CAMBIO_CONTRASENA(?,?)");
     $stmt->bind_param("is",$ID_DOC, $CONTRASENA_DOC);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+
+function editar_docente($ID_DOC, $ID_DOC_NUE,$NOMBRE_DOC, $APELLIDO_DOC, $CELULAR_DOC, $CORREO_DOC) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_DOCENTE_ACTUALIZAR(?,?,?,?,?,?)");
+    $stmt->bind_param("iissis",$ID_DOC, $ID_DOC_NUE,$NOMBRE_DOC, $APELLIDO_DOC, $CELULAR_DOC, $CORREO_DOC);
     if ($stmt->execute()) {
         $stmt->close();
         return true;

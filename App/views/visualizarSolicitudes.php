@@ -3,11 +3,6 @@
 
 <?php
 
-if (session_status() != PHP_SESSION_NONE) {
-    if ($_SESSION['rol'] != "Administrador") {
-        header('Location: visualizarSitio.php');
-    }
-}
 $title = "Solicitudes";
 include('templates/head.php');
 
@@ -18,6 +13,9 @@ include('templates/head.php');
     <?php
 
     include('templates/header.php');
+    if ($_SESSION['rol'] != "Administrador") {
+        header('Location: visualizarSitio.php');
+    }
     include('../models/funcionSolicitud.php')
         ?>
 

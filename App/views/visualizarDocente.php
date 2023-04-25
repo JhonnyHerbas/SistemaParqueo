@@ -3,11 +3,6 @@
 
 <?php
 
-if (session_status() != PHP_SESSION_NONE) {
-    if ($_SESSION['rol'] != "Administrador") {
-        header('Location: visualizarSitio.php');
-    }
-}
 $title = "Ver sitios";
 include('templates/head.php');
 
@@ -18,6 +13,9 @@ include('templates/head.php');
     <?php
 
     include('templates/header.php');
+    if ($_SESSION['rol'] != "Administrador") {
+        header('Location: visualizarSitio.php');
+    }
     include('../models/funcionAdmin.php');
 
     ?>
@@ -65,7 +63,7 @@ include('templates/head.php');
                                     </div>
                                     <div class="acordion-btn w-50">
                                         <div class="function azul">
-                                            <a href="" target="_self" class="fa-solid fa-pencil blanco"></a>
+                                            <a href="editarDatosUser.php?id_doc=<?php echo $fila["ID_DOC"];?>" target="_self" class="fa-solid fa-pencil blanco"></a>
                                         </div>
                                         <div class="function rojo">
                                             <a href="" target="_self" class="fa-solid fa-trash blanco"></a>

@@ -3,11 +3,6 @@
 
 <?php
 
-if (session_status() != PHP_SESSION_NONE) {
-    if ($_SESSION['rol'] != "Administrador") {
-        header('Location: visualizarSitio.php');
-    }
-}
 $title = "Editar sección";
 include('templates/head.php');
 include('../models/funcionSeccion.php')
@@ -18,6 +13,9 @@ include('../models/funcionSeccion.php')
     <?php
 
     include('templates/header.php');
+    if ($_SESSION['rol'] != "Administrador") {
+        header('Location: visualizarSitio.php');
+    }
     //$id_s es la id dela seccion
     $id_sec = $_GET['id_sec'];
     $seccion = [];

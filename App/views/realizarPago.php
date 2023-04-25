@@ -3,11 +3,6 @@
 
 <?php
 
-if (session_status() != PHP_SESSION_NONE) {
-    if ($_SESSION['rol'] != "Administrador") {
-        header('Location: visualizarSitio.php');
-    }
-}
 $title = "Solicitudes";
 include('templates/head.php');
 ?>
@@ -17,16 +12,19 @@ include('templates/head.php');
     <?php
 
     include('templates/header.php');
+    if ($_SESSION['rol'] == "Administrador") {
+        header('Location: visualizarSitio.php');
+    }
     include('../models/funcionDocente.php');
-        ?>
+    ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
     <section class="container-form">
-        <?php 
+        <?php
         $cod = $_GET['id_sol'];
         $result = visualizar_pago_solicitado($cod);
         $pago = $result->fetch_array(MYSQLI_BOTH);
-        ?>    
+        ?>
         <div class="card form">
             <div class="card-header">
                 <h2 class="h2">Realizar pago</h2>
@@ -52,8 +50,8 @@ include('templates/head.php');
                         <div class="mb-3 inpu">
                             <label for="validationCustom03" class="form-label">Precio:</label>
                             <input type="text" name="precio" class="form-control bg-info" id="validationCustom03"
-                                pattern="^[0-9]{9}$" autocomplete="off" spellcheck="false" minlength="5"
-                                maxlength="30" value="<?php echo $pago['PRECIO_SIT']; ?>" readonly>
+                                pattern="^[0-9]{9}$" autocomplete="off" spellcheck="false" minlength="5" maxlength="30"
+                                value="<?php echo $pago['PRECIO_SIT']; ?>" readonly>
                             <div class="invalid-feedback">
                                 Ingrese un código válido.
                             </div>
@@ -74,8 +72,8 @@ include('templates/head.php');
                         <div class="mb-3 inpu">
                             <label for="validationCustom05" class="form-label">Correo:</label>
                             <input type="email" name="correo" class="form-control bg-info" id="validationCustom05"
-                                autocomplete="off" spellcheck="false" maxlength="50" value="<?php echo $pago['CORREO_DOC']; ?>"
-                                readonly>
+                                autocomplete="off" spellcheck="false" maxlength="50"
+                                value="<?php echo $pago['CORREO_DOC']; ?>" readonly>
                             <div class="invalid-feedback">
                                 Ingrese un correo válido.
                             </div>
@@ -86,8 +84,8 @@ include('templates/head.php');
                         <div class="mb-3">
                             <label for="validationCustom01" class="form-label">Código SIS:</label>
                             <input type="text" name="codigo" class="form-control bg-info" id="validationCustom01"
-                                autocomplete="off" spellcheck="false" maxlength="50" value="<?php echo $pago['ID_DOC']; ?>"
-                                readonly>
+                                autocomplete="off" spellcheck="false" maxlength="50"
+                                value="<?php echo $pago['ID_DOC']; ?>" readonly>
                             <div class="invalid-feedback">
                                 Ingrese un correo válido.
                             </div>
@@ -95,8 +93,8 @@ include('templates/head.php');
                         <div class="mb-3">
                             <label for="validationCustom01" class="form-label">Fecha fin</label>
                             <input type="text" name="fecha" class="form-control bg-info" id="validationCustom01"
-                                autocomplete="off" spellcheck="false" maxlength="50" value="<?php echo $_GET['fecha']; ?>"
-                                readonly>
+                                autocomplete="off" spellcheck="false" maxlength="50"
+                                value="<?php echo $_GET['fecha']; ?>" readonly>
                             <div class="invalid-feedback">
                                 Ingrese un correo válido.
                             </div>
@@ -131,7 +129,7 @@ include('templates/head.php');
             </div>
         </div>
     </section>
-        
+
     <!-- Include de los scripts.php -->
     <?php
 
