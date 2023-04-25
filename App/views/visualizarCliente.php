@@ -62,29 +62,35 @@ include('templates/head.php');
                                                     class="fa-solid fa-pencil blanco"></a>
                                             </div>
                                             <div class="function rojo">
-                                            <a href=""data-toggle="modal" data-target="#<?php echo $modal_id ?>" class="fa-solid fa-trash blanco"></a>
+                                            <a href=""data-toggle="modal" data-toggle="modal" data-target="#jha" class="fa-solid fa-trash blanco"></a>
                                             </div>
                                     </div>
                                 </div>
                             
                         </div>
+
+
+                        
+
                     </div>
                    <!-- Modal -->
                 <div class="container-modal">
-                <div class="modal fade" id="<?php echo $modal_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="jha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-body">
-                                ¿Está seguro de que desea guardar este horario?
+                                ¿Está seguro de eliminar este docente?
                             </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
-                                </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <a href="../controllers/eliminarClienteAction.php? id_do=<?php echo $row['ID_DOC']?>" rel="noopener noreferrer"><button id="confirmar-btn" type="summit" class="btn btn-success" data-bs-dismiss="modal">Confirmar</button></a>
+                                <a href="../views/visualizarCliente.php" rel="noopener noreferrer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button></a>
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                
                     <?php
                 }    
             }
@@ -98,7 +104,12 @@ include('templates/head.php');
     
     ?>
 <script>
-        
+    document.querySelectorAll('.function.rojo').forEach(item => {
+  item.addEventListener('click', event => {
+    event.preventDefault(); // previene el comportamiento predeterminado del enlace
+    $('#jha').modal('show'); // muestra el modal con el ID 'jha'
+  })
+})    
       
 </script>
 </body>
