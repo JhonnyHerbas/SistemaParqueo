@@ -41,5 +41,19 @@ function obtener_sitio_solicitado($ID_DOC){
     $sitio_solicitado = $row['NOMBRE_SIT'];
     return $sitio_solicitado;
 }
+function solicitud($ID_SOL,$ACCION){
+    $conn = get_connection();
+    if($ACCION=='aceptar'){
+        $result = mysqli_query($conn, "CALL DB_SP_SOLICITUD_ACEPTAR($ID_SOL)");
+    }else{
+        $result = mysqli_query($conn, "CALL DB_SP_SOLICITUD_RECHAZAR($ID_SOL)");
+    }
+   /* if (mysqli_num_rows($result) > 0) {
+        return $result;
+    } else {
+        return null;
+    }*/
+
+}
 
 ?>

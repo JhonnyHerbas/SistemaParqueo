@@ -5,6 +5,7 @@
 
 $title = "Solicitudes";
 include('templates/head.php');
+//include('../models/funcionSolicitud.php');
 
 ?>
 
