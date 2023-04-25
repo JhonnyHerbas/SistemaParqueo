@@ -69,6 +69,15 @@ function eliminar_sitio($ID_SIT) {
     mysqli_close($conn);
 }
 
+function inhabilitar_sitio($ID_SIT) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SITIO_INHABILITAR("'.$ID_SIT.'")';
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+}
+
 function buscar_sitioSP06($NOMBRE_SIT) {
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_SITIO_BUSCAR(?)");
