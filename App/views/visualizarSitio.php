@@ -121,7 +121,7 @@ include('templates/head.php');
                                                     <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
                                                 </div>
                                                 <div class="function rojo">
-                                                    <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
+                                                    <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT']. '" target="_self" class="fa-solid fa-trash blanco"></a>
                                                 </div>';
                                         }
                                         
