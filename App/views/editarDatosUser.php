@@ -11,13 +11,12 @@ include('../models/funcionAdmin.php')
 <body>
     <?php
 
-    $id_doc = $_GET['id_doc'];
-
-    if ($docente_id = visualizar_datos_docente($id_doc)) {
-        $docente = $docente_id->fetch_array(MYSQLI_BOTH);
-    }
     include('templates/header.php');
-    if ($_SESSION['rol'] == "Administrador") { ?>
+    if ($_SESSION['rol'] == "Administrador") { 
+        $id_doc = $_GET['id_doc'];
+        if ($docente_id = visualizar_datos_docente($id_doc)) {
+            $docente = $docente_id->fetch_array(MYSQLI_BOTH);
+        }?>
         <main>
             <div class="form-containerG">
                 <div class="header-containerG">
@@ -99,7 +98,12 @@ include('../models/funcionAdmin.php')
                         </div>
                         <input type="hidden" value="<?php echo $docente['ID_DOC']; ?>" name="id_doc" style="display: none;">
                         <!-- CUANDO NO SEA UN ADMINISTRADOR -->
-                    <?php } else { ?>
+                    <?php } else { 
+                                $id_doc = $_SESSION['codigo'];
+                                if ($docente_id = visualizar_datos_docente($id_doc)) {
+                                    $docente = $docente_id->fetch_array(MYSQLI_BOTH);
+                                }
+                    ?>
                         <main>
                             <div class="form-containerG">
                                 <div class="header-containerG">

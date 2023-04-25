@@ -1,10 +1,10 @@
 
-$(document).ready(function(){
+$(document).ready(function () {
     let select = document.getElementById("estado");
     let valorSeleccionado = select.value;
     let data = document.getElementById("data");
-    
-    function cargar_solicitudes(send_dato){
+
+    function cargar_solicitudes(send_dato) {
         $.ajax({
             type: "POST",
             url: "/SistemaParqueo/App/helpers/comboSolicitudes.php",
@@ -24,18 +24,18 @@ $(document).ready(function(){
                             </button>
                         </h2>
                         <div id="flush-collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                Titulo: ${solicitudes.TITULO_SOL} <br> 
-                                Nombre: ${solicitudes.NOMBRE_DOC} ${solicitudes.APELLIDO_DOC} <br> 
-                                Celular: ${solicitudes.CELULAR_DOC} <br> 
-                                Correo: ${solicitudes.CORREO_DOC} <br> 
-                                Estado: ${solicitudes.ESTADO_SOL} <br> 
-                                Descripción: ${solicitudes.DESCRIPCION_SOL ? solicitudes.DESCRIPCION_SOL : ''} <br> 
-                                Numero de sitio: #${solicitudes.SITIO_SOL} <br>
-                                Fecha solicitud: ${solicitudes.FECHA_SOL}
-                            </div> 
-
-                            <div class="acordion-btn w-50">    
+                            <div class="accordion-body body-sitio">
+                                <div class="acordion-text w-50">
+                                    Titulo: ${solicitudes.TITULO_SOL} <br> 
+                                    Nombre: ${solicitudes.NOMBRE_DOC} ${solicitudes.APELLIDO_DOC} <br> 
+                                    Celular: ${solicitudes.CELULAR_DOC} <br> 
+                                    Correo: ${solicitudes.CORREO_DOC} <br> 
+                                    Estado: ${solicitudes.ESTADO_SOL} <br> 
+                                    Descripción: ${solicitudes.DESCRIPCION_SOL ? solicitudes.DESCRIPCION_SOL : ''} <br> 
+                                    Numero de sitio: #${solicitudes.SITIO_SOL} <br>
+                                    Fecha solicitud: ${solicitudes.FECHA_SOL}
+                                </div>
+                                    <div class="acordion-btn w-50">    
                                     <div class="function verde">
                                         <a href="../controllers/aceptarSolicitudAction.php?nombre=${solicitudes.NOMBRE_DOC}&apellido=${solicitudes.APELLIDO_DOC}&id=${solicitudes.ID_SOL}&sitio=${solicitudes.SITIO_SOL}&correo=${solicitudes.CORREO_DOC}&accion=aceptar" class="fa-solid fa-square-check blanco"></a>
                                     </div>
@@ -43,12 +43,8 @@ $(document).ready(function(){
                                         <a href="../controllers/aceptarSolicitudAction.php?nombre=${solicitudes.NOMBRE_DOC}&apellido=${solicitudes.APELLIDO_DOC}&sitio=${solicitudes.SITIO_SOL}&correo=${solicitudes.CORREO_DOC}&accion=rechazar" target="_self" class="fa-solid fa-square-xmark blanco"></a>
                                     </div>
                                 </div>
-
+                            </div>
                         </div>
-                         
-                        
-                        
-
                     </div>            
                     `;
                     i++;
@@ -59,16 +55,16 @@ $(document).ready(function(){
     }
 
     let send_dato = {
-        'ESTADO' : valorSeleccionado
+        'ESTADO': valorSeleccionado
     };
-      
+
     cargar_solicitudes(send_dato);
-      
-      select.addEventListener('change', function() {
+
+    select.addEventListener('change', function () {
         send_dato = {
-          'ESTADO': select.value
+            'ESTADO': select.value
         };
         cargar_solicitudes(send_dato);
-      });
-      
+    });
+
 })

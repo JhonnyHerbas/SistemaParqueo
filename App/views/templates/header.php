@@ -36,7 +36,7 @@ if (isset($_SESSION['nombre'])) {
         $listaDocente = "<ul>
             <li>
                 <p>
-                    <a href='editarDatosUser.php?id_doc=" . $_SESSION['codigo'] . "'>Editar datos</a>
+                    <a href='editarDatosUser.php'>Editar datos</a>
                 </p>
             </li>
             <li>
