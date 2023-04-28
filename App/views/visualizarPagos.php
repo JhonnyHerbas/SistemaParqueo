@@ -12,7 +12,7 @@ include('templates/head.php');
     <?php
 
     include('templates/header.php');
-    if ($_SESSION['rol'] != "Administrador") {
+    if ($_SESSION['rol'] == "Administrador") {
         header('Location: visualizarSitio.php');
     }
     include('../models/funcionDocente.php');
