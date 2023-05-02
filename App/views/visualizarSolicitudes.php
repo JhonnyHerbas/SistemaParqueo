@@ -37,7 +37,7 @@ include('templates/head.php');
         <div class="data" id="data">
 
         </div>
-        
+    </div>
 
         <!-- Include de los scripts.php -->
         <?php

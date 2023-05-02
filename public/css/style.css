@@ -43,8 +43,8 @@ header {
     justify-content: space-between;
     z-index: 1000;
     flex-flow: column nowrap;
-    padding: 8rem 2rem;
-    width: 25rem;
+    padding: 3rem 2rem;
+    width: 20rem;
     text-align: center;
     overflow: auto;
 }
@@ -65,13 +65,12 @@ ul {
 header .navbar a {
     display: block;
     color: #ffffff;
-    margin: 3rem 0;
+    margin: 0.5rem 0;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 header .navbar a:hover {
-    letter-spacing: .2rem;
     color: #00cfff;
 }
 
@@ -85,7 +84,9 @@ header .redes_sociales a {
     margin: 0.7rem;
     text-decoration: none;
 }
-
+.info{
+    text-align: center;
+}
 #menu-bars {
     position: fixed;
     top: 1rem;
@@ -201,6 +202,21 @@ header .redes_sociales a {
     background: #00cfff;
     border-radius: 50px;
 }
+.reporte{
+    margin-left: 5% !important;
+    width: 90% !important;
+    height: 80vh !important;
+    overflow: auto !important;
+}
+
+.reporte::-webkit-scrollbar {
+    width: 10px;
+}
+
+.reporte::-webkit-scrollbar-thumb {
+    background: #ffff;
+    border-radius: 50px;
+}
 
 .body-sitio {
     display: flex;
@@ -236,7 +252,6 @@ header .redes_sociales a {
     color: #FFFFFF;
     border-radius: 0.5vh;
 }
-
 /*realizar solicitud*/
 .container-form {
     margin: 10% 25%;
@@ -606,7 +621,13 @@ form label:not(:first-child) {
     header.active {
         left: 0%;
     }
-
+    header .navbar a {
+        display: block;
+        color: #ffffff;
+        margin: 2rem 0;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
     .container-form {
         margin: 20% 2%;
         border: none;

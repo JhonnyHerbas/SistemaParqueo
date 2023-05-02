@@ -15,14 +15,14 @@ if (isset($_SESSION['nombre'])) {
         <a href="/SistemaParqueo/App/views/visualizarSitio.php" class="logo">
             <img src="/SistemaParqueo/public/img/FCYT.png" alt="logo" class="logo">
         </a>
-        <h2>Sistema de parqueo FCYT</h2>
+        <h4>Sistema de parqueo FCYT</h4>
     </div>
     <div class="line"></div>
 
     <div class="container-user">
         <img src="/SistemaParqueo/public/img/Usuario.png" alt="usuario" class="logo">
         <div class="info-user">
-            <h3 class="info">
+            <h4 class="info">
                 <?php echo $user; ?>
             </h3>
             <h5 class="info">
@@ -62,13 +62,27 @@ if (isset($_SESSION['nombre'])) {
         $listaAdmin = "
         <ul>
             <li>
+                <p>
+                    <a class='btn' data-bs-toggle='collapse' href='#collapse-docente' role='button'
+                        aria-expanded='false' aria-controls='collapse-sitio'>
+                        Reportes
+                    </a>
+                </p>
+                <div class='collapse' id='collapse-docente'>
+                    <ul>
+                        <li><a href='reporteMensual.php'>Reporte mensual</a></li>
+                        <li><a href='reporteSemanal.php'>Reporte semanal</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
             <p>
-                <a class='btn' data-bs-toggle='collapse' href='#collapse-sitio' role='button'
+                <a class='btn' data-bs-toggle='collapse' href='#collapse-docente' role='button'
                     aria-expanded='false' aria-controls='collapse-sitio'>
                     Docentes
                 </a>
             </p>
-                <div class='collapse' id='collapse-sitio'>
+                <div class='collapse' id='collapse-docente'>
                     <ul>
                         <li><a href='visualizarDocente.php'>Ver docentes</a></li>
                         <li><a href='registrarCliente.php'>Registrar docente</a></li>

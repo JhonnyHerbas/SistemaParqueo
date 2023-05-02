@@ -82,4 +82,23 @@ function ver_contrasena($ID_DOC){
         return null;
     }
 }
+
+function obtener_reporte_mensual_pdf($mes,$anio){
+    $conn = get_connection();
+    $query ='CALL DB_SP_REPORTE_MENSUAL_PDF("'.$mes.'","'.$anio.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+function obtener_reporte_semanal_pdf($semana,$anio){
+    $conn = get_connection();
+    $query ='CALL DB_SP_REPORTE_SEMANAL_PDF("'.$semana.'","'.$anio.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>
