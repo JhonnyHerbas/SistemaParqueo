@@ -72,7 +72,7 @@ include('../models/funcionAdmin.php')
                             <div class="derecha">
                                 <div class="mb-3">
                                     <label for="validationCustom05" class="form-label">Celular:</label>
-                                    <input type="text" name="celular" class="form-control" id="validationCustom05"
+                                    <input type="text" name="celular" class="form-control bg-info" id="validationCustom05"
                                         pattern="^[0-9]{8}$" autocomplete="off" spellcheck="false" minlength="5"
                                         maxlength="30" placeholder="Ingrese su numero" readonly
                                         value="<?php echo $docente["CELULAR_DOC"]; ?>">
@@ -87,7 +87,7 @@ include('../models/funcionAdmin.php')
                                 <!-- Input del nombre -->
                                 <div class="mb-3">
                                     <label for="validationCustom06" class="form-label">Correo:</label>
-                                    <input type="email" name="correo" class="form-control" id="validationCustom06"
+                                    <input type="email" name="correo" class="form-control bg-info" id="validationCustom06"
                                         autocomplete="off" spellcheck="false" maxlength="50" placeholder="Ingrese su correo"
                                         readonly value="<?php echo $docente["CORREO_DOC"]; ?>">
                                     <div class="invalid-feedback">
@@ -120,7 +120,7 @@ include('../models/funcionAdmin.php')
                                                 <!-- Input del nombre -->
                                                 <div class="mb-3">
                                                     <label for="validationCustom01" class="form-label">Nombre:</label>
-                                                    <input type="text" name="nombre" class="form-control"
+                                                    <input type="text" name="nombre" class="form-control bg-info"
                                                         id="validationCustom01" pattern="[a-zA-Z\s]{3,30}"
                                                         autocomplete="off" spellcheck="false"
                                                         placeholder="Ingrese su nombre" readonly
@@ -133,7 +133,7 @@ include('../models/funcionAdmin.php')
                                             <div class="derecha">
                                                 <div class="mb-3">
                                                     <label for="validationCustom02" class="form-label">Apellido/s:</label>
-                                                    <input type="text" name="apellido" class="form-control"
+                                                    <input type="text" name="apellido" class="form-control bg-info"
                                                         id="validationCustom02" pattern="[a-zA-Z\s]{3,90}"
                                                         autocomplete="off" spellcheck="false" minlength="5" maxlength="30"
                                                         placeholder="Ingrese su apellido" readonly
@@ -149,7 +149,7 @@ include('../models/funcionAdmin.php')
                                                 <!-- Input del codigoSis -->
                                                 <div class="mb-3">
                                                     <label for="validationCustom03" class="form-label">Código SIS:</label>
-                                                    <input type="text" name="codigo" class="form-control"
+                                                    <input type="text" name="codigo" class="form-control bg-info"
                                                         id="validationCustom03" pattern="^[0-9]{9}$" autocomplete="off"
                                                         spellcheck="false" minlength="5" maxlength="30"
                                                         placeholder="Ingrese su código" readonly
