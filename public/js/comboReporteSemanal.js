@@ -5,7 +5,7 @@ $(document).ready(function () {
     function cargar_reportes(send_dato) {
         $.ajax({
             type: "POST",
-            url: "/SistemaParqueo/App/helpers/comboSemanal.php",
+            url: "/SistemaParqueo/App/helpers/comboReporteSemanal.php",
             data: send_dato,
             success: function (response) {
                 const reportes = JSON.parse(response)
@@ -18,7 +18,7 @@ $(document).ready(function () {
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                ${reportes.MES}
+                                ${reportes.SEMANA}
                             </button>
                         </h2>
                         <div id="flush-collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -30,7 +30,7 @@ $(document).ready(function () {
                                 </div>
                                 <div class="acordion-btn w-50">    
                                     <div class="function verde">
-                                        <a href="../controllers/reporteMensualAction.php?anio=${reportes.ANIO}&mes=${reportes.NUM_MES}&mes_text=${reportes.MES}" class="fa-solid fa-print blanco" target="_blank"></a>
+                                        <a href="../controllers/reporteSemanalAction.php?anio=${reportes.ANIO}&mes=${reportes.NUM_MES}&mes_text=${reportes.MES}" class="fa-solid fa-print blanco" target="_blank"></a>
                                     </div>        
                                 </div>
                             </div>
