@@ -10,9 +10,10 @@
 
     $pdf = new PDF();
     $pdf->mes = $mes;
+
     $pdf->AddPage();        
     
-    if($reportes = obtener_reporte_semanal_pdf($mes,$anio)) {
+    if($reportes = obtener_reporte_semanal_pdf($semana,$anio)) {
         $pdf->SetFont('Arial','B',10); // Establecemos la fuente en negrita
         $pdf->Cell(10,10,utf8_decode('N°'),1,0,'C');
         $pdf->Cell(20,10,'Sitio',1,0,'C');
@@ -41,7 +42,7 @@
         $fecha_actual = new DateTime(date('Y-m-d'));
 
         $interval = $fecha->diff($fecha_actual);
-        $meses = $interval->format('%m');
+        $meses = $interval->format('%s');
 
         $resta = $meses - $can;
         if($resta>0){
