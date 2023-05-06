@@ -5,7 +5,7 @@
     /*Obtenemos el anio y mes del metodo GET */
     $anio = $_GET['anio'];
     $sem = $_GET['semana']+1;
-    $mes = strtolower($_GET['mes'] . ' semana ' .$sem);
+    // $mes = strtolower($_GET['mes'] . ' semana ' .$sem);
     $semana = $GET['semana'];
 
     $pdf = new PDF();
