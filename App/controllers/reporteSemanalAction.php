@@ -4,11 +4,12 @@
 
     /*Obtenemos el anio y mes del metodo GET */
     $anio = $_GET['anio'];
-    $mes = $_GET['mes'];
-    $mes_text = strtolower( $_GET['mes_text']);
+    $sem = $_GET['semana']+1;
+    $mes = strtolower($_GET['mes'] . ' semana ' .$sem);
+    $semana = $GET['semana'];
 
     $pdf = new PDF();
-    $pdf->mes = $mes_text;
+    $pdf->mes = $mes;
     $pdf->AddPage();        
     
     if($reportes = obtener_reporte_semanal_pdf($mes,$anio)) {
