@@ -18,7 +18,7 @@ function visualizar_reporte($anio){
 			'TOTAL_FACTURA' => $row['TOTAL_FACTURA'],
 			'TOTAL_SITIOS' => $row['TOTAL_SITIOS'],
 			'NUEVOS_SITIOS' => $row['NUEVOS_SITIOS'],
-            'MES' => $row['MES'],
+           
 		);
 	}
 	$jsonString = json_encode($json);
