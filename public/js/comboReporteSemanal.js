@@ -3,6 +3,7 @@ $(document).ready(function () {
     let valorSeleccionado = select.value;
     let data = document.getElementById("data");
     function cargar_reportes(send_dato) {
+       
         $.ajax({
             type: "POST",
             url: "/SistemaParqueo/App/helpers/comboReporteSemanal.php",
@@ -11,6 +12,7 @@ $(document).ready(function () {
                 const reportes = JSON.parse(response)
                 let templete = ``;
                 let i = 1;
+                let j= 1;
                 console.log(reportes)
                 reportes.forEach(reportes => {
                     templete += `
@@ -18,7 +20,8 @@ $(document).ready(function () {
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                ${reportes.SEMANA}
+                             
+                                ${reportes.SEMANA} 
                             </button>
                         </h2>
                         <div id="flush-collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -37,13 +40,16 @@ $(document).ready(function () {
                         </div>
                     </div>            
                     `;
+                    
                     i++;
+                    
                 });
                 data.innerHTML = templete;
             }
         });
+        semanaAnterior = reportes.semana;
     }
-
+    let semanaAnterior = null;
     let send_dato = {
         'ANIO': valorSeleccionado
     };

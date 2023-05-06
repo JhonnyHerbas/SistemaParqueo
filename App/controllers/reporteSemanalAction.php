@@ -6,7 +6,7 @@
     $anio = $_GET['anio'];
     $sem = $_GET['semana'];
     
-    $mes = strtolower($_GET['semana_text'] . ' semana ' .$sem);
+    $mes = strtolower($_GET['semana_text']  );
     $semana = $_GET['semana'];
 
     $pdf = new PDF();
