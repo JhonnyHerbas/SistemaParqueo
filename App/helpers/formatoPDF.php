@@ -11,7 +11,7 @@ class PDF extends FPDF
         $this->Image('../../public/img/FCYT.png',20,20,20,20);
         $this->SetFont('Arial','B',15);
         $this->Cell(30);
-        $this->MultiCell(160,7,trim(utf8_decode("Informe del mes de ".$this->mes."de la semana"."\nParqueo de la Facultad de Ciencias y Tecnología\nUniversidad Mayor de San Simón")),0,'C');
+        $this->MultiCell(160,7,trim(utf8_decode("Informe del mes de ".$this->mes."\nParqueo de la Facultad de Ciencias y Tecnología\nUniversidad Mayor de San Simón")),0,'C');
         $this->Ln(5);
     }
 
