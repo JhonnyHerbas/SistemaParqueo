@@ -1,6 +1,5 @@
 $(document).ready(function () {
     let select = document.getElementById("fecha");
-    let valorSeleccionado = select.value;
     let data = document.getElementById("data");
 
     function cargar_reportes(send_dato) {
@@ -29,8 +28,8 @@ $(document).ready(function () {
                         <div id="flush-collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body body-sitio">
                                 <div class="acordion-text w-50">
-                                    Entrada: ${reporte.FECHA_INGRESO_ACT} <br> 
-                                    Salida: ${reporte.FECHA_SALIDA_ACT}<br> 
+                                    Hora de Entrada: ${reporte.FECHA_INGRESO_ACT} <br> 
+                                    Hora de Salida: ${reporte.FECHA_SALIDA_ACT}<br> 
                                     Tiempo Transcurrido: ${reporte.TIEMPO_TRANSCURRIDO}<br>
                                 </div>
                             </div>
@@ -50,7 +49,8 @@ $(document).ready(function () {
 
     cargar_reportes(send_dato);
 
-    document.getElementById("buscar").addEventListener('click', function () {
+    document.getElementById("buscar").addEventListener('click', function (event) {
+        event.preventDefault(); // Evita la recarga de la página
         send_dato = {
             'fecha': select.value
         };
