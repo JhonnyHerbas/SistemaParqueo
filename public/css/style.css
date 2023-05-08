@@ -549,7 +549,9 @@ input[type="number"]::-webkit-inner-spin-button {
     flex-direction: column;
     font-size: 2vh;
 }
-
+.solicitud-header h2{
+    font-weight: bold;
+}
 form label:not(:first-child) {
     margin-top: 5vh;
 }

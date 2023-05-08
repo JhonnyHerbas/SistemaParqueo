@@ -24,7 +24,7 @@
             $pdf->SetFont('Arial','',10);
             $pdf->Cell(10, 10, $i, 1,0,'C');
             $pdf->Cell(20, 10, $reporte['NOMBRE_SIT'], 1,0,'C');
-            $pdf->Cell(60, 10, $reporte['NOMBRE_DOC'] .$reporte['APELLIDO_DOC'], 1,0,'C');
+            $pdf->Cell(60, 10, $reporte['NOMBRE_DOC'] .' '.$reporte['APELLIDO_DOC'], 1,0,'C');
             $pdf->Cell(40, 10, $reporte['FECHA_ASI'], 1,0,'C');
             $pdf->Cell(30, 10, $reporte['TOTAL_MONTO']. ' PARCK', 1,0,'C');
             $deuda = obtener_deudas($reporte['FECHA_ASI'],$reporte['NUM_FACTURAS']);
