@@ -3,7 +3,7 @@ include '../config/conexion.php';
 
 function visualizar_solicitud(){
     $conn = get_connection();
-    $query = 'SELECT * FROM db_view_solicitud_vista';
+    $query = 'SELECT * FROM DB_VIEW_SOLICITUD_VISTA';
     if ($result = $conn->query($query)) {
         return $result;
     } else {
@@ -12,7 +12,7 @@ function visualizar_solicitud(){
 }
 function visualizar_sitios(){
     $conn = get_connection();
-    $query = 'SELECT * FROM db_view_sitio_disponible';
+    $query = 'SELECT * FROM DB_VIEW_SITIO_DISPONIBLE';
     if ($result = $conn->query($query)) {
         return $result;
     } else {

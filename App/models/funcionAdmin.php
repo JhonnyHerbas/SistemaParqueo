@@ -30,7 +30,7 @@ function insertar_docente ($codigo, $nombre, $apellido, $celular, $correo, $pass
 
 function visualizar_docente(){
     $conn = get_connection();
-    $query = 'SELECT * FROM db_view_docente_vista';
+    $query = 'SELECT * FROM DB_VIEW_DOCENTE_VISTA';
 
     if ($result = $conn->query($query)) {
         return $result;

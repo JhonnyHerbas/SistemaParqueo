@@ -17,7 +17,7 @@ function insertar_seccion($ID_ADM,$NOMBRE_SEC,$DESCRIPCION_SEC,$PARQUEO,$CANTIDA
 
 function visualizar_seccion() {
     $conn = get_connection();
-    $query = 'SELECT * FROM db_view_seccion_vista';
+    $query = 'SELECT * FROM DB_VIEW_SECCION_VISTA';
     if ($result = $conn->query($query)) {
         return $result;
     } else {

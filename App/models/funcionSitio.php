@@ -4,7 +4,7 @@ require_once('../config/conexion.php');
 
 function visualizar_sitio() {
     $conn = get_connection();
-    $query = 'SELECT * FROM db_view_sitio_vista';
+    $query = 'SELECT * FROM DB_VIEW_SITIO_VISTA';
 
     if ($result = $conn->query($query)) {
         return $result;
