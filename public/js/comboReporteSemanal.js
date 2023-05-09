@@ -47,7 +47,7 @@ $(document).ready(function () {
                 data.innerHTML = templete;
             }
         });
-        semanaAnterior = reportes.semana;
+        //semanaAnterior = reportes.semana;
     }
     let semanaAnterior = null;
     let send_dato = {
