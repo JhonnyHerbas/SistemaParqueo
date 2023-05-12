@@ -7,7 +7,7 @@ $(document).ready(function () {
         console.log("Contenido de send_dato:", send_dato);
         $.ajax({
             type: "POST",
-            url: "/SistemaParqueo/App/helpers/comboEstadiaCliente.php",
+            url: "../../App/helpers/comboEstadiaCliente.php",
             data: send_dato,
             success: function (response) {
                 const reportes = JSON.parse(response);

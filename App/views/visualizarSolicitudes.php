@@ -45,7 +45,7 @@ include('templates/head.php');
         include('templates/scripts.php');
 
         ?>
-    <script src="/SistemaParqueo/public/js/comboEstadoSolicitud.js"></script>
+    <script src="../../public/js/comboEstadoSolicitud.js"></script>
 </body>
 
 </html>

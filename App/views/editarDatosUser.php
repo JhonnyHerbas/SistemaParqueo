@@ -214,7 +214,7 @@ include('../models/funcionAdmin.php')
 include('templates/scripts.php');
 
 ?>
-<script src="/SistemaParqueo/public/js/validacion.js"></script>
+<script src="../../public/js/validacion.js"></script>
 </body>
 
 </html>

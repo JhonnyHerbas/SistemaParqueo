@@ -11,7 +11,7 @@ $('#seccion').on('change', function () {
 
     // Realizar solicitud AJAX a la página PHP que maneja la consulta SQL de verSitios.php
     $.ajax({
-        url: '/SistemaParqueo/App/helpers/verSitios.php',
+        url: '../../App/helpers/verSitios.php',
         type: 'POST',
         data: { seccion: seccion },
         success: function (data) {
@@ -26,7 +26,7 @@ $('#seccion').on('change', function () {
 
     // Realizar solicitud AJAX a la página PHP que maneja la consulta SQL de obtenerDescripcion.php
     $.ajax({
-        url: '/SistemaParqueo/App/models/obtenerDescripcion.php',
+        url: '../../App/models/obtenerDescripcion.php',
         type: 'POST',
         data: { seccion: seccion },
         success: function (data) {

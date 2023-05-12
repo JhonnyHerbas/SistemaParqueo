@@ -26,7 +26,7 @@ include('../models/funcionSeccion.php')
             </div>
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
-                    action="/SistemaParqueo/App/controllers/crearSeccionAction.php" method="post">
+                    action="../controllers/crearSeccionAction.php" method="post">
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label">Nombre de sección:</label>
                         <input type="text" name="nombre-seccion" class="form-control" id="validationCustom01"
@@ -106,7 +106,7 @@ include('../models/funcionSeccion.php')
     ?>
 
 
-    <script src="/SistemaParqueo/public/js/validacion.js"></script>
+    <script src="../../public/js/validacion.js"></script>
 </body>
 
 </html>

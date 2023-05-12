@@ -7,7 +7,7 @@ $(document).ready(function () {
     function cargar_solicitudes(send_dato) {
         $.ajax({
             type: "POST",
-            url: "/SistemaParqueo/App/helpers/comboSolicitudes.php",
+            url: "/App/helpers/comboSolicitudes.php",
             data: send_dato,
             success: function (response) {
                 const solicitudes = JSON.parse(response)

@@ -30,7 +30,7 @@ include('../models/funcionSolicitud.php');
             </div>
             <div class="card-body grande">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
-                    action="/SistemaParqueo/App/controllers/registrarDocenteAction.php" method="post">
+                    action="../controllers/registrarDocenteAction.php" method="post">
 
                     <div class="columnas">
                         <div class="izquierda">
@@ -140,7 +140,7 @@ include('../models/funcionSolicitud.php');
     include('templates/scripts.php');
 
     ?>
-    <script src="/SistemaParqueo/public/js/validacion.js"></script>
+    <script src="../../public/js/validacion.js"></script>
 </body>
 
 </html>

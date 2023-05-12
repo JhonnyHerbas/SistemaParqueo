@@ -48,7 +48,7 @@ $mail= new PHPMailer(true);
         
         solicitud($id_sol,$accion);
         //echo $correo;
-        header("Location: /SistemaParqueo/App/views/modalSolicitud.php?accion=aceptar");
+        header("Location: ../views/modalSolicitud.php?accion=aceptar");
     } catch (Exception $e) {
         echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
     }
@@ -61,7 +61,7 @@ $mail= new PHPMailer(true);
         // Envía el correo electrónico y muestra un mensaje
         $mail->send();
         solicitud($id_sol,$accion);
-        header("Location: /SistemaParqueo/App/views/modalSolicitud.php?accion=rechazar");
+        header("Location: ../views/modalSolicitud.php?accion=rechazar");
        // echo 'El correo electrónico se ha enviado correctamente.';
     } catch (Exception $e) {
         echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;

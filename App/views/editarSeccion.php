@@ -33,7 +33,7 @@ include('../models/funcionSeccion.php')
             </div>
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
-                    action="/SistemaParqueo/App/controllers/actualizarSeccionAction.php" method="post">
+                    action="../controllers/actualizarSeccionAction.php" method="post">
                     <div>
                         <input type="hidden" value="<?php echo $seccion['ID_ADM']; ?>" name="id-adm"
                             style="display: none;">
@@ -100,7 +100,7 @@ include('../models/funcionSeccion.php')
     ?>
 
 
-    <script src="/SistemaParqueo/public/js/validacion.js"></script>
+    <script src="../../public/js/validacion.js"></script>
 </body>
 
 </html>

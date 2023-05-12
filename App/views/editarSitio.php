@@ -31,7 +31,7 @@ include('../models/funcionSitio.php')
             <h2 class="h2">Editar sitio</h2>
         </div>
         <div class="card-body">
-            <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/editarSitioAction.php" method="post">
+            <form id="myForm" class="row g-3 needs-validation" novalidate action="../controllers/editarSitioAction.php" method="post">
                 <div class="mb-3">
                     <label for="validationCustom02" class="form-label">Sección:</label>
                     <select class="form-select bg-info" name="seccion" id="validationCustom04" required>

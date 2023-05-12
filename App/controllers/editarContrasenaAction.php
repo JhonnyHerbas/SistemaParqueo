@@ -16,7 +16,7 @@ if ($result) {
         if ($contrasenia == $verContrasenia) {
             $hashNuevo = md5($contrasenia);
            editar_docente_contrasena($_POST['id_doc'], $hashNuevo);
-           header("Location: /SistemaParqueo/App/views/editarDatosUser.php");
+           header("Location: ../views/editarDatosUser.php");
            exit();
         }
     } else {

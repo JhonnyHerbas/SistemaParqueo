@@ -32,7 +32,7 @@ include('../models/funcionAdmin.php');
                 </h2>
             </div>
             <div class="card-body">
-            <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/editarContrasenaAction.php" method="post">
+            <form id="myForm" class="row g-3 needs-validation" novalidate action="../controllers/editarContrasenaAction.php" method="post">
                             <!-- Input de la contraseña actual-->
                             <div class="mb-3">
                                 <label for="validationCustom07" class="form-label">Contraseña actual:</label>

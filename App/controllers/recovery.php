@@ -37,7 +37,7 @@ if ($result) {
             $mail->isHTML(true);
             $mail->Subject = 'Recupera tu contraseña';
             $mail->Body = 'Hola, este es un correo generado para solicitar la recuperación de contraseña, Por favor <br>
-            <a href="localhost/SistemaParqueo/App/views/nuevaContrasena.php?id=' . $result['id'] . '">Ingrese para recuperar su contraseña</a> <br>
+            <a href="http://exodusdevelopme.tis.cs.umss.edu.bo/App/views/nuevaContrasena.php?id=' . $result['id'] . '">Ingrese para recuperar su contraseña</a> <br>
             Su numero de codigo de seguridad es: ' . $token;
 
             $mail->send();

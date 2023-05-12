@@ -36,7 +36,7 @@ include('../models/funcionSitio.php');
             </div>
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
-                    action="/SistemaParqueo/App/controllers/realizarSolcitudAction.php" method="post">
+                    action="../controllers/realizarSolcitudAction.php" method="post">
                     <div>
                         <input type="hidden" value="<?php echo $cod; ?>" name="id_doc"
                             style="display: none;">
@@ -124,7 +124,7 @@ include('../models/funcionSitio.php');
     ?>
 
 
-    <script src="/SistemaParqueo/public/js/validacion.js"></script>
+    <script src="../../public/js/validacion.js"></script>
 </body>
 
 </html>

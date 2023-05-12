@@ -12,15 +12,15 @@ if (isset($_SESSION['nombre'])) {
 <div id="menu-bars" class="fas fa-bars"></div>
 <header>
     <div class="container-logo">
-        <a href="/SistemaParqueo/App/views/visualizarSitio.php" class="logo">
-            <img src="/SistemaParqueo/public/img/FCYT.png" alt="logo" class="logo">
+        <a href="visualizarSitio.php" class="logo">
+            <img src="../../public/img/FCYT.png" alt="logo" class="logo">
         </a>
         <h4>Sistema de parqueo FCYT</h4>
     </div>
     <div class="line"></div>
 
     <div class="container-user">
-        <img src="/SistemaParqueo/public/img/Usuario.png" alt="usuario" class="logo">
+        <img src="../../public/img/Usuario.png" alt="usuario" class="logo">
         <div class="info-user">
             <h4 class="info">
                 <?php echo $user; ?>

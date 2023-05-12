@@ -26,7 +26,7 @@ include('../models/funcionConfiguracionHorario.php')
             <h2 class="h2">Registrar nuevo horario</h2>
         </div>
         <div class="card-body">
-            <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/configuracionHorarioAction.php" method="post" novalidate>
+            <form id="myForm" class="row g-3 needs-validation" novalidate action="../controllers/configuracionHorarioAction.php" method="post" novalidate>
                 <div class="mb-3">
                     <label for="validationCustom01" class="form-label">Horario de apertura:</label>
                     <input type="text" name="hora-apertura" class="form-control" id="validationCustom01" pattern="^(0[6-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
@@ -137,6 +137,6 @@ include('../models/funcionConfiguracionHorario.php')
 
 
    
-<script src="/SistemaParqueo/public/js/validacion.js"></script>
+<script src="../../public/js/validacion.js"></script>
 </body>
 </html>

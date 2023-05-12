@@ -56,7 +56,7 @@ include('templates/header.php');
         include('templates/scripts.php');
 
         ?>
-    <script src="/SistemaParqueo/public/js/comboReporteMensual.js"></script>
+    <script src="../../public/js/comboReporteMensual.js"></script>
 </body>
 
 </html>

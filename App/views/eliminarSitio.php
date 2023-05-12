@@ -18,7 +18,7 @@ include('templates/head.php');
     $id_sit = $_GET['id_sit'];
     ?>
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
-    <form action="/SistemaParqueo/App/controllers/eliminarSitioAction.php" method="post">
+    <form action="../controllers/eliminarSitioAction.php" method="post">
     <div class="modal error" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">

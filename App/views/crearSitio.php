@@ -25,7 +25,7 @@ include('../models/funcionSeccion.php');
             <h2 class="h2">Crear sitio</h2>
         </div>
         <div class="card-body">
-            <form id="myForm" class="row g-3 needs-validation" novalidate action="/SistemaParqueo/App/controllers/crearSitioAction.php" method="post">
+            <form id="myForm" class="row g-3 needs-validation" novalidate action="../controllers/crearSitioAction.php" method="post">
                 <div class="mb-3">
                     <label for="validationCustom01" class="form-label">Nombre del sitio:</label>
                     <input type="text" name="name" class="form-control bg-info" id="validationCustom01" pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" 
@@ -97,7 +97,7 @@ include('../models/funcionSeccion.php');
     ?>
 
 
-    <script src="/SistemaParqueo/public/js/validacion.js"></script>
+    <script src="../../public/js/validacion.js"></script>
 </body>
 
 </html>

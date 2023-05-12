@@ -31,7 +31,7 @@ include('templates/head.php');
             </div>
             <div class="card-body pago">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
-                    action="/SistemaParqueo/App/controllers/realizarPagoAction.php" method="post">
+                    action="../controllers/realizarPagoAction.php" method="post">
                     <div>
                         <input type="hidden" value="<?php echo $pago['ID_ASI']; ?>" name="id-asi"
                             style="display: none;">

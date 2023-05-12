@@ -6,7 +6,7 @@ $(document).ready(function () {
        
         $.ajax({
             type: "POST",
-            url: "/SistemaParqueo/App/helpers/comboReporteSemanal.php",
+            url: "../../App/helpers/comboReporteSemanal.php",
             data: send_dato,
             success: function (response) {
                 const reportes = JSON.parse(response)
