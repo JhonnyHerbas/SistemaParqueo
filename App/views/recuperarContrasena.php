@@ -53,11 +53,11 @@ include('../models/funcionSolicitud.php');
         </div>
     </header>
     <main>
-        <div class="form-container">
-            <div class="header-container">
-                <h2 class="title-form">
+        <div class="container-login">
+            <div class="header-container-login">
+                <h3 class="title-form">
                     Recuperar contraseña
-                </h2>
+                </h3>
             </div>
             <div class="card-body">
                 <form id="login" class="row g-3 needs-validation" novalidate
@@ -73,15 +73,15 @@ include('../models/funcionSolicitud.php');
                     ?>
                     <!-- Aqui viene toda la interfaz de visualizacion -->
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label">Email:</label>
-                        <input type="email" name="email" class="form-control" id="validationCustom01"
+                        <label for="validationCustom01" class="form-label text">Email:</label>
+                        <input type="email" name="email" class="form-control text" id="validationCustom01"
                             autocomplete="off" spellcheck="false" placeholder="Ingrese su correo electronico" required>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text">
                             Por favor, ingrese un código válido.
                         </div>
                     </div>
                     <div class="button-container">
-                        <button type="submit" class="btn btn-success" id="submitButton" data-toggle="modal"
+                        <button type="submit" class="btn btn-success text" id="submitButton" data-toggle="modal"
                             data-target="#exampleModal">Restablecer</button>
                     </div>
                 </form>

@@ -22,10 +22,10 @@ if (isset($_SESSION['nombre'])) {
     <div class="container-user">
         <img src="../../public/img/Usuario.png" alt="usuario" class="logo">
         <div class="info-user">
-            <h4 class="info">
+            <h4 class="info text">
                 <?php echo $user; ?>
             </h3>
-            <h5 class="info">
+            <h5 class="info text">
                 <?php echo $role; ?>
             </h5>
         </div>

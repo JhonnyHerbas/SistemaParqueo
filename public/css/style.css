@@ -19,7 +19,7 @@ main {
     justify-content: center;
     align-items: center;
     background-color: #00cfff;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .container-logo {
@@ -581,7 +581,20 @@ form label:not(:first-child) {
     width: 50vw;
     border-radius: 1vh;
 }
-
+.container-login{
+    background-color: white;
+    width: 30vw;
+    border-radius: 1vh;
+}
+.header-container-login {
+    height: 10vh;
+    width: 30vw;
+    background-color: #046b99;
+    border-radius: 1vh 1vh 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .header-container {
     height: 10vh;
     width: 50vw;
@@ -595,6 +608,17 @@ form label:not(:first-child) {
 .header-container h2 {
     color: white;
     text-align: center;
+}
+.header-container-login h3 {
+    color: white;
+    text-align: center;
+}
+
+.font-weight-bold{
+    font-weight: bold;
+}
+.login-label, .text{
+    font-size: 1rem;
 }
 
 @media (max-width:991px) {
@@ -682,6 +706,20 @@ form label:not(:first-child) {
         width: 100vw;
         font-size: 1vh;
         padding: 0;
+    }
+    .container-login{
+        background-color: white;
+        width: 80vw;
+        border-radius: 1vh;
+    }
+    .header-container-login {
+        height: 10vh;
+        width: 80vw;
+        background-color: #046b99;
+        border-radius: 1vh 1vh 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
