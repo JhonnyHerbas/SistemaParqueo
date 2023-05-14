@@ -23,10 +23,10 @@ include('templates/head.php');
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
     <div class="container container-solicitud ">
         <div class="solicitud-header">
-            <h1 class="h1">
-                Solicitudes
-            </h1>
-            <select class="form-select" aria-label="Default select example" id="estado">
+            <h3 class="font-weight-bold">
+                SOLICITUDES
+            </h3>
+            <select class="form-select text" aria-label="Default select example" id="estado">
                 <option selected disabled>ESTADO</option>
                 <option value="ACEPTADO">ACEPTADO</option>
                 <option value="RECHAZADO">RECHAZADO</option>

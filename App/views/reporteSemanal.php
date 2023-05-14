@@ -23,9 +23,9 @@ include('templates/header.php');
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
     <div class="container container-solicitud ">
         <div class="solicitud-header">
-            <h2 class="h2">
+            <h3 class="font-weight-bold">
                 Generar reporte semanal
-            </h2>
+            </h3>
             <select class="form-select" aria-label="Default select example" id="estado">
                 <option selected disabled>AÑO</option>
                 <?php 
@@ -42,9 +42,6 @@ include('templates/header.php');
                 ?>
             </select>
         </div>
-    </div>
-
-    <div class="reporte">
         <div class="data" id="data">
 
         </div>

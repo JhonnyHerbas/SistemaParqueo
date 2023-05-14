@@ -23,46 +23,46 @@ include('../models/funcionConfiguracionHorario.php')
     <section class="container-form">
     <div class="card form">
         <div class="card-header">
-            <h2 class="h2">Registrar nuevo horario</h2>
+            <h3 class="font-weight-bold">Registrar nuevo horario</h3>
         </div>
         <div class="card-body">
             <form id="myForm" class="row g-3 needs-validation" novalidate action="../controllers/configuracionHorarioAction.php" method="post" novalidate>
                 <div class="mb-3">
-                    <label for="validationCustom01" class="form-label">Horario de apertura:</label>
-                    <input type="text" name="hora-apertura" class="form-control" id="validationCustom01" pattern="^(0[6-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
+                    <label for="validationCustom01" class="form-label text">Horario de apertura:</label>
+                    <input type="text" name="hora-apertura" class="form-control text" id="validationCustom01" pattern="^(0[6-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
                     minlength="8" maxlength="8" placeholder="HH:MM:SS" required>
-                    <div class="invalid-feedback" >
+                    <div class="invalid-feedback text" >
                         Por favor, ingrese un valor válido para este campo.
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="validationCustom01" class="form-label">Horario de cierre:</label>
-                    <input type="text" name="hora-cierre" class="form-control" id="validationCustom01" pattern="^(0?[0-9]|1[0-9]|2[0-2]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
+                    <label for="validationCustom01" class="form-label text">Horario de cierre:</label>
+                    <input type="text" name="hora-cierre" class="form-control text" id="validationCustom01" pattern="^(0?[0-9]|1[0-9]|2[0-2]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
                     minlength="8" maxlength="8" placeholder="HH:MM:SS" required>
                    
-                    <div class="invalid-feedback" id="ci">Por favor, ingrese un valor válido para este campo.</div>
+                    <div class="invalid-feedback text" id="ci">Por favor, ingrese un valor válido para este campo.</div>
                 </div>
                 
                 <div class="mb-3">
-                    <label for="validationCustom02" class="form-label">Día:</label>
-                    <select class="form-select" name="dia" id="validationCustom04" required>
+                    <label for="validationCustom02" class="form-label text">Día:</label>
+                    <select class="form-select text" name="dia" id="validationCustom04" required>
                     <option selected disabled value="">Seleccione un día</option>
-                    <option class='form-control' id='validationCustom02' value="LUNES">Lunes</option>
-                    <option class='form-control' id='validationCustom02' value="MARTES">Martes</option>
-                    <option class='form-control' id='validationCustom02' value="MIERCOLES">Miercoles</option>
-                    <option class='form-control' id='validationCustom02' value="JUEVES">Jueves</option>
-                    <option class='form-control' id='validationCustom02' value="VIERNES">Viernes</option>
-                    <option class='form-control' id='validationCustom02' value="SABADO">Sabado</option>
-                    <option class='form-control' id='validationCustom02' value="DOMINGO">Domingo</option>
+                    <option class='form-control text' id='validationCustom02' value="LUNES">Lunes</option>
+                    <option class='form-control text' id='validationCustom02' value="MARTES">Martes</option>
+                    <option class='form-control text' id='validationCustom02' value="MIERCOLES">Miercoles</option>
+                    <option class='form-control text' id='validationCustom02' value="JUEVES">Jueves</option>
+                    <option class='form-control text' id='validationCustom02' value="VIERNES">Viernes</option>
+                    <option class='form-control text' id='validationCustom02' value="SABADO">Sabado</option>
+                    <option class='form-control text' id='validationCustom02' value="DOMINGO">Domingo</option>
                     </select>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback text">
                         Por favor seleccione un dia
                     </div>
                 </div>
                 
                 <div class="col-12 button">
-                    <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
-                    <button class="btn btn-danger" type="reset">Cancelar</button>
+                    <button class="btn btn-success text" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
+                    <a href="./visualizarSitio.php" class="btn btn-danger text" >Cancelar</a>
                 </div>
 
         <!-- Modal -->
@@ -70,12 +70,14 @@ include('../models/funcionConfiguracionHorario.php')
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                            <div class="modal-body">
-                                ¿Está seguro de que desea guardar este horario?
-                            </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
+                                <div class="modal-body">
+                                    ¿Está seguro de que desea guardar este horario?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                        id="cancelButton">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary"
+                                        id="confirmButton">Confirmar</button>
                                 </div>
                             </div>
                         </div>
