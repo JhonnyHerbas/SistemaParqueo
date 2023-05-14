@@ -53,4 +53,13 @@ function realizar_pago($ID_ASI,$MONTO,$DOCENTE,$ID_DOC){
     }
 }
 
+function visualizar_docente_asignados(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_DOCENTE_ASIGNADO';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>
