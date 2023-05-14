@@ -23,10 +23,9 @@ include('templates/head.php');
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
 
     <main>
-        <div class="form-container">
-            <div class="visual">
-
-                <h2>DOCENTES</h2>
+        <div class="container-docente">
+            <h3 class="font-weight-bold">DOCENTES</h3>
+            <div class="container-lista">
                 <!-- Aqui vendra toda la vista de docentes -->
                 <?php
 
@@ -38,7 +37,7 @@ include('templates/head.php');
                         ?>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button collapsed" id="libre" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#<?php echo $buttons . $fila["ID_DOC"]; ?>" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
                                     <?php

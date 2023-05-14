@@ -28,13 +28,13 @@ include('../models/funcionSitio.php')
         <section class="container-form">
     <div class="card form">
         <div class="card-header">
-            <h2 class="h2">Editar sitio</h2>
+            <h3 class="font-weight-bold">Editar sitio</h3>
         </div>
         <div class="card-body">
             <form id="myForm" class="row g-3 needs-validation" novalidate action="../controllers/editarSitioAction.php" method="post">
                 <div class="mb-3">
-                    <label for="validationCustom02" class="form-label">Sección:</label>
-                    <select class="form-select bg-info" name="seccion" id="validationCustom04" required>
+                    <label for="validationCustom02" class="form-label text">Sección:</label>
+                    <select class="form-select bg-info text" name="seccion" id="validationCustom04" required>
                     <option selected disabled value="">Elige...</option>
                         <?php
                         $result = visualizar_seccion();
@@ -47,7 +47,7 @@ include('../models/funcionSitio.php')
                         } 
                         ?>
                     </select>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback text">
                         Por favor seleccione una sección
                     </div>
                 </div>
@@ -56,8 +56,8 @@ include('../models/funcionSitio.php')
                     <input type="hidden" value="<?php echo $sitio['NOMBRE_SIT'];?>" name="name" style="display: none;">
                 </div>
                 <div class="col-12 button">
-                    <button class="btn btn-success" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
-                    <a href="visualizarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">Cancelar</button></a>
+                    <button class="btn btn-success text" id="submitButton" data-toggle="modal" data-target="#exampleModal">Guardar</button>
+                    <a href="visualizarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-secondary btn-danger text" data-bs-dismiss="modal">Cancelar</button></a>
                 </div>
 
         <!-- Modal -->
@@ -68,10 +68,12 @@ include('../models/funcionSitio.php')
                             <div class="modal-body">
                                 ¿Está seguro de editar este sitio?
                             </div>
-                                <div class="modal-footer d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-success" id="confirmButton">Confirmar</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal"id="cancelButton" >Cancelar</button>
-                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                    id="cancelButton">Cancelar</button>
+                                <button type="submit" class="btn btn-primary"
+                                    id="confirmButton">Confirmar</button>
+                            </div>
                             </div>
                         </div>
                     </div>

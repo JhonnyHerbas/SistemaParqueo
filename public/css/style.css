@@ -79,7 +79,7 @@ header .redes_sociales a:hover {
 }
 
 header .redes_sociales a {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #ffffff;
     margin: 0.7rem;
     text-decoration: none;
@@ -254,7 +254,7 @@ header .redes_sociales a {
 }
 /*realizar solicitud*/
 .container-form {
-    margin: 10% 25%;
+    margin: 5% 25%;
     border: none;
 }
 
@@ -419,12 +419,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .accordion-button:not(.collapsed) {
     background-color: #046b99;
     color: #ffffff;
-}
-
-/*realizar solicitud*/
-.container-form {
-    margin: 10% 25%;
-    border: none;
 }
 
 .modal-content {
@@ -620,7 +614,29 @@ form label:not(:first-child) {
 .login-label, .text{
     font-size: 1rem;
 }
+.container-docente{
+    margin-top: 5vh;
+    width: 80%;
+    height: 90vh; 
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 1vw;
+}
+.container-lista{
+    background-color: #FFFFFF;
+    height: 80vh;
+    width: 90%;
+    overflow: auto;
+    margin-left: 5%
+}
+.container-lista::-webkit-scrollbar {
+    width: 10px;
+}
 
+.container-lista::-webkit-scrollbar-thumb {
+    background: #00cfff;
+    border-radius: 50px;
+}
 @media (max-width:991px) {
     html {
         font-size: 55%;
@@ -720,6 +736,21 @@ form label:not(:first-child) {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .container-docente{
+        margin-top: 8vh;
+        width: 90%;
+        height: 80vh; 
+        background-color: #FFFFFF;
+        border-radius: 15px;
+        padding: 1vw;
+    }
+    .container-lista{
+        background-color: #FFFFFF;
+        height: 73vh;
+        width: 90%;
+        overflow: auto;
+        margin-left: 6%
     }
 }
 

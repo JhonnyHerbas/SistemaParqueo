@@ -29,7 +29,7 @@ include('../models/funcionSeccion.php')
     <section class="container-form">
         <div class="card form">
             <div class="card-header">
-                <h2 class="h2">Editar sección</h2>
+                <h3 class="font-weight-bold">Editar sección</h3>
             </div>
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
@@ -41,28 +41,28 @@ include('../models/funcionSeccion.php')
                             style="display: none;">
                     </div>
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label">Nombre de sección:</label>
-                        <input type="text" name="nombre-seccion" class="form-control" id="validationCustom01"
+                        <label for="validationCustom01" class="form-label text">Nombre de sección:</label>
+                        <input type="text" name="nombre-seccion" class="form-control text" id="validationCustom01"
                             pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="3"
                             maxlength="30" value="<?php echo $seccion['NOMBRE_SEC']; ?>" readonly required>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="validationTextarea" class="form-label">Descripción:</label>
-                        <textarea class="form-control area" name="descripcion" id="validationTextarea" minlength="20"
+                        <label for="validationTextarea" class="form-label text">Descripción:</label>
+                        <textarea class="form-control area text" name="descripcion" id="validationTextarea" minlength="20"
                             maxlength="200" cols="3" autocomplete="off" spellcheck="false"
                             required><?php echo $seccion['DESCRIPCION_SEC']; ?></textarea>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text">
                             Solo se acepta un mínimo de 20 y máximo de 200 caracteres.
                         </div>
                     </div>
 
                     <div class="col-12 button">
-                        <button class="btn btn-success" id="submitButton" data-toggle="modal"
+                        <button class="btn btn-success text" id="submitButton" data-toggle="modal"
                             data-target="#exampleModal">Guardar</button>
-                        <button class="btn btn-danger" type="reset">Cancelar</button>
+                        <a href="./visualizarSitio.php" class="btn btn-danger text" >Cancelar</a>
                     </div>
 
                     <!-- Modal -->
