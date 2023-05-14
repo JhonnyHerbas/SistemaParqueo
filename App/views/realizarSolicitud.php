@@ -32,7 +32,7 @@ include('../models/funcionSitio.php');
     <section class="container-form">
         <div class="card form">
             <div class="card-header">
-                <h2 class="h2">Solicitar sitio</h2>
+                <h3 class="font-weight-bold">Solicitar sitio</h3>
             </div>
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
@@ -45,38 +45,38 @@ include('../models/funcionSitio.php');
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label">Titulo de solicitud:</label>
-                        <input type="text" name="titulo-solicitud" class="form-control" id="validationCustom01"
+                        <label for="validationCustom01" class="form-label text">Titulo de solicitud:</label>
+                        <input type="text" name="titulo-solicitud" class="form-control text" id="validationCustom01"
                             pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="5"
                             maxlength="30" value="Solicitud de sitio" readonly>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationCustom02" class="form-label">Sección:</label>
-                        <input type="text" name="seccion" class="form-control" id="validationCustom01"
+                        <label for="validationCustom02" class="form-label text">Sección:</label>
+                        <input type="text" name="seccion" class="form-control text" id="validationCustom01"
                             pattern="" autocomplete="off" spellcheck="false"
                             maxlength="30" value="<?php echo $seccion["NOMBRE_SEC"]; ?>" readonly>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text">
                             Por favor ingrese una seccion
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationCustom02" class="form-label">Sitio:</label>
-                        <input type="text" name="sitio" class="form-control" id="validationCustom01"
+                        <label for="validationCustom02" class="form-label text">Sitio:</label>
+                        <input type="text" name="sitio" class="form-control text" id="validationCustom01"
                             pattern="" autocomplete="off" spellcheck="false"
                             maxlength="30" value="<?php echo $sitio["NOMBRE_SIT"]; ?>" readonly>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text">
                             Por favor ingrese un sitio
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationTextarea" class="form-label">Descripción:</label>
-                        <textarea class="form-control area" name="descripcion" id="validationTextarea" maxlength="200"
+                        <label for="validationTextarea" class="form-label text">Descripción:</label>
+                        <textarea class="form-control area text" name="descripcion" id="validationTextarea" maxlength="200"
                             cols="3" autocomplete="off" spellcheck="false" ></textarea>
                         <div class="invalid-feedback">
                             Solo se acepta un máximo de 200 caracteres.
@@ -84,9 +84,9 @@ include('../models/funcionSitio.php');
                     </div>
 
                     <div class="col-12 button">
-                        <button class="btn btn-success" id="submitButton" data-toggle="modal"
+                        <button class="btn btn-success text" id="submitButton" data-toggle="modal"
                             data-target="#exampleModal">Guardar</button>
-                        <a href="visualizarSitio.php" class="btn btn-danger">Cancelar</a>
+                        <a href="visualizarSitio.php" class="btn btn-danger text">Cancelar</a>
                     </div>
 
                     <!-- Modal -->
@@ -99,9 +99,9 @@ include('../models/funcionSitio.php');
                                         ¿Está seguro de que desea guardar esta solicitud?
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
                                             id="cancelButton">Cancelar</button>
-                                        <button type="submit" class="btn btn-success"
+                                        <button type="submit" class="btn btn-primary"
                                             id="confirmButton">Confirmar</button>
                                     </div>
                                 </div>

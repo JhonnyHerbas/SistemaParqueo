@@ -21,9 +21,12 @@ include('templates/head.php');
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
     <div class="container container-solicitud ">
-        <h1 class="h1">
-            Pagos pendientes
-        </h1>
+        <div class="solicitud-header">
+            <h3 class="font-weight-bold">
+                Pagos pendientes
+            </h3>
+        </div>
+        <div class="data">
         <?php 
             $cod = $_SESSION['codigo'];
             $result = visualizar_pagos($cod);
@@ -96,6 +99,8 @@ include('templates/head.php');
             }
 
         ?>
+        </div>
+        
         <!-- Include de los scripts.php -->
         <?php
 

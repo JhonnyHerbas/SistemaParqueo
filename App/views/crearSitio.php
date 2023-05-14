@@ -66,7 +66,7 @@ include('../models/funcionSeccion.php');
                     <a href="visualizarSitio.php" rel="noopener noreferrer"><button type="button" class="btn btn-danger text" data-bs-dismiss="modal">Cancelar</button></a>
                 </div>
 
-        <!-- Modal -->
+                <!-- Modal -->
                 <div class="container-modal">
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
                         <div class="modal-dialog">
