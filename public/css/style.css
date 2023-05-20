@@ -626,6 +626,26 @@ form label:not(:first-child) {
 .h3{
     color: #FFFFFF;
 }
+.compra-moneda{
+    display: flex;
+    border-radius: 0 0 1vh 1vh;
+    align-items: center;
+    display: flex;
+    margin: 1%;
+}
+.container-imagen{
+    width: 50%;
+}
+.container-formulario{
+    width: 50%;
+}
+.qr{
+    width: 100%;
+    border-radius: 15%;
+}
+.custom-file-label::after {
+    content: "Elegir archivo";
+}
 @media (max-width:991px) {
     html {
         font-size: 55%;
@@ -747,6 +767,11 @@ form label:not(:first-child) {
         width: 90%;
         overflow: auto;
         margin-left: 6%
+    }
+    .qr{
+        width: 50vw;
+        height: 50vh;
+        border-radius: 15%;
     }
 }
 

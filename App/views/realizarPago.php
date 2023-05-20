@@ -85,7 +85,7 @@ include('templates/head.php');
                             <label for="validationCustom01" class="form-label">Código SIS:</label>
                             <input type="text" name="codigo" class="form-control bg-info" id="validationCustom01"
                                 autocomplete="off" spellcheck="false" maxlength="50"
-                                value="<?php echo $pago['ID_DOC']; ?>" readonly>
+                                value="<?= $pago['ID_DOC']; ?>" readonly>
                             <div class="invalid-feedback">
                                 Ingrese un correo válido.
                             </div>

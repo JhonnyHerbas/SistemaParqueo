@@ -53,6 +53,20 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
                 <p>
+                    <a class='btn' href='comprarMoneda.php'>
+                        Comprar monedas
+                    </a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a class='btn' href='realizarConsulta.php'>
+                        Realizar consulta
+                    </a>
+                </p>
+            </li>
+            <li>
+                <p>
                     <a class='btn' href='../controllers/cerrarSesion.php'>
                         Cerrar sesión
                     </a>
@@ -63,12 +77,12 @@ if (isset($_SESSION['nombre'])) {
         <ul>
             <li>
                 <p>
-                    <a class='btn' data-bs-toggle='collapse' href='#collapse-docente' role='button'
+                    <a class='btn' data-bs-toggle='collapse' href='#collapse-reporte' role='button'
                         aria-expanded='false' aria-controls='collapse-sitio'>
                         Reportes
                     </a>
                 </p>
-                <div class='collapse' id='collapse-docente'>
+                <div class='collapse' id='collapse-reporte'>
                     <ul>
                         <li><a href='reporteMensual.php'>Reporte mensual</a></li>
                         <li><a href='reporteSemanal.php'>Reporte semanal</a></li>
@@ -115,6 +129,19 @@ if (isset($_SESSION['nombre'])) {
                     <ul>
                         <li><a href='visualizarSitio.php'>Ver sitios</a></li>
                         <li><a href='crearSitio.php'>Crear sitio</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <a class='btn' data-bs-toggle='collapse' href='#collapse-notificacion' role='button'
+                        aria-expanded='false' aria-controls='collapse-sitio'>
+                        Notificaciones
+                    </a>
+                </p>
+                <div class='collapse' id='collapse-notificacion'>
+                    <ul>
+                        <li><a href='visualizarConsulta.php'>Visualizar consultas</a></li>
                     </ul>
                 </div>
             </li>
