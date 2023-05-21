@@ -22,4 +22,23 @@ function visualizar_consulta(){
         return null;
     }
 }
+function visualizar_reclamo($ID){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_RECLAMO_VISTA("'.$ID.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+function responder_reclamo($ID){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_RECLAMO_RESPUESTA("'.$ID.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
 ?>

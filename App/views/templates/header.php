@@ -142,13 +142,10 @@ if (isset($_SESSION['nombre'])) {
                 <div class='collapse' id='collapse-notificacion'>
                     <ul>
                         <li><a href='visualizarConsulta.php'>Visualizar consultas</a></li>
+                        <li><a href='visualizarSolicitudes.php'>Visualizar solicitudes</a></li>
+                        <li><a href='visualizarCompraMoneda.php'>Visualizar compra</a></li>
                     </ul>
                 </div>
-            </li>
-            <li>
-                <p>
-                    <a href='visualizarSolicitudes.php'>Ver solicitudes</a>
-                </p>
             </li>
             <li>
                 <p>

@@ -101,4 +101,51 @@ function obtener_reporte_semanal_pdf($semana,$anio){
         return null;
     }
 }
+
+function visualizar_compra_moneda(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_COMPRA_VISTA';
+
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function visualizar_asignacion_moneda($ID_COM){
+    $conn = get_connection();
+    $query ='CALL DB_SP_COMPRA_VISTA("'.$ID_COM.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function asignar_moneda($ID_DOC,$CANT,$ID_COM){
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_COMPRA_ASIGNAR_MONEDA(?,?,?)");
+    $stmt->bind_param("iii",$ID_DOC,$CANT,$ID_COM);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+
+function rechazar_moneda($ID_COM){
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_COMPRA_RECHAZAR_MONEDA(?)");
+    $stmt->bind_param("i",$ID_COM);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
 ?>

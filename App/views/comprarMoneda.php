@@ -31,7 +31,7 @@ include('../models/funcionSeccion.php')
                 </div>
                 <div class="container-formulario">
                     <form id="myForm" class="row g-3 needs-validation" novalidate
-                        action="../controllers/realizarConsultaAction.php" method="post">
+                        action="../controllers/comprarMonedaAction.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="validationCustom01" class="form-label text">Codigos SIS:</label>
                             <input type="number" name="codigo" class="form-control text" id="validationCustom01"
@@ -49,7 +49,7 @@ include('../models/funcionSeccion.php')
 
                         <div class="mb-3">
                             <label for="comprobante" class="form-label text">Comprobante:</label>
-                            <input type="file" title="Elegir" class="form-control text text" aria-label="file example" id="comprobante" accept=".jpeg,.jpg,.png" required>
+                            <input type="file" class="form-control text text" aria-label="file example" name="img" id="comprobante" accept=".jpeg,.jpg,.png" required>
                             <div class="invalid-feedback text">Seleccione un formato jpeg, jpg, png.</div>
                             <script>
                                 var input = document.getElementById('comprobante');

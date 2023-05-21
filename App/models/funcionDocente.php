@@ -62,4 +62,17 @@ function visualizar_docente_asignados(){
         return null;
     }
 }
+
+function comprar_moneda($ID_DOC,$RUTA,$TIPO,$MONTO){
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_COMPRA_MONEDA (?,?,?,?)");
+    $stmt->bind_param("issi",$ID_DOC,$RUTA,$TIPO,$MONTO);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
 ?>

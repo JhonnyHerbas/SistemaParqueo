@@ -249,7 +249,9 @@ header .redes_sociales a {
     display: flex;
     justify-content: center;
 }
-
+.modal-comprobante{
+    margin: 5% 50% !important;
+}
 .card-header {
     text-align: center;
     background-color: #046b99;
@@ -405,10 +407,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .accordion-button:not(.collapsed) {
     background-color: #046b99;
     color: #ffffff;
-}
-
-.modal-content {
-    margin: 50% 50%;
 }
 
 .card-header {
@@ -641,10 +639,18 @@ form label:not(:first-child) {
 }
 .qr{
     width: 100%;
-    border-radius: 15%;
+    border-radius: 5%;
 }
 .custom-file-label::after {
     content: "Elegir archivo";
+}
+.modal-content img{
+    width: auto;
+    height: 70vh;
+    border-radius: 15%;
+}
+.form-control[readonly] {
+    background-color: #00cfff;
 }
 @media (max-width:991px) {
     html {
@@ -703,10 +709,17 @@ form label:not(:first-child) {
         font-weight: bold;
         font-size: 3vh;
     }
-
+    .modal-comprobante{
+        margin: 20% 1% !important;
+    }
     .modal-content {
         margin: 50% 0%;
     }
+    .modal-content img{
+        width: auto;
+        height: 60vh;
+        border-radius: 15%;
+    }   
 
     .form-container {
         width: 80vw;

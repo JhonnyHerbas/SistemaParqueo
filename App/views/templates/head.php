@@ -7,6 +7,6 @@
     </title>
     <link rel="shortcut icon" href="../../public/img/FCYT.png"/>
     <link rel="stylesheet" type="text/css" href="../../public/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/estilos.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/all.css">
 </head>
