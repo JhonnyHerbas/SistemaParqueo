@@ -1,5 +1,5 @@
 <?php
-include '../config/conexion.php';
+require_once ('../config/conexion.php');
 function registrar_horario($id,$fecha,$horA,$horaC,$dia)
 {
     $conn = get_connection();
@@ -13,6 +13,14 @@ function registrar_horario($id,$fecha,$horA,$horaC,$dia)
         return false;
     }
 }
-
+function visualizar_horario(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_CONFIGURACION_VISTA';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 
 ?>

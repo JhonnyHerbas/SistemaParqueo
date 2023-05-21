@@ -15,11 +15,18 @@ include('templates/head.php');
     include('templates/header.php');
     include('../models/funcionSeccion.php');
     include('../models/funcionSitio.php');
+    include('../models/funcionConfiguracionHorario.php');
 
+    $configuraciones = visualizar_horario();
+    $configuracion= $configuraciones->fetch_array(MYSQLI_BOTH);
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
-
+    <div class="horario">
+        <span><?= $configuracion['DIA_CON']; ?></span>
+        <span>Apertura: <?= $configuracion['HORA_APERTURA_CON']; ?></span>
+        <span>Cierre: <?= $configuracion['HORA_CIERRE_CON']; ?></span>
+    </div>
     <main>
         <div class="main">
             <div class="container-busqueda">

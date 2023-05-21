@@ -159,13 +159,12 @@ header .redes_sociales a {
 
 .main {
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 .visual {
     margin-top: 3%;
-    margin-left: 5%;
-    height: 85vh;
+    height: 82vh;
     width: 90%;
     background-color: #ffffff;
     border-radius: 15px;
@@ -174,12 +173,12 @@ header .redes_sociales a {
 
 .container-seccion {
     text-align: right;
-    height: 15vh;
+    height: 10vh;
     width: 100%;
 }
 
 .seccion {
-    margin: 5%;
+    margin: 1%;
     width: 30%;
     border-radius: 10px;
     background-color: #01baef;
@@ -652,6 +651,21 @@ form label:not(:first-child) {
 .form-control[readonly] {
     background-color: #00cfff;
 }
+.horario{
+    width: 90%;
+    background: #1C304A;
+    height: 5vh;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #FFFFFF;
+    border-radius: 2%;
+    align-items: center;
+}
+.horario span{
+    font-weight: bold;
+}
 @media (max-width:991px) {
     html {
         font-size: 55%;
@@ -786,6 +800,31 @@ form label:not(:first-child) {
         height: 50vh;
         border-radius: 15%;
     }
+    .horario{
+        width: 100%;
+        background: #1C304A;
+        height: 5vh;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: #FFFFFF;
+        border-radius: 2%;
+        align-items: center;
+    }
+    .visual {
+        margin-left: 5%;
+        margin-top: 3%;
+        height: 80vh;
+        width: 90%;
+        background-color: #ffffff;
+        border-radius: 15px;
+        /* display: block; */
+    }
+    .main {
+        width: 100%;
+        min-height: 50vh;
+    }
 }
 
 @media (max-width:450px) {
@@ -815,10 +854,6 @@ form label:not(:first-child) {
 
     .container-logo h2 {
         padding-top: 2.5vh;
-    }
-
-    .visual {
-        height: 90vh;
     }
 
     .form-container {
