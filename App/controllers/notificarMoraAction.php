@@ -31,7 +31,7 @@ $mail= new PHPMailer(true);
     // Configura el asunto y el cuerpo del correo
     $mail->Subject = 'Recordatorio de pago pendiente';
     $mail->Body    = 'Estimado Docente,
-    Espero que se encuentre bien. Le escribo en relación a su sitio asiganado en nuestra empresa. Lamentablemente, hemos notado que su sitio se encuentra en mora de pago desde hace '.$tiempo.' meses.
+    Espero que se encuentre bien. Le escribo en relación a su sitio asignado en nuestro parqueo. Lamentablemente, hemos notado que su sitio se encuentra en mora de pago desde hace '.$tiempo.' meses.
     
     Le agradeceríamos mucho si pudiera realizar el pago de su deuda lo antes posible para evitar cualquier inconveniente futuro. Si ya realizó el pago, por favor, háganos saber para actualizar nuestros registros.
     
