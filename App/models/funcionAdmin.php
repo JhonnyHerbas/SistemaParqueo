@@ -171,4 +171,13 @@ function visualizar_guardia(){
         return null;
     }
 }
+function habilitar_guardia($id){
+    $conn = get_connection();
+    $query ='CALL DB_SP_GUARDIA_HABLITAR("'.$id.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

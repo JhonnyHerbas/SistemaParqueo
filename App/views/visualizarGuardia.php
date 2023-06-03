@@ -72,7 +72,7 @@ include('templates/head.php');
                                         </div>
                                         <?php }else{ ?>
                                         <div class="function verde">
-                                            <a href="./habilitarActionGuardia.php?id_guardia=<?php echo $fila["ID_GUA"];?>" target="_self" class="fa-solid fa-lock blanco"></a>
+                                            <a href="../controllers/habilitarActionGuardia.php?id_guardia=<?php echo $fila["ID_GUA"];?>" target="_self" class="fa-solid fa-lock blanco"></a>
                                         </div>
                                         <?php } ?>
                                     </div>
