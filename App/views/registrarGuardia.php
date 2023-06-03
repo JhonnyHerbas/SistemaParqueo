@@ -33,11 +33,10 @@ include('../models/funcionSolicitud.php');
                     style="display: none;">
 
                     <div class="mb-3">
-
                         <label for="validationCustom03" class="form-label text">Cedula de identidad:</label>
-                        <input type="text" name="codigo" class="form-control text" id="validationCustom03"
-                        autocomplete="off" spellcheck="false" minlength="5"
-                            maxlength="30" placeholder="Ingrese su cedula" required>
+                        <input type="number" name="codigo" class="form-control text" id="validationCustom03"
+                        autocomplete="off" spellcheck="false" min="5"
+                            max="30" placeholder="Ingrese su cedula" required>
                         <div class="invalid-feedback text">
                             Ingrese una cedula de identidad válido.
                         </div>

@@ -209,4 +209,27 @@ function visualizar_horario(){
         return null;
     }
 }
+function asignar_guardia_horario($id_horario,$id_guardia){
+    $conn = get_connection();
+    $query ='CALL DB_SP_HORARIO_GUARDIA_ASIGNAR("'.$id_horario.'","'.$id_guardia.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function insertar_horario($ingreso,$salida, $turno, $sueldo) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_HORARIO_INSERTAR(?,?,?,?)");
+    $stmt->bind_param("sssi",$ingreso,$salida,$turno, $sueldo);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+
 ?>

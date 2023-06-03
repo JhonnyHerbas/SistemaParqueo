@@ -55,13 +55,13 @@ include('templates/head.php');
                                         }
                                         echo "Hora ingreso: ".$row["INGRESO_HOR"]. '<br>';
                                         echo "Hora salida: ".$row["SALIDA_HOR"]. '<br>';
-                                        echo "Sueldo mensual: ".$row["SUELDO_HOR"]. '<br>';                                    
+                                        echo "Sueldo mensual: ".$row["SUELDO_HOR"]. ' bs' . '<br>';                                    
                                     ?>
                                 </div>
                                 <div class="acordion-btn w-50">
                                     <?php if($guardia["NOMBRE_GUA"] == null){ ?>
                                         <div class="function verde">
-                                            <a href="#" class="fa-solid fa-id-card-clip blanco"></a>
+                                            <a href="<?php echo 'asignarGuardiaHorario.php?id=' . $row['ID_HOR']?>" class="fa-solid fa-id-card-clip blanco"></a>
                                         </div>
                                     <?php } ?>                                    
                                     <div class="function azul">
