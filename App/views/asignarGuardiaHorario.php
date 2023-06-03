@@ -34,7 +34,7 @@ include('../models/funcionAdmin.php');
                             style="display: none;">
 
                     <div class="mb-3">
-                    <label for="validationCustom02" class="form-label text">Sección:</label>
+                    <label for="validationCustom02" class="form-label text">Guardia:</label>
                     <select class="form-select bg-info text" name="id_guardia" id="validationCustom04" required>
                     <option selected disabled value="">Elige...</option>
                         <?php
