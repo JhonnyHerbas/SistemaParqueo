@@ -180,4 +180,13 @@ function habilitar_guardia($id){
         return null;
     }
 }
+function deshabilitar_guardia($id){
+    $conn = get_connection();
+    $query ='CALL DB_SP_GUARDIA_DESHABLITAR("'.$id.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

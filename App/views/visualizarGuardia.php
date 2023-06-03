@@ -68,7 +68,7 @@ include('templates/head.php');
                                         </div>
                                         <?php if($fila["ESTADO_GUA"] == "ACTIVO"){?>
                                         <div class="function naranja">
-                                            <a href="./desahabilitarActionGuardia.php?id_guardia=<?php echo $fila["ID_GUA"];?>" target="_self" class="fa-solid fa-lock-open blanco"></a>
+                                            <a href="../controllers/desahabilitarActionGuardia.php?id_guardia=<?php echo $fila["ID_GUA"];?>" target="_self" class="fa-solid fa-lock-open blanco"></a>
                                         </div>
                                         <?php }else{ ?>
                                         <div class="function verde">
