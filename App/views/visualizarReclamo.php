@@ -60,8 +60,11 @@ include('templates/head.php');
                                 </div>
                                 <div class="acordion-btn w-50">
                                     <div class="function verde">
-                                        <a href="#" class="fa-solid fa-clipboard-question blanco"></a>
+                                        <a href="../controllers/atenderReclamoAction.php?codigo=<?php echo $row['ID_REC']; ?>" class="fa-solid fa-circle-check blanco"></a>
                                     </div>
+                                    <div class="function verde">
+                                        <a href="../controllers/rechazarReclamoAction.php?codigo=<?php echo $row['ID_REC']; ?>" class="fa-solid fa-xmark blanco"></a>
+                                    </div> 
                                 </div>                                    
                             </div>
                         </div>

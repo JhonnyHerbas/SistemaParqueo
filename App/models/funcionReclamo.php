@@ -49,5 +49,31 @@ function visualizar_reclamos(){
         return null;
     }
 }
-
+function visualizar_reclamo_id($ID){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_RECLAMO_VISTA_ID("'.$ID.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+function atender_reclamo($ID){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_RECLAMO_ATENDER("'.$ID.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+function rechazar_reclamo($ID){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_RECLAMO_RECHAZAR("'.$ID.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

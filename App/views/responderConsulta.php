@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Crear sección";
+$title = "Responder consulta";
 include('templates/head.php');
 include('../models/funcionReclamo.php')
     ?>
