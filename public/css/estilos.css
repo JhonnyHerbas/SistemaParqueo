@@ -341,7 +341,9 @@ input[type="number"]::-webkit-inner-spin-button {
 .rojo {
     background-color: #ff0000;
 }
-
+.naranja {
+    background-color: #ffc107;
+}
 .blanco {
     color: white;
     padding: 1vh;
