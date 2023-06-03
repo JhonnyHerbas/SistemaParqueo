@@ -171,6 +171,15 @@ function visualizar_guardia(){
         return null;
     }
 }
+function visualizar_guardia_id($id){
+    $conn = get_connection();
+    $query ='CALL DB_SP_GUARDIA_VISTA_ID("'.$id.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 function habilitar_guardia($id){
     $conn = get_connection();
     $query ='CALL DB_SP_GUARDIA_HABLITAR("'.$id.'")';
@@ -183,6 +192,17 @@ function habilitar_guardia($id){
 function deshabilitar_guardia($id){
     $conn = get_connection();
     $query ='CALL DB_SP_GUARDIA_DESHABLITAR("'.$id.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function visualizar_horario(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_HORARIO_VISTA';
+
     if ($result = $conn->query($query)) {
         return $result;
     } else {
