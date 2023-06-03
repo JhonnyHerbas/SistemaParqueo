@@ -148,4 +148,27 @@ function rechazar_moneda($ID_COM){
         return false;
     }
 }
+
+function insertar_guardia($ci,$cod, $nombre, $apellido, $pass) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_GUARDIA_INSERTAR(?,?,?,?,?)");
+    $stmt->bind_param("iisss",$ci,$cod,$nombre, $apellido, $pass);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+function visualizar_guardia(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_GUARDIA_VISTA';
+
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

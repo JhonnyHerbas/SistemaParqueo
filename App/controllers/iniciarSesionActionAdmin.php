@@ -13,6 +13,7 @@ if ($result) {
     if ($hash == $password) {
         session_start();
         $_SESSION['username'] = $user;
+        $_SESSION['codigo'] = $fila['ID_ADM'];
         $_SESSION['nombre'] = $fila['NOMBRE_ADM'] . " " . $fila['APELLIDO_ADM'];
         $_SESSION['rol'] = "Administrador";
         header("Location: ../views/visualizarSitio.php");
