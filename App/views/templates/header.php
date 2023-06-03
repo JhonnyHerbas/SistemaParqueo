@@ -63,6 +63,9 @@ if (isset($_SESSION['nombre'])) {
                     <a class='btn' href='realizarConsulta.php'>
                         Realizar consulta
                     </a>
+                    <a class='btn' href='realizarReclamo.php'>
+                        Realizar reclamo
+                    </a>
                 </p>
             </li>
             <li>
@@ -106,6 +109,20 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
                 <p>
+                    <a class='btn' data-bs-toggle='collapse' href='#collapse-guardia' role='button'
+                        aria-expanded='false' aria-controls='collapse-sitio'>
+                        Guardias
+                    </a>
+                </p>
+                <div class='collapse' id='collapse-guardia'>
+                    <ul>
+                        <li><a href='visualizarGuardia.php'>Ver guardias</a></li>
+                        <li><a href='registrarGuardia.php'>Registrar guardia</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <p>
                     <a class='btn' href='configuracionHorario.php'>
                         Configurar horario
                     </a>
@@ -142,6 +159,7 @@ if (isset($_SESSION['nombre'])) {
                 <div class='collapse' id='collapse-notificacion'>
                     <ul>
                         <li><a href='visualizarConsulta.php'>Visualizar consultas</a></li>
+                        <li><a href='visualizarReclamo.php'>Visualizar reclamos</a></li>
                         <li><a href='visualizarSolicitudes.php'>Visualizar solicitudes</a></li>
                         <li><a href='visualizarCompraMoneda.php'>Visualizar compra</a></li>
                     </ul>

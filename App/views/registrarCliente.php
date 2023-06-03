@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Realizar solicitud";
+$title = "Registrar docente";
 include('templates/head.php');
 include('../models/funcionSolicitud.php');
 ?>

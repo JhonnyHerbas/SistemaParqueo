@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Reporte";
+$title = "Reporte mensual";
 include('templates/head.php');
 include('../models/funcionDocente.php');
 include('../models/funcionSitio.php');

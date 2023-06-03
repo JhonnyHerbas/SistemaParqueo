@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Consultas";
+$title = "Reclamos";
 include('templates/head.php');
 ?>
 
@@ -24,12 +24,12 @@ include('templates/head.php');
     <div class="container container-solicitud ">
         <div class="solicitud-header">
             <h3 class="font-weight-bold">
-                CONSULTAS
+                Reclamos
             </h3>
         </div>
         <div class="data">
             <?php 
-             $result = visualizar_consulta();
+             $result = visualizar_reclamos();
              $i=1;
              if($result){
                 while ($row= $result->fetch_array(MYSQLI_BOTH)){
@@ -39,7 +39,7 @@ include('templates/head.php');
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
                                 <?php 
-                                    echo 'Consulta '. $i;                                        
+                                    echo 'Reclamo '. $i;                                        
                                 ?>
                             </button>
                         </h2>
@@ -60,7 +60,7 @@ include('templates/head.php');
                                 </div>
                                 <div class="acordion-btn w-50">
                                     <div class="function verde">
-                                    <a href="responderConsulta.php?consulta=<?php echo $row["ID_REC"]; ?>" class="fa-solid fa-clipboard-question blanco"></a>
+                                        <a href="#" class="fa-solid fa-clipboard-question blanco"></a>
                                     </div>
                                 </div>                                    
                             </div>

@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Solicitudes";
+$title = "Clientes en mora";
 include('templates/head.php');
 ?>
 

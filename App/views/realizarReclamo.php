@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Responder consulta";
+$title = "Realizar reclamo";
 include('templates/head.php');
 ?>
 
@@ -23,11 +23,11 @@ include('templates/head.php');
     <section class="container-form">
         <div class="card form">
             <div class="card-header">
-                <h3 class="font-weight-bold">Realizar consulta</h3>
+                <h3 class="font-weight-bold">Realizar reclamo</h3>
             </div>
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
-                    action="../controllers/realizarConsultaAction.php" method="post">
+                    action="../controllers/realizarReclamoAction.php" method="post">
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Codigos SIS:</label>
                         <input type="number" name="codigo" class="form-control text" id="validationCustom01"
@@ -35,8 +35,8 @@ include('templates/head.php');
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label text">Titulo de la consulta:</label>
-                        <input type="text" name="titulo-consulta" class="form-control text" id="validationCustom01"
+                        <label for="validationCustom01" class="form-label text">Motivo del reclamo:</label>
+                        <input type="text" name="titulo-reclamo" class="form-control text" id="validationCustom01"
                             pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="5"
                             maxlength="30" required>
                         <div class="invalid-feedback text">
@@ -65,7 +65,7 @@ include('templates/head.php');
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        ¿Está seguro de realizar esta consulta?
+                                        ¿Está seguro de realizar este reclamo?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal"

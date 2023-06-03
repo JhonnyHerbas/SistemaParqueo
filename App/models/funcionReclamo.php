@@ -40,5 +40,14 @@ function responder_reclamo($ID){
         return null;
     }
 }
+function visualizar_reclamos(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_RECLAMO_VIEW';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 
 ?>

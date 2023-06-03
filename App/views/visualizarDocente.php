@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Ver sitios";
+$title = "Ver docentes";
 include('templates/head.php');
 
 ?>

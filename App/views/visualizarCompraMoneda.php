@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Solicitudes";
+$title = "Compra de monedas";
 include('templates/head.php');
 //include('../models/funcionSolicitud.php');
 
