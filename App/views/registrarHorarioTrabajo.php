@@ -110,8 +110,8 @@ function validarHorario() {
       document.getElementById("ci").innerHTML = miv;
       
   } else {
-    if (cierre.getTime() - apertura.getTime() < 3 * 60 * 60 * 1000) {
-        var miv="Error el tiempo de funcionamiento del parqueo es de 3 horas.";
+    if (cierre.getTime() - apertura.getTime() < 1 * 30 * 60 * 1000) {
+        var miv="Error el tiempo de funcionamiento del parqueo es de 2 horas.";
        horaCierre.setCustomValidity("errorr");
        document.getElementById("ci").innerHTML = miv;
     }else{

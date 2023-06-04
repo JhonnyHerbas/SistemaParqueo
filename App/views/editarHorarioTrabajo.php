@@ -26,7 +26,7 @@ include('../models/funcionAdmin.php')
     <section class="container-form">
         <div class="card form">
             <div class="card-header">
-                <h3 class="font-weight-bold">Crear horario de trabajo</h3>
+                <h3 class="font-weight-bold">Editar horario de trabajo</h3>
             </div>
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
