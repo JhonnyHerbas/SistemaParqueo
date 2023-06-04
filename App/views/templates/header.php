@@ -24,10 +24,10 @@ if (isset($_SESSION['nombre'])) {
         <div class="info-user">
             <h4 class="info text">
                 <?php echo $user; ?>
-                </h3>
-                <h5 class="info text">
-                    <?php echo $role; ?>
-                </h5>
+            </h4>
+            <h5 class="info text">
+                <?php echo $role; ?>
+            </h5>
         </div>
     </div>
 
@@ -108,6 +108,7 @@ if (isset($_SESSION['nombre'])) {
                         <li><a href='visualizarDocente.php'>Ver docentes</a></li>
                         <li><a href='registrarCliente.php'>Registrar docente</a></li>
                         <li><a href='visualizarClienteMora.php'>Docentes mora</a></li>
+                        <li><a href='estadiaCliente.php'>Estadia docentes</a></li>
                     </ul>
                 </div>
             </li>
@@ -194,6 +195,20 @@ if (isset($_SESSION['nombre'])) {
         </ul>";
         $listaGuardia = "
         <ul>
+        <li>
+                <p>
+                    <a class='btn' href='registroIngreso.php'>
+                        Registrar ingreso
+                    </a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a class='btn' href='registroSalida.php'>
+                        Registrar salida
+                    </a>
+                </p>
+            </li>
             <li>
                 <p>
                     <a class='btn' href='../controllers/cerrarSesion.php'>
@@ -203,16 +218,15 @@ if (isset($_SESSION['nombre'])) {
             </li>
         </ul>";
 
-        if ($_SESSION['rol'] == "Administrador") {
-            echo $listaAdmin;
-        } else {
-            if ($_SESSION['rol'] == "Docente") {
-                echo $listaDocente;
+            if ($_SESSION['rol'] == "Administrador") {
+                echo $listaAdmin;
             } else {
-                echo $listaGuardia;
+                if ($_SESSION['rol'] == "Docente") {
+                    echo $listaDocente;
+                } else {
+                    echo $listaGuardia;
+                }
             }
-        }
-
         ?>
     </nav>
 

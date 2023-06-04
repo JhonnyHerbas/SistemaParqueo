@@ -607,6 +607,14 @@ form label:not(:first-child) {
     margin-left: 5%;
     margin-top: 2vh;
 }
+.estadia-cliente{
+    background-color: #FFFFFF;
+    height: 90%;
+    width: 90%;
+    overflow: auto;
+    margin-left: 5%;
+    margin-top: 2vh;
+}
 .data::-webkit-scrollbar {
     width: 10px;
 }
