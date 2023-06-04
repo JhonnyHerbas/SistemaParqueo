@@ -24,16 +24,17 @@ if (isset($_SESSION['nombre'])) {
         <div class="info-user">
             <h4 class="info text">
                 <?php echo $user; ?>
-            </h3>
-            <h5 class="info text">
-                <?php echo $role; ?>
-            </h5>
+                </h3>
+                <h5 class="info text">
+                    <?php echo $role; ?>
+                </h5>
         </div>
     </div>
 
     <nav class="navbar">
         <?php
-        $listaDocente = "<ul>
+        $listaDocente = "
+        <ul>
             <li>
                 <p>
                     <a href='editarDatosUser.php'>Editar datos</a>
@@ -191,11 +192,25 @@ if (isset($_SESSION['nombre'])) {
                 </p>
             </li>
         </ul>";
+        $listaGuardia = "
+        <ul>
+            <li>
+                <p>
+                    <a class='btn' href='../controllers/cerrarSesion.php'>
+                        Cerrar sesión
+                    </a>
+                </p>
+            </li>
+        </ul>";
 
         if ($_SESSION['rol'] == "Administrador") {
             echo $listaAdmin;
         } else {
-            echo $listaDocente;
+            if ($_SESSION['rol'] == "Docente") {
+                echo $listaDocente;
+            } else {
+                echo $listaGuardia;
+            }
         }
 
         ?>

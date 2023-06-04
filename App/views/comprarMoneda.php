@@ -13,7 +13,7 @@ include('../models/funcionSeccion.php')
     <?php
 
     include('templates/header.php');
-    if ($_SESSION['rol'] == "Administrador") {
+    if ($_SESSION['rol'] == "Administrador" || $_SESSION['rol'] == "Guardia") {
         header('Location: visualizarSitio.php');
     }
     $cod = $_SESSION['codigo']

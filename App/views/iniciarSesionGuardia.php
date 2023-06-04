@@ -37,11 +37,12 @@ include('../models/funcionSolicitud.php');
                 </li>
                 <li>
                     <p>
-                        <a class='btn' href='iniciarSesionGuardia.php'>
-                            Iniciar sesión guardia
+                        <a class='btn' href='iniciarSesionDocente.php'>
+                            Iniciar sesión docente
                         </a>
                     </p>
                 </li>
+                <li>
             </ul>
         </nav>
 
@@ -60,9 +61,9 @@ include('../models/funcionSolicitud.php');
             </div>
             <div class="card-body">
                 <form id="login" class="row g-3 needs-validation" novalidate
-                    action="../controllers/iniciarSesionActionDocente.php" method="post">
+                    action="../controllers/iniciarSesionActionGuardia.php" method="post">
 
-                    <h4 class="font-weight-bold">DOCENTE</h4>
+                    <h4 class="font-weight-bold">GUARDIA</h4>
                     <?php
                     // Obtener el parámetro "nombre" de la URL usando el operador ternario
                     $mensaje = isset($_GET["mensaje"]) ? $_GET["mensaje"] : "";
@@ -78,12 +79,12 @@ include('../models/funcionSolicitud.php');
                     ?>
                     <!-- Aqui viene toda la interfaz de visualizacion -->
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label text">Código SIS:</label>
+                        <label for="validationCustom01" class="form-label text">CI:</label>
                         <input type="text" name="codigo" class="form-control text" id="validationCustom01"
-                            pattern="^[0-9]{9}$" autocomplete="off" spellcheck="false" placeholder="Ingrese su código"
+                            pattern="^[0-9]{4-9}$" autocomplete="off" spellcheck="false" placeholder="Ingrese su código"
                             required>
                         <div class="invalid-feedback text">
-                            Por favor, ingrese un código válido.
+                            Por favor, ingrese un ci válido.
                         </div>
                     </div>
                     <div class="mb-3">
@@ -100,9 +101,9 @@ include('../models/funcionSolicitud.php');
                             data-target="#exampleModal">Iniciar
                             sesión</button>
                     </div>
-                    <div class="d-flex align-items-center justify-content-center h5">
+                    <!-- <div class="d-flex align-items-center justify-content-center h5">
                         <a class="text" href="recuperarContrasena.php">¿Olvidaste tu contraseña?</a>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>

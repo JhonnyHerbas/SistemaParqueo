@@ -35,6 +35,13 @@ include('../models/funcionSolicitud.php');
                         </a>
                     </p>
                 </li>
+                <li>
+                    <p>
+                        <a class='btn' href='iniciarSesionGuardia.php'>
+                            Iniciar sesión guardia
+                        </a>
+                    </p>
+                </li>
             </ul>
         </nav>
 
@@ -84,7 +91,7 @@ include('../models/funcionSolicitud.php');
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required>
                         <div class="invalid-feedback text">
-                            Por favor, ingrese un nombre válido.
+                            Por favor, ingrese un contraseña válida.
                         </div>
                     </div>
                     <div class="button-container">

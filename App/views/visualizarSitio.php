@@ -19,6 +19,9 @@ include('templates/head.php');
 
     $configuraciones = visualizar_horario();
     $configuracion= $configuraciones->fetch_array(MYSQLI_BOTH);
+    if ($_SESSION['rol'] == "Guardia"){
+        header('Location: vistaGuardia.php');
+    }
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
