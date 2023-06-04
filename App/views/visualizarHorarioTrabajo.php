@@ -67,6 +67,9 @@ include('templates/head.php');
                                     <div class="function azul">
                                         <a href="editarHorarioTrabajo.php?id_horario=<?php echo $row["ID_HOR"];?>" class="fa-solid fa-pencil blanco"></a>
                                     </div> 
+                                    <div class="function rojo">
+                                        <a href="../controllers/eliminarHorarioTrabajo.php?id_horario=<?php echo $row["ID_HOR"];?>" class="fa-solid fa-trash blanco"></a>
+                                    </div> 
                                 </div>                                    
                             </div>
                         </div>

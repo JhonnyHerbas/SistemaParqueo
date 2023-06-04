@@ -38,7 +38,7 @@ include('../models/funcionAdmin.php');
                     <select class="form-select bg-info text" name="id_guardia" id="validationCustom04" required>
                     <option selected disabled value="">Elige...</option>
                         <?php
-                        $result = visualizar_guardia();
+                        $result = visualizar_guardia_activo();
                         if($result){
                             while($row = $result->fetch_array(MYSQLI_BOTH)){
                                 $id = $row['ID_GUA'];
@@ -56,7 +56,7 @@ include('../models/funcionAdmin.php');
                     <div class="col-12 button">
                         <button class="btn btn-success text" id="submitButton" data-toggle="modal"
                             data-target="#exampleModal">Guardar</button>
-                        <a  href="visualizarCompraMoneda.php" class="btn btn-danger text" >Cancelar</a>
+                        <a  href="visualizarHorarioTrabajo.php" class="btn btn-danger text" >Cancelar</a>
                     </div>
 
                     <!-- Modal -->

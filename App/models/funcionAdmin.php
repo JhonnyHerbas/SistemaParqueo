@@ -171,6 +171,16 @@ function visualizar_guardia(){
         return null;
     }
 }
+function visualizar_guardia_activo(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_GUARDIA_ACTIVO_VISTA';
+
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 function visualizar_guardia_id($id){
     $conn = get_connection();
     $query ='CALL DB_SP_GUARDIA_VISTA_ID("'.$id.'")';
@@ -250,6 +260,15 @@ function editar_horario($id,$ingreso, $salida, $turno, $sueldo) {
     } else {
         $stmt->close();
         return false;
+    }
+}
+function eliminar_horario($id){
+    $conn = get_connection();
+    $query ='CALL DB_SP_HORARIO_ELIMINAR("'.$id.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
     }
 }
 ?>
