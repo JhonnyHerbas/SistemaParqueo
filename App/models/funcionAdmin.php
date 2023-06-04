@@ -231,5 +231,25 @@ function insertar_horario($ingreso,$salida, $turno, $sueldo) {
         return false;
     }
 }
-
+function visualizar_horario_id($id){
+    $conn = get_connection();
+    $query ='CALL DB_SP_HORARIO_VISTA_ID("'.$id.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+function editar_horario($id,$ingreso, $salida, $turno, $sueldo) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_HORARIO_UPDATE(?,?,?,?,?)");
+    $stmt->bind_param("isssi",$id,$ingreso,$salida,$turno,$sueldo);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
 ?>
