@@ -271,4 +271,16 @@ function eliminar_horario($id){
         return null;
     }
 }
+function editar_guardia($id,$nombre, $apellido) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_GUARDIA_UPDATE(?,?,?)");
+    $stmt->bind_param("iss",$id,$nombre,$apellido);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
 ?>
