@@ -66,6 +66,9 @@ if (isset($_SESSION['nombre'])) {
                     <a class='btn' href='realizarReclamo.php'>
                         Realizar reclamo
                     </a>
+                    <a class='btn' href='realizarSolicitudCompartido.php'>
+                        Solicitar sitio compartido
+                    </a>
                 </p>
             </li>
             <li>
@@ -176,6 +179,7 @@ if (isset($_SESSION['nombre'])) {
                         <li><a href='visualizarReclamo.php'>Visualizar reclamos</a></li>
                         <li><a href='visualizarSolicitudes.php'>Visualizar solicitudes</a></li>
                         <li><a href='visualizarCompraMoneda.php'>Visualizar compra</a></li>
+                        <li><a href='visualizarSolicitudCompartido.php'>Solicitudes de sitio compartido</a></li>
                     </ul>
                 </div>
             </li>

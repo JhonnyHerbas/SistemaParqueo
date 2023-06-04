@@ -102,5 +102,23 @@ function liberar_sitio($id_sit)
         return null;
     }
 }
+function sitio_compartir($ID_DOC) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SITIO_COMPARTIDO("'.$ID_DOC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+function visualizar_sitio_id($ID_SIT) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SITIO_VISTA_EDITAR("'.$ID_SIT.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 
 ?>

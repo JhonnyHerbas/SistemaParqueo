@@ -161,6 +161,7 @@ function insertar_guardia($ci,$cod, $nombre, $apellido, $pass) {
         return false;
     }
 }
+
 function visualizar_guardia(){
     $conn = get_connection();
     $query = 'SELECT * FROM DB_VIEW_GUARDIA_VISTA';
@@ -171,6 +172,7 @@ function visualizar_guardia(){
         return null;
     }
 }
+
 function visualizar_guardia_activo(){
     $conn = get_connection();
     $query = 'SELECT * FROM DB_VIEW_GUARDIA_ACTIVO_VISTA';
@@ -181,6 +183,7 @@ function visualizar_guardia_activo(){
         return null;
     }
 }
+
 function visualizar_guardia_id($id){
     $conn = get_connection();
     $query ='CALL DB_SP_GUARDIA_VISTA_ID("'.$id.'")';
@@ -190,6 +193,7 @@ function visualizar_guardia_id($id){
         return null;
     }
 }
+
 function habilitar_guardia($id){
     $conn = get_connection();
     $query ='CALL DB_SP_GUARDIA_HABLITAR("'.$id.'")';
@@ -199,6 +203,7 @@ function habilitar_guardia($id){
         return null;
     }
 }
+
 function deshabilitar_guardia($id){
     $conn = get_connection();
     $query ='CALL DB_SP_GUARDIA_DESHABLITAR("'.$id.'")';
@@ -219,6 +224,7 @@ function visualizar_horario(){
         return null;
     }
 }
+
 function asignar_guardia_horario($id_horario,$id_guardia){
     $conn = get_connection();
     $query ='CALL DB_SP_HORARIO_GUARDIA_ASIGNAR("'.$id_horario.'","'.$id_guardia.'")';
@@ -241,6 +247,7 @@ function insertar_horario($ingreso,$salida, $turno, $sueldo) {
         return false;
     }
 }
+
 function visualizar_horario_id($id){
     $conn = get_connection();
     $query ='CALL DB_SP_HORARIO_VISTA_ID("'.$id.'")';
@@ -250,6 +257,7 @@ function visualizar_horario_id($id){
         return null;
     }
 }
+
 function editar_horario($id,$ingreso, $salida, $turno, $sueldo) {
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_HORARIO_UPDATE(?,?,?,?,?)");
@@ -262,6 +270,7 @@ function editar_horario($id,$ingreso, $salida, $turno, $sueldo) {
         return false;
     }
 }
+
 function eliminar_horario($id){
     $conn = get_connection();
     $query ='CALL DB_SP_HORARIO_ELIMINAR("'.$id.'")';
@@ -271,6 +280,7 @@ function eliminar_horario($id){
         return null;
     }
 }
+
 function editar_guardia($id,$nombre, $apellido) {
     $conn = get_connection();
     $stmt = $conn->prepare("CALL DB_SP_GUARDIA_UPDATE(?,?,?)");
@@ -281,6 +291,30 @@ function editar_guardia($id,$nombre, $apellido) {
     } else {
         $stmt->close();
         return false;
+    }
+}
+
+function insertar_sitio_compartido($id,$titular, $suplente) {
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_COMPARTIDO_INSERT(?,?,?)");
+    $stmt->bind_param("iii",$id,$titular,$suplente);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+
+function visualizar_sitio_compartido(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_COMPARTIDO_VISTA';
+
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
     }
 }
 ?>

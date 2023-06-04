@@ -31,6 +31,15 @@ function visualizar_docente_id($ID_DOC){
         return null;
     }
 }
+function visualizar_docente_id_distinto($ID_DOC){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_DOCENTE_ID_DISTINTO("'.$ID_DOC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 function visualizar_pago_solicitado($ID_SOl){
     $conn = get_connection();
     $query = 'CALL DB_SP_PAGO_VISTA("'.$ID_SOl.'")';
