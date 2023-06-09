@@ -317,4 +317,61 @@ function visualizar_sitio_compartido(){
         return null;
     }
 }
+
+function crear_noticia($id, $titulo, $descripcion){
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_NOTICIA_CREAR(?,?,?)");
+    $stmt->bind_param("iss",$id, $titulo, $descripcion);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+function editar_noticia($id, $titulo, $descripcion){
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_NOTICIA_EDITAR(?,?,?)");
+    $stmt->bind_param("iss",$id, $titulo, $descripcion);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+function eliminar_noticia($id){
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_NOTICIA_ELIMINAR(?)");
+    $stmt->bind_param("i",$id);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+function ver_noticia($id){
+    $conn = get_connection();
+    $query ='CALL DB_SP_NOTICIA_VER("'.$id.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function visualizar_noticias(){
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_NOTICIAS_VISTA';
+
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

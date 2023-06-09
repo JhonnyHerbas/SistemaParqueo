@@ -74,6 +74,11 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
                 <p>
+                    <a href='verNoticias.php'>Noticias</a>
+                </p>
+            </li>
+            <li>
+                <p>
                     <a class='btn' href='../controllers/cerrarSesion.php'>
                         Cerrar sesión
                     </a>
@@ -186,6 +191,20 @@ if (isset($_SESSION['nombre'])) {
                 </div>
             </li>
             <li>
+            <p>
+                <a class='btn' data-bs-toggle='collapse' href='#collapse-docente' role='button'
+                    aria-expanded='false' aria-controls='collapse-sitio'>
+                    Noticias
+                </a>
+            </p>
+                <div class='collapse' id='collapse-docente'>
+                    <ul>
+                        <li><a href='verNoticias.php'>Ver noticias</a></li>
+                        <li><a href='crearNoticia.php'>Publicar noticia</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
                 <p>
                     <a class='btn' href='../controllers/cerrarSesion.php'>
                         Cerrar sesión
@@ -207,6 +226,11 @@ if (isset($_SESSION['nombre'])) {
                     <a class='btn' href='registroSalida.php'>
                         Registrar salida
                     </a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href='verNoticias.php'>Noticias</a>
                 </p>
             </li>
             <li>

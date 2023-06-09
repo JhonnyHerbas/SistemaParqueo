@@ -513,7 +513,16 @@ input[type="number"]::-webkit-inner-spin-button {
     justify-content: center;
     display: flex;
 }
-
+.card-noticias {
+    display: block;
+}
+.title-notice {
+    font-weight: bold;
+}
+.body-card {
+    text-align: left;
+    display: flex;
+}
 .card-body form {
     width: 90vh;
     display: block;
