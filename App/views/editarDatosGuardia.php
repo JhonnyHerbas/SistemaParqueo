@@ -71,9 +71,9 @@ include('../models/funcionAdmin.php');
                                         ¿Está seguro de actualizar?
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal"
                                             id="cancelButton">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary"
+                                        <button type="submit" class="btn btn-success"
                                             id="confirmButton">Confirmar</button>
                                     </div>
                                 </div>

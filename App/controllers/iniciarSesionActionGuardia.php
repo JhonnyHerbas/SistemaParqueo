@@ -16,7 +16,7 @@ if ($result) {
         $_SESSION['codigo'] = $fila['ID_GUA'];
         $_SESSION['nombre'] = $fila['NOMBRE_GUA'] . " " . $fila['APELLIDO_GUA'];
         $_SESSION['rol'] = "Guardia";
-        header("Location: ../views/vistaGuardia.php");
+        header("Location: ../views/verNoticias.php");
     } else {
         header("Location: ../views/iniciarSesionGuardia.php?error=contrasena_incorrecta");
     }

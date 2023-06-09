@@ -101,9 +101,6 @@ include('../models/funcionSolicitud.php');
                             data-target="#exampleModal">Iniciar
                             sesión</button>
                     </div>
-                    <!-- <div class="d-flex align-items-center justify-content-center h5">
-                        <a class="text" href="recuperarContrasena.php">¿Olvidaste tu contraseña?</a>
-                    </div> -->
                 </form>
             </div>
         </div>
