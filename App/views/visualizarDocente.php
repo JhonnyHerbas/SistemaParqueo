@@ -64,9 +64,6 @@ include('templates/head.php');
                                         <div class="function azul">
                                             <a href="editarDatosUser.php?id_doc=<?php echo $fila["ID_DOC"];?>" target="_self" class="fa-solid fa-pencil blanco"></a>
                                         </div>
-                                        <div class="function rojo">
-                                            <a href="" target="_self" class="fa-solid fa-trash blanco"></a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

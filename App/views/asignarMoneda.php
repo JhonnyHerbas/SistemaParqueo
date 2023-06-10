@@ -49,7 +49,7 @@ include('../models/funcionDocente.php');
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationCustom02" class="form-label text">Codigo SIS:</label>
+                        <label for="validationCustom02" class="form-label text">Código SIS:</label>
                         <input type="number" class="form-control text" name="codigo" id="validationCustom02" value="<?=  $compra['ID_DOC'] ?>" readonly required>
                     </div>
 

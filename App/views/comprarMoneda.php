@@ -33,7 +33,7 @@ include('../models/funcionSeccion.php')
                     <form id="myForm" class="row g-3 needs-validation" novalidate
                         action="../controllers/comprarMonedaAction.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label for="validationCustom01" class="form-label text">Codigos SIS:</label>
+                            <label for="validationCustom01" class="form-label text">Código SIS:</label>
                             <input type="number" name="codigo" class="form-control text" id="validationCustom01"
                                 required readonly value="<?php echo $cod; ?>">
                         </div>

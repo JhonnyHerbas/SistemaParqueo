@@ -29,7 +29,7 @@ include('templates/head.php');
                 <form id="myForm" class="row g-3 needs-validation" novalidate
                     action="../controllers/realizarReclamoAction.php" method="post">
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label text">Codigos SIS:</label>
+                        <label for="validationCustom01" class="form-label text">Código SIS:</label>
                         <input type="number" name="codigo" class="form-control text" id="validationCustom01"
                             required readonly value="<?php echo $cod; ?>">
                     </div>
@@ -37,7 +37,7 @@ include('templates/head.php');
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Motivo del reclamo:</label>
                         <input type="text" name="titulo-reclamo" class="form-control text" id="validationCustom01"
-                            pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="5"
+                            pattern="^(?=.*[a-zA-Z])[a-zA-Z0-9\s]+$" autocomplete="off" spellcheck="false" minlength="5"
                             maxlength="30" required>
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
@@ -88,6 +88,7 @@ include('templates/head.php');
     include('templates/scripts.php');
 
     ?>
+    <script src="../../public/js/textareaValidation.js"></script>
 </body>
 
 </html>

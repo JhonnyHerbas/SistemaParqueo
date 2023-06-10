@@ -71,7 +71,7 @@ try {
         echo "No se econtraron resultados.";
     }
 } catch (Exception $e) {
-
+    header("Location: ../views/visualizarSitio.php");
 }
 
 ?>

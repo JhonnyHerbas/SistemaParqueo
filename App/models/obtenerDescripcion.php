@@ -8,7 +8,7 @@ $result = mysqli_query($conn, "CALL DB_SP_SECCION_VISTA_EDITAR($id_sec)");
 try {
     $row = mysqli_fetch_assoc($result);
 } catch (Exception $e) {
-
+    header("Location: ../views/visualizarSitio.php");
 }
 
 echo "<p>" . $row['PARQUEO_SEC'] . "<br>" . $row['DESCRIPCION_SEC'] . "</p>";

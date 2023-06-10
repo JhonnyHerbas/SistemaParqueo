@@ -113,7 +113,7 @@ include('templates/head.php');
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        ¿Está seguro de crear esta sección?
+                                        ¿Está seguro de realizar el pago?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal"

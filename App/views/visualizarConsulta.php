@@ -49,7 +49,7 @@ include('templates/head.php');
                                 <?php
                                     $docentes = visualizar_docente_id($row['ID_DOC']);
                                     $docente= $docentes->fetch_array(MYSQLI_BOTH);
-                                    echo "Titulo: ".$row["TITULO_REC"]. '<br>';
+                                    echo "Título: ".$row["TITULO_REC"]. '<br>';
                                     echo "Nombre: ".$docente["NOMBRE_DOC"].' '.$docente["APELLIDO_DOC"]. '<br>';
                                     echo "Celular: ".$docente["CELULAR_DOC"]. '<br>';
                                     echo "Correo: ".$docente["CORREO_DOC"]. '<br>';

@@ -21,7 +21,7 @@ include('../models/funcionAdmin.php')
             <div class="form-containerG">
                 <div class="header-containerG">
                     <h3 class="font-weight-bold h3">
-                        Registrar docente
+                        Editar docente
                     </h3>
                 </div>
                 <div class="card-body">
@@ -34,7 +34,7 @@ include('../models/funcionAdmin.php')
                                 <div class="mb-3">
                                     <label for="validationCustom01" class="form-label text">Nombre:</label>
                                     <input type="text" name="nombre" class="form-control text" id="validationCustom01"
-                                        pattern="[a-zA-Z\s]{3,30}" autocomplete="off" spellcheck="false"
+                                        pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,30}$" autocomplete="off" spellcheck="false"
                                         placeholder="Ingrese su nombre" required
                                         value="<?php echo $docente["NOMBRE_DOC"]; ?>">
                                     <div class="invalid-feedback text">
@@ -46,7 +46,7 @@ include('../models/funcionAdmin.php')
                                 <div class="mb-3">
                                     <label for="validationCustom02" class="form-label text">Apellido/s:</label>
                                     <input type="text" name="apellido" class="form-control text" id="validationCustom02"
-                                        pattern="[a-zA-Z\s]{3,90}" autocomplete="off" spellcheck="false" minlength="5"
+                                        pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,90}$" autocomplete="off" spellcheck="false" minlength="5"
                                         maxlength="30" placeholder="Ingrese su apellido" required
                                         value="<?php echo $docente["APELLIDO_DOC"]; ?>">
                                     <div class="invalid-feedback text">
@@ -108,7 +108,7 @@ include('../models/funcionAdmin.php')
                             <div class="form-containerG">
                                 <div class="header-containerG">
                                     <h3 class="font-weight-bold h3">
-                                        Registrar docente
+                                        Editar docente
                                     </h3>
                                 </div>
                                 <div class="card-body grande">
@@ -121,7 +121,7 @@ include('../models/funcionAdmin.php')
                                                 <div class="mb-3">
                                                     <label for="validationCustom01" class="form-label text">Nombre:</label>
                                                     <input type="text" name="nombre" class="form-control text"
-                                                        id="validationCustom01" pattern="[a-zA-Z\s]{3,30}"
+                                                        id="validationCustom01" pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,30}$"
                                                         autocomplete="off" spellcheck="false"
                                                         placeholder="Ingrese su nombre" readonly
                                                         value="<?php echo $docente["NOMBRE_DOC"]; ?>">
@@ -134,7 +134,7 @@ include('../models/funcionAdmin.php')
                                                 <div class="mb-3">
                                                     <label for="validationCustom02" class="form-label text">Apellido/s:</label>
                                                     <input type="text" name="apellido" class="form-control text"
-                                                        id="validationCustom02" pattern="[a-zA-Z\s]{3,90}"
+                                                        id="validationCustom02" pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,90}$
                                                         autocomplete="off" spellcheck="false" minlength="5" maxlength="30"
                                                         placeholder="Ingrese su apellido" readonly
                                                         value="<?php echo $docente["APELLIDO_DOC"]; ?>">

@@ -43,8 +43,8 @@ include('../models/funcionReclamo.php')
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationTextarea" class="form-label text">Descripción de la consulta:</label>
-                        <textarea class="form-control area text" name="descripcion" id="validationTextarea" readonly><?= $consulta['DESCRIPCION_REC'] ?></textarea>                      
+                        <label for="validationTextarea1" class="form-label text">Descripción de la consulta:</label>
+                        <textarea class="form-control area text" name="descripcion" id="validationTextarea1" readonly><?= $consulta['DESCRIPCION_REC'] ?></textarea>                      
                     </div>
 
                     <div class="mb-3">
@@ -98,6 +98,7 @@ include('../models/funcionReclamo.php')
 
 
     <script src="../../public/js/validacion.js"></script>
+    <script src="../../public/js/textareaValidation.js"></script>
 </body>
 
 </html>
