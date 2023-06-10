@@ -92,7 +92,7 @@ include('../models/funcionSolicitud.php');
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required>
                         <div class="invalid-feedback text">
-                            Por favor, ingrese un contraseña válida.
+                            Por favor, ingrese una contraseña válida.
                         </div>
                     </div>
                     <div class="button-container">

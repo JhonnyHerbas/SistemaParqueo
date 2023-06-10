@@ -33,19 +33,18 @@ include('../models/funcionSolicitud.php');
                     style="display: none;">
 
                     <div class="mb-3">
-                        <label for="validationCustom03" class="form-label text">Cedula de identidad:</label>
-                        <input type="number" name="codigo" class="form-control text" id="validationCustom03"
-                        autocomplete="off" spellcheck="false" min="5"
-                            max="30" placeholder="Ingrese su cedula" required>
+                        <label for="validationCustom03" class="form-label text">Cédula de identidad:</label>
+                        <input type="text" name="codigo" class="form-control text" id="validationCustom03"
+                        autocomplete="off" spellcheck="false" pattern="[0-9]{5,10}" placeholder="Ingrese su cedula" required>
                         <div class="invalid-feedback text">
-                            Ingrese una cedula de identidad válido.
+                            Ingrese una cédula de identidad válido.
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Nombre:</label>
                         <input type="text" name="nombre" class="form-control text" id="validationCustom01"
-                            pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="3"
+                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,30}$" autocomplete="off" spellcheck="false" minlength="3"
                             maxlength="30" required placeholder="Ingrese un nombre">
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
@@ -55,8 +54,8 @@ include('../models/funcionSolicitud.php');
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Apellidos:</label>
                         <input type="text" name="apellido" class="form-control text" id="validationCustom01"
-                                pattern = "^[a-zA-Z0-9áéíóúÁÉÍÓÚ\s]*$" autocomplete="off" spellcheck="false" minlength="3"
-                            maxlength="30" required placeholder="Ingrese un apellido">
+                            pattern = "^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,90}$" autocomplete="off" spellcheck="false" minlength="3"
+                            maxlength="90" required placeholder="Ingrese un apellido">
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
                         </div>

@@ -38,7 +38,7 @@ include('../models/funcionAdmin.php')
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Turno del horario:</label>
                         <input type="text" name="turno" class="form-control text" id="validationCustom01"
-                            pattern="^[a-zA-Z0-9ñ\s]*$" autocomplete="off" spellcheck="false" minlength="3"
+                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z0-9ñ\s]{3,30}$" autocomplete="off" spellcheck="false" minlength="3"
                             maxlength="30" required value="<?= $horario['TURNO_HOR'];?>">
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.

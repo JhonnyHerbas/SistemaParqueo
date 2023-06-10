@@ -21,7 +21,7 @@ include('../models/funcionAdmin.php');
     $cod = $_GET['id_guardia'];
     $result = visualizar_guardia_id($cod);
     $row = $result->fetch_array(MYSQLI_BOTH)
-    ?>
+        ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
     <section class="container-form">
@@ -32,24 +32,23 @@ include('../models/funcionAdmin.php');
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
                     action="../controllers/editarDatosGuardiaAction.php" method="post">
-                    <input type="hidden" value="<?= $cod; ?>" name="id_guardia"
-                    style="display: none;">
+                    <input type="hidden" value="<?= $cod; ?>" name="id_guardia" style="display: none;">
 
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Nombre:</label>
                         <input type="text" name="nombre" class="form-control text" id="validationCustom01"
-                            pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="3"
-                            maxlength="30" required value="<?= $row['NOMBRE_GUA'];?>">
+                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,30}$" autocomplete="off" spellcheck="false"
+                            minlength="3" maxlength="30" required value="<?= $row['NOMBRE_GUA']; ?>">
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Apellidos:</label>
                         <input type="text" name="apellido" class="form-control text" id="validationCustom01"
-                                pattern = "^[a-zA-Z0-9áéíóúÁÉÍÓÚ\s]*$" autocomplete="off" spellcheck="false" minlength="3"
-                            maxlength="30" required value="<?= $row['APELLIDO_GUA'];?>">
+                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,90}$" autocomplete="off" spellcheck="false"
+                            minlength="3" maxlength="90" required value="<?= $row['APELLIDO_GUA']; ?>">
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
