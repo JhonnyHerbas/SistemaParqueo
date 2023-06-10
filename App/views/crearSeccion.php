@@ -30,7 +30,7 @@ include('../models/funcionSeccion.php')
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Nombre de sección:</label>
                         <input type="text" name="nombre-seccion" class="form-control text" id="validationCustom01"
-                            pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="3"
+                            pattern="^(?=.*[a-zA-Z])[a-zA-Z\d\s]+$" autocomplete="off" spellcheck="false" minlength="3"
                             maxlength="30" required>
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
@@ -41,7 +41,7 @@ include('../models/funcionSeccion.php')
                         <label for="validationCustom04" class="form-label text">Parqueo:</label>
                         <select class="form-select text" id="validationCustom04" name="parqueo" required>
                             <option selected disabled value="">Seleccione</option>
-                            <option value="Parqueo 1" >Parqueo 1</option>
+                            <option value="Parqueo 1">Parqueo 1</option>
                             <option value="Parqueo 2">Parqueo 2</option>
                         </select>
                         <div class="invalid-feedback text">
@@ -51,20 +51,23 @@ include('../models/funcionSeccion.php')
 
                     <div class="mb-3">
                         <label for="validationCustom02" class="form-label text">Cantidad de sitios:</label>
-                        <input type="number" class="form-control text" name="cantidad" id="validationCustom02" min="4" max="20"  required>
+                        <input type="number" class="form-control text" name="cantidad" id="validationCustom02" min="4"
+                            max="20" required>
                         <div class="invalid-feedback text">
-                            Ingrese un numero mayor a 4 y menor a 20.
+                            Ingrese un número mayor a 4 y menor a 20.
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="validationTextarea" class="form-label text">Descripción:</label>
-                        <textarea class="form-control area text" name="descripcion" id="validationTextarea" minlength="20"
-                            maxlength="200" cols="3" autocomplete="off" spellcheck="false" required></textarea>
+                        <textarea class="form-control area text" name="descripcion" id="validationTextarea" pattern=""
+                            minlength="20" maxlength="200" cols="3" autocomplete="off" spellcheck="false"
+                            required></textarea>
                         <div class="invalid-feedback text">
                             Solo se acepta un mínimo de 20 y máximo de 200 caracteres.
                         </div>
                     </div>
+
                     <div class="col-12 button">
                         <button class="btn btn-success text" id="submitButton" data-toggle="modal"
                             data-target="#exampleModal">Guardar</button>
@@ -107,6 +110,7 @@ include('../models/funcionSeccion.php')
 
 
     <script src="../../public/js/validacion.js"></script>
+    <script src="../../public/js/textareaValidation.js"></script>
 </body>
 
 </html>

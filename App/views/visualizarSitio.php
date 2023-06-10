@@ -36,7 +36,7 @@ include('templates/head.php');
                 <form action="../controllers/buscarSitio.php" method="POST">
                     <div class="input-container">
                         <div class="container-input-buscar">
-                            <input type="text" class="input-buscar" name="nombre" id="nombre">
+                            <input type="text" class="input-buscar" pattern="[0-9]*" name="nombre" id="nombre">
                         </div>
                         <div class="container-button-buscar">
                             <input type="submit" value="Buscar" class="button-buscar" id="buscar">
@@ -142,6 +142,8 @@ include('templates/head.php');
                             </div>
                             <?php
                         }
+                    } else {
+                        echo "<h1>El sitio no existe</h1>";
                     }
                     ?>
                 </div>

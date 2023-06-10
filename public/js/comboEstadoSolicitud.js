@@ -25,13 +25,13 @@ $(document).ready(function () {
                         <div id="flush-collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body body-sitio">
                                 <div class="acordion-text w-50">
-                                    Titulo: ${solicitudes.TITULO_SOL} <br> 
+                                    Título: ${solicitudes.TITULO_SOL} <br> 
                                     Nombre: ${solicitudes.NOMBRE_DOC} ${solicitudes.APELLIDO_DOC} <br> 
                                     Celular: ${solicitudes.CELULAR_DOC} <br> 
                                     Correo: ${solicitudes.CORREO_DOC} <br> 
                                     Estado: ${solicitudes.ESTADO_SOL} <br> 
                                     Descripción: ${solicitudes.DESCRIPCION_SOL ? solicitudes.DESCRIPCION_SOL : ''} <br> 
-                                    Numero de sitio: #${solicitudes.SITIO_SOL} <br>
+                                    Número de sitio: #${solicitudes.SITIO_SOL} <br>
                                     Fecha solicitud: ${solicitudes.FECHA_SOL}
                                 </div>
                                     <div class="acordion-btn w-50">    

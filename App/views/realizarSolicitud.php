@@ -45,7 +45,7 @@ include('../models/funcionSitio.php');
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label text">Titulo de solicitud:</label>
+                        <label for="validationCustom01" class="form-label text">Título de solicitud:</label>
                         <input type="text" name="titulo-solicitud" class="form-control text" id="validationCustom01"
                             pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="5"
                             maxlength="30" value="Solicitud de sitio" readonly>
@@ -76,8 +76,8 @@ include('../models/funcionSitio.php');
 
                     <div class="mb-3">
                         <label for="validationTextarea" class="form-label text">Descripción:</label>
-                        <textarea class="form-control area text" name="descripcion" id="validationTextarea" maxlength="200"
-                            cols="3" autocomplete="off" spellcheck="false" ></textarea>
+                        <textarea class="form-control area text" name="descripcion" id="validationTextarea" minlength="5" maxlength="200"
+                            cols="3" autocomplete="off" spellcheck="false" required></textarea>
                         <div class="invalid-feedback">
                             Solo se acepta un máximo de 200 caracteres.
                         </div>
@@ -125,6 +125,7 @@ include('../models/funcionSitio.php');
 
 
     <script src="../../public/js/validacion.js"></script>
+    <script src="../../public/js/textareaValidation.js"></script>
 </body>
 
 </html>

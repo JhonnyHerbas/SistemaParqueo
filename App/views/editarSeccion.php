@@ -101,6 +101,7 @@ include('../models/funcionSeccion.php')
 
 
     <script src="../../public/js/validacion.js"></script>
+    <script src="../../public/js/textareaValidation.js"></script>
 </body>
 
 </html>
