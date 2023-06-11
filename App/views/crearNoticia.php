@@ -34,7 +34,7 @@ include('templates/head.php');
                     <div class="mb-3">
                         <label for="validationCustom03" class="form-label text">Título:</label>
                         <input type="text" name="titulo" class="form-control text" id="validationCustom03"
-                            autocomplete="off" spellcheck="false" min="3" max="50" placeholder="Ingrese un titulo"
+                            autocomplete="off" pattern="^(?=.*[a-zA-Z])[a-zA-Z0-9\s]{3,30}$" spellcheck="false" min="3" max="50" placeholder="Ingrese un titulo"
                             required>
                         <div class="invalid-feedback text">
                             Ingrese un titulo válido.
@@ -86,6 +86,7 @@ include('templates/head.php');
 
     ?>
     <script src="../../public/js/validacion.js"></script>
+    <script src="../../public/js/textareaValidation.js"></script>
 </body>
 
 </html>
