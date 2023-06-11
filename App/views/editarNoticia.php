@@ -28,7 +28,7 @@ include('../models/funcionAdmin.php');
     <section class="container-form">
         <div class="card form">
             <div class="card-header">
-                <h3 class="font-weight-bold">Publicar noticia</h3>
+                <h3 class="font-weight-bold">Editar noticia</h3>
             </div>
             <div class="card-body">
                 <form id="myForm" class="row g-3 needs-validation" novalidate
@@ -37,7 +37,7 @@ include('../models/funcionAdmin.php');
                     <input type="hidden" name="id-not" value="<?php echo $id; ?>">
 
                     <div class="mb-3">
-                        <label for="validationCustom03" class="form-label text">Titulo:</label>
+                        <label for="validationCustom03" class="form-label text">Título:</label>
                         <input type="text" name="titulo" class="form-control text" id="validationCustom03"
                             autocomplete="off" spellcheck="false" min="3" max="50" placeholder="Ingrese un titulo"
                             required value="<?php echo $fila['TITULO_NOT']; ?>">

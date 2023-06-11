@@ -32,7 +32,7 @@ include('templates/head.php');
                     <input type="hidden" name="id-user" value="<?php echo $_SESSION['codigo']; ?>">
 
                     <div class="mb-3">
-                        <label for="validationCustom03" class="form-label text">Titulo:</label>
+                        <label for="validationCustom03" class="form-label text">Título:</label>
                         <input type="text" name="titulo" class="form-control text" id="validationCustom03"
                             autocomplete="off" spellcheck="false" min="3" max="50" placeholder="Ingrese un titulo"
                             required>
