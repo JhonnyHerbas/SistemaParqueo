@@ -65,7 +65,7 @@ include('../models/funcionSolicitud.php');
                         <label for="validationCustom07" class="form-label text">Contraseña:</label>
                         <input type="password" name="pass" class="form-control text" id="validationCustom07"
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
-                            placeholder="Ingrese su contraseña" required>
+                            placeholder="Ingrese su contraseña" required oninput="checkPasswordMatch(this)">
                         <div class="invalid-feedback text">
                             Ingrese una contraseña válida.
                         </div>
@@ -80,7 +80,7 @@ include('../models/funcionSolicitud.php');
                             Ingrese una contraseña válida.
                         </div>
                     </div>
-
+                    <p id="password-match-msg"></p>
                     <div class="col-12 button">
                         <button class="btn btn-success text" id="submitButton" data-toggle="modal"
                             data-target="#exampleModal">Guardar</button>
@@ -117,6 +117,7 @@ include('../models/funcionSolicitud.php');
 
     ?>
     <script src="../../public/js/validacion.js"></script>
+    <script src="../../public/js/validarPassword.js"></script>
 </body>
 
 </html>

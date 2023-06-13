@@ -148,14 +148,14 @@ if (isset($_SESSION['nombre'])) {
             <li>
                 <p>
                     <a class='btn' href='configuracionHorario.php'>
-                        Configurar horario
+                        Configurar horario de atención
                     </a>
                 </p>
             </li>
             <li>
                 <p>
                     <a class='btn' href='crearSeccion.php'>
-                        Crear seccion
+                        Crear sección
                     </a>
                 </p>
             </li>

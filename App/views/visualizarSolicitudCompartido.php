@@ -74,6 +74,8 @@ include('templates/head.php');
             <?php
                 $i=$i+1;                        
                 }
+            } else {
+                echo "<h1>No existen solicitudes</h1>";
             }
             ?>
         </div>
