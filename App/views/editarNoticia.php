@@ -58,7 +58,7 @@ include('../models/funcionAdmin.php');
                     <div class="col-12 button">
                         <button class="btn btn-success text" id="submitButton" data-toggle="modal"
                             data-target="#exampleModal">Guardar</button>
-                        <button class="btn btn-danger text" type="reset">Cancelar</button>
+                            <a href="./verNoticias.php" class="btn btn-danger text" >Cancelar</a>
                     </div>
 
                     <!-- Modal -->
