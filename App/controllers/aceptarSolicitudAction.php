@@ -21,7 +21,7 @@ echo $correo;
  // Crea un objeto PHPMailer
 $mail= new PHPMailer(true);
  // Configura el servidor SMTP de Gmail
- $mail->isSMTP();
+$mail->isSMTP();
  $mail->Host = 'smtp.gmail.com';
  $mail->Port = 465;
  $mail->SMTPAuth = true;

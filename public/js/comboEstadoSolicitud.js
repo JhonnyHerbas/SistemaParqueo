@@ -2,7 +2,9 @@ $(document).ready(function () {
     let select = document.getElementById("estado");
     let valorSeleccionado = select.value;
     let data = document.getElementById("data");
-
+    var fechaActual = new Date();
+    var dia = fechaActual.getDate();
+    
     function cargar_solicitudes(send_dato) {
         $.ajax({
             type: "POST",
@@ -34,14 +36,20 @@ $(document).ready(function () {
                                     Número de sitio: #${solicitudes.SITIO_SOL} <br>
                                     Fecha solicitud: ${solicitudes.FECHA_SOL}
                                 </div>
-                                    <div class="acordion-btn w-50">    
-                                    <div class="function verde">
-                                        <a href="../controllers/aceptarSolicitudAction.php?nombre=${solicitudes.NOMBRE_DOC}&apellido=${solicitudes.APELLIDO_DOC}&id=${solicitudes.ID_SOL}&sitio=${solicitudes.SITIO_SOL}&correo=${solicitudes.CORREO_DOC}&accion=aceptar" class="fa-solid fa-square-check blanco"></a>
-                                    </div>
-                                    <div class="function rojo">
-                                        <a href="../controllers/aceptarSolicitudAction.php?nombre=${solicitudes.NOMBRE_DOC}&apellido=${solicitudes.APELLIDO_DOC}&sitio=${solicitudes.SITIO_SOL}&correo=${solicitudes.CORREO_DOC}&accion=rechazar" target="_self" class="fa-solid fa-square-xmark blanco"></a>
-                                    </div>
-                                </div>
+                                ${
+                                    solicitudes.ESTADO_SOL === 'ESPERA' && dia<16
+                                      ? `
+                                        <div class="acordion-btn w-50">    
+                                            <div class="function verde">
+                                                <a href="../controllers/aceptarSolicitudAction.php?nombre=${solicitudes.NOMBRE_DOC}&apellido=${solicitudes.APELLIDO_DOC}&id=${solicitudes.ID_SOL}&sitio=${solicitudes.SITIO_SOL}&correo=${solicitudes.CORREO_DOC}&accion=aceptar" class="fa-solid fa-square-check blanco"></a>
+                                            </div>
+                                            <div class="function rojo">
+                                                <a href="../controllers/aceptarSolicitudAction.php?nombre=${solicitudes.NOMBRE_DOC}&apellido=${solicitudes.APELLIDO_DOC}&id=${solicitudes.ID_SOL}&sitio=${solicitudes.SITIO_SOL}&correo=${solicitudes.CORREO_DOC}&accion=rechazar" target="_self" class="fa-solid fa-square-xmark blanco"></a>
+                                            </div>
+                                        </div>
+                                      `
+                                      : ''
+                                  }
                             </div>
                         </div>
                     </div>            

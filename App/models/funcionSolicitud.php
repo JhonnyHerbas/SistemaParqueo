@@ -48,11 +48,6 @@ function solicitud($ID_SOL,$ACCION){
     }else{
         $result = mysqli_query($conn, "CALL DB_SP_SOLICITUD_RECHAZAR($ID_SOL)");
     }
-   /* if (mysqli_num_rows($result) > 0) {
-        return $result;
-    } else {
-        return null;
-    }*/
 
 }
 
