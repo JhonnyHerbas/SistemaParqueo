@@ -8,7 +8,8 @@ $seccion = $_POST['seccion'];
 if (!empty($seccion)) {
     $sql = "CALL DB_SP_SITIO_VISTA_ID_SEC($seccion)";
 }
-
+include('../models/funcionSitio.php');
+include('../models/funcionDocente.php');
 $result = mysqli_query($conn, $sql);
 
 try {
@@ -42,13 +43,18 @@ try {
             if ($fila["DISPONIBLE_SIT"] == 1) {
                 echo 'Asignado: No<br>';
             } else {
-                echo 'Asignado: Si<br>';
+                echo "Asignado: Si<br>";
+                $sitios1 = visualizar_sitio_docente($fila['ID_SIT']);
+                $sitio1 = $sitios1->fetch_array(MYSQLI_BOTH);
+                $docentes = visualizar_docente_id($sitio1['ID_DOC']);
+                $docente = $docentes->fetch_array(MYSQLI_BOTH);
+                echo "Docente: " . $docente['NOMBRE_DOC'] . ' ' . $docente['APELLIDO_DOC'] . '<br>';
             }
             echo 'Precio: ' . $fila["PRECIO_SIT"] . ' PARCK';
             echo '</div><div class="acordion-btn w-50">';
             if ($_SESSION['rol'] != "Administrador") {
                 if ($fila['DISPONIBLE_SIT'] != 0) {
-                echo '<div class="function verde"><a href="realizarSolicitud.php?id_sit='. $fila["ID_SIT"] .'&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
+                    echo '<div class="function verde"><a href="realizarSolicitud.php?id_sit=' . $fila["ID_SIT"] . '&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
                 }
             } else {
                 if ($fila['DISPONIBLE_SIT'] == 0) {
@@ -58,7 +64,7 @@ try {
                         <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
                     </div>
                     <div class="function rojo">
-                        <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT']. '" target="_self" class="fa-solid fa-trash blanco"></a>
+                        <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-trash blanco"></a>
                     </div>';
             }
             echo '
@@ -73,5 +79,3 @@ try {
 } catch (Exception $e) {
     header("Location: ../views/visualizarSitio.php");
 }
-
-?>

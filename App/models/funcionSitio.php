@@ -121,4 +121,14 @@ function visualizar_sitio_id($ID_SIT) {
     }
 }
 
+function visualizar_sitio_docente($ID_SIT) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SITIO_VISTA_DOCENTE("'.$ID_SIT.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
 ?>

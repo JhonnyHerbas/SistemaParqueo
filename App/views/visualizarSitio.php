@@ -15,11 +15,12 @@ include('templates/head.php');
     include('templates/header.php');
     include('../models/funcionSeccion.php');
     include('../models/funcionSitio.php');
+    include('../models/funcionDocente.php');
     include('../models/funcionConfiguracionHorario.php');
 
     $configuraciones = visualizar_horario();
-    $configuracion= $configuraciones->fetch_array(MYSQLI_BOTH);
-    if ($_SESSION['rol'] == "Guardia"){
+    $configuracion = $configuraciones->fetch_array(MYSQLI_BOTH);
+    if ($_SESSION['rol'] == "Guardia") {
         header('Location: vistaGuardia.php');
     }
     ?>
@@ -77,16 +78,14 @@ include('templates/head.php');
                     if ($sitios) {
                         while ($fila = mysqli_fetch_array($sitios)) {
                             $buttons = "flush-collapse";
-                            ?>
+                    ?>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button id="<?php if ($fila['DISPONIBLE_SIT'] == 1) {
-                                        echo "libre";
-                                    } else {
-                                        echo "ocupado";
-                                    } ?>" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#<?php echo $buttons . $fila["ID_SIT"]; ?>" aria-expanded="false"
-                                        aria-controls="flush-collapseOne">
+                                                    echo "libre";
+                                                } else {
+                                                    echo "ocupado";
+                                                } ?>" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $buttons . $fila["ID_SIT"]; ?>" aria-expanded="false" aria-controls="flush-collapseOne">
                                         <?php
 
                                         echo "Sitio #" . $fila["NOMBRE_SIT"];
@@ -94,9 +93,7 @@ include('templates/head.php');
                                         ?>
                                     </button>
                                 </h2>
-                                <div id="<?php echo $buttons . $fila["ID_SIT"]; ?>" class="accordion-collapse collapse"
-                                    aria-labelledby="<?php echo $buttons . $fila["ID_SIT"]; ?>"
-                                    data-bs-parent="#accordionFlushExample">
+                                <div id="<?php echo $buttons . $fila["ID_SIT"]; ?>" class="accordion-collapse collapse" aria-labelledby="<?php echo $buttons . $fila["ID_SIT"]; ?>" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body body-sitio">
                                         <div class="acordion-text w-50">
                                             <?php
@@ -106,12 +103,17 @@ include('templates/head.php');
                                             } else {
                                                 echo "Disponible: No<br>";
                                             }
-
                                             if ($fila["DISPONIBLE_SIT"] == 1) {
                                                 echo "Asignado: No<br>";
                                             } else {
                                                 echo "Asignado: Si<br>";
+                                                $sitios1 = visualizar_sitio_docente($fila['ID_SIT']);
+                                                $sitio1 = $sitios1->fetch_array(MYSQLI_BOTH);
+                                                $docentes = visualizar_docente_id($sitio1['ID_DOC']);
+                                                $docente = $docentes->fetch_array(MYSQLI_BOTH);
+                                                echo "Docente: " . $docente['NOMBRE_DOC'] . ' ' . $docente['APELLIDO_DOC'] . '<br>';
                                             }
+
 
                                             echo "Precio: " . $fila["PRECIO_SIT"] . " PARCK <br>";
                                             echo "Sección: # " . $fila["ID_SEC"];
@@ -121,7 +123,7 @@ include('templates/head.php');
                                         echo '<div class="acordion-btn w-50">';
                                         if ($_SESSION['rol'] != "Administrador") {
                                             if ($fila['DISPONIBLE_SIT'] != 0) {
-                                            echo '<div class="function verde"><a href="realizarSolicitud.php?id_sit='. $fila["ID_SIT"] .'&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>'; 
+                                                echo '<div class="function verde"><a href="realizarSolicitud.php?id_sit=' . $fila["ID_SIT"] . '&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
                                             }
                                         } else {
                                             if ($fila['DISPONIBLE_SIT'] == 0) {
@@ -131,16 +133,16 @@ include('templates/head.php');
                                                     <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
                                                 </div>
                                                 <div class="function rojo">
-                                                    <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT']. '" target="_self" class="fa-solid fa-trash blanco"></a>
+                                                    <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-trash blanco"></a>
                                                 </div>';
                                         }
-                                        
+
                                         echo '</div>';
                                         ?>
                                     </div>
                                 </div>
                             </div>
-                            <?php
+                    <?php
                         }
                     } else {
                         echo "<h1>El sitio no existe</h1>";
@@ -152,8 +154,7 @@ include('templates/head.php');
 
                     </div>
                     <div class="function-seccion azul">
-                        <a href="" target="_self" class="fa-solid fa-pencil blanco editar-seccion"
-                            id="editar-hidden"></a>
+                        <a href="" target="_self" class="fa-solid fa-pencil blanco editar-seccion" id="editar-hidden"></a>
                     </div>
                 </div>
             </div>
