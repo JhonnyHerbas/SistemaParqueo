@@ -169,6 +169,7 @@ if (isset($_SESSION['nombre'])) {
                 <div class='collapse' id='collapse-sitio'>
                     <ul>
                         <li><a href='visualizarSitio.php'>Ver sitios</a></li>
+                        <li><a href='visualizarSitioCompartido.php'>Ver sitios compartidos</a></li>
                         <li><a href='crearSitio.php'>Crear sitio</a></li>
                     </ul>
                 </div>

@@ -356,6 +356,17 @@ function visualizar_sitio_compartido_id($id)
         return null;
     }
 }
+function visualizar_sitio_compartido_actuales()
+{
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_COMPARTIDO_SITIO_VISTA';
+
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 
 function crear_noticia($id, $titulo, $descripcion)
 {

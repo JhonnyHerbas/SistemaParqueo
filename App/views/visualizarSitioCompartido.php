@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <?php
 
-$title = "Solicitud sitios compartidos";
+$title = "Sitios compartidos";
 include('templates/head.php');
 ?>
 
@@ -24,12 +24,12 @@ include('templates/head.php');
     <div class="container container-solicitud ">
         <div class="solicitud-header">
             <h3 class="font-weight-bold">
-                Solicitudes de sitio compartido
+                Sitios compartidos
             </h3>
         </div>
         <div class="data">
             <?php
-            $result = visualizar_sitio_compartido();
+            $result = visualizar_sitio_compartido_actuales();
             $i = 1;
             if ($result) {
                 while ($row = $result->fetch_array(MYSQLI_BOTH)) {
@@ -39,7 +39,13 @@ include('templates/head.php');
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
                                 <?php
-                                echo 'Solicitud ' . $i;
+                                $titulares = visualizar_docente_id($row['ID_TITULAR_COMP']);
+                                $titular = $titulares->fetch_array(MYSQLI_BOTH);
+                                $suplentes = visualizar_docente_id($row['ID_SUPLENTE_COMP']);
+                                $suplente = $suplentes->fetch_array(MYSQLI_BOTH);
+                                $sitios = visualizar_sitio_id($row['ID_SIT']);
+                                $sitio = $sitios->fetch_array(MYSQLI_BOTH);
+                                echo 'Sitio # ' . $sitio["NOMBRE_SIT"];
                                 ?>
                             </button>
                         </h2>
@@ -47,26 +53,11 @@ include('templates/head.php');
                             <div class="accordion-body body-sitio">
                                 <div class="acordion-text w-80">
                                     <?php
-                                    $titulares = visualizar_docente_id($row['ID_TITULAR_COMP']);
-                                    $titular = $titulares->fetch_array(MYSQLI_BOTH);
-                                    $suplentes = visualizar_docente_id($row['ID_SUPLENTE_COMP']);
-                                    $suplente = $suplentes->fetch_array(MYSQLI_BOTH);
-                                    $sitios = visualizar_sitio_id($row['ID_SIT']);
-                                    $sitio = $sitios->fetch_array(MYSQLI_BOTH);
                                     echo "Docente titular: " . $titular["NOMBRE_DOC"] . ' ' . $titular["APELLIDO_DOC"] . '<br>';
                                     echo "Correo del titular: " . $titular["CORREO_DOC"] . '<br>';
                                     echo "Docente a compartir: " . $suplente["NOMBRE_DOC"] . ' ' . $suplente["APELLIDO_DOC"] . '<br>';
                                     echo "Correo del suplente: " . $suplente["CORREO_DOC"] . '<br>';
-                                    echo "Sitio: " . $sitio["NOMBRE_SIT"] . '<br>';
                                     ?>
-                                </div>
-                                <div class="acordion-btn w-50">
-                                    <div class="function verde">
-                                        <a href="../controllers/aceptarSitioCompartido.php?codigo=<?php echo $row['ID_COMP']; ?>" class="fa-solid fa-circle-check blanco"></a>
-                                    </div>
-                                    <div class="function verde">
-                                        <a href="../controllers/rechazarSitioCompartido.php?codigo=<?php echo $row['ID_COMP']; ?>" class="fa-solid fa-xmark blanco"></a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
