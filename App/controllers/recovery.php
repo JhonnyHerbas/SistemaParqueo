@@ -20,11 +20,11 @@ if ($result) {
 
         try {
             // Configura el servidor SMTP de Gmail
-            $mail->isSMTP(); 
+            $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
-            $mail->Port = 587;
+            $mail->Port = 465;
             $mail->SMTPAuth = true;
-            $mail->SMTPSecure = 'tls';
+            $mail->SMTPSecure = 'ssl';
 
             // Configura las credenciales de Gmail
             $mail->Username = 'servicio.correo.exodus@gmail.com';
@@ -33,7 +33,7 @@ if ($result) {
             // Configura el remitente y el destinatario del correo
             $mail->setFrom('servicio.correo.exodus@gmail.com', 'Exodus');
             $mail->addAddress($correo, 'Recuperación');
-            
+
             $mail->isHTML(true);
             $mail->Subject = 'Recupera tu contraseña';
             $mail->Body = 'Hola, este es un correo generado para solicitar la recuperación de contraseña, Por favor <br>
@@ -49,4 +49,3 @@ if ($result) {
 } else {
     header("Location: ../views/recuperarContrasena.php?error=correo_inexistente");
 }
-?>

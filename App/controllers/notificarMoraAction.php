@@ -11,9 +11,9 @@ $mail= new PHPMailer(true);
  // Configura el servidor SMTP de Gmail
  $mail->isSMTP();
  $mail->Host = 'smtp.gmail.com';
- $mail->Port = 587;
+ $mail->Port = 465;
  $mail->SMTPAuth = true;
- $mail->SMTPSecure = 'tls';
+ $mail->SMTPSecure = 'ssl';
 
  // Configura las credenciales de Gmail
  $mail->Username = 'servicio.correo.exodus@gmail.com';
@@ -50,5 +50,4 @@ $mail= new PHPMailer(true);
 } catch (Exception $e) {
     echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
 }
-
 ?>
