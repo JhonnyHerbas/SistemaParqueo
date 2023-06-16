@@ -193,12 +193,12 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
             <p>
-                <a class='btn' data-bs-toggle='collapse' href='#collapse-docente' role='button'
+                <a class='btn' data-bs-toggle='collapse' href='#collapse-noticia' role='button'
                     aria-expanded='false' aria-controls='collapse-sitio'>
                     Noticias
                 </a>
             </p>
-                <div class='collapse' id='collapse-docente'>
+                <div class='collapse' id='collapse-noticia'>
                     <ul>
                         <li><a href='verNoticias.php'>Ver noticias</a></li>
                         <li><a href='crearNoticia.php'>Publicar noticia</a></li>

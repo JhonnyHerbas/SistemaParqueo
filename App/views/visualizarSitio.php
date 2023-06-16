@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <?php
 
@@ -11,7 +11,6 @@ include('templates/head.php');
 <body>
     <!-- Include del header.php -->
     <?php
-
     include('templates/header.php');
     include('../models/funcionSeccion.php');
     include('../models/funcionSitio.php');
@@ -112,6 +111,15 @@ include('templates/head.php');
                                                 $docentes = visualizar_docente_id($sitio1['ID_DOC']);
                                                 $docente = $docentes->fetch_array(MYSQLI_BOTH);
                                                 echo "Docente: " . $docente['NOMBRE_DOC'] . ' ' . $docente['APELLIDO_DOC'] . '<br>';
+
+                                                $compartidos = visualizar_sitio_compartido_true($fila['ID_SIT']);
+
+                                                if ($compartidos && mysqli_num_rows($compartidos) > 0) {
+                                                    $compartido = mysqli_fetch_array($compartidos);
+                                                    $docentes2 = visualizar_docente_id($compartido['ID_SUPLENTE_COMP']);
+                                                    $docente2 = $docentes2->fetch_array(MYSQLI_BOTH);
+                                                    echo "Docente a compartir: " . $docente2['NOMBRE_DOC'] . ' ' . $docente2['APELLIDO_DOC'] . '<br>';
+                                                }
                                             }
 
 

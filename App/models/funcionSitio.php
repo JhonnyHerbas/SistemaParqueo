@@ -130,5 +130,14 @@ function visualizar_sitio_docente($ID_SIT) {
         return null;
     }
 }
-
+function visualizar_sitio_compartido_true($id)
+{
+    $conn = get_connection();
+    $query = 'CALL DB_SP_COMPARTIDO_SITIO_TRUE("' . $id . '")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>
