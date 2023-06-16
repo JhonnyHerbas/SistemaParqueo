@@ -43,6 +43,13 @@ include('../models/funcionSolicitud.php');
                     </p>
                 </li>
                 <li>
+                    <p>
+                        <a class='btn' href='iniciarSesionGuardia.php'>
+                            Iniciar sesión guardia
+                        </a>
+                    </p>
+                </li>
+                <li>
             </ul>
         </nav>
 
@@ -77,7 +84,7 @@ include('../models/funcionSolicitud.php');
                         <input type="email" name="email" class="form-control text" id="validationCustom01"
                             autocomplete="off" spellcheck="false" placeholder="Ingrese su correo electronico" required>
                         <div class="invalid-feedback text">
-                            Por favor, ingrese un código válido.
+                            Por favor, ingrese un correo válido.
                         </div>
                     </div>
                     <div class="button-container">

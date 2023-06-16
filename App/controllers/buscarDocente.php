@@ -1,6 +1,6 @@
 <?php
 
-header('Location: ../views/vistaGuardia.php?' . (($_POST["nombre"]) ? 'nombre=' . $_POST["nombre"] : ''));
+header('Location: ../views/registroIngreso.php?' . (($_POST["nombre"]) ? 'nombre=' . $_POST["nombre"] : ''));
 exit();
 
 ?>

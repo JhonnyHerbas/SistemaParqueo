@@ -26,7 +26,8 @@ include('templates/header.php');
             <form method="POST">
                 <div class="input-container">
                     <div class="container-input-buscar">
-                        <input type="text" class="input-buscar" name="fecha" id="fecha" placeholder="AAAA-MM-DD">
+                        <input type="text" class="input-buscar" name="fecha" id="fecha" placeholder="AAAA-MM-DD"
+                            pattern="^\d{4}-\d{2}-\d{2}$" minlength="10" maxlength="10" required>
                     </div>
                     <div class="container-button-buscar">
                         <input type="submit" value="Buscar" class="button-buscar" id="buscar">

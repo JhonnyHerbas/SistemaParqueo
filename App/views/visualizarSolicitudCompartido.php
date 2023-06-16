@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Reclamos";
+$title = "Solicitud sitios compartidos";
 include('templates/head.php');
 ?>
 
