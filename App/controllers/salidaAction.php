@@ -7,9 +7,9 @@ $id_act = $_GET['id_act'];
 $result = registrar_salida($id_act);
 
 if ($result) {
-    header('Location: ../views/RegistroSalida.php?mensaje=exitoso');
+    header('Location: ../views/registroSalida.php');
 } else {
-    header('Location: ../views/RegistroSalida.php?mensaje=fallido');
+    header('Location: ../views/registroSalida.php');
 }
 
 ?>

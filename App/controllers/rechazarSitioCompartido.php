@@ -1,10 +1,10 @@
 <?php 
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\PHPMailer;
+use phpmailer\phpmailer\Exception;
+use phpmailer\phpmailer\SMTP;
+use phpmailer\phpmailer\PHPMailer;
 //require_once 'vendor/autoload.php';
-require '../../vendor/phpMailer/phpmailer/src/Exception.php';
-require '../../vendor/phpMailer/phpmailer/src/PHPMailer.php';
+require '../../vendor/phpmailer/phpmailer/src/Exception.php';
+require '../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '../../vendor/phpmailer/phpmailer/src/SMTP.php';
 
 include('../models/funcionAdmin.php');

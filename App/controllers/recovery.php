@@ -1,11 +1,11 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+use phpmailer\phpmailer\PHPMailer;
+use phpmailer\phpmailer\Exception;
+use phpmailer\phpmailer\SMTP;
 
-require '../../vendor/phpMailer/phpmailer/src/Exception.php';
-require '../../vendor/phpMailer/phpmailer/src/PHPMailer.php';
+require '../../vendor/phpmailer/phpmailer/src/Exception.php';
+require '../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '../../vendor/phpmailer/phpmailer/src/SMTP.php';
 
 require_once('../models/funcionRecovery.php');

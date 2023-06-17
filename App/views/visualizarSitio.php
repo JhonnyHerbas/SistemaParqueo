@@ -161,9 +161,15 @@ include('templates/head.php');
                     <div class="container-descripcion" id="container-descripcion">
 
                     </div>
-                    <div class="function-seccion azul">
-                        <a href="" target="_self" class="fa-solid fa-pencil blanco editar-seccion" id="editar-hidden"></a>
-                    </div>
+
+                    <?php
+                    
+                    if ($_SESSION['rol'] == "Administrador") {
+                        echo "<div class='function-seccion azul'>
+                                <a href='' target='_self' class='fa-solid fa-pencil blanco editar-seccion' id='editar-hidden'></a>
+                            </div>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>

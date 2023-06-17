@@ -7,9 +7,9 @@ $id_doc = $_GET['id_doc'];
 $result = registrar_ingreso($id_doc);
 
 if ($result) {
-    header('Location: ../views/RegistroIngreso.php?mensaje=exitoso');
+    header('Location: ../views/registroIngreso.php');
 } else {
-    header('Location: ../views/RegistroIngreso.php?mensaje=fallido');
+    header('Location: ../views/registroIngreso.php');
 }
 
 ?>

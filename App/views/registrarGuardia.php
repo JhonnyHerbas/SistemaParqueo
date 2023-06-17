@@ -62,8 +62,8 @@ include('../models/funcionSolicitud.php');
                     </div>
                     
                     <div class="mb-3">
-                        <label for="validationCustom07" class="form-label text">Contraseña:</label>
-                        <input type="password" name="pass" class="form-control text" id="validationCustom07"
+                        <label for="validationCustom08" class="form-label text">Contraseña:</label>
+                        <input type="password" name="pass" class="form-control text" id="validationCustom08"
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required oninput="checkPasswordMatch(this)">
                         <div class="invalid-feedback text">
@@ -72,8 +72,8 @@ include('../models/funcionSolicitud.php');
                     </div>
                     
                     <div class="mb-3">
-                        <label for="validationCustom08" class="form-label text">Verificar contraseña:</label>
-                        <input type="password" name="verPass" class="form-control text" id="validationCustom08"
+                        <label for="validationCustom07" class="form-label text">Verificar contraseña:</label>
+                        <input type="password" name="verPass" class="form-control text" id="validationCustom07"
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required>
                         <div class="invalid-feedback text">
