@@ -10,7 +10,7 @@ $hash = md5($pass);
 
 if ($pass == $confirmacion) {
     $result = cambiar_contrasena($codigo, $hash, $token);
-    if ($result == 1) {
+    if ($result == true) {
         header("Location: ../views/notificacionCorreo.php?cambio=correcto");
     } else {
         header("Location: ../views/notificacionCorreo.php?cambio=incorrecto");

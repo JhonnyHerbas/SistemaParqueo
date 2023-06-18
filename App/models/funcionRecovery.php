@@ -26,10 +26,14 @@ function recuperar_correo($correo, $token)
 function cambiar_contrasena($id, $contrasena, $token)
 {
     $conn = get_connection();
-    $stmt = mysqli_prepare($conn, "CALL DB_SP_CAMBIAR_CONTRASENA(?,?,?)");
-    mysqli_stmt_bind_param($stmt, "isi", $id, $contrasena, $token);
-    mysqli_stmt_execute($stmt);
-    $filas = mysqli_stmt_affected_rows($stmt);
-    return $filas;
+    $stmt = $conn->prepare("CALL DB_SP_CAMBIAR_CONTRASENA(?,?,?)");
+    $stmt->bind_param("isi", $id, $contrasena, $token);
+     if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
 }
 ?>
