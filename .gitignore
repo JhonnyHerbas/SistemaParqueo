@@ -1,3 +1,5 @@
 # Excluir todos los archivos con extension .ini y .sql
 *.ini
 *.sql
+*.html
+*.txt
