@@ -383,7 +383,14 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 1vh;
     font-size: 3vh;
 }
-
+.mensaje{
+    margin-top: 5vh;
+    text-align: center;
+}
+.mensaje > p{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
 /* Styles libre o sitio ocupado */
 #libre {
     background: #0cbea1;
