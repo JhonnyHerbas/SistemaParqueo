@@ -22,7 +22,7 @@ $(document).ready(function () {
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                    Reclamo ${i}
+                                    Consulta ${i}
                                 </button>
                             </h2>
                             <div id="flush-collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -41,10 +41,7 @@ $(document).ready(function () {
                                           ? `
                                             <div class="acordion-btn w-50">    
                                                 <div class="function verde">
-                                                    <a href="#" class="fa-solid fa-square-check blanco"></a>
-                                                </div>
-                                                <div class="function rojo">
-                                                    <a href="#" target="_self" class="fa-solid fa-square-xmark blanco"></a>
+                                                    <a href="./responderConsulta.php?consulta=${consultas.ID_REC}" class="fa-solid fa-clipboard-question blanco"></a>
                                                 </div>
                                             </div>
                                           `

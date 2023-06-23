@@ -25,8 +25,7 @@ include('templates/head.php');
             </h3>
             <select class="form-select text" aria-label="Default select example" id="estado">
                 <option selected disabled>ESTADO</option>
-                <option value="SOLUCIONADO">SOLUCIONADO</option>
-                <option value="RECHAZADO">RECHAZADO</option>
+                <option value="ACEPTADO">ACEPTADO</option>
                 <option value="ESPERA" selected>ESPERA</option>
             </select>
         </div>
