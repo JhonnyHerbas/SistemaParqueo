@@ -22,78 +22,31 @@ include('templates/head.php');
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
-    <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
     <div class="container container-solicitud ">
         <div class="solicitud-header">
             <h3 class="font-weight-bold">
-                COMPRAS DE MONEDAS
+                Compras de monedas
             </h3>
+            <select class="form-select text" aria-label="Default select example" id="estado">
+                <option selected disabled>ESTADO</option>
+                <option value="ACEPTADO">ACEPTADO</option>
+                <option value="RECHAZADO">RECHAZADO</option>
+                <option value="ESPERA" selected>ESPERA</option>
+            </select>
         </div>
-        <div class="data">
-            <?php 
-             $result =visualizar_compra_moneda();
-             $i=1;
-             if($result){
-                while ($row= $result->fetch_array(MYSQLI_BOTH)){
-                    $collapse = "flush-collapse".$i;                                
-                    ?>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                <?php 
-                                    echo 'Compra moneda '. $i;                                        
-                                ?>
-                            </button>
-                        </h2>
-                        <div id="<?php echo $collapse ?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body body-sitio">
-                                <div class="acordion-text w-80">
-                                <?php
-                                    $docentes = visualizar_docente_id($row['ID_DOC']);
-                                    $docente= $docentes->fetch_array(MYSQLI_BOTH);
-                                    echo "Codigo SIS: ".$row["ID_DOC"]. '<br>';
-                                    echo "Nombre: ".$docente["NOMBRE_DOC"].' '.$docente["APELLIDO_DOC"]. '<br>';
-                                    echo "Celular: ".$docente["CELULAR_DOC"]. '<br>';
-                                    echo "Correo: ".$docente["CORREO_DOC"]. '<br>';
-                                    echo "Monto: ".$row["MONTO_COM"]. '<br>';
-                                    echo '<button type="button" class="btn btn-secondary text" data-bs-toggle="modal" data-bs-target="#exampleModal'.$i.'">Ver comprobante</button>';
-                                    ?>
 
-                                    <div class="modal fade" id="exampleModal<?php echo $i; ?>" tabindex="-1" aria-labelledby="exampleModalLabel<?php echo $i; ?>" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content modal-comprobante">
-                                                <img src="../controllers/img/<?php echo $row["RUTA_COM"]; ?>" alt="Comprobante" class="comprobante">
-                                            </div>
-                                        </div>
-                                    </div>                                                               
-                            </div>
-                            <div class="acordion-btn w-50">    
-                                <div class="function verde">
-                                    <a href="<?php echo 'asignarMoneda.php?id=' . $row['ID_COM'] ?>" class="fa-solid fa-square-check blanco"></a>
-                                </div>
-                                <div class="function rojo">
-                                    <a href="../controllers/rechazarMonedaAction.php?id=<?php echo $row['ID_COM']; ?>" class="fa-solid fa-square-xmark blanco"></a>
-                                </div>
-                            </div>    
-                        </div>
-                    </div> 
-                    </div>                      
-            <?php
-                $i=$i+1;                        
-                }
-            }
-            ?>
-        
+        <div class="data" id="data">
+
         </div>
     </div>
 
-        <!-- Include de los scripts.php -->
-        <?php
+    <!-- Include de los scripts.php -->
+    <?php
 
-        include('templates/scripts.php');
+    include('templates/scripts.php');
 
-        ?>
-    <script src="../../public/js/comboEstadoSolicitud.js"></script>
+    ?>
+    <script src="../../public/js/comboEstadoCompra.js"></script>
 </body>
 
 </html>

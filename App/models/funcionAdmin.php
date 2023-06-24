@@ -280,7 +280,16 @@ function visualizar_horario_id($id)
         return null;
     }
 }
-
+function visualizar_compra_id($id)
+{
+    $conn = get_connection();
+    $query = 'CALL DB_SP_COMPRA_VISTA_ID("' . $id . '")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 function editar_horario($id, $ingreso, $salida, $turno, $sueldo)
 {
     $conn = get_connection();
