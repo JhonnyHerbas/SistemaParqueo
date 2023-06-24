@@ -37,7 +37,7 @@ $(document).ready(function () {
                                     Fecha solicitud: ${solicitudes.FECHA_SOL}
                                 </div>
                                 ${
-                                    solicitudes.ESTADO_SOL === 'ESPERA' && dia<16
+                                    solicitudes.ESTADO_SOL === 'ESPERA'
                                       ? `
                                         <div class="acordion-btn w-50">    
                                             <div class="function verde">
