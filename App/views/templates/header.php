@@ -112,6 +112,7 @@ if (isset($_SESSION['nombre'])) {
                     <ul>
                         <li><a href='visualizarDocente.php'>Ver docentes</a></li>
                         <li><a href='registrarCliente.php'>Registrar docente</a></li>
+                        <li><a href='agregarDocenteLista.php'>Cargar docentes</a></li>
                         <li><a href='visualizarClienteMora.php'>Docentes mora</a></li>
                         <li><a href='estadiaCliente.php'>Estadia docentes</a></li>
                     </ul>
