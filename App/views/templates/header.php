@@ -148,8 +148,8 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
                 <p>
-                    <a class='btn' href='configuracionHorario.php'>
-                        Configurar horario de atención
+                    <a class='btn' href='visualizarHorarioAtencion.php'>
+                        Dias de atención
                     </a>
                 </p>
             </li>
