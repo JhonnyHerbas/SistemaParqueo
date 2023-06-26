@@ -70,7 +70,7 @@ include('templates/head.php');
                                     ?>
                                     </div>
                                     <div class="acordion-btn w-50">
-                                        <div class="function verde">
+                                        <div class="function verde" title="Notificar al correo">
                                         <a href="../controllers/notificarMoraAction.php?codigo=<?php echo $row['ID_DOC']; ?>&correo=<?php echo $row['CORREO_DOC']; ?>&tiempo=<?php echo $resta; ?>" class="fa-solid fa-envelope blanco"></a>
                                         </div>
                                     </div>                                    

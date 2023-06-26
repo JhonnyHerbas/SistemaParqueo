@@ -50,7 +50,7 @@ include('templates/head.php');
                                     ?>
                                 </div>
                                 <div class="acordion-btn w-50 ">
-                                    <div class="function verde">
+                                    <div class="function verde" title="Editar horario de atención">
                                         <a href="./actualizarHorario.php?codigo=<?php echo $row['ID_CON']; ?>" class="fa-solid fa-pencil blanco"></a>
                                     </div>
                                 </div>
