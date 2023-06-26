@@ -83,8 +83,8 @@ include('templates/head.php');
                                         ?>
                                     </div>
                                     <div class="acordion-btn w-50">
-                                        <div class="function verde">
-                                            <a href="<?php echo 'realizarPago.php?id_sol=' . $row['ID_SOL'] . '&fecha=' . $fecha_siguiente->format('Y-m-d'); ?>" target="_self" class="fa-solid fa-money-check-dollar blanco"></a>
+                                        <div class="function verde" title="Realizar pago">
+                                            <a href="<?php echo 'realizarPago.php?id_sol=' . $row['ID_SOL'] . '&fecha=' . $fecha_siguiente->format('Y-m-d'); ?>" target="_self" class="fa-solid fa-money-check-dollar blanco" ></a>
                                         </div>
                                     </div>
                                 </div>

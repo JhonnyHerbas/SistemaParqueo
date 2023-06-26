@@ -40,7 +40,7 @@ $(document).ready(function () {
                                         consultas.ESTADO_REC === 'ESPERA'
                                           ? `
                                             <div class="acordion-btn w-50">    
-                                                <div class="function verde">
+                                                <div class="function verde" title="Responder consulta">
                                                     <a href="./responderConsulta.php?consulta=${consultas.ID_REC}" class="fa-solid fa-clipboard-question blanco"></a>
                                                 </div>
                                             </div>

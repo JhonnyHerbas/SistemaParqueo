@@ -24,7 +24,7 @@ include('templates/header.php');
     <div class="container container-solicitud ">        
         <div class="solicitud-header">
             <h2 class="h2 h2estadia">
-                Docentes
+                Estadia de docentes
             </h2>
             <div class="container-busqueda">
             <form method="POST">

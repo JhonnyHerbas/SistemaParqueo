@@ -63,7 +63,7 @@ try {
             echo '</div><div class="acordion-btn w-50">';
             if ($_SESSION['rol'] != "Administrador") {
                 if ($fila['DISPONIBLE_SIT'] != 0) {
-                    echo '<div class="function verde"><a href="realizarSolicitud.php?id_sit=' . $fila["ID_SIT"] . '&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
+                    echo '<div class="function verde" title="Solicitar sitio"><a href="realizarSolicitud.php?id_sit=' . $fila["ID_SIT"] . '&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
                 }
             } else {
                 if ($fila['DISPONIBLE_SIT'] == 0) {

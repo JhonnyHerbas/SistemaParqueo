@@ -39,10 +39,10 @@ $(document).ready(function () {
                                         compartidos.ESTADO_COMP === 'ESPERA'
                                           ? `
                                             <div class="acordion-btn w-50">    
-                                                <div class="function verde">
+                                                <div class="function verde" title="Aceptar solicitud">
                                                     <a href="../controllers/aceptarSitioCompartido.php?codigo=${compartidos.ID_COMP}" class="fa-solid fa-square-check blanco"></a>
                                                 </div>
-                                                <div class="function rojo">
+                                                <div class="function rojo" title="Rechazar solicitud">
                                                     <a href="../controllers/rechazarSitioCompartido.php?codigo=${compartidos.ID_COMP}" target="_self" class="fa-solid fa-square-xmark blanco"></a>
                                                 </div>
                                             </div>

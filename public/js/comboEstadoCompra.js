@@ -48,10 +48,10 @@ $(document).ready(function () {
                                         compras.ESTADO_COM === 'ESPERA'
                                           ? `
                                             <div class="acordion-btn w-50">    
-                                                <div class="function verde">
+                                                <div class="function verde" title="Asignar monedas">
                                                     <a href="asignarMoneda.php?id=${compras.ID_COM}" class="fa-solid fa-square-check blanco"></a>
                                                 </div>
-                                                <div class="function rojo">
+                                                <div class="function rojo" title="Rechazar compra">
                                                     <a href="../controllers/rechazarMonedaAction.php?id=${compras.ID_COM}" target="_self" class="fa-solid fa-square-xmark blanco"></a>
                                                 </div>
                                             </div>

@@ -40,11 +40,11 @@ $(document).ready(function () {
                                         reclamos.ESTADO_REC === 'ESPERA'
                                           ? `
                                             <div class="acordion-btn w-50">    
-                                                <div class="function verde">
-                                                    <a href="../controllers/atenderReclamoAction.php?codigo=${reclamos.ID_REC}" class="fa-solid fa-square-check blanco"></a>
+                                                <div class="function verde" title="Atender reclamo">
+                                                    <a href="../controllers/atenderReclamoAction.php?codigo=${reclamos.ID_REC}" class="fa-solid fa-square-check blanco" title="Atender reclamo"></a>
                                                 </div>
-                                                <div class="function rojo">
-                                                    <a href="../controllers/rechazarReclamoAction.php?codigo=${reclamos.ID_REC}" target="_self" class="fa-solid fa-square-xmark blanco"></a>
+                                                <div class="function rojo" title="Rechazar reclamo">
+                                                    <a href="../controllers/rechazarReclamoAction.php?codigo=${reclamos.ID_REC}" target="_self" class="fa-solid fa-square-xmark blanco" title="Rechazar reclamo"></a>
                                                 </div>
                                             </div>
                                           `
