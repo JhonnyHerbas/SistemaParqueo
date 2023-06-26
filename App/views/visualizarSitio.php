@@ -46,6 +46,11 @@ include('templates/head.php');
             </div>
             <div class="visual">
                 <div class="container-seccion">
+                    <div class="solicitud-header">
+                        <h3 class="font-weight-bold">
+                            Sitios
+                        </h3>
+                    </div>
                     <select class="seccion" id="seccion" name="seccion">
                         <option value="todos">Todos</option>
                         <!-- Implementacion de la visualizacion de secciones -->
@@ -163,7 +168,7 @@ include('templates/head.php');
                     </div>
 
                     <?php
-                    
+
                     if ($_SESSION['rol'] == "Administrador") {
                         echo "<div class='function-seccion azul'>
                                 <a href='' target='_self' class='fa-solid fa-pencil blanco editar-seccion' id='editar-hidden'></a>
