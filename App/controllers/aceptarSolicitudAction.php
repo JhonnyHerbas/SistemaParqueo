@@ -1,5 +1,7 @@
 <?php
 include '../models/funcionSolicitud.php';
+include '../models/funcionSitio.php';
+
 use phpmailer\phpmailer\Exception;
 use phpmailer\phpmailer\SMTP;
 use phpmailer\phpmailer\PHPMailer;
@@ -16,55 +18,63 @@ $correo = $_GET["correo"];
 $sitio = $_GET["sitio"];
 $accion = $_GET["accion"];
 $id_sol = $_GET["id"];
-echo $correo;
-
- // Crea un objeto PHPMailer
-$mail= new PHPMailer(true);
- // Configura el servidor SMTP de Gmail
-$mail->isSMTP();
- $mail->Host = 'smtp.gmail.com';
- $mail->Port = 465;
- $mail->SMTPAuth = true;
- $mail->SMTPSecure = 'ssl';
-
- // Configura las credenciales de Gmail
- $mail->Username = 'servicio.correo.exodus@gmail.com';
- $mail->Password = 'frmstpfizdzgjqei';
-
- // Configura el remitente y el destinatario del correo
- $mail->setFrom('servicio.correo.exodus@gmail.com', 'Exodus');
- $mail->addAddress($correo, $nombre . ' ' . $apellido);
-
- if ($accion == 'aceptar') {
-    try {
-       
-        // Configura el asunto y el cuerpo del correo
-        $mail->Subject = 'Respuesta de Solicitud de espacio';
-        $mail->Body    = 'Con este correo para informarle que se le acepta la solicitud';
-
-        // Envía el correo electrónico y muestra un mensaje
-        $mail->send();
-        //echo 'El correo electrónico se ha enviado correctamente.';
-        
-        solicitud($id_sol,$accion);
-        //echo $correo;
-        header("Location: ../views/modalSolicitud.php?accion=aceptar");
-    } catch (Exception $e) {
-        echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
-    }
+$sitios = visualizar_nombre_sitio($sitio);
+$sitio1 = $sitios->fetch_array(MYSQLI_BOTH);
+if ($sitio1["DISPONIBLE_SIT"] == 0) {
+    $mensaje = "¡El sitio ha sido aceptado previamente!";
+    $titulo = "Error al aceptar la solicitud";
+    $boton = "btn-danger";
+    $link = "./visualizarSolicitudes.php";
+    include('../views/modalAceptacion.php');
 } else {
-     try {
-       // Configura el asunto y el cuerpo del correo
-        $mail->Subject = 'Respuesta de Solicitud de espacio';
-        $mail->Body    = 'Con este correo para informarle que se le rechaza la solicitud';
+    // Crea un objeto PHPMailer
+    $mail = new PHPMailer(true);
+    // Configura el servidor SMTP de Gmail
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'ssl';
 
-        // Envía el correo electrónico y muestra un mensaje
-        $mail->send();
-        solicitud($id_sol,$accion);
-        header("Location: ../views/modalSolicitud.php?accion=rechazar");
-       // echo 'El correo electrónico se ha enviado correctamente.';
-    } catch (Exception $e) {
-        echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
+    // Configura las credenciales de Gmail
+    $mail->Username = 'servicio.correo.exodus@gmail.com';
+    $mail->Password = 'frmstpfizdzgjqei';
+
+    // Configura el remitente y el destinatario del correo
+    $mail->setFrom('servicio.correo.exodus@gmail.com', 'Exodus');
+    $mail->addAddress($correo, $nombre . ' ' . $apellido);
+
+    if ($accion == 'aceptar') {
+        try {
+
+            // Configura el asunto y el cuerpo del correo
+            $mail->Subject = 'Respuesta de Solicitud de espacio';
+            $mail->Body    = 'Con este correo para informarle que se le acepta la solicitud';
+
+            // Envía el correo electrónico y muestra un mensaje
+            $mail->send();
+            //echo 'El correo electrónico se ha enviado correctamente.';
+
+            solicitud($id_sol, $accion);
+            //echo $correo;
+            header("Location: ../views/modalSolicitud.php?accion=aceptar");
+        } catch (Exception $e) {
+            echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
+        }
+    } else {
+        try {
+            // Configura el asunto y el cuerpo del correo
+            $mail->Subject = 'Respuesta de Solicitud de espacio';
+            $mail->Body    = 'Con este correo para informarle que se le rechaza la solicitud';
+
+            // Envía el correo electrónico y muestra un mensaje
+            $mail->send();
+            solicitud($id_sol, $accion);
+            header("Location: ../views/modalSolicitud.php?accion=rechazar");
+            // echo 'El correo electrónico se ha enviado correctamente.';
+        } catch (Exception $e) {
+            echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
+        }
     }
 }
 ?>
