@@ -124,7 +124,15 @@ header .redes_sociales a {
   color: white;
   border: none;
 }
-
+.buscar-estadia{
+  width: 15vw;
+  background: #00cfff;
+  color: #fff;
+}
+.h2estadia{
+  padding-left: 3vw;
+  padding-top: 2vh;
+}
 .container-busqueda {
   padding-left: 3vw;
   padding-top: 2vh;
@@ -407,7 +415,9 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: #046b99;
   color: white;
 }
-
+.estadia{
+  display: flex;
+}
 /*Visualizar solicitudes*/
 .container-solicitud {
   margin-top: 5%;

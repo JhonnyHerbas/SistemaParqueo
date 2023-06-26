@@ -21,13 +21,16 @@ include('templates/header.php');
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
-    <div class="container container-solicitud ">
-        <div class="container-busqueda">
+    <div class="container container-solicitud ">        
+        <div class="solicitud-header">
+            <h2 class="h2 h2estadia">
+                Docentes
+            </h2>
+            <div class="container-busqueda">
             <form method="POST">
-                <div class="input-container">
-                    <div class="container-input-buscar">
-                        <input type="text" class="input-buscar" name="fecha" id="fecha" placeholder="AAAA-MM-DD"
-                            pattern="^\d{4}-\d{2}-\d{2}$" minlength="10" maxlength="10" required>
+                <div class="input-container estadia">
+                    <div class="container-input-buscar ">
+                        <input type="text" class="input-buscar buscar-estadia" name="fecha" id="fecha" placeholder="AAAA-MM-DD" pattern="^\d{4}-\d{2}-\d{2}$" minlength="10" maxlength="10" required>
                     </div>
                     <div class="container-button-buscar">
                         <input type="submit" value="Buscar" class="button-buscar" id="buscar">
@@ -35,14 +38,13 @@ include('templates/header.php');
                 </div>
             </form>
         </div>
-        <div class="solicitud-header">
-            <h2 class="h2">
-                Clientes
-            </h2>
         </div>
 
         <div class="reporte">
             <div class="estadia-cliente" id="data">
+                <div id="mensaje-busqueda" class="mensaje">
+                    <p>Por favor, realice una búsqueda en el buscador utilizando el formato Año-Mes-Día (por ejemplo, 2023-06-26) para obtener información sobre la fecha exacta en la que ciertos docentes ingresaron.</p>
+                </div>
 
             </div>
         </div>

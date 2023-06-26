@@ -1,27 +1,29 @@
 $(document).ready(function () {
-    let select = document.getElementById("fecha");
-    let data = document.getElementById("data");
+  let select = document.getElementById("fecha");
+  let data = document.getElementById("data");
 
-    function cargar_reportes(send_dato) {
-        console.log("Contenido de select:", select);
-        console.log("Contenido de send_dato:", send_dato);
-        $.ajax({
-            type: "POST",
-            url: "../../App/helpers/comboEstadiaCliente.php",
-            data: send_dato,
-            success: function (response) {
-                const reportes = JSON.parse(response);
-                let templete = ``;
-                let i = 1;
-                let j = 1;
-                console.log(reportes);
-                reportes.forEach(reporte => {
-                    templete += `
+  function cargar_reportes(send_dato) {
+    console.log("Contenido de select:", select);
+    console.log("Contenido de send_dato:", send_dato);
+    $.ajax({
+      type: "POST",
+      url: "../../App/helpers/comboEstadiaCliente.php",
+      data: send_dato,
+      success: function (response) {
+        const reportes = JSON.parse(response);
+        let templete = ``;
+        let i = 1;
+        let j = 1;
+        console.log(reportes);
+        if (Object.keys(reportes).length === 0) {
+          templete += `<div class="mensaje"><p>No se encontraron registros de ingreso de docentes en la fecha especificada.</p></div>`;
+        } else {
+          reportes.forEach((reporte) => {
+            templete += `
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapse${i}">
-                                
+                                data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapse${i}">                                
                                 ${reporte.NOMBRE_DOC} ${reporte.APELLIDO_DOC} 
                             </button>
                         </h2>
@@ -36,24 +38,19 @@ $(document).ready(function () {
                         </div>
                     </div>            
                     `;
-                    i++;
-                });
-                data.innerHTML = templete;
-            }
-        });
-    }
-   
-    let send_dato = {
-        'fecha': select.value
-    };
-
-    cargar_reportes(send_dato);
-
-    document.getElementById("buscar").addEventListener('click', function (event) {
-        event.preventDefault(); // Evita la recarga de la página
-        send_dato = {
-            'fecha': select.value
-        };
-        cargar_reportes(send_dato);
+            i++;
+          });
+        }
+        data.innerHTML = templete;
+      },
     });
+  }
+
+  document.getElementById("buscar").addEventListener("click", function (event) {
+    event.preventDefault(); // Evita la recarga de la página
+    send_dato = {
+      fecha: select.value,
+    };
+    cargar_reportes(send_dato);
+  });
 });
