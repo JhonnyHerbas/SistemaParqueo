@@ -53,7 +53,7 @@ if ($sitios && mysqli_num_rows($sitios) > 0) {
         $mail->Subject = 'Acpetacion de solicitud de sitio compartido';
         $mail->Body    = 'Estimado/a Docente,
 
-    Esperamos que este mensaje le encuentre bien. Nos complace informarle que su solicitud realizada a través del sitio compartido ha sido aceptada exitosamente en el Sistema de Parqueo FCYT.
+    Esperamos que se encuentre bien. Nos complace informarle que su solicitud realizada a través del sitio compartido ha sido aceptada exitosamente en el Sistema de Parqueo FCYT.
     
     Agradecemos su interés y cooperación en cumplir con los requisitos establecidos para la solicitud. Hemos revisado cuidadosamente su solicitud y hemos determinado que cumple con los criterios necesarios para su aprobación.
     
