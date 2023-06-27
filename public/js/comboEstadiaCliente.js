@@ -48,9 +48,12 @@ $(document).ready(function () {
 
   document.getElementById("buscar").addEventListener("click", function (event) {
     event.preventDefault(); // Evita la recarga de la página
-    send_dato = {
-      fecha: select.value,
-    };
-    cargar_reportes(send_dato);
+  
+    if (select.value != "") {
+      send_dato = {
+        fecha: select.value,
+      };
+      cargar_reportes(send_dato);
+    }
   });
 });
