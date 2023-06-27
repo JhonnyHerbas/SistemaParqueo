@@ -130,6 +130,16 @@ function visualizar_sitio_docente($ID_SIT) {
         return null;
     }
 }
+
+function visualizar_docente_sitio($ID_DOC) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_DOCENTE_VISTA_SITIO ("'.$ID_DOC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 function visualizar_sitio_compartido_true($id)
 {
     $conn = get_connection();

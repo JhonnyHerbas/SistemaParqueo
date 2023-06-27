@@ -32,9 +32,9 @@ include('templates/head.php');
     </div>
     <main>
         <div class="main">
-            <div class="container-busqueda">
+            <div class="container-busqueda tusitio">
                 <form action="../controllers/buscarSitio.php" method="POST">
-                    <div class="input-container">
+                    <div class="input-container tusitio">
                         <div class="container-input-buscar">
                             <input type="text" class="input-buscar" pattern="[0-9]*" name="nombre" id="nombre">
                         </div>
@@ -43,6 +43,20 @@ include('templates/head.php');
                         </div>
                     </div>
                 </form>
+                <?php
+                if ($_SESSION['rol'] != "Administrador") {
+                    $cod = $_SESSION['codigo'];
+                    $sitiodocentes = visualizar_docente_sitio($cod);
+                    $sitiodocente = $sitiodocentes->fetch_array(MYSQLI_BOTH);
+                    if ($sitiodocente != null) {
+                        echo ' <div class="solicitud-header tu_sitio">
+                                    <h5 class="font-weight-bold">
+                                        Tu sitio: '.$sitiodocente['NOMBRE_SIT']. ' 
+                                    </h5>
+                                </div>';
+                    }
+                }
+                ?>
             </div>
             <div class="visual">
                 <div class="container-seccion">
@@ -140,14 +154,8 @@ include('templates/head.php');
                                             }
                                         } else {
                                             if ($fila['DISPONIBLE_SIT'] == 0) {
-                                                echo '<div class="function celeste"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
+                                                echo '<div class="function celeste" title="Desocupar docente"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
                                             }
-                                            echo '<div class="function azul">
-                                                    <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
-                                                </div>
-                                                <div class="function rojo">
-                                                    <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-trash blanco"></a>
-                                                </div>';
                                         }
 
                                         echo '</div>';

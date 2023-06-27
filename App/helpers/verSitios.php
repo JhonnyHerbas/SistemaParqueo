@@ -67,14 +67,8 @@ try {
                 }
             } else {
                 if ($fila['DISPONIBLE_SIT'] == 0) {
-                    echo '<div class="function celeste"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
+                    echo '<div class="function celeste" title="Desocupar sitio"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
                 }
-                echo '<div class="function azul">
-                        <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
-                    </div>
-                    <div class="function rojo">
-                        <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-trash blanco"></a>
-                    </div>';
             }
             echo '
             </div>
