@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 use phpmailer\phpmailer\Exception;
 use phpmailer\phpmailer\SMTP;
 use phpmailer\phpmailer\PHPMailer;
@@ -9,37 +10,48 @@ require '../../vendor/phpmailer/phpmailer/src/SMTP.php';
 
 include('../models/funcionAdmin.php');
 include('../models/funcionDocente.php');
+include('../models/funcionSitio.php');
 
-// Crea un objeto PHPMailer
-$mail= new PHPMailer(true);
- // Configura el servidor SMTP de Gmail
- $mail->isSMTP();
- $mail->Host = 'smtp.gmail.com';
- $mail->Port = 465;
- $mail->SMTPAuth = true;
- $mail->SMTPSecure = 'ssl';
+$codigo = $_GET["codigo"];
+$result = visualizar_sitio_compartido_id($codigo);
+$compartido = $result->fetch_array(MYSQLI_BOTH);
 
- // Configura las credenciales de Gmail
- $mail->Username = 'servicio.correo.exodus@gmail.com';
- $mail->Password = 'frmstpfizdzgjqei';
+$sitios = visualizar_sitio_compartido_true($compartido['ID_SIT']);
+$sitio1 = $sitios->fetch_array(MYSQLI_BOTH);
 
- $codigo = $_GET["codigo"];
- $result = visualizar_sitio_compartido_id($codigo);
- $compartido= $result->fetch_array(MYSQLI_BOTH);
+if ($sitios && mysqli_num_rows($sitios) > 0) {
+    $mensaje = "El sitio ya está compartido. No se puede aceptar la solicitud.";
+    $titulo = "Error al aceptar la solicitud";
+    $boton = "btn-danger";
+    $link = "./visualizarSolicitudCompartido.php";
+    include('../views/modalAceptacion.php');
+} else {
+    // Crea un objeto PHPMailer
+    $mail = new PHPMailer(true);
+    // Configura el servidor SMTP de Gmail
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'ssl';
 
- $docentes = visualizar_docente_id($compartido['ID_TITULAR_COMP']);
- $docente= $docentes->fetch_array(MYSQLI_BOTH);
+    // Configura las credenciales de Gmail
+    $mail->Username = 'servicio.correo.exodus@gmail.com';
+    $mail->Password = 'frmstpfizdzgjqei';
 
- $correo = $docente["CORREO_DOC"];
+    $docentes = visualizar_docente_id($compartido['ID_TITULAR_COMP']);
+    $docente = $docentes->fetch_array(MYSQLI_BOTH);
 
- // Configura el remitente y el destinatario del correo
- $mail->setFrom('servicio.correo.exodus@gmail.com', 'Sistema de parqueo FCYT');
- $mail->addAddress($correo, $codigo);
+    $correo = $docente["CORREO_DOC"];
 
- try {       
-    // Configura el asunto y el cuerpo del correo
-    $mail->Subject = 'Acpetacion de solicitud de sitio compartido';
-    $mail->Body    = 'Estimado/a Docente,
+    // Configura el remitente y el destinatario del correo
+    $mail->setFrom('servicio.correo.exodus@gmail.com', 'Sistema de parqueo FCYT');
+    $mail->addAddress($correo, $codigo);
+
+    try {
+        // Configura el asunto y el cuerpo del correo
+        $mail->Subject = 'Acpetacion de solicitud de sitio compartido';
+        $mail->Body    = 'Estimado/a Docente,
 
     Esperamos que este mensaje le encuentre bien. Nos complace informarle que su solicitud realizada a través del sitio compartido ha sido aceptada exitosamente en el Sistema de Parqueo FCYT.
     
@@ -52,11 +64,12 @@ $mail= new PHPMailer(true);
     Atentamente,
     Sistema de Parqueo FCYT';
 
-    // Envía el correo electrónico y muestra un mensaje
-    $mail->send();
-    aceptar_sitio_compartido($codigo);
-    header("Location: ../views/visualizarSolicitudCompartido.php");
-} catch (Exception $e) {
-    echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
+        // Envía el correo electrónico y muestra un mensaje
+        $mail->send();
+        aceptar_sitio_compartido($codigo);
+        header("Location: ../views/visualizarSolicitudCompartido.php");
+    } catch (Exception $e) {
+        echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
+    }
 }
 ?>
