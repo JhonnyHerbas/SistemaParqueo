@@ -9,7 +9,7 @@ $descripcion = $_POST['descripcion'];
 $result = editar_noticia($id_not, $titulo, $descripcion);
 
 if ($result) {
-    header('Location: ../views/verNoticias.php');
+    header("Location: ../views/notificacion.php?mensaje=5");
 } else {
     header('Location: ../views/verNoticias.php');
 }
