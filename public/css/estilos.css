@@ -315,10 +315,6 @@ header .redes_sociales a {
   justify-content: center;
 }
 
-.error {
-  display: block;
-}
-
 form {
   padding: 0% 10%;
 }
@@ -494,10 +490,6 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: red;
   width: 30vw;
   height: 30vh;
-}
-
-.error {
-  display: block;
 }
 
 form {
@@ -713,6 +705,19 @@ form label:not(:first-child) {
 }
 .horario span {
   font-weight: bold;
+}
+.error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: initial !important;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  display: block;
 }
 @media (max-width: 991px) {
   html {
