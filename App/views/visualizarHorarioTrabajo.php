@@ -33,7 +33,7 @@ include('templates/head.php');
                     ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <button id="<?php if($row['ID_GUA'] == null){echo "libre";}else{echo "ocupado";}?>" class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
                                 <?php 
                                     echo 'Horario '. $row['TURNO_HOR'];                                        
                                 ?>
