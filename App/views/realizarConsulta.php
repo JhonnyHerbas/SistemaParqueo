@@ -39,8 +39,8 @@ include('templates/head.php');
                         <input type="text" name="titulo-consulta" class="form-control text" id="validationCustom01"
                             pattern="^(?=.*[a-zA-Z])[a-zA-ZáéíóúÁÉÍÓÚüÜñ0-9\s]+$" autocomplete="off" spellcheck="false" minlength="5"
                             maxlength="30" required>
-                        <div class="invalid-feedback text">
-                            Por favor, ingrese un valor válido para este campo.
+                        <div id="error-msg1" class="invalid-feedback text">
+                            Por favor, ingrese un titulo con letras y numeros.
                         </div>
                     </div>
 
@@ -89,6 +89,18 @@ include('templates/head.php');
 
     ?>
     <script src="../../public/js/textareaValidation.js"></script>
+    <script>
+        const tituloInput = document.getElementById('validationCustom01');
+        const errorMsg = document.getElementById('error-msg1');
+
+        tituloInput.addEventListener('input', function () {
+            if (tituloInput.checkValidity()) {
+                errorMsg.style.display = 'none';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>

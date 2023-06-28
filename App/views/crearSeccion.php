@@ -30,10 +30,10 @@ include('../models/funcionSeccion.php')
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Nombre de sección:</label>
                         <input type="text" name="nombre-seccion" class="form-control text" id="validationCustom01"
-                            pattern="^(?=.*[a-zA-Z])[a-zA-Z\d\s]+$" autocomplete="off" spellcheck="false" minlength="3"
+                            pattern="^(?=.*[a-zA-Z])[a-zA-Z0-9\d\s]+$" autocomplete="off" spellcheck="false" minlength="3"
                             maxlength="30" required>
                         <div id="error-msg1" class="invalid-feedback text">
-                            Por favor, ingrese un valor válido para este campo.
+                            Por favor, ingrese un nombre con letras y numeros o solo letras.
                         </div>
                     </div>
 

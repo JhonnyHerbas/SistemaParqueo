@@ -69,12 +69,12 @@ include('../models/funcionSolicitud.php');
                     
                     <div class="mb-3">
                         <input type="hidden" value="<?php echo $codigo; ?>" name="codigo">
-                        <label for="validationCustom02" class="form-label">Codigo de seguridad:</label>
-                        <input type="input" name="token" class="form-control" id="validationCustom02"
+                        <label for="validationCustom01" class="form-label">Codigo de seguridad:</label>
+                        <input type="input" name="token" class="form-control" id="validationCustom01"
                             pattern="[0-9]{6}" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su token" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingrese un token valido.
+                        <div id="error-msg1" class="invalid-feedback">
+                            Por favor, ingrese un token el token valido que le llego a su correo.
                         </div>
                     </div>
                     <div class="mb-3">
@@ -83,17 +83,17 @@ include('../models/funcionSolicitud.php');
                         <input type="password" name="nuevoPass" class="form-control" id="validationCustom02"
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required>
-                        <div class="invalid-feedback">
+                        <div id="error-msg2" class="invalid-feedback">
                             Ingrese una contraseña válida entre 8 y 20 caracteres que contenga mayusculas, minusculas y un numero.
                         </div>
                     </div>
                     <div class="mb-3">
                         <input type="hidden" value="<?php echo $codigo; ?>" name="codigo">
-                        <label for="validationCustom02" class="form-label">Confirmar contraseña:</label>
-                        <input type="password" name="nuevoPassConf" class="form-control" id="validationCustom02"
+                        <label for="validationCustom03" class="form-label">Confirmar contraseña:</label>
+                        <input type="password" name="nuevoPassConf" class="form-control" id="validationCustom03"
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required>
-                        <div class="invalid-feedback">
+                        <div id="error-msg3" class="invalid-feedback">
                             Ingrese una contraseña válida entre 8 y 20 caracteres que contenga mayusculas, minusculas y un numero.
                         </div>
                     </div>
@@ -112,6 +112,40 @@ include('../models/funcionSolicitud.php');
     include('templates/scripts.php');
 
     ?>
+    <script>
+        const tituloInput = document.getElementById('validationCustom01');
+        const errorMsg = document.getElementById('error-msg1');
+
+        tituloInput.addEventListener('input', function () {
+            if (tituloInput.checkValidity()) {
+                errorMsg.style.display = 'none';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        });
+
+        const tituloInput = document.getElementById('validationCustom02');
+        const errorMsg = document.getElementById('error-msg2');
+
+        tituloInput.addEventListener('input', function () {
+            if (tituloInput.checkValidity()) {
+                errorMsg.style.display = 'none';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        });
+
+        const tituloInput = document.getElementById('validationCustom03');
+        const errorMsg = document.getElementById('error-msg3');
+
+        tituloInput.addEventListener('input', function () {
+            if (tituloInput.checkValidity()) {
+                errorMsg.style.display = 'none';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>

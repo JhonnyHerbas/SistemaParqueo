@@ -41,7 +41,7 @@ include('../models/funcionAdmin.php');
                         <input type="text" name="titulo" class="form-control text" id="validationCustom03"
                             autocomplete="off" pattern="^(?=.*[a-zA-Z])[a-zA-ZáéíóúÁÉÍÓÚüÜñ0-9\s]{3,30}$" spellcheck="false" min="3" max="50" placeholder="Ingrese un titulo"
                             required value="<?php echo $fila['TITULO_NOT']; ?>">
-                        <div class="invalid-feedback text">
+                        <div id="error-msg3" class="invalid-feedback text">
                             Ingrese un titulo válido.
                         </div>
                     </div>
@@ -92,6 +92,18 @@ include('../models/funcionAdmin.php');
     ?>
     <script src="../../public/js/validacion.js"></script>
     <script src="../../public/js/textareaValidation.js"></script>
+    <script>
+        const tituloInput = document.getElementById('validationCustom03');
+        const errorMsg = document.getElementById('error-msg3');
+
+        tituloInput.addEventListener('input', function () {
+            if (tituloInput.checkValidity()) {
+                errorMsg.style.display = 'none';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>
