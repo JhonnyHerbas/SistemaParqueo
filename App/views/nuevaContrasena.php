@@ -84,7 +84,7 @@ include('../models/funcionSolicitud.php');
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required>
                         <div class="invalid-feedback">
-                            Por favor, ingrese una contraseña válida.
+                            Ingrese una contraseña válida entre 8 y 20 caracteres que contenga mayusculas, minusculas y un numero.
                         </div>
                     </div>
                     <div class="mb-3">
@@ -94,7 +94,7 @@ include('../models/funcionSolicitud.php');
                             pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                             placeholder="Ingrese su contraseña" required>
                         <div class="invalid-feedback">
-                            Por favor, ingrese una contraseña válida.
+                            Ingrese una contraseña válida entre 8 y 20 caracteres que contenga mayusculas, minusculas y un numero.
                         </div>
                     </div>
                     <div class="button-container">

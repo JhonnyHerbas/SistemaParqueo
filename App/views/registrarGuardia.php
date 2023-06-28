@@ -44,7 +44,7 @@ include('../models/funcionSolicitud.php');
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Nombre:</label>
                         <input type="text" name="nombre" class="form-control text" id="validationCustom01"
-                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,30}$" autocomplete="off" spellcheck="false" minlength="3"
+                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-ZáéíóúÁÉÍÓÚüÜñ\s]{3,30}$" autocomplete="off" spellcheck="false" minlength="3"
                             maxlength="30" required placeholder="Ingrese un nombre">
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
@@ -54,7 +54,7 @@ include('../models/funcionSolicitud.php');
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Apellidos:</label>
                         <input type="text" name="apellido" class="form-control text" id="validationCustom01"
-                            pattern = "^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,90}$" autocomplete="off" spellcheck="false" minlength="3"
+                            pattern = "^(?=(.*[a-zA-Z]){3,})[a-zA-ZáéíóúÁÉÍÓÚüÜñ\s]{3,90}$" autocomplete="off" spellcheck="false" minlength="3"
                             maxlength="90" required placeholder="Ingrese un apellido">
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.

@@ -38,7 +38,7 @@ include('../models/funcionSolicitud.php');
                             <div class="mb-3">
                                 <label for="validationCustom01" class="form-label text">Nombre:</label>
                                 <input type="text" name="nombre" class="form-control text" id="validationCustom01"
-                                    pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,30}$" autocomplete="off" spellcheck="false"
+                                    pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-ZáéíóúÁÉÍÓÚüÜñ\s]{3,30}$" autocomplete="off" spellcheck="false"
                                     placeholder="Ingrese su nombre" required>
                                 <div class="invalid-feedback text">
                                     Ingrese un nombre válido.
@@ -49,7 +49,7 @@ include('../models/funcionSolicitud.php');
                             <div class="mb-3">
                                 <label for="validationCustom02" class="form-label text">Apellido/s:</label>
                                 <input type="text" name="apellido" class="form-control text" id="validationCustom02"
-                                    pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,90}$" autocomplete="off" spellcheck="false" minlength="5"
+                                    pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-ZáéíóúÁÉÍÓÚüÜñ\s]{3,90}$" autocomplete="off" spellcheck="false" minlength="5"
                                     maxlength="30" placeholder="Ingrese su apellido" required>
                                 <div class="invalid-feedback text">
                                     Ingrese un apellido válido.
@@ -74,10 +74,10 @@ include('../models/funcionSolicitud.php');
                             <div class="mb-3">
                                 <label for="validationCustom05" class="form-label text">Celular:</label>
                                 <input type="text" name="celular" class="form-control text" id="validationCustom05"
-                                    pattern="^[0-9]{8}$" autocomplete="off" spellcheck="false" minlength="5"
+                                    pattern="^[67][0-9]{7}$" autocomplete="off" spellcheck="false" minlength="5"
                                     maxlength="30" placeholder="Ingrese su numero" required>
                                 <div class="invalid-feedback text">
-                                    Ingrese un número válido.
+                                    Ingrese un número de celular válido.
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ include('../models/funcionSolicitud.php');
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                                     placeholder="Ingrese su contraseña" required>
                                 <div class="invalid-feedback text">
-                                    Ingrese una contraseña válida.
+                                    Ingrese una contraseña válida entre 8 y 20 caracteres que contenga mayusculas, minusculas y un numero.
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@ include('../models/funcionSolicitud.php');
                                     pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
                                     placeholder="Ingrese su contraseña" required oninput="checkPasswordMatch(this)">
                                 <div class="invalid-feedback text">
-                                    Ingrese una contraseña válida.
+                                    Ingrese una contraseña válida entre 8 y 20 caracteres que contenga mayusculas, minusculas y un numero.
                                 </div>
                             </div>
                         </div>

@@ -34,19 +34,39 @@ include('templates/head.php');
                     <div class="mb-3">
                         <label for="validationCustom03" class="form-label text">Título:</label>
                         <input type="text" name="titulo" class="form-control text" id="validationCustom03"
-                            autocomplete="off" pattern="^(?=.*[a-zA-Z])[a-zA-Z0-9\s]{3,30}$" spellcheck="false" min="3" max="50" placeholder="Ingrese un titulo"
-                            required>
-                        <div class="invalid-feedback text">
-                            Ingrese un titulo válido.
+                            autocomplete="off" pattern="^(?=.*[a-zA-Z])[a-zA-ZáéíóúÁÉÍÓÚüÜ0-9\s]{3,30}$"
+                            spellcheck="false" min="3" max="50" placeholder="Ingrese un título" required>
+                        <div id="error-msg" class="invalid-feedback text">
+                            Ingrese un título válido sin caracteres especiales.
                         </div>
                     </div>
+
+                    <script>
+                        // Obtener referencia al campo de entrada y al mensaje de error
+                        const tituloInput = document.getElementById('validationCustom03');
+                        const errorMsg = document.getElementById('error-msg');
+
+                        // Agregar un event listener para el evento input
+                        tituloInput.addEventListener('input', function () {
+                            // Verificar si el valor del campo de entrada es válido utilizando checkValidity()
+                            if (tituloInput.checkValidity()) {
+                                // Si es válido, ocultar el mensaje de error
+                                errorMsg.style.display = 'none';
+                            } else {
+                                // Si no es válido, mostrar el mensaje de error
+                                errorMsg.style.display = 'block';
+                            }
+                        });
+                    </script>
 
                     <div class="mb-3">
                         <label for="validationTextarea" class="form-label text">Descripción:</label>
                         <textarea class="form-control area text" name="descripcion" id="validationTextarea"
-                            maxlength="250" cols="3" autocomplete="off" spellcheck="false"></textarea>
-                        <div class="invalid-feedback">
-                            Solo se acepta un máximo de 250 caracteres.
+                            minlength="20" maxlength="250" cols="3" autocomplete="off" spellcheck="false"
+                            required></textarea>
+                        <div id="error-msg" class="invalid-feedback">
+                            Solo se acepta un mínimo de 20 caracteres y un máximo de 250 caracteres. Ingresa solo
+                            letras, números, espacios y puntos.
                         </div>
                     </div>
 

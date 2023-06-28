@@ -100,6 +100,10 @@ include('templates/head.php');
                         </div>
                         <?php
                     }
+                } else {
+                    echo "<div id='mensaje-busqueda' class='mensaje'>
+                    <p>No existe coincidencias con el Nombre o Apellido que busca</p>
+                </div>";
                 }
                 ?>
             </div>

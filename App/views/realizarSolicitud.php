@@ -47,7 +47,7 @@ include('../models/funcionSitio.php');
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Título de solicitud:</label>
                         <input type="text" name="titulo-solicitud" class="form-control text" id="validationCustom01"
-                            pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="5"
+                            pattern="^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñ\s]*$" autocomplete="off" spellcheck="false" minlength="5"
                             maxlength="30" value="Solicitud de sitio" readonly>
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.

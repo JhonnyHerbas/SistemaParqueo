@@ -39,7 +39,7 @@ include('../models/funcionAdmin.php');
                     <div class="mb-3">
                         <label for="validationCustom03" class="form-label text">Título:</label>
                         <input type="text" name="titulo" class="form-control text" id="validationCustom03"
-                            autocomplete="off" pattern="^(?=.*[a-zA-Z])[a-zA-Z0-9\s]{3,30}$" spellcheck="false" min="3" max="50" placeholder="Ingrese un titulo"
+                            autocomplete="off" pattern="^(?=.*[a-zA-Z])[a-zA-ZáéíóúÁÉÍÓÚüÜñ0-9\s]{3,30}$" spellcheck="false" min="3" max="50" placeholder="Ingrese un titulo"
                             required value="<?php echo $fila['TITULO_NOT']; ?>">
                         <div class="invalid-feedback text">
                             Ingrese un titulo válido.

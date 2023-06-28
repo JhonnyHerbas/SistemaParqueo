@@ -32,7 +32,7 @@ include('templates/head.php');
             if ($noticias) {
                 while ($fila = mysqli_fetch_array($noticias)) {
                     ?>
-            <div class="card">
+            <div class="card noticia">
                 <div class="card-body card-noticias">
                     <h5 class="card-title title-notice">
                         <?php echo $fila['TITULO_NOT']; ?>

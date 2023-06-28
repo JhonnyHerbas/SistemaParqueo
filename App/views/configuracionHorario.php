@@ -34,19 +34,19 @@ include('../models/funcionConfiguracionHorario.php')
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Horario de apertura:</label>
                         <input type="text" name="hora-apertura" class="form-control text" id="validationCustom01"
-                            pattern="^(0[6-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off"
-                            spellcheck="false" minlength="8" maxlength="8" placeholder="HH:MM:SS" required>
+                            pattern="^(0[6-9]|1[0-9]|2[0-3]):[0-5][0-9]$" autocomplete="off"
+                            spellcheck="false" minlength="8" maxlength="8" placeholder="HH:MM" required>
                         <div class="invalid-feedback text">
-                            Por favor, ingrese un valor válido para este campo.
+                            Por favor, ingrese un valor válido para este campo en formato HH:MM.
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Horario de cierre:</label>
                         <input type="text" name="hora-cierre" class="form-control text" id="validationCustom01"
-                            pattern="^(0?[0-9]|1[0-9]|2[0-2]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off"
-                            spellcheck="false" minlength="8" maxlength="8" placeholder="HH:MM:SS" required>
+                            pattern="^(0?[0-9]|1[0-9]|2[0-2]):[0-5][0-9]$" autocomplete="off"
+                            spellcheck="false" minlength="8" maxlength="8" placeholder="HH:MM" required>
 
-                        <div class="invalid-feedback text" id="ci">Por favor, ingrese un valor válido para este campo.
+                        <div class="invalid-feedback text" id="ci">Por favor, ingrese un valor válido para este campo en formato HH:MM.
                         </div>
                     </div>
 
