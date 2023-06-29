@@ -81,8 +81,8 @@ if (isset($_SESSION['nombre'])) {
                 </p>
                 <div class='collapse' id='collapse-reporte'>
                     <ul>
-                        <li><a href='verVehiculos.php'>Ver Vehículos</a></li>
-                        <li><a href='registrarVehiculo.php'>Registrar Vehículos</a></li>
+                        <li><a href='verVehiculos.php'>Ver vehículos</a></li>
+                        <li><a href='registrarVehiculo.php'>Registrar vehículo</a></li>
                     </ul>
                 </div>
             </li>
