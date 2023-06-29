@@ -26,7 +26,7 @@ include('../models/funcionSolicitud.php');
     $mensaje = isset($_GET["mensaje"]) ? $_GET["mensaje"] : "";
     switch ($mensaje) {
     case 1:
-        $notificacion = "Se edito los datos del docente correctamente";
+        $notificacion = "Los datos del docente se editaron correctamente";
         $href = "visualizarDocente.php";
         break;
     case 2:
