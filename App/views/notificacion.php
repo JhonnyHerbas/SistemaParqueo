@@ -38,12 +38,16 @@ include('../models/funcionSolicitud.php');
         $href = "visualizarSitio.php";
         break;
     case 4:
-        $notificacion = "El sitio se edito correctamente";
-        $href = "visualizarSitio.php";
+        $notificacion = "El horario se edito correctamente";
+        $href = "visualizarHorarioTrabajo.php";
         break;
     case 5:
         $notificacion = "La noticia se edito correctamente";
         $href = "verNoticias.php";
+        break;
+    case 6:
+        $notificacion = "El horario se edito correctamente";
+        $href = "visualizarHorarioAtencion.php";
         break;
     default:
         $notificacion = "Se edito los datos del guardia correctamente";
