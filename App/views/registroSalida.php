@@ -26,19 +26,8 @@ include('templates/head.php');
     <div class="container container-solicitud ">
         <div class="solicitud-header">
             <h2 class="h2">
-                Salida clientes
+                Salida docentes
             </h2>
-            <?php
-            if (isset($_GET['mensaje'])) {
-                if ($_GET['mensaje'] == "exitoso") {
-                    echo '<span id="mensaje" class="mensaje">Registro exitoso.</span>';
-                } else {
-                    if ($_GET['mensaje'] == "fallido") {
-                        echo '<span id="mensaje" class="mensaje">Registro fallido.</span>';
-                    }
-                }
-            }
-            ?>
         </div>
 
         <div class="reporte">

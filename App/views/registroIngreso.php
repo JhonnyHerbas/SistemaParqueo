@@ -24,34 +24,22 @@ include('templates/head.php');
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
     <div class="container container-solicitud ">
-        <div class="container-busqueda">
-            <form action="../controllers/buscarDocente.php" method="POST">
-                <div class="input-container">
-                    <div class="container-input-buscar">
-                        <input type="text" class="input-buscar" name="nombre" id="fecha"
-                            placeholder="Ingrese nombre o apellido">
-                    </div>
-                    <div class="container-button-buscar">
-                        <input type="submit" value="Buscar" class="button-buscar" id="buscar">
-                    </div>
-                </div>
-            </form>
-        </div>
         <div class="solicitud-header">
-            <h2 class="h2">
-                Ingreso clientes
+            <h2 class="h2 h2estadia">
+                Ingreso docentes
             </h2>
-            <?php
-            if (isset($_GET['mensaje'])) {
-                if ($_GET['mensaje'] == "exitoso") {
-                    echo '<span id="mensaje" class="mensaje">Registro exitoso.</span>';
-                } else {
-                    if ($_GET['mensaje'] == "fallido") {
-                        echo '<span id="mensaje" class="mensaje">Registro fallido.</span>';
-                    }
-                }
-            }
-            ?>
+            <div class="container-busqueda">
+                <form action="../controllers/buscarDocente.php" method="POST">
+                    <div class="input-container estadia">
+                        <div class="container-input-buscar">
+                            <input type="text" class="input-buscar buscar-estadia" name="nombre" id="fecha" placeholder="Ingrese nombre o apellido">
+                        </div>
+                        <div class="container-button-buscar">
+                            <input type="submit" value="Buscar" class="button-buscar" id="buscar">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="reporte">
@@ -64,12 +52,10 @@ include('templates/head.php');
                 if ($docentes) {
                     while ($fila = mysqli_fetch_array($docentes)) {
                         $buttons = "flush-collapse";
-                        ?>
+                ?>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" id="libre" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#<?php echo $buttons . $fila["ID_DOC"]; ?>" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
+                                <button class="accordion-button collapsed" id="libre" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $buttons . $fila["ID_DOC"]; ?>" aria-expanded="false" aria-controls="flush-collapseOne">
                                     <?php
 
                                     echo $fila["NOMBRE_DOC"] . " " . $fila["APELLIDO_DOC"];
@@ -77,9 +63,7 @@ include('templates/head.php');
                                     ?>
                                 </button>
                             </h2>
-                            <div id="<?php echo $buttons . $fila["ID_DOC"]; ?>" class="accordion-collapse collapse"
-                                aria-labelledby="<?php echo $buttons . $fila["ID_DOC"]; ?>"
-                                data-bs-parent="#accordionFlushExample">
+                            <div id="<?php echo $buttons . $fila["ID_DOC"]; ?>" class="accordion-collapse collapse" aria-labelledby="<?php echo $buttons . $fila["ID_DOC"]; ?>" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body body-sitio">
                                     <div class="acordion-text w-50">
                                         <?php
@@ -91,14 +75,13 @@ include('templates/head.php');
                                     </div>
                                     <div class="acordion-btn w-50">
                                         <div class="function azul">
-                                            <a href="registroIngresoForm.php?id_doc=<?php echo $fila["ID_DOC"]; ?>"
-                                                class="fa-solid fa-door-open blanco"></a>
+                                            <a href="registroIngresoForm.php?id_doc=<?php echo $fila["ID_DOC"]; ?>" class="fa-solid fa-door-open blanco"></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     }
                 } else {
                     echo "<div id='mensaje-busqueda' class='mensaje'>
