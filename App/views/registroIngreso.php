@@ -91,7 +91,7 @@ include('templates/head.php');
                                     </div>
                                     <div class="acordion-btn w-50">
                                         <div class="function azul">
-                                            <a href="../controllers/ingresoAction.php?id_doc=<?php echo $fila["ID_DOC"]; ?>"
+                                            <a href="registroIngresoForm.php?id_doc=<?php echo $fila["ID_DOC"]; ?>"
                                                 class="fa-solid fa-door-open blanco"></a>
                                         </div>
                                     </div>
