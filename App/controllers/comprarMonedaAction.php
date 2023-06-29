@@ -26,6 +26,6 @@ if (move_uploaded_file($_FILES['img']['tmp_name'], $upload)) {
     comprar_moneda($cod, $nombre_final, $_FILES['img']['type'], $cant);
 }
 
-header("Location: ../views/visualizarSitio.php");
+header("Location: ../views/notificacion.php?mensaje=7");
 exit();
 ?>

@@ -50,7 +50,7 @@ try {
     $mail->send();
 
     asignar_moneda($_POST['codigo'], $_POST['cantidad'], $_POST['id_com']);
-    header("Location: ../views/visualizarCompraMoneda.php");
+    header("Location: ../views/notificacion.php?mensaje=8");
 } catch (Exception $e) {
     echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
 }

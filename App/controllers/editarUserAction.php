@@ -9,6 +9,6 @@ $celular = $_POST['celular'];
 $correo = $_POST['correo'];
 
 editar_docente($_POST['id_doc'], $_POST['codigo'], $_POST['nombre'], $_POST['apellido'],$_POST['celular'],$_POST['correo']);
-header("Location: ../views/notificacion.php?mensaje=correcto");
+header("Location: ../views/notificacion.php?mensaje=1");
 exit();
 ?>
