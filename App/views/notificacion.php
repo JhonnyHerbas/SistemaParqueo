@@ -49,6 +49,14 @@ include('../models/funcionSolicitud.php');
         $notificacion = "El horario se edito correctamente";
         $href = "visualizarHorarioAtencion.php";
         break;
+    case 7:
+        $notificacion = "La solicitud de compra de parckoins se envió correctamente, por favor espere el correo de confirmación";
+        $href = "visualizarSitio.php";
+        break;
+    case 8:
+        $notificacion = "La compra de parckoins se realizó correctamente";
+        $href = "visualizarCompraMoneda.php";
+        break;
     default:
         $notificacion = "Se edito los datos del guardia correctamente";
         $href = "visualizarGuardia.php";
