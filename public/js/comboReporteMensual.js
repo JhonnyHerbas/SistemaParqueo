@@ -29,7 +29,7 @@ $(document).ready(function () {
                                     Sitios nuevos: ${reportes.NUEVOS_SITIOS} <br>
                                 </div>
                                 <div class="acordion-btn w-50">    
-                                    <div class="function verde">
+                                    <div class="function verde" title="Generar pdf">
                                         <a href="../controllers/reporteMensualAction.php?anio=${reportes.ANIO}&mes=${reportes.NUM_MES}&mes_text=${reportes.MES}" class="fa-solid fa-print blanco" target="_blank"></a>
                                     </div>        
                                 </div>

@@ -24,7 +24,7 @@ include('templates/head.php');
     <div class="container container-solicitud ">
         <div class="solicitud-header">
             <h3 class="font-weight-bold">
-                SOLICITUDES
+                Solicitudes de sitio
             </h3>
             <select class="form-select text" aria-label="Default select example" id="estado">
                 <option selected disabled>ESTADO</option>

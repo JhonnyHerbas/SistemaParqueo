@@ -130,10 +130,40 @@ function visualizar_sitio_docente($ID_SIT) {
         return null;
     }
 }
+
+function visualizar_docente_sitio($ID_DOC) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_DOCENTE_VISTA_SITIO ("'.$ID_DOC.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 function visualizar_sitio_compartido_true($id)
 {
     $conn = get_connection();
     $query = 'CALL DB_SP_COMPARTIDO_SITIO_TRUE("' . $id . '")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function liberar_sitio_id($ID_SIT) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SITIO_LIBERAR_ID ("'.$ID_SIT.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function aceptar_liberar_sitio($ID_SIT) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SITIO_LIBERAR_ACEPTADO ("'.$ID_SIT.'")';
     if ($result = $conn->query($query)) {
         return $result;
     } else {

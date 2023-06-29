@@ -37,13 +37,13 @@ $(document).ready(function () {
                                     Fecha solicitud: ${solicitudes.FECHA_SOL}
                                 </div>
                                 ${
-                                    solicitudes.ESTADO_SOL === 'ESPERA' && dia<16
+                                    solicitudes.ESTADO_SOL === 'ESPERA'
                                       ? `
                                         <div class="acordion-btn w-50">    
-                                            <div class="function verde">
+                                            <div class="function verde" title="Aceptar solicitud">
                                                 <a href="../controllers/aceptarSolicitudAction.php?nombre=${solicitudes.NOMBRE_DOC}&apellido=${solicitudes.APELLIDO_DOC}&id=${solicitudes.ID_SOL}&sitio=${solicitudes.SITIO_SOL}&correo=${solicitudes.CORREO_DOC}&accion=aceptar" class="fa-solid fa-square-check blanco"></a>
                                             </div>
-                                            <div class="function rojo">
+                                            <div class="function rojo" title="Rechazar solicitud">
                                                 <a href="../controllers/aceptarSolicitudAction.php?nombre=${solicitudes.NOMBRE_DOC}&apellido=${solicitudes.APELLIDO_DOC}&id=${solicitudes.ID_SOL}&sitio=${solicitudes.SITIO_SOL}&correo=${solicitudes.CORREO_DOC}&accion=rechazar" target="_self" class="fa-solid fa-square-xmark blanco"></a>
                                             </div>
                                         </div>

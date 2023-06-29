@@ -11,7 +11,9 @@ if (!empty($seccion)) {
 include('../models/funcionSitio.php');
 include('../models/funcionDocente.php');
 $result = mysqli_query($conn, $sql);
-
+$cod = $_SESSION['codigo'];
+$sitiodocentes = visualizar_docente_sitio($cod);
+$sitiodocente = $sitiodocentes->fetch_array(MYSQLI_BOTH);
 try {
     if (mysqli_num_rows($result) > 0) {
         //Aqui debe imprimirse todo lo que contiene las vistas
@@ -63,18 +65,11 @@ try {
             echo '</div><div class="acordion-btn w-50">';
             if ($_SESSION['rol'] != "Administrador") {
                 if ($fila['DISPONIBLE_SIT'] != 0) {
-                    echo '<div class="function verde"><a href="realizarSolicitud.php?id_sit=' . $fila["ID_SIT"] . '&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
+                    echo '<div class="function verde" title="Solicitar sitio"><a href="realizarSolicitud.php?id_sit=' . $fila["ID_SIT"] . '&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
                 }
-            } else {
-                if ($fila['DISPONIBLE_SIT'] == 0) {
-                    echo '<div class="function celeste"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
+                if ($fila["NOMBRE_SIT"] == $sitiodocente["NOMBRE_SIT"]) {
+                    echo '<div class="function celeste" title="Solicitud de desocupación del sitio"><a href="../controllers/solicitarLiberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
                 }
-                echo '<div class="function azul">
-                        <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
-                    </div>
-                    <div class="function rojo">
-                        <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-trash blanco"></a>
-                    </div>';
             }
             echo '
             </div>

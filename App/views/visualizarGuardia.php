@@ -63,15 +63,15 @@ include('templates/head.php');
                                         ?>
                                     </div>
                                     <div class="acordion-btn w-50">
-                                        <div class="function azul">
+                                        <div class="function azul" title="Editar datos">
                                             <a href="editarDatosGuardia.php?id_guardia=<?php echo $fila["ID_GUA"];?>" target="_self" class="fa-solid fa-pencil blanco"></a>
                                         </div>
                                         <?php if($fila["ESTADO_GUA"] == "ACTIVO"){?>
-                                        <div class="function naranja">
+                                        <div class="function naranja" title="Deshabilitar guardia">
                                             <a href="../controllers/desahabilitarActionGuardia.php?id_guardia=<?php echo $fila["ID_GUA"];?>" target="_self" class="fa-solid fa-lock-open blanco"></a>
                                         </div>
                                         <?php }else{ ?>
-                                        <div class="function verde">
+                                        <div class="function verde" title="Habilitar guardia">
                                             <a href="../controllers/habilitarActionGuardia.php?id_guardia=<?php echo $fila["ID_GUA"];?>" target="_self" class="fa-solid fa-lock blanco"></a>
                                         </div>
                                         <?php } ?>

@@ -39,7 +39,7 @@ include('../models/funcionSeccion.php');
                 </div>
                 <div class="mb-3">
                   <input type="hidden" min="1" autocomplete="off" 
-                    name="precio" maxlength="10" pattern="^[0-9]*$" value = "100"  class="text"
+                    name="precio" maxlength="10" pattern="^[0-9]*$" value = "130"  class="text"
                   >
                 </div>
                 <div class="mb-3">

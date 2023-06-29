@@ -280,7 +280,16 @@ function visualizar_horario_id($id)
         return null;
     }
 }
-
+function visualizar_compra_id($id)
+{
+    $conn = get_connection();
+    $query = 'CALL DB_SP_COMPRA_VISTA_ID("' . $id . '")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 function editar_horario($id, $ingreso, $salida, $turno, $sueldo)
 {
     $conn = get_connection();
@@ -448,5 +457,40 @@ function aceptar_sitio_compartido($ID)
         return $result;
     } else {
         return null;
+    }
+}
+function visualizar_horarios()
+{
+    $conn = get_connection();
+    $query = 'SELECT * FROM DB_VIEW_CONFIGURACION_LISTA';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function visualizar_horarios_atencion_id($ID)
+{
+    $conn = get_connection();
+    $query = 'CALL DB_SP_CONFIGURACION_VISTA_ID("' . $ID . '")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function actualizar_horario_atencion($cod,$ingreso,$cierre)
+{
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_CONFIGURACION_UPDATE(?,?,?)");
+    $stmt->bind_param("iss", $cod, $ingreso, $cierre);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
     }
 }

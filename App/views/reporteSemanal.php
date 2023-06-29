@@ -29,7 +29,7 @@ include('templates/header.php');
             <select class="form-select" aria-label="Default select example" id="estado">
                 <option selected disabled>AÑO</option>
                 <?php 
-                    $anio_inicio = 2022;
+                    $anio_inicio = 2023;
                     $anio_actual = date("Y");                    
                     while($anio_inicio <= $anio_actual){
                         if($anio_actual == $anio_inicio){

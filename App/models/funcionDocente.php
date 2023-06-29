@@ -84,4 +84,13 @@ function comprar_moneda($ID_DOC,$RUTA,$TIPO,$MONTO){
         return false;
     }
 }
+function solicitar_liberar_sitio($ID_SIT){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_SITIO_SOLICITAR_LIBERAR("'.$ID_SIT.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

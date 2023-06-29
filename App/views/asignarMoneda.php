@@ -3,7 +3,7 @@
 
 <?php
 
-$title = "Crear sección";
+$title = "Asignar monedas";
 include('templates/head.php');
 include('../models/funcionAdmin.php');
 include('../models/funcionDocente.php');

@@ -26,58 +26,16 @@ include('templates/head.php');
             <h3 class="font-weight-bold">
                 Solicitudes de sitio compartido
             </h3>
+            <select class="form-select text" aria-label="Default select example" id="estado">
+                <option selected disabled>ESTADO</option>
+                <option value="ACEPTADO">ACEPTADO</option>
+                <option value="RECHAZADO">RECHAZADO</option>
+                <option value="ESPERA" selected>ESPERA</option>
+            </select>
         </div>
-        <div class="data">
-            <?php
-            $result = visualizar_sitio_compartido();
-            $i = 1;
-            if ($result) {
-                while ($row = $result->fetch_array(MYSQLI_BOTH)) {
-                    $collapse = "flush-collapse" . $i;
-            ?>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                <?php
-                                echo 'Solicitud ' . $i;
-                                ?>
-                            </button>
-                        </h2>
-                        <div id="<?php echo $collapse ?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body body-sitio">
-                                <div class="acordion-text w-80">
-                                    <?php
-                                    $titulares = visualizar_docente_id($row['ID_TITULAR_COMP']);
-                                    $titular = $titulares->fetch_array(MYSQLI_BOTH);
-                                    $suplentes = visualizar_docente_id($row['ID_SUPLENTE_COMP']);
-                                    $suplente = $suplentes->fetch_array(MYSQLI_BOTH);
-                                    $sitios = visualizar_sitio_id($row['ID_SIT']);
-                                    $sitio = $sitios->fetch_array(MYSQLI_BOTH);
-                                    echo "Docente titular: " . $titular["NOMBRE_DOC"] . ' ' . $titular["APELLIDO_DOC"] . '<br>';
-                                    echo "Correo del titular: " . $titular["CORREO_DOC"] . '<br>';
-                                    echo "Docente a compartir: " . $suplente["NOMBRE_DOC"] . ' ' . $suplente["APELLIDO_DOC"] . '<br>';
-                                    echo "Correo del suplente: " . $suplente["CORREO_DOC"] . '<br>';
-                                    echo "Sitio: " . $sitio["NOMBRE_SIT"] . '<br>';
-                                    ?>
-                                </div>
-                                <div class="acordion-btn w-50">
-                                    <div class="function verde">
-                                        <a href="../controllers/aceptarSitioCompartido.php?codigo=<?php echo $row['ID_COMP']; ?>" class="fa-solid fa-circle-check blanco"></a>
-                                    </div>
-                                    <div class="function verde">
-                                        <a href="../controllers/rechazarSitioCompartido.php?codigo=<?php echo $row['ID_COMP']; ?>" class="fa-solid fa-xmark blanco"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            <?php
-                    $i = $i + 1;
-                }
-            } else {
-                echo "<h1>No existen solicitudes</h1>";
-            }
-            ?>
+
+        <div class="data" id="data">
+
         </div>
     </div>
 
@@ -87,6 +45,7 @@ include('templates/head.php');
     include('templates/scripts.php');
 
     ?>
+    <script src="../../public/js/comboEstadoCompartido.js"></script>
 </body>
 
 </html>
