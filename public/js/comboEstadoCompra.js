@@ -22,7 +22,7 @@ $(document).ready(function () {
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                    Reclamo ${i}
+                                    Compra de moneda ${i}
                                 </button>
                             </h2>
                             <div id="flush-collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
