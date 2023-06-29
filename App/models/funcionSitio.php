@@ -150,4 +150,24 @@ function visualizar_sitio_compartido_true($id)
         return null;
     }
 }
+
+function liberar_sitio_id($ID_SIT) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SITIO_LIBERAR_ID ("'.$ID_SIT.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function aceptar_liberar_sitio($ID_SIT) {
+    $conn = get_connection();
+    $query ='CALL DB_SP_SITIO_LIBERAR_ACEPTADO ("'.$ID_SIT.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>

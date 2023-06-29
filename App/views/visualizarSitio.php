@@ -51,7 +51,7 @@ include('templates/head.php');
                     if ($sitiodocente != null) {
                         echo ' <div class="solicitud-header tu_sitio">
                                     <h5 class="font-weight-bold">
-                                        Tu sitio: '.$sitiodocente['NOMBRE_SIT']. ' 
+                                        Tu sitio: ' . $sitiodocente['NOMBRE_SIT'] . ' 
                                     </h5>
                                 </div>';
                     }
@@ -152,12 +152,10 @@ include('templates/head.php');
                                             if ($fila['DISPONIBLE_SIT'] != 0) {
                                                 echo '<div class="function verde" title="Solicitar sitio"><a href="realizarSolicitud.php?id_sit=' . $fila["ID_SIT"] . '&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
                                             }
-                                        } else {
-                                            if ($fila['DISPONIBLE_SIT'] == 0) {
-                                                echo '<div class="function celeste" title="Desocupar docente"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
+                                            if ($fila["NOMBRE_SIT"] == $sitiodocente["NOMBRE_SIT"]) {
+                                                echo '<div class="function celeste" title="Solicitud de desocupación del sitio"><a href="../controllers/solicitarLiberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
                                             }
                                         }
-
                                         echo '</div>';
                                         ?>
                                     </div>
