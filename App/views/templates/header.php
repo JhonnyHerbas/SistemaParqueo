@@ -74,6 +74,20 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
                 <p>
+                    <a class='btn' data-bs-toggle='collapse' href='#collapse-reporte' role='button'
+                        aria-expanded='false' aria-controls='collapse-sitio'>
+                        Vehículos
+                    </a>
+                </p>
+                <div class='collapse' id='collapse-reporte'>
+                    <ul>
+                        <li><a href='verVehiculos.php'>Ver Vehículos</a></li>
+                        <li><a href='registrarVehiculo.php'>Registrar Vehículos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <p>
                     <a href='verNoticias.php'>Noticias</a>
                 </p>
             </li>

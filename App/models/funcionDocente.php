@@ -84,4 +84,27 @@ function comprar_moneda($ID_DOC,$RUTA,$TIPO,$MONTO){
         return false;
     }
 }
+
+function registrar_vehiculo($id_doc, $placa, $color, $tipo){
+    $conn = get_connection();
+    $stmt = $conn->prepare("CALL DB_SP_VEHICULO_REGISTRAR (?,?,?,?)");
+    $stmt->bind_param("siss", $placa, $id_doc, $color, $tipo);
+    if ($stmt->execute()) {
+        $stmt->close();
+        return true;
+    } else {
+        $stmt->close();
+        return false;
+    }
+}
+
+function visualizar_vehiculos($id_doc){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_VEHICULO_VISTA("'.$id_doc.'")';
+    if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
 ?>
