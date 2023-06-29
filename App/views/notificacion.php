@@ -34,19 +34,19 @@ include('../models/funcionSolicitud.php');
         $href = "editarDatosUser.php";
         break;
     case 3:
-        $notificacion = "La sección se edito correctamente";
+        $notificacion = "La sección se editó correctamente";
         $href = "visualizarSitio.php";
         break;
     case 4:
-        $notificacion = "El horario se edito correctamente";
+        $notificacion = "El horario se editó correctamente";
         $href = "visualizarHorarioTrabajo.php";
         break;
     case 5:
-        $notificacion = "La noticia se edito correctamente";
+        $notificacion = "La noticia se editó correctamente";
         $href = "verNoticias.php";
         break;
     case 6:
-        $notificacion = "El horario se edito correctamente";
+        $notificacion = "El horario se editó correctamente";
         $href = "visualizarHorarioAtencion.php";
         break;
     case 7:
@@ -58,7 +58,7 @@ include('../models/funcionSolicitud.php');
         $href = "visualizarCompraMoneda.php";
         break;
     default:
-        $notificacion = "Se edito los datos del guardia correctamente";
+        $notificacion = "Los datos del guardia se editaron correctamente";
         $href = "visualizarGuardia.php";
         break;
     }
