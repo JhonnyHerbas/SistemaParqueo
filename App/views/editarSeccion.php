@@ -45,8 +45,8 @@ include('../models/funcionSeccion.php')
                         <input type="text" name="nombre-seccion" class="form-control text" id="validationCustom01"
                             pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" minlength="3"
                             maxlength="30" value="<?php echo $seccion['NOMBRE_SEC']; ?>" readonly required>
-                        <div class="invalid-feedback text">
-                            Por favor, ingrese un valor válido para este campo.
+                        <div id="error-msg1" class="invalid-feedback text">
+                            Por favor, ingrese un nombre con letras y numeros o solo letras.
                         </div>
                     </div>
                     <div class="mb-3">
@@ -102,6 +102,18 @@ include('../models/funcionSeccion.php')
 
     <script src="../../public/js/validacion.js"></script>
     <script src="../../public/js/textareaValidation.js"></script>
+    <script>
+        const tituloInput = document.getElementById('validationCustom01');
+        const errorMsg = document.getElementById('error-msg1');
+
+        tituloInput.addEventListener('input', function () {
+            if (tituloInput.checkValidity()) {
+                errorMsg.style.display = 'none';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>

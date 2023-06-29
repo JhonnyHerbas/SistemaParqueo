@@ -74,6 +74,20 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
                 <p>
+                    <a class='btn' data-bs-toggle='collapse' href='#collapse-reporte' role='button'
+                        aria-expanded='false' aria-controls='collapse-sitio'>
+                        Vehículos
+                    </a>
+                </p>
+                <div class='collapse' id='collapse-reporte'>
+                    <ul>
+                        <li><a href='verVehiculos.php'>Ver vehículos</a></li>
+                        <li><a href='registrarVehiculo.php'>Registrar vehículo</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <p>
                     <a href='verNoticias.php'>Noticias</a>
                 </p>
             </li>
@@ -134,17 +148,8 @@ if (isset($_SESSION['nombre'])) {
             </li>
             <li>
                 <p>
-                    <a class='btn' data-bs-toggle='collapse' href='#collapse-horario' role='button'
-                        aria-expanded='false' aria-controls='collapse-sitio'>
-                        Horarios de trabajo
-                    </a>
+                    <a href='visualizarHorarioTrabajo.php'>Ver horarios de trabajo</a>
                 </p>
-                <div class='collapse' id='collapse-horario'>
-                    <ul>
-                        <li><a href='visualizarHorarioTrabajo.php'>Ver horarios de trabajo</a></li>
-                        <li><a href='registrarHorarioTrabajo.php'>Crear horario de trabajo</a></li>
-                    </ul>
-                </div>
             </li>
             <li>
                 <p>

@@ -35,7 +35,7 @@ include('../models/funcionAdmin.php')
                     <input type="hidden" value="<?php echo $id; ?>" name="id_horario"
                             style="display: none;">
 
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Turno del horario:</label>
                         <input type="text" name="turno" class="form-control text" id="validationCustom01"
                             pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z0-9ñ\s]{3,30}$" autocomplete="off" spellcheck="false" minlength="3"
@@ -43,24 +43,24 @@ include('../models/funcionAdmin.php')
                         <div class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Hora de ingreso:</label>
-                        <input type="text" name="hora-apertura" class="form-control text" id="validationCustom01" pattern="^(0[6-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
-                        minlength="8" maxlength="8" value="<?= $horario['INGRESO_HOR'];?>" required>
+                        <input type="time" name="hora-apertura" class="form-control text" id="validationCustom01" pattern="^(0[6-9]|1[0-9]|2[0-3]):[0-5][0-9]$" autocomplete="off" spellcheck="false" 
+                        minlength="8" maxlength="8" value="<?= $horario['INGRESO_HOR'];?>" required min="06:30" max="18:30">
                         <div class="invalid-feedback text" >
-                            Por favor, ingrese un valor válido para este campo.
+                            Por favor, ingrese una hora entre las 6:30 y las 18:30
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Hora de salida:</label>
-                        <input type="text" name="hora-cierre" class="form-control text" id="validationCustom01" pattern="^(0?[0-9]|1[0-9]|2[0-2]):[0-5][0-9]:[0-5][0-9]$" autocomplete="off" spellcheck="false" 
-                        minlength="8" maxlength="8" value="<?= $horario['SALIDA_HOR'];?>" required>
+                        <input type="time" name="hora-cierre" class="form-control text" id="validationCustom01" pattern="^(0?[0-9]|1[0-9]|2[0-2]):[0-5][0-9]$" autocomplete="off" spellcheck="false" 
+                        minlength="8" maxlength="8" value="<?= $horario['SALIDA_HOR'];?>" required min="10:30" max="22:30">
                     
                         <div class="invalid-feedback text" >
-                            Por favor, ingrese un valor válido para este campo.
+                            Por favor, ingrese una hora entre las 10:30 y las 22:30
                         </div>
                     </div>
 

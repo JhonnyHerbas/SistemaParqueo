@@ -1,15 +1,11 @@
-<?php 
+<?php
 
-require_once ('../models/funcionGuardia.php');
+require_once('../models/funcionGuardia.php');
 
-$id_doc = $_GET['id_doc'];
+$id_doc = $_POST['id-user'];
+$id_vehiculo = $_POST['id-vehiculo'];
 
-$result = registrar_ingreso($id_doc);
-
-if ($result) {
-    header('Location: ../views/registroIngreso.php');
-} else {
-    header('Location: ../views/registroIngreso.php');
-}
+registrar_ingreso($id_doc, $id_vehiculo);
+header('Location: ../views/registroIngreso.php');
 
 ?>

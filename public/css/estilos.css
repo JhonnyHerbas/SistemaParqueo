@@ -569,6 +569,11 @@ form label:not(:first-child) {
   font-size: small;
 }
 
+.noticia {
+  background-image: linear-gradient(to bottom, #ffffff, #00cfff);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
 .overflow-registro {
   overflow: auto;
 }

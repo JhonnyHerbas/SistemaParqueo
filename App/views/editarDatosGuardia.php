@@ -37,19 +37,20 @@ include('../models/funcionAdmin.php');
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Nombre:</label>
                         <input type="text" name="nombre" class="form-control text" id="validationCustom01"
-                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,30}$" autocomplete="off" spellcheck="false"
-                            minlength="3" maxlength="30" required value="<?= $row['NOMBRE_GUA']; ?>">
-                        <div class="invalid-feedback text">
+                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-ZáéíóúÁÉÍÓÚüÜñ\s]{3,30}$" autocomplete="off"
+                            spellcheck="false" minlength="3" maxlength="30" required value="<?= $row['NOMBRE_GUA']; ?>">
+                        <div id="error-msg1" class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="validationCustom01" class="form-label text">Apellidos:</label>
-                        <input type="text" name="apellido" class="form-control text" id="validationCustom01"
-                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-Z\s]{3,90}$" autocomplete="off" spellcheck="false"
-                            minlength="3" maxlength="90" required value="<?= $row['APELLIDO_GUA']; ?>">
-                        <div class="invalid-feedback text">
+                        <label for="validationCustom02" class="form-label text">Apellidos:</label>
+                        <input type="text" name="apellido" class="form-control text" id="validationCustom02"
+                            pattern="^(?=(.*[a-zA-Z]){3,})[a-zA-ZáéíóúÁÉÍÓÚüÜñ\s]{3,90}$" autocomplete="off"
+                            spellcheck="false" minlength="3" maxlength="90" required
+                            value="<?= $row['APELLIDO_GUA']; ?>">
+                        <div id="error-msg2" class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo.
                         </div>
                     </div>
@@ -88,6 +89,38 @@ include('../models/funcionAdmin.php');
     include('templates/scripts.php');
     ?>
     <script src="../../public/js/validacion.js"></script>
+    <script>
+        // Obtener referencia al campo de entrada y al mensaje de error
+        const tituloInput = document.getElementById('validationCustom01');
+        const errorMsg = document.getElementById('error-msg1');
+
+        // Agregar un event listener para el evento input
+        tituloInput.addEventListener('input', function () {
+            // Verificar si el valor del campo de entrada es válido utilizando checkValidity()
+            if (tituloInput.checkValidity()) {
+                // Si es válido, ocultar el mensaje de error
+                errorMsg.style.display = 'none';
+            } else {
+                // Si no es válido, mostrar el mensaje de error
+                errorMsg.style.display = 'block';
+            }
+        });
+
+        const tituloInput1 = document.getElementById('validationCustom02');
+        const errorMsg1 = document.getElementById('error-msg2');
+
+        // Agregar un event listener para el evento input
+        tituloInput1.addEventListener('input', function () {
+            // Verificar si el valor del campo de entrada es válido utilizando checkValidity()
+            if (tituloInput1.checkValidity()) {
+                // Si es válido, ocultar el mensaje de error
+                errorMsg1.style.display = 'none';
+            } else {
+                // Si no es válido, mostrar el mensaje de error
+                errorMsg1.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>

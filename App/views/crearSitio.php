@@ -28,11 +28,28 @@ include('../models/funcionSeccion.php');
             <form id="myForm" class="row g-3 needs-validation" novalidate action="../controllers/crearSitioAction.php" method="post">
                 <div class="mb-3">
                     <label for="validationCustom01" class="form-label text">Nombre del sitio:</label>
-                    <input type="text" name="name" class="form-control bg-info text" id="validationCustom01" pattern="^[a-zA-Z0-9\s]*$" autocomplete="off" spellcheck="false" 
+                    <input type="text" name="name" class="form-control bg-info text" id="validationCustom01" pattern="[0-9]+" autocomplete="off" spellcheck="false" 
                     minlength="5" maxlength="30" placeholder="" onkeyup = "this.value=this.value.replace(/^\s+/,'');" required>
-                    <div class="invalid-feedback text">
-                        Por favor, ingrese un valor válido para este campo.
+                    <div id="error-msg1" class="invalid-feedback text">
+                        El nombre del sitio tiene que ser un numero.
                     </div>
+                    <script>
+                        // Obtener referencia al campo de entrada y al mensaje de error
+                        const tituloInput = document.getElementById('validationCustom01');
+                        const errorMsg = document.getElementById('error-msg1');
+
+                        // Agregar un event listener para el evento input
+                        tituloInput.addEventListener('input', function () {
+                            // Verificar si el valor del campo de entrada es válido utilizando checkValidity()
+                            if (tituloInput.checkValidity()) {
+                                // Si es válido, ocultar el mensaje de error
+                                errorMsg.style.display = 'none';
+                            } else {
+                                // Si no es válido, mostrar el mensaje de error
+                                errorMsg.style.display = 'block';
+                            }
+                        });
+                    </script>
                 </div>
                 <div class="mb-3">
                     <input name="disponible" class="text" value = "1"  style="display: none;">

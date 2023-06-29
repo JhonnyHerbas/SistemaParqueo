@@ -33,9 +33,9 @@ include('templates/head.php');
                     ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <button id="<?php if($row['ID_GUA'] == null){echo "libre";}else{echo "ocupado";}?>" class="accordion-button collapsed titulo-acordion" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse ?>" aria-expanded="false" aria-controls="flush-collapseTwo">
                                 <?php 
-                                    echo 'Horario '. $i;                                        
+                                    echo 'Horario '. $row['TURNO_HOR'];                                        
                                 ?>
                             </button>
                         </h2>
@@ -44,7 +44,6 @@ include('templates/head.php');
                                 <div class="acordion-text w-100">
                                     <?php
                                         $guardias = visualizar_guardia_id($row['ID_GUA']);
-                                        echo "Horario: ".$row["TURNO_HOR"]. '<br>';
                                         if($guardias){
                                             $guardia= $guardias->fetch_array(MYSQLI_BOTH);
                                             if($guardia["NOMBRE_GUA"] == null){
@@ -66,9 +65,6 @@ include('templates/head.php');
                                     <?php } ?>                                    
                                     <div class="function azul">
                                         <a href="editarHorarioTrabajo.php?id_horario=<?php echo $row["ID_HOR"];?>" class="fa-solid fa-pencil blanco"></a>
-                                    </div> 
-                                    <div class="function rojo">
-                                        <a href="../controllers/eliminarHorarioTrabajo.php?id_horario=<?php echo $row["ID_HOR"];?>" class="fa-solid fa-trash blanco"></a>
                                     </div> 
                                 </div>                                    
                             </div>

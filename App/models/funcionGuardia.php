@@ -40,10 +40,10 @@ function visualizar_salida() {
     }
 }
 
-function registrar_ingreso($id_doc) {
+function registrar_ingreso($id_doc, $id_vehiculo) {
     $conn = get_connection();
-    $stmt = mysqli_prepare($conn, "CALL DB_SP_INGRESO_DOCENTE(?)");
-    mysqli_stmt_bind_param($stmt, "i", $id_doc);
+    $stmt = mysqli_prepare($conn, "CALL DB_SP_INGRESO_DOCENTE(?,?)");
+    mysqli_stmt_bind_param($stmt, "ii", $id_doc, $id_vehiculo);
     mysqli_stmt_execute($stmt);
 
     $rows_affected = mysqli_affected_rows($conn);
