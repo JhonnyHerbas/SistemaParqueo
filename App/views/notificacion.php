@@ -30,7 +30,7 @@ include('../models/funcionSolicitud.php');
         $href = "visualizarDocente.php";
         break;
     case 2:
-        $notificacion = "La contraseña se edito correctamente";
+        $notificacion = "La contraseña se cambió correctamente";
         $href = "editarDatosUser.php";
         break;
     case 3:
