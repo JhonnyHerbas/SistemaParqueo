@@ -26,7 +26,7 @@ $(document).ready(function () {
                                 <div class="accordion-body body-sitio">
                                     <div class="acordion-text w-50">
                                         Docente: ${desocupar.NOMBRE_DOC} ${desocupar.APELLIDO_DOC}<br> 
-                                        Correo: ${desocupar.CELULAR_DOC} <br>
+                                        Celular: ${desocupar.CELULAR_DOC} <br>
                                         Correo: ${desocupar.CORREO_DOC} <br>
                                     </div>
                                     <div class="acordion-btn w-50">    

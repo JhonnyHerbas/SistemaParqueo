@@ -51,7 +51,7 @@ include('templates/head.php');
                     if ($sitiodocente != null) {
                         echo ' <div class="solicitud-header tu_sitio">
                                     <h5 class="font-weight-bold">
-                                        Tu sitio: ' . $sitiodocente['NOMBRE_SIT'] . ' 
+                                        Tu sitio es: ' . $sitiodocente['NOMBRE_SIT'] . ' 
                                     </h5>
                                 </div>';
                     }
