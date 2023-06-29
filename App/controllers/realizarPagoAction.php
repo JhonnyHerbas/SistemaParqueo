@@ -31,7 +31,7 @@ if ($row['PARK_COIN_DOC'] >= $_POST['precio']) {
 
     // Configura el remitente y el destinatario del correo
     $mail->setFrom('servicio.correo.exodus@gmail.com', 'Sistema de parqueo FCYT');
-    $mail->addAddress($correo, $codigo);
+    $mail->addAddress($correo, $cod);
 
     try {
         // Configura el asunto y el cuerpo del correo
@@ -48,7 +48,11 @@ if ($row['PARK_COIN_DOC'] >= $_POST['precio']) {
         // Envía el correo electrónico y muestra un mensaje
         $mail->send();
         realizar_pago($_POST['id-asi'], $_POST['precio'], $_POST['nombreDocente'], $_POST['codigo']);
-        header("Location: ../views/visualizarPagos.php");
+        $mensaje = "Su pago se realizo exitosamente.";
+        $titulo = "Pago exitoso";
+        $boton = "btn-success";
+        $link = "./visualizarPagos.php";
+        include('../views/modalAceptacion.php');
     } catch (Exception $e) {
         echo 'Error al enviar el correo electrónico: ' . $mail->ErrorInfo;
     }
@@ -59,4 +63,3 @@ if ($row['PARK_COIN_DOC'] >= $_POST['precio']) {
     $link = "./visualizarPagos.php";
     include('../views/modalAceptacion.php');
 }
-?>

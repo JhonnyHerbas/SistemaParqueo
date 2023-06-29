@@ -37,7 +37,7 @@ include('../models/funcionAdmin.php');
                             <div class="mb-3">
                                 <label for="validationCustom07" class="form-label">Contraseña actual:</label>
                                 <input type="password" name="pass" class="form-control" id="validationCustom07"
-                                    pattern="^[a-zA-Z0-9]{8,20}$" autocomplete="off" spellcheck="false"
+                                     autocomplete="off" spellcheck="false"
                                     placeholder="Ingrese su contraseña" required>
                                 <div class="invalid-feedback">
                                     Ingrese una contraseña válida.
