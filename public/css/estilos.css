@@ -124,12 +124,12 @@ header .redes_sociales a {
   color: white;
   border: none;
 }
-.buscar-estadia{
+.buscar-estadia {
   width: 15vw;
   background: #00cfff;
   color: #fff;
 }
-.h2estadia{
+.h2estadia {
   padding-left: 3vw;
   padding-top: 2vh;
 }
@@ -183,6 +183,10 @@ header .redes_sociales a {
   text-align: right;
   height: 10vh;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw 3vw;
+  align-items: center;
 }
 
 .seccion {
@@ -311,10 +315,6 @@ header .redes_sociales a {
   justify-content: center;
 }
 
-.error {
-  display: block;
-}
-
 form {
   padding: 0% 10%;
 }
@@ -403,7 +403,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .nota {
   border: 1px solid black;
   padding: 10px;
-  
 }
 /* Styles libre o sitio ocupado */
 #libre {
@@ -415,7 +414,7 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: #046b99;
   color: white;
 }
-.estadia{
+.estadia {
   display: flex;
 }
 /*Visualizar solicitudes*/
@@ -491,10 +490,6 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: red;
   width: 30vw;
   height: 30vh;
-}
-
-.error {
-  display: block;
 }
 
 form {
@@ -715,6 +710,23 @@ form label:not(:first-child) {
 }
 .horario span {
   font-weight: bold;
+}
+.error {
+  display: block;
+}
+.tusitio{
+  display: flex;
+}
+.tu_sitio{
+  height: 5vh;
+  background-color: #1c304a;
+  width: 12vw;
+  color:#ffffff;
+  padding: 1vh;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
 }
 @media (max-width: 991px) {
   html {

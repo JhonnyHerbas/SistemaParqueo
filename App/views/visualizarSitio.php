@@ -32,9 +32,9 @@ include('templates/head.php');
     </div>
     <main>
         <div class="main">
-            <div class="container-busqueda">
+            <div class="container-busqueda tusitio">
                 <form action="../controllers/buscarSitio.php" method="POST">
-                    <div class="input-container">
+                    <div class="input-container tusitio">
                         <div class="container-input-buscar">
                             <input type="text" class="input-buscar" pattern="[0-9]*" name="nombre" id="nombre">
                         </div>
@@ -43,9 +43,28 @@ include('templates/head.php');
                         </div>
                     </div>
                 </form>
+                <?php
+                if ($_SESSION['rol'] != "Administrador") {
+                    $cod = $_SESSION['codigo'];
+                    $sitiodocentes = visualizar_docente_sitio($cod);
+                    $sitiodocente = $sitiodocentes->fetch_array(MYSQLI_BOTH);
+                    if ($sitiodocente != null) {
+                        echo ' <div class="solicitud-header tu_sitio">
+                                    <h5 class="font-weight-bold">
+                                        Tu sitio es: ' . $sitiodocente['NOMBRE_SIT'] . ' 
+                                    </h5>
+                                </div>';
+                    }
+                }
+                ?>
             </div>
             <div class="visual">
                 <div class="container-seccion">
+                    <div class="solicitud-header">
+                        <h3 class="font-weight-bold">
+                            Sitios
+                        </h3>
+                    </div>
                     <select class="seccion" id="seccion" name="seccion">
                         <option value="todos">Todos</option>
                         <!-- Implementacion de la visualizacion de secciones -->
@@ -133,18 +152,10 @@ include('templates/head.php');
                                             if ($fila['DISPONIBLE_SIT'] != 0) {
                                                 echo '<div class="function verde" title="Solicitar sitio"><a href="realizarSolicitud.php?id_sit=' . $fila["ID_SIT"] . '&id_sec=' . $fila["ID_SEC"] . '" target="_self" class="fa-solid fa-id-card-clip blanco"></a></div>';
                                             }
-                                        } else {
-                                            if ($fila['DISPONIBLE_SIT'] == 0) {
-                                                echo '<div class="function celeste"><a href="../controllers/liberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
+                                            if ($fila["NOMBRE_SIT"] == $sitiodocente["NOMBRE_SIT"]) {
+                                                echo '<div class="function celeste" title="Solicitud de desocupación del sitio"><a href="../controllers/solicitarLiberarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-lock blanco"></a></div>';
                                             }
-                                            echo '<div class="function azul">
-                                                    <a href="editarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-pencil blanco"></a>
-                                                </div>
-                                                <div class="function rojo">
-                                                    <a href="eliminarSitio.php?id_sit=' . $fila['ID_SIT'] . '" target="_self" class="fa-solid fa-trash blanco"></a>
-                                                </div>';
                                         }
-
                                         echo '</div>';
                                         ?>
                                     </div>
@@ -163,7 +174,7 @@ include('templates/head.php');
                     </div>
 
                     <?php
-                    
+
                     if ($_SESSION['rol'] == "Administrador") {
                         echo "<div class='function-seccion azul'>
                                 <a href='' target='_self' class='fa-solid fa-pencil blanco editar-seccion' id='editar-hidden'></a>

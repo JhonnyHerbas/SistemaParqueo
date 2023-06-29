@@ -17,7 +17,7 @@ include('templates/header.php');
     if ($_SESSION['rol'] != "Administrador") {
         header('Location: visualizarSitio.php');
     }
-
+    $fechaActual = date("Y-m-d", strtotime("-1 day"));
     ?>
 
     <!-- Aqui vendra toda la interfaz que se necesita para la visualizacion -->
@@ -30,7 +30,8 @@ include('templates/header.php');
             <form method="POST">
                 <div class="input-container estadia">
                     <div class="container-input-buscar ">
-                        <input type="text" class="input-buscar buscar-estadia" name="fecha" id="fecha" placeholder="AAAA-MM-DD" pattern="^\d{4}-\d{2}-\d{2}$" minlength="10" maxlength="10" required>
+                        <input type="date" class="input-buscar buscar-estadia" 
+                        name="fecha" id="fecha" min="2023-01-01" max="<?= $fechaActual ?>" required>
                     </div>
                     <div class="container-button-buscar">
                         <input type="submit" value="Buscar" class="button-buscar" id="buscar">
@@ -43,7 +44,7 @@ include('templates/header.php');
         <div class="reporte">
             <div class="estadia-cliente" id="data">
                 <div id="mensaje-busqueda" class="mensaje">
-                    <p>Por favor, realice una búsqueda en el buscador utilizando el formato Año-Mes-Día (por ejemplo, 2023-06-26) para obtener información sobre la fecha exacta en la que ciertos docentes ingresaron.</p>
+                    <p>Por favor, realiza una búsqueda de fecha para obtener la información exacta de ingreso de ciertos docentes.</p>
                 </div>
 
             </div>

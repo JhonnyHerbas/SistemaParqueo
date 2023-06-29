@@ -7,6 +7,6 @@ $horaCierre = $_POST['hora-cierre'];
 $horaCierreFormateada = date('H:i:s', strtotime($horaCierre));
 
 actualizar_horario_atencion($_POST['id'], $horaAperturaFormateada, $horaCierreFormateada);
-header("Location: ../views/visualizarHorarioAtencion.php");
+header("Location: ../views/notificacion.php?mensaje=6");
 exit();
 ?>

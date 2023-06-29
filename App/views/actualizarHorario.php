@@ -42,7 +42,7 @@ include('templates/head.php');
 
                     <div class="mb-3">
                         <label for="validationCustom01" class="form-label text">Horario de apertura:</label>
-                        <input type="text" name="hora-apertura" class="form-control text" id="validationCustom01" pattern="(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]" autocomplete="off" spellcheck="false" placeholder="HH:MM" value="<?= $horaApertura  ?>" required>
+                        <input type="time"  name="hora-apertura" class="form-control text" id="validationCustom01" pattern="(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]" autocomplete="off" spellcheck="false" placeholder="HH:MM" value="<?= $horaApertura  ?>" required>
                         <div id="hora-apertura-feedback" class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo en formato HH:MM.
                         </div>
@@ -50,7 +50,7 @@ include('templates/head.php');
 
                     <div class="mb-3">
                         <label for="validationCustom02" class="form-label text">Horario de cierre:</label>
-                        <input type="text" name="hora-cierre" class="form-control text" id="validationCustom02" pattern="^(0[0-9]|1[0-9]|2[0-2]):[0-5][0-9]$" autocomplete="off" spellcheck="false" placeholder="HH:MM" value="<?= $horaCierre; ?>" required>
+                        <input type="time"  name="hora-cierre" class="form-control text" id="validationCustom02" pattern="^(0[0-9]|1[0-9]|2[0-2]):[0-5][0-9]$" autocomplete="off" spellcheck="false" placeholder="HH:MM" value="<?= $horaCierre; ?>" required>
                         <div id="hora-cierre-feedback" class="invalid-feedback text">
                             Por favor, ingrese un valor válido para este campo en formato HH:MM.
                         </div>

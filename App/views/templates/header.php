@@ -191,9 +191,10 @@ if (isset($_SESSION['nombre'])) {
                     <ul>
                         <li><a href='visualizarConsulta.php'>Visualizar consultas</a></li>
                         <li><a href='visualizarReclamo.php'>Visualizar reclamos</a></li>
-                        <li><a href='visualizarSolicitudes.php'>Visualizar solicitudes</a></li>
-                        <li><a href='visualizarCompraMoneda.php'>Visualizar compra</a></li>
-                        <li><a href='visualizarSolicitudCompartido.php'>Solicitudes de sitio compartido</a></li>
+                        <li><a href='visualizarSolicitudes.php'>Visualizar solicitudes de ocupacion</a></li>
+                        <li><a href='visualizarSolicitudesLiberarSitio.php'>Visualizar solicitudes de desocupacion</a></li>
+                        <li><a href='visualizarCompraMoneda.php'>Visualizar compra de monedas</a></li>
+                        <li><a href='visualizarSolicitudCompartido.php'>Solicitudes de sitio compartido</a></li>                        
                     </ul>
                 </div>
             </li>

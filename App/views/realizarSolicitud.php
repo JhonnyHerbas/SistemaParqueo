@@ -77,7 +77,7 @@ include('../models/funcionSitio.php');
                     <div class="mb-3">
                         <label for="validationTextarea" class="form-label text">Descripción:</label>
                         <textarea class="form-control area text" name="descripcion" id="validationTextarea" minlength="5" maxlength="200"
-                            cols="3" autocomplete="off" spellcheck="false" required></textarea>
+                            cols="3" autocomplete="off" spellcheck="false" ></textarea>
                         <div class="invalid-feedback">
                             Solo se acepta un máximo de 200 caracteres.
                         </div>

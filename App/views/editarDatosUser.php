@@ -163,7 +163,7 @@ include('../models/funcionAdmin.php')
                                                 <div class="mb-3">
                                                     <label for="validationCustom04" class="form-label text">Celular:</label>
                                                     <input type="text" name="celular" class="form-control text"
-                                                        id="validationCustom04" pattern="^[0-9]{8}$" autocomplete="off"
+                                                        id="validationCustom04" pattern="^[67][0-9]{7}$" autocomplete="off"
                                                         spellcheck="false" minlength="5" maxlength="30"
                                                         placeholder="Ingrese su numero" required
                                                         value="<?php echo $docente["CELULAR_DOC"]; ?>">

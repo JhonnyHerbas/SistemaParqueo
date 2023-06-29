@@ -61,7 +61,7 @@ include('templates/head.php');
                                         ?>
                                     </div>
                                     <div class="acordion-btn w-50">
-                                        <div class="function azul">
+                                        <div class="function azul" title="Editar datos">
                                             <a href="editarDatosUser.php?id_doc=<?php echo $fila["ID_DOC"];?>" target="_self" class="fa-solid fa-pencil blanco"></a>
                                         </div>
                                     </div>

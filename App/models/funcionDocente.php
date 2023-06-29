@@ -101,6 +101,16 @@ function registrar_vehiculo($id_doc, $placa, $color, $tipo){
 function visualizar_vehiculos($id_doc){
     $conn = get_connection();
     $query = 'CALL DB_SP_VEHICULO_VISTA("'.$id_doc.'")';
+  if ($result = $conn->query($query)) {
+        return $result;
+    } else {
+        return null;
+    }
+}
+
+function solicitar_liberar_sitio($ID_SIT){
+    $conn = get_connection();
+    $query = 'CALL DB_SP_SITIO_SOLICITAR_LIBERAR("'.$ID_SIT.'")';
     if ($result = $conn->query($query)) {
         return $result;
     } else {

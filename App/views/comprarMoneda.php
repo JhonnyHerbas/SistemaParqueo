@@ -23,7 +23,7 @@ include('../models/funcionSeccion.php')
     <section class="container-form">
         <div class="card form">
             <div class="card-header">
-                <h3 class="font-weight-bold">Comprar moneda</h3>
+                <h3 class="font-weight-bold">Solicitud de comprar moneda</h3>
             </div>
             <div class="compra-moneda">
                 <div class="container-imagen">
